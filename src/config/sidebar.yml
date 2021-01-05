@@ -2,15 +2,9 @@
 
 - label: 'Introduction'
   link: '/'
-- label: 'Getting started'
-  link: '/getting-started'
-- label: Examples
-  items:
-    - label: 'Echo bot'
-      link: '/example/echo-bot'
+- label: 'Security Policy'
+  link: '/security'
 - label: Community
   items:
     - label: 'Github'
       link: https://github.com/gotd/td
-- label: 'Security Policy'
-  link: '/security'

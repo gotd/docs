@@ -4,7 +4,7 @@ module.exports = {
     defaultTitle: `gotd docs`,
     siteTitleShort: `gotd docs`,
     siteDescription: `gotd: telegram client in go documentation`,
-    siteUrl: `https://rocketdocs.netlify.com`,
+    siteUrl: `http://gotd.dev`,
     siteAuthor: `@ernado`,
     siteImage: `/banner.png`,
     siteLanguage: `en`,
@@ -43,7 +43,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-canonical-urls`,
       options: {
-        siteUrl: `https://rocketdocs.netlify.com`,
+        siteUrl: `http://gotd.dev`,
       },
     },
     `gatsby-plugin-offline`,
