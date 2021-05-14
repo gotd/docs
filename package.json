@@ -1,0 +1,10 @@
+{
+  "name": "docs",
+  "description": "The gotd documentation",
+  "repository": "github:gotd/docs",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "typescript": "^4.2.4"
+  }
+}
