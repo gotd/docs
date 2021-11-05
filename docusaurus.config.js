@@ -79,7 +79,11 @@ const config = {
             items: [
               {
                 label: 'Telegram',
-                href: 'https://t.me/gotd_dev',
+                href: 'https://t.me/gotd_en',
+              },
+              {
+                label: 'Telegram (in russian)',
+                href: 'https://t.me/gotd_ru',
               },
             ],
           },
