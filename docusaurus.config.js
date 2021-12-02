@@ -13,7 +13,7 @@ const config = {
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   organizationName: 'gotd', // Usually your GitHub org/user name.
-  projectName: 'gotd', // Usually your repo name.
+  projectName: 'td', // Usually your repo name.
 
   presets: [
     [
@@ -56,7 +56,7 @@ const config = {
           },
           // {to: '/blog', label: 'Blog', position: 'left'},
           {
-            href: 'https://github.com/gotd/gotd',
+            href: 'https://github.com/gotd/td',
             label: 'GitHub',
             position: 'right',
           },
@@ -96,7 +96,7 @@ const config = {
               // },
               {
                 label: 'GitHub',
-                href: 'https://github.com/gotd/gotd',
+                href: 'https://github.com/gotd/td',
               },
             ],
           },
