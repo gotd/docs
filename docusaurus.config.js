@@ -12,6 +12,9 @@ const config = {
   url: 'https://gotd.dev',
   baseUrl: '/',
   onBrokenLinks: 'throw',
+  future: {
+    v4: true,
+  },
   markdown: {
     hooks: {
       onBrokenMarkdownLinks: 'warn',
