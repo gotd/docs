@@ -1,14 +1,16 @@
-# Website
+# gotd documentation
 
-This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
+Source for [gotd.dev](https://gotd.dev), the documentation website for [gotd](https://github.com/gotd/td) — a Telegram client in Go.
 
-### Installation
+Built with [Docusaurus 3](https://docusaurus.io/), a modern static website generator.
+
+## Installation
 
 ```
 $ yarn
 ```
 
-### Local Development
+## Local Development
 
 ```
 $ yarn start
@@ -16,7 +18,7 @@ $ yarn start
 
 This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
 
-### Build
+## Build
 
 ```
 $ yarn build
@@ -24,7 +26,15 @@ $ yarn build
 
 This command generates static content into the `build` directory and can be served using any static contents hosting service.
 
-### Deployment
+## Generating reference docs
+
+```
+$ yarn gen:reference
+```
+
+Regenerates the API reference pages via `tools/docgen/generate.sh`.
+
+## Deployment
 
 ```
 $ GIT_USER=<Your GitHub username> USE_SSH=true yarn deploy
