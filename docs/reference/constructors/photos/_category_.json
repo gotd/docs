@@ -1,0 +1,9 @@
+{
+  "label": "photos",
+  "position": 14,
+  "link": {
+    "type": "generated-index",
+    "slug": "/reference/constructors/photos",
+    "description": "3 constructors in the photos namespace."
+  }
+}

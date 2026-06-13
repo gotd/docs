@@ -1,0 +1,9 @@
+{
+  "label": "account",
+  "position": 1,
+  "link": {
+    "type": "generated-index",
+    "slug": "/reference/methods/account",
+    "description": "128 methods in the account namespace."
+  }
+}

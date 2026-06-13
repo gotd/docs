@@ -1,0 +1,9 @@
+{
+  "label": "messages",
+  "position": 11,
+  "link": {
+    "type": "generated-index",
+    "slug": "/reference/constructors/messages",
+    "description": "94 constructors in the messages namespace."
+  }
+}

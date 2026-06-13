@@ -1,0 +1,9 @@
+{
+  "label": "upload",
+  "position": 23,
+  "link": {
+    "type": "generated-index",
+    "slug": "/reference/methods/upload",
+    "description": "8 methods in the upload namespace."
+  }
+}

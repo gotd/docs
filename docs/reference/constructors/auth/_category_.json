@@ -1,0 +1,9 @@
+{
+  "label": "auth",
+  "position": 3,
+  "link": {
+    "type": "generated-index",
+    "slug": "/reference/constructors/auth",
+    "description": "28 constructors in the auth namespace."
+  }
+}

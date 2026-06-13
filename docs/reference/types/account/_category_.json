@@ -1,0 +1,9 @@
+{
+  "label": "account",
+  "position": 1,
+  "link": {
+    "type": "generated-index",
+    "slug": "/reference/types/account",
+    "description": "10 types in the account namespace."
+  }
+}

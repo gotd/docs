@@ -1,0 +1,9 @@
+{
+  "label": "test",
+  "position": 21,
+  "link": {
+    "type": "generated-index",
+    "slug": "/reference/methods/test",
+    "description": "2 methods in the test namespace."
+  }
+}

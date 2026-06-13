@@ -1,0 +1,9 @@
+{
+  "label": "payments",
+  "position": 10,
+  "link": {
+    "type": "generated-index",
+    "slug": "/reference/types/payments",
+    "description": "8 types in the payments namespace."
+  }
+}

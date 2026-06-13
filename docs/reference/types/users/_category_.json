@@ -1,0 +1,9 @@
+{
+  "label": "users",
+  "position": 16,
+  "link": {
+    "type": "generated-index",
+    "slug": "/reference/types/users",
+    "description": "2 types in the users namespace."
+  }
+}

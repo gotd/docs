@@ -1,0 +1,9 @@
+{
+  "label": "bots",
+  "position": 4,
+  "link": {
+    "type": "generated-index",
+    "slug": "/reference/methods/bots",
+    "description": "38 methods in the bots namespace."
+  }
+}

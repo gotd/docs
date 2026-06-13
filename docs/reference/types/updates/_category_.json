@@ -1,0 +1,9 @@
+{
+  "label": "updates",
+  "position": 14,
+  "link": {
+    "type": "generated-index",
+    "slug": "/reference/types/updates",
+    "description": "2 types in the updates namespace."
+  }
+}

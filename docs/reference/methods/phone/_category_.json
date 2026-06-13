@@ -1,0 +1,9 @@
+{
+  "label": "phone",
+  "position": 14,
+  "link": {
+    "type": "generated-index",
+    "slug": "/reference/methods/phone",
+    "description": "43 methods in the phone namespace."
+  }
+}

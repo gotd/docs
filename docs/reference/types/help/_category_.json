@@ -1,0 +1,9 @@
+{
+  "label": "help",
+  "position": 8,
+  "link": {
+    "type": "generated-index",
+    "slug": "/reference/types/help",
+    "description": "11 types in the help namespace."
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "label": "storage",
+  "position": 19,
+  "link": {
+    "type": "generated-index",
+    "slug": "/reference/constructors/storage",
+    "description": "10 constructors in the storage namespace."
+  }
+}

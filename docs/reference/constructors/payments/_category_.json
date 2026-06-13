@@ -1,0 +1,9 @@
+{
+  "label": "payments",
+  "position": 12,
+  "link": {
+    "type": "generated-index",
+    "slug": "/reference/constructors/payments",
+    "description": "37 constructors in the payments namespace."
+  }
+}

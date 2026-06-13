@@ -1,0 +1,9 @@
+{
+  "label": "channels",
+  "position": 4,
+  "link": {
+    "type": "generated-index",
+    "slug": "/reference/types/channels",
+    "description": "2 types in the channels namespace."
+  }
+}

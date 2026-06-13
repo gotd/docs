@@ -1,0 +1,9 @@
+{
+  "label": "photos",
+  "position": 11,
+  "link": {
+    "type": "generated-index",
+    "slug": "/reference/types/photos",
+    "description": "1 types in the photos namespace."
+  }
+}

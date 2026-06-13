@@ -1,0 +1,9 @@
+{
+  "label": "phone",
+  "position": 13,
+  "link": {
+    "type": "generated-index",
+    "slug": "/reference/constructors/phone",
+    "description": "8 constructors in the phone namespace."
+  }
+}

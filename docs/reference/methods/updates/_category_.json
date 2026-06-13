@@ -1,0 +1,9 @@
+{
+  "label": "updates",
+  "position": 22,
+  "link": {
+    "type": "generated-index",
+    "slug": "/reference/methods/updates",
+    "description": "3 methods in the updates namespace."
+  }
+}

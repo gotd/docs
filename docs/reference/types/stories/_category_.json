@@ -1,0 +1,9 @@
+{
+  "label": "stories",
+  "position": 13,
+  "link": {
+    "type": "generated-index",
+    "slug": "/reference/types/stories",
+    "description": "2 types in the stories namespace."
+  }
+}

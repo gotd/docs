@@ -1,0 +1,9 @@
+{
+  "label": "auth",
+  "position": 3,
+  "link": {
+    "type": "generated-index",
+    "slug": "/reference/methods/auth",
+    "description": "26 methods in the auth namespace."
+  }
+}

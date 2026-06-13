@@ -1,0 +1,9 @@
+{
+  "label": "Types",
+  "position": 3,
+  "link": {
+    "type": "generated-index",
+    "slug": "/reference/types",
+    "description": "All 244 TL classes (types), grouped by namespace."
+  }
+}

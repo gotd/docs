@@ -1,0 +1,9 @@
+{
+  "label": "contacts",
+  "position": 7,
+  "link": {
+    "type": "generated-index",
+    "slug": "/reference/methods/contacts",
+    "description": "28 methods in the contacts namespace."
+  }
+}

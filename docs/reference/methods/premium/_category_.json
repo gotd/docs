@@ -1,0 +1,9 @@
+{
+  "label": "premium",
+  "position": 16,
+  "link": {
+    "type": "generated-index",
+    "slug": "/reference/methods/premium",
+    "description": "5 methods in the premium namespace."
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "label": "chatlists",
+  "position": 6,
+  "link": {
+    "type": "generated-index",
+    "slug": "/reference/constructors/chatlists",
+    "description": "5 constructors in the chatlists namespace."
+  }
+}

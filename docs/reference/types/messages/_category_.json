@@ -1,0 +1,9 @@
+{
+  "label": "messages",
+  "position": 9,
+  "link": {
+    "type": "generated-index",
+    "slug": "/reference/types/messages",
+    "description": "26 types in the messages namespace."
+  }
+}
