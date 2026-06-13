@@ -60,7 +60,7 @@ func main() {
   [security guidelines](https://core.telegram.org/mtproto/security_guidelines),
   with secure PRNG, replay-attack protection, 2FA and MTProxy support.
 
-:::warning Read this first
+:::warning[Read this first]
 Before using this library on a real account, read the
 [**How To Not Get Banned**](https://github.com/gotd/td/blob/main/.github/SUPPORT.md#how-to-not-get-banned)
 guide. Telegram may limit or ban accounts that behave abusively.
@@ -89,7 +89,7 @@ application's `api_id` and `api_hash` — see
 * **[Advanced](./advanced/transports-and-proxy.md)** — transports and proxies, running
   without `Run`, debugging, data export, and voice calls.
 
-:::tip Generated API reference
+:::tip[Generated API reference]
 Because of `pkg.go.dev` limitations, the generated `tg` package docs are hosted
 separately at [**ref.gotd.dev**](https://ref.gotd.dev/pkg/github.com/gotd/td/tg.html).
 This site covers the hand-written, higher-level parts of the library.

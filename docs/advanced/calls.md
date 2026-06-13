@@ -9,7 +9,7 @@ the [`calls`](https://ref.gotd.dev/pkg/github.com/gotd/td/telegram/calls.html) p
 supporting both **1:1 calls** and **group voice chats**. This is an advanced feature
 that builds on the rest of the library — authenticate and handle updates first.
 
-:::note Audio pipeline
+:::note[Audio pipeline]
 The examples transcode MP3 to Opus with **ffmpeg** and feed the resulting RTP packets
 into the call. You need ffmpeg available, and you bring your own audio source. The
 helper `examples.StreamMP3(ctx, writePacket, path)` encapsulates the transcoding.

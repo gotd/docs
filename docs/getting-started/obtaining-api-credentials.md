@@ -17,7 +17,7 @@ clients.
 Follow the official guide on
 [obtaining api_id](https://core.telegram.org/api/obtaining_api_id) for details.
 
-:::danger Keep your credentials secret
+:::danger[Keep your credentials secret]
 Never hardcode `api_id` / `api_hash` in source you publish, and never share them — they
 **cannot be rotated easily**. Read them from the environment or a config file instead.
 :::

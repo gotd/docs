@@ -85,7 +85,7 @@ The [`userbot`](https://github.com/gotd/td/tree/main/examples/userbot) example u
 persistent state; the [`updates`](https://github.com/gotd/td/tree/main/examples/updates)
 example is a minimal in-memory version.
 
-:::note Known limits
+:::note[Known limits]
 The engine relies on the server for `getDifference` correctness and cannot recover from
 `ChannelDifferenceTooLong` (it resyncs that channel instead). Stateless updates can't be
 ordered. These are inherent to the MTProto update model.
