@@ -1,0 +1,29 @@
+name: reference
+
+# Ensures the committed API reference (docs/reference) stays in sync with the
+# generator output. Bump TD_REF together with tools/docgen/generate.sh.
+on:
+  pull_request:
+    paths:
+      - 'tools/docgen/**'
+      - 'docs/reference/**'
+      - '.github/workflows/reference.yml'
+  push:
+    branches: [main]
+
+jobs:
+  drift-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version: 'stable'
+      - name: Regenerate reference
+        run: npm run gen:reference
+      - name: Check for drift
+        run: |
+          if ! git diff --exit-code --stat docs/reference; then
+            echo "::error::docs/reference is out of date. Run 'npm run gen:reference' and commit the result."
+            exit 1
+          fi

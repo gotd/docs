@@ -11,7 +11,8 @@
     "clear": "docusaurus clear",
     "serve": "NODE_OPTIONS=--no-experimental-webstorage docusaurus serve",
     "write-translations": "docusaurus write-translations",
-    "write-heading-ids": "docusaurus write-heading-ids"
+    "write-heading-ids": "docusaurus write-heading-ids",
+    "gen:reference": "bash tools/docgen/generate.sh"
   },
   "dependencies": {
     "@docusaurus/core": "^3.10.0",

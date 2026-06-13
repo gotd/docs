@@ -15,6 +15,15 @@ const config = {
   future: {
     v4: true,
   },
+  headTags: [
+    {
+      tagName: 'meta',
+      attributes: {
+        name: 'algolia-site-verification',
+        content: 'F1C0F77133870978',
+      },
+    },
+  ],
   markdown: {
     hooks: {
       onBrokenMarkdownLinks: 'warn',
@@ -57,10 +66,16 @@ const config = {
         },
         items: [
           {
-            type: 'doc',
-            docId: 'intro',
+            type: 'docSidebar',
+            sidebarId: 'tutorialSidebar',
             position: 'left',
             label: 'Tutorial',
+          },
+          {
+            type: 'docSidebar',
+            sidebarId: 'referenceSidebar',
+            position: 'left',
+            label: 'API Reference',
           },
           // {to: '/blog', label: 'Blog', position: 'left'},
           {
