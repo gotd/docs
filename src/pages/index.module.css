@@ -16,9 +16,41 @@
   }
 }
 
+.heroDescription {
+  max-width: 640px;
+  margin: 0 auto 1.5rem;
+  font-size: 1.15rem;
+  opacity: 0.95;
+}
+
+.install {
+  max-width: 440px;
+  margin: 0 auto 1.5rem;
+  text-align: left;
+}
+
 .buttons {
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
 }
 
+.quickStart {
+  padding: 3rem 0;
+}
+
+.sectionTitle {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.quickStartFootnote {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.feature {
+  margin-bottom: 1.5rem;
+}
