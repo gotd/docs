@@ -73,6 +73,12 @@ const config = {
           },
           {
             type: 'docSidebar',
+            sidebarId: 'botapiSidebar',
+            position: 'left',
+            label: 'Bot API',
+          },
+          {
+            type: 'docSidebar',
             sidebarId: 'referenceSidebar',
             position: 'left',
             label: 'API Reference',

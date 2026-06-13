@@ -88,6 +88,8 @@ application's `api_id` and `api_hash` — see
   API pleasant to use.
 * **[Advanced](./advanced/transports-and-proxy.md)** — transports and proxies, running
   without `Run`, debugging, data export, and voice calls.
+* **[Bot API](./botapi/overview.md)** — `gotd/botapi`, the Telegram Bot API surface
+  implemented over MTProto instead of HTTP to `api.telegram.org`.
 
 :::tip[Generated API reference]
 Because of `pkg.go.dev` limitations, the generated `tg` package docs are hosted
