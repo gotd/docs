@@ -35,9 +35,9 @@ client.Run(ctx, func(ctx context.Context) error {
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| `Peer` | `InputPeerClass` | yes | The channel |
+| `Peer` | [`InputPeerClass`](/docs/reference/types/general/input-peer) | yes | The channel |
 | `MsgID` | `int` | yes | The ID of the message to which we sent the paid reactions |
-| `Private` | `PaidReactionPrivacyClass` | yes | If true, makes the current anonymous in the top sender leaderboard for this message; otherwise, does the opposite. |
+| `Private` | [`PaidReactionPrivacyClass`](/docs/reference/types/general/paid-reaction-privacy) | yes | If true, makes the current anonymous in the top sender leaderboard for this message; otherwise, does the opposite. |
 
 ## Returns
 

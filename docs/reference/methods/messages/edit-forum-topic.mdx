@@ -35,7 +35,7 @@ client.Run(ctx, func(ctx context.Context) error {
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| `Peer` | `InputPeerClass` | yes | The supergroup forum, private chat (for forum-enabled bots) or bot forum (for users) where the topic is located. |
+| `Peer` | [`InputPeerClass`](/docs/reference/types/general/input-peer) | yes | The supergroup forum, private chat (for forum-enabled bots) or bot forum (for users) where the topic is located. |
 | `TopicID` | `int` | yes | Topic ID |
 | `Title` | `string` | — | If present, will update the topic title (maximum UTF-8 length: 128). |
 | `IconEmojiID` | `int64` | — | If present, updates the custom emoji used as topic icon. Telegram Premium users can use any custom emoji, other users can only use the custom emojis contained in the inputStickerSetEmojiDefaultTopicIcons emoji pack. Pass 0 to switch to the fallback topic icon. |
@@ -44,7 +44,7 @@ client.Run(ctx, func(ctx context.Context) error {
 
 ## Returns
 
-`UpdatesClass`
+[`UpdatesClass`](/docs/reference/types/general/updates)
 
 ## Possible errors
 

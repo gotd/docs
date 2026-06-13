@@ -35,12 +35,12 @@ client.Run(ctx, func(ctx context.Context) error {
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| `Key` | `InputPrivacyKeyClass` | yes | New privacy rule |
-| `Rules` | `[]InputPrivacyRuleClass` | yes | Peers to which the privacy rule will apply. |
+| `Key` | [`InputPrivacyKeyClass`](/docs/reference/types/general/input-privacy-key) | yes | New privacy rule |
+| `Rules` | [`[]InputPrivacyRuleClass`](/docs/reference/types/general/input-privacy-rule) | yes | Peers to which the privacy rule will apply. |
 
 ## Returns
 
-`*AccountPrivacyRules`
+[`*AccountPrivacyRules`](/docs/reference/constructors/account/privacy-rules)
 
 ## Possible errors
 

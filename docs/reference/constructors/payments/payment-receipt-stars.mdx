@@ -24,12 +24,12 @@ Implements [`payments.PaymentReceipt`](/docs/reference/types/payments/payment-re
 | `BotID` | `int64` | yes | Bot ID |
 | `Title` | `string` | yes | Title |
 | `Description` | `string` | yes | Description |
-| `Photo` | `WebDocumentClass` | — | Product photo |
-| `Invoice` | `Invoice` | yes | Invoice |
+| `Photo` | [`WebDocumentClass`](/docs/reference/types/general/web-document) | — | Product photo |
+| `Invoice` | [`Invoice`](/docs/reference/constructors/general/invoice) | yes | Invoice |
 | `Currency` | `string` | yes | Currency, always XTR. |
 | `TotalAmount` | `int64` | yes | Amount of Telegram Stars. |
 | `TransactionID` | `string` | yes | Transaction ID |
-| `Users` | `[]UserClass` | yes | Info about users mentioned in the other fields. |
+| `Users` | [`[]UserClass`](/docs/reference/types/general/user) | yes | Info about users mentioned in the other fields. |
 
 ## References
 

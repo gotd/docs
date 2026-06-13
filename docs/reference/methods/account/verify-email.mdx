@@ -35,12 +35,12 @@ client.Run(ctx, func(ctx context.Context) error {
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| `Purpose` | `EmailVerifyPurposeClass` | yes | Verification purpose |
-| `Verification` | `EmailVerificationClass` | yes | Email verification code or token |
+| `Purpose` | [`EmailVerifyPurposeClass`](/docs/reference/types/general/email-verify-purpose) | yes | Verification purpose |
+| `Verification` | [`EmailVerificationClass`](/docs/reference/types/general/email-verification) | yes | Email verification code or token |
 
 ## Returns
 
-`AccountEmailVerifiedClass`
+[`AccountEmailVerifiedClass`](/docs/reference/types/account/email-verified)
 
 ## Possible errors
 

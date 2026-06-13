@@ -37,13 +37,13 @@ client.Run(ctx, func(ctx context.Context) error {
 | ---- | ---- | -------- | ----------- |
 | `Precise` | `bool` | — | Disable some checks on limit and offset values, useful for example to stream videos by keyframes |
 | `CDNSupported` | `bool` | — | Whether the current client supports CDN downloads |
-| `Location` | `InputFileLocationClass` | yes | File location |
+| `Location` | [`InputFileLocationClass`](/docs/reference/types/general/input-file-location) | yes | File location |
 | `Offset` | `int64` | yes | Number of bytes to be skipped |
 | `Limit` | `int` | yes | Number of bytes to be returned |
 
 ## Returns
 
-`UploadFileClass`
+[`UploadFileClass`](/docs/reference/types/upload/file)
 
 ## Possible errors
 

@@ -37,12 +37,12 @@ client.Run(ctx, func(ctx context.Context) error {
 | ---- | ---- | -------- | ----------- |
 | `Slug` | `string` | yes | Unique theme ID used to generate theme deep links, can be empty to autogenerate a random ID. |
 | `Title` | `string` | yes | Theme name |
-| `Document` | `InputDocumentClass` | — | Theme file |
-| `Settings` | `[]InputThemeSettings` | — | Theme settings, multiple values can be provided for the different base themes (day/night mode, etc). |
+| `Document` | [`InputDocumentClass`](/docs/reference/types/general/input-document) | — | Theme file |
+| `Settings` | [`[]InputThemeSettings`](/docs/reference/constructors/general/input-theme-settings) | — | Theme settings, multiple values can be provided for the different base themes (day/night mode, etc). |
 
 ## Returns
 
-`*Theme`
+[`*Theme`](/docs/reference/constructors/general/theme)
 
 ## Possible errors
 

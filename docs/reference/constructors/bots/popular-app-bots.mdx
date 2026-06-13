@@ -19,7 +19,11 @@ type tg.BotsPopularAppBots struct { /* ... */ }
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
 | `NextOffset` | `string` | — | Offset for pagination. |
-| `Users` | `[]UserClass` | yes | The bots associated to each Main Mini App, see here » for more info. |
+| `Users` | [`[]UserClass`](/docs/reference/types/general/user) | yes | The bots associated to each Main Mini App, see here » for more info. |
+
+## Returned by
+
+- [`bots.getPopularAppBots`](/docs/reference/methods/bots/get-popular-app-bots)
 
 ## References
 

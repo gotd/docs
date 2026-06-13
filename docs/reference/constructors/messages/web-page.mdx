@@ -18,9 +18,13 @@ type tg.MessagesWebPage struct { /* ... */ }
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| `Webpage` | `WebPageClass` | yes | The instant view webpage. |
-| `Chats` | `[]ChatClass` | yes | Chats mentioned in the webpage. |
-| `Users` | `[]UserClass` | yes | Users mentioned in the webpage. |
+| `Webpage` | [`WebPageClass`](/docs/reference/types/general/web-page) | yes | The instant view webpage. |
+| `Chats` | [`[]ChatClass`](/docs/reference/types/general/chat) | yes | Chats mentioned in the webpage. |
+| `Users` | [`[]UserClass`](/docs/reference/types/general/user) | yes | Users mentioned in the webpage. |
+
+## Returned by
+
+- [`messages.getWebPage`](/docs/reference/methods/messages/get-web-page)
 
 ## References
 

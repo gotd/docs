@@ -21,9 +21,9 @@ type tg.MessageReactions struct { /* ... */ }
 | `Min` | `bool` | — | Similar to min objects, used for message reaction » constructors that are the same for all users so they don't have the reactions sent by the current user (you can use messages.getMessagesReactions to get the full reaction info). |
 | `CanSeeList` | `bool` | — | Whether messages.getMessageReactionsList can be used to see how each specific peer reacted to the message |
 | `ReactionsAsTags` | `bool` | — | If set or if there are no reactions, all present and future reactions should be treated as message tags, see here » for more info. |
-| `Results` | `[]ReactionCount` | yes | Reactions |
-| `RecentReactions` | `[]MessagePeerReaction` | — | List of recent peers and their reactions |
-| `TopReactors` | `[]MessageReactor` | — | Paid Telegram Star reactions leaderboard » for this message. |
+| `Results` | [`[]ReactionCount`](/docs/reference/constructors/general/reaction-count) | yes | Reactions |
+| `RecentReactions` | [`[]MessagePeerReaction`](/docs/reference/constructors/general/message-peer-reaction) | — | List of recent peers and their reactions |
+| `TopReactors` | [`[]MessageReactor`](/docs/reference/constructors/general/message-reactor) | — | Paid Telegram Star reactions leaderboard » for this message. |
 
 ## References
 

@@ -38,7 +38,7 @@ client.Run(ctx, func(ctx context.Context) error {
 | `JustContacts` | `bool` | — | Whether to only fetch view reaction/views made by our contacts |
 | `ReactionsFirst` | `bool` | — | Whether to return storyView info about users that reacted to the story (i.e. if set, the server will first sort results by view date as usual, and then also additionally sort the list by putting storyViews with an associated reaction first in the list). Ignored if forwards_first is set. |
 | `ForwardsFirst` | `bool` | — | If set, returns forwards and reposts first, then reactions, then other views; otherwise returns interactions sorted just by interaction date. |
-| `Peer` | `InputPeerClass` | yes | Peer where the story was posted |
+| `Peer` | [`InputPeerClass`](/docs/reference/types/general/input-peer) | yes | Peer where the story was posted |
 | `Q` | `string` | — | Search for specific peers |
 | `ID` | `int` | yes | Story ID |
 | `Offset` | `string` | yes | Offset for pagination, obtained from stories.storyViewsList.next_offset |
@@ -46,7 +46,7 @@ client.Run(ctx, func(ctx context.Context) error {
 
 ## Returns
 
-`*StoriesStoryViewsList`
+[`*StoriesStoryViewsList`](/docs/reference/constructors/stories/story-views-list)
 
 ## Possible errors
 

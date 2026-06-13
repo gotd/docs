@@ -21,7 +21,12 @@ type tg.EmojiKeywordsDifference struct { /* ... */ }
 | `LangCode` | `string` | yes | Language code for keywords |
 | `FromVersion` | `int` | yes | Previous emoji keyword list version |
 | `Version` | `int` | yes | Current version of emoji keyword list |
-| `Keywords` | `[]EmojiKeywordClass` | yes | Emojis associated to keywords |
+| `Keywords` | [`[]EmojiKeywordClass`](/docs/reference/types/general/emoji-keyword) | yes | Emojis associated to keywords |
+
+## Returned by
+
+- [`messages.getEmojiKeywords`](/docs/reference/methods/messages/get-emoji-keywords)
+- [`messages.getEmojiKeywordsDifference`](/docs/reference/methods/messages/get-emoji-keywords-difference)
 
 ## References
 

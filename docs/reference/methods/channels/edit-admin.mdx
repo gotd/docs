@@ -35,14 +35,14 @@ client.Run(ctx, func(ctx context.Context) error {
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| `Channel` | `InputChannelClass` | yes | The supergroup/channel. |
-| `UserID` | `InputUserClass` | yes | The ID of the user whose admin rights should be modified |
-| `AdminRights` | `ChatAdminRights` | yes | The admin rights |
+| `Channel` | [`InputChannelClass`](/docs/reference/types/general/input-channel) | yes | The supergroup/channel. |
+| `UserID` | [`InputUserClass`](/docs/reference/types/general/input-user) | yes | The ID of the user whose admin rights should be modified |
+| `AdminRights` | [`ChatAdminRights`](/docs/reference/constructors/general/chat-admin-rights) | yes | The admin rights |
 | `Rank` | `string` | — | Indicates the role (rank) of the admin in the group: just an arbitrary string. If the flag is not set, the rank is left unchanged. |
 
 ## Returns
 
-`UpdatesClass`
+[`UpdatesClass`](/docs/reference/types/general/updates)
 
 ## Possible errors
 

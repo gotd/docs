@@ -36,13 +36,13 @@ client.Run(ctx, func(ctx context.Context) error {
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
 | `Deleted` | `bool` | — | Whether to fully disconnect the bot from the current account. |
-| `Rights` | `BusinessBotRights` | — | Business bot rights. |
-| `Bot` | `InputUserClass` | yes | The bot to connect or disconnect |
-| `Recipients` | `InputBusinessBotRecipients` | yes | Configuration for the business connection |
+| `Rights` | [`BusinessBotRights`](/docs/reference/constructors/general/business-bot-rights) | — | Business bot rights. |
+| `Bot` | [`InputUserClass`](/docs/reference/types/general/input-user) | yes | The bot to connect or disconnect |
+| `Recipients` | [`InputBusinessBotRecipients`](/docs/reference/constructors/general/input-business-bot-recipients) | yes | Configuration for the business connection |
 
 ## Returns
 
-`UpdatesClass`
+[`UpdatesClass`](/docs/reference/types/general/updates)
 
 ## Possible errors
 

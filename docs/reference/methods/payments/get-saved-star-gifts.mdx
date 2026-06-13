@@ -44,14 +44,14 @@ client.Run(ctx, func(ctx context.Context) error {
 | `ExcludeUnupgradable` | `bool` | — | Exclude gifts that cannot be upgraded to collectible gifts ». |
 | `PeerColorAvailable` | `bool` | — | PeerColorAvailable field of PaymentsGetSavedStarGiftsRequest. |
 | `ExcludeHosted` | `bool` | — | ExcludeHosted field of PaymentsGetSavedStarGiftsRequest. |
-| `Peer` | `InputPeerClass` | yes | Fetch only gifts owned by the specified peer, such as: a user, with peer=inputPeerUser; a channel, with peer=inputPeerChannel; a connected business user (when executing the method as a bot, over the business connection), with peer=inputPeerUser. |
+| `Peer` | [`InputPeerClass`](/docs/reference/types/general/input-peer) | yes | Fetch only gifts owned by the specified peer, such as: a user, with peer=inputPeerUser; a channel, with peer=inputPeerChannel; a connected business user (when executing the method as a bot, over the business connection), with peer=inputPeerUser. |
 | `CollectionID` | `int` | — | Only returns gifts within the specified collection ». |
 | `Offset` | `string` | yes | Offset for pagination. |
 | `Limit` | `int` | yes | Maximum number of results to return, see pagination |
 
 ## Returns
 
-`*PaymentsSavedStarGifts`
+[`*PaymentsSavedStarGifts`](/docs/reference/constructors/payments/saved-star-gifts)
 
 ## Possible errors
 

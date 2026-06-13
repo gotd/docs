@@ -35,13 +35,13 @@ client.Run(ctx, func(ctx context.Context) error {
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| `Users` | `[]InputUserClass` | yes | List of user IDs to be invited |
+| `Users` | [`[]InputUserClass`](/docs/reference/types/general/input-user) | yes | List of user IDs to be invited |
 | `Title` | `string` | yes | Chat name |
 | `TTLPeriod` | `int` | — | Time-to-live of all messages that will be sent in the chat: once message.date+message ttl_period === time(), the message will be deleted on the server, and must be deleted locally as well. You can use messages.setDefaultHistoryTTL to edit this value later. |
 
 ## Returns
 
-`*MessagesInvitedUsers`
+[`*MessagesInvitedUsers`](/docs/reference/constructors/messages/invited-users)
 
 ## Possible errors
 

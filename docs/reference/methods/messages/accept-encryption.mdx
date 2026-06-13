@@ -35,13 +35,13 @@ client.Run(ctx, func(ctx context.Context) error {
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| `Peer` | `InputEncryptedChat` | yes | Secret chat ID |
+| `Peer` | [`InputEncryptedChat`](/docs/reference/constructors/general/input-encrypted-chat) | yes | Secret chat ID |
 | `GB` | `[]byte` | yes | B = g ^ b mod p, see Wikipedia |
 | `KeyFingerprint` | `int64` | yes | 64-bit fingerprint of the received key |
 
 ## Returns
 
-`EncryptedChatClass`
+[`EncryptedChatClass`](/docs/reference/types/general/encrypted-chat)
 
 ## Possible errors
 

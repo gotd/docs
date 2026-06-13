@@ -21,7 +21,11 @@ type tg.MessagesBotApp struct { /* ... */ }
 | `Inactive` | `bool` | — | Whether the web app was never used by the user, and confirmation must be asked from the user before opening it. |
 | `RequestWriteAccess` | `bool` | — | The bot is asking permission to send messages to the user: if the user agrees, set the write_allowed flag when invoking messages.requestAppWebView. |
 | `HasSettings` | `bool` | — | Deprecated flag, can be ignored. |
-| `App` | `BotAppClass` | yes | Bot app information |
+| `App` | [`BotAppClass`](/docs/reference/types/general/bot-app) | yes | Bot app information |
+
+## Returned by
+
+- [`messages.getBotApp`](/docs/reference/methods/messages/get-bot-app)
 
 ## References
 

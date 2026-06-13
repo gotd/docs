@@ -35,13 +35,13 @@ client.Run(ctx, func(ctx context.Context) error {
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| `UserID` | `InputUserClass` | yes | User ID |
+| `UserID` | [`InputUserClass`](/docs/reference/types/general/input-user) | yes | User ID |
 | `RandomID` | `int` | yes | Unique client request ID required to prevent resending. This also doubles as the chat ID. |
 | `GA` | `[]byte` | yes | A = g ^ a mod p, see Wikipedia |
 
 ## Returns
 
-`EncryptedChatClass`
+[`EncryptedChatClass`](/docs/reference/types/general/encrypted-chat)
 
 ## Possible errors
 

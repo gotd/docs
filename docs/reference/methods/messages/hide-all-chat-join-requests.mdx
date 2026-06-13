@@ -36,12 +36,12 @@ client.Run(ctx, func(ctx context.Context) error {
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
 | `Approved` | `bool` | — | Whether to dismiss or approve all chat join requests » |
-| `Peer` | `InputPeerClass` | yes | The chat or channel |
+| `Peer` | [`InputPeerClass`](/docs/reference/types/general/input-peer) | yes | The chat or channel |
 | `Link` | `string` | — | Only dismiss or approve join requests » initiated using this invite link |
 
 ## Returns
 
-`UpdatesClass`
+[`UpdatesClass`](/docs/reference/types/general/updates)
 
 ## Possible errors
 

@@ -21,7 +21,7 @@ Implements [`KeyboardButton`](/docs/reference/types/general/keyboard-button).
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
 | `RequiresPassword` | `bool` | — | Whether the user should verify his identity by entering his 2FA SRP parameters to the messages.getBotCallbackAnswer method. NOTE: telegram and the bot WILL NOT have access to the plaintext password, thanks to SRP. This button is mainly used by the official @botfather bot, for verifying the user's identity before transferring ownership of a bot to another user. |
-| `Style` | `KeyboardButtonStyle` | — | Button style, see here » for more info on button styles. |
+| `Style` | [`KeyboardButtonStyle`](/docs/reference/constructors/general/keyboard-button-style) | — | Button style, see here » for more info on button styles. |
 | `Text` | `string` | yes | Button text |
 | `Data` | `[]byte` | yes | Callback data |
 

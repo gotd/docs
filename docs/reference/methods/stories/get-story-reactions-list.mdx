@@ -36,15 +36,15 @@ client.Run(ctx, func(ctx context.Context) error {
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
 | `ForwardsFirst` | `bool` | — | If set, returns forwards and reposts first, then reactions, then other views; otherwise returns interactions sorted just by interaction date. |
-| `Peer` | `InputPeerClass` | yes | Channel |
+| `Peer` | [`InputPeerClass`](/docs/reference/types/general/input-peer) | yes | Channel |
 | `ID` | `int` | yes | Story ID |
-| `Reaction` | `ReactionClass` | — | Get only reactions of this type |
+| `Reaction` | [`ReactionClass`](/docs/reference/types/general/reaction) | — | Get only reactions of this type |
 | `Offset` | `string` | — | Offset for pagination (taken from the next_offset field of the returned stories StoryReactionsList); empty in the first request. |
 | `Limit` | `int` | yes | Maximum number of results to return, see pagination |
 
 ## Returns
 
-`*StoriesStoryReactionsList`
+[`*StoriesStoryReactionsList`](/docs/reference/constructors/stories/story-reactions-list)
 
 ## Possible errors
 

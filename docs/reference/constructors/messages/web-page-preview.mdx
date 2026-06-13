@@ -18,9 +18,13 @@ type tg.MessagesWebPagePreview struct { /* ... */ }
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| `Media` | `MessageMediaClass` | yes | The messageMediaWebPage or a messageMediaEmpty if there is no preview. |
-| `Chats` | `[]ChatClass` | yes | Chats mentioned in the gift field. |
-| `Users` | `[]UserClass` | yes | Users mentioned within the media object. |
+| `Media` | [`MessageMediaClass`](/docs/reference/types/general/message-media) | yes | The messageMediaWebPage or a messageMediaEmpty if there is no preview. |
+| `Chats` | [`[]ChatClass`](/docs/reference/types/general/chat) | yes | Chats mentioned in the gift field. |
+| `Users` | [`[]UserClass`](/docs/reference/types/general/user) | yes | Users mentioned within the media object. |
+
+## Returned by
+
+- [`messages.getWebPagePreview`](/docs/reference/methods/messages/get-web-page-preview)
 
 ## References
 

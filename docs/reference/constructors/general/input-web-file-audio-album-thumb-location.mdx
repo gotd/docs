@@ -21,7 +21,7 @@ Implements [`InputWebFileLocation`](/docs/reference/types/general/input-web-file
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
 | `Small` | `bool` | — | Used to return a thumbnail with 100x100 resolution (instead of the default 600x600) |
-| `Document` | `InputDocumentClass` | — | The audio file in question: must NOT be provided in secret chats, provide the title and performer fields instead. |
+| `Document` | [`InputDocumentClass`](/docs/reference/types/general/input-document) | — | The audio file in question: must NOT be provided in secret chats, provide the title and performer fields instead. |
 | `Title` | `string` | — | Song title: should only be used in secret chats, in normal chats provide document instead, as it has more lax rate limits. |
 | `Performer` | `string` | — | Song performer: should only be used in secret chats, in normal chats provide document instead, as it has more lax rate limits. |
 

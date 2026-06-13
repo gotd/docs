@@ -37,12 +37,12 @@ client.Run(ctx, func(ctx context.Context) error {
 | ---- | ---- | -------- | ----------- |
 | `NoWebpage` | `bool` | — | Disable webpage preview |
 | `InvertMedia` | `bool` | — | If set, any eventual webpage preview will be shown on top of the message instead of at the bottom. |
-| `ID` | `InputBotInlineMessageIDClass` | yes | Sent inline message ID |
+| `ID` | [`InputBotInlineMessageIDClass`](/docs/reference/types/general/input-bot-inline-message-i-d) | yes | Sent inline message ID |
 | `Message` | `string` | — | Message |
-| `Media` | `InputMediaClass` | — | Media |
-| `ReplyMarkup` | `ReplyMarkupClass` | — | Reply markup for inline keyboards |
-| `Entities` | `[]MessageEntityClass` | — | Message entities for styled text |
-| `RichMessage` | `InputRichMessageClass` | — | RichMessage field of MessagesEditInlineBotMessageRequest. |
+| `Media` | [`InputMediaClass`](/docs/reference/types/general/input-media) | — | Media |
+| `ReplyMarkup` | [`ReplyMarkupClass`](/docs/reference/types/general/reply-markup) | — | Reply markup for inline keyboards |
+| `Entities` | [`[]MessageEntityClass`](/docs/reference/types/general/message-entity) | — | Message entities for styled text |
+| `RichMessage` | [`InputRichMessageClass`](/docs/reference/types/general/input-rich-message) | — | RichMessage field of MessagesEditInlineBotMessageRequest. |
 
 ## Returns
 

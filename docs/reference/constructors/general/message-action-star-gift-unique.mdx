@@ -28,13 +28,13 @@ Implements [`MessageAction`](/docs/reference/types/general/message-action).
 | `Assigned` | `bool` | — | This collectible gift was assigned from the TON blockchain ». |
 | `FromOffer` | `bool` | — | This collectible gift was transferred after a purchase offer » was accepted. |
 | `Craft` | `bool` | — | This collectible gift was obtained by crafting ». |
-| `Gift` | `StarGiftClass` | yes | The collectible gift. |
+| `Gift` | [`StarGiftClass`](/docs/reference/types/general/star-gift) | yes | The collectible gift. |
 | `CanExportAt` | `int` | — | If set, indicates that the current gift can't be exported to the TON blockchain » yet: the owner will be able to export it at the specified unixtime. |
 | `TransferStars` | `int64` | — | If set, indicates that the gift can be transferred » to another user by paying the specified amount of stars. |
-| `FromID` | `PeerClass` | — | Sender of the gift (unset for anonymous gifts). |
-| `Peer` | `PeerClass` | — | Receiver of the gift. |
+| `FromID` | [`PeerClass`](/docs/reference/types/general/peer) | — | Sender of the gift (unset for anonymous gifts). |
+| `Peer` | [`PeerClass`](/docs/reference/types/general/peer) | — | Receiver of the gift. |
 | `SavedID` | `int64` | — | For channel gifts, ID to use in inputSavedStarGiftChat constructors. |
-| `ResaleAmount` | `StarsAmountClass` | — | Resale price of the gift. |
+| `ResaleAmount` | [`StarsAmountClass`](/docs/reference/types/general/stars-amount) | — | Resale price of the gift. |
 | `CanTransferAt` | `int` | — | If set, indicates that the current gift can't be transferred » yet: the owner will be able to transfer it at the specified unixtime. |
 | `CanResellAt` | `int` | — | If set, indicates that the current gift can't be resold » yet: the owner will be able to put it up for sale at the specified unixtime. |
 | `DropOriginalDetailsStars` | `int64` | — | If set, the starGiftAttributeOriginalDetails attribute of this gift may be removed by paying the specified amount of stars, see here » for the full flow. |

@@ -37,11 +37,11 @@ client.Run(ctx, func(ctx context.Context) error {
 | ---- | ---- | -------- | ----------- |
 | `Dark` | `bool` | — | Whether to enable dark theme for graph colors |
 | `Ton` | `bool` | — | If set, fetches channel/bot ad revenue statistics in TON. |
-| `Peer` | `InputPeerClass` | yes | Get statistics for the specified bot, channel or ourselves (inputPeerSelf). |
+| `Peer` | [`InputPeerClass`](/docs/reference/types/general/input-peer) | yes | Get statistics for the specified bot, channel or ourselves (inputPeerSelf). |
 
 ## Returns
 
-`*PaymentsStarsRevenueStats`
+[`*PaymentsStarsRevenueStats`](/docs/reference/constructors/payments/stars-revenue-stats)
 
 ## Possible errors
 

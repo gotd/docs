@@ -27,13 +27,13 @@ client.Run(ctx, func(ctx context.Context) error {
 {{if .Params}}
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-{{range .Params}}| `{{.Name}}` | `{{.GoType}}` | {{if .Optional}}—{{else}}yes{{end}} | {{.Description | mdxCell}} |
+{{range .Params}}| `{{.Name}}` | {{.TypeMD}} | {{if .Optional}}—{{else}}yes{{end}} | {{.Description | mdxCell}} |
 {{end}}{{else}}
 This method takes no parameters.
 {{end}}
 ## Returns
 
-{{if .ReturnType}}`{{.ReturnType}}`{{else}}Nothing (only an error is returned).{{end}}
+{{if .ReturnType}}{{.ReturnTypeMD}}{{else}}Nothing (only an error is returned).{{end}}
 {{if .Errors}}
 ## Possible errors
 

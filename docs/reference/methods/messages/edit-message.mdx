@@ -37,20 +37,20 @@ client.Run(ctx, func(ctx context.Context) error {
 | ---- | ---- | -------- | ----------- |
 | `NoWebpage` | `bool` | — | Disable webpage preview |
 | `InvertMedia` | `bool` | — | If set, any eventual webpage preview will be shown on top of the message instead of at the bottom. |
-| `Peer` | `InputPeerClass` | yes | Where was the message sent |
+| `Peer` | [`InputPeerClass`](/docs/reference/types/general/input-peer) | yes | Where was the message sent |
 | `ID` | `int` | yes | ID of the message to edit |
 | `Message` | `string` | — | New message |
-| `Media` | `InputMediaClass` | — | New attached media |
-| `ReplyMarkup` | `ReplyMarkupClass` | — | Reply markup for inline keyboards |
-| `Entities` | `[]MessageEntityClass` | — | Message entities for styled text |
+| `Media` | [`InputMediaClass`](/docs/reference/types/general/input-media) | — | New attached media |
+| `ReplyMarkup` | [`ReplyMarkupClass`](/docs/reference/types/general/reply-markup) | — | Reply markup for inline keyboards |
+| `Entities` | [`[]MessageEntityClass`](/docs/reference/types/general/message-entity) | — | Message entities for styled text |
 | `ScheduleDate` | `int` | — | Scheduled message date for scheduled messages |
 | `ScheduleRepeatPeriod` | `int` | — | Once sent, this message will be automatically re-scheduled to be re-sent again this many seconds in the future, see here » for more info on repeating scheduled messages. |
 | `QuickReplyShortcutID` | `int` | — | If specified, edits a quick reply shortcut message, instead ». |
-| `RichMessage` | `InputRichMessageClass` | — | RichMessage field of MessagesEditMessageRequest. |
+| `RichMessage` | [`InputRichMessageClass`](/docs/reference/types/general/input-rich-message) | — | RichMessage field of MessagesEditMessageRequest. |
 
 ## Returns
 
-`UpdatesClass`
+[`UpdatesClass`](/docs/reference/types/general/updates)
 
 ## Possible errors
 

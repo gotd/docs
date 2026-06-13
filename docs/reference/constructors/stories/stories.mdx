@@ -19,10 +19,17 @@ type tg.StoriesStories struct { /* ... */ }
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
 | `Count` | `int` | yes | Total number of stories that can be fetched |
-| `Stories` | `[]StoryItemClass` | yes | Stories |
+| `Stories` | [`[]StoryItemClass`](/docs/reference/types/general/story-item) | yes | Stories |
 | `PinnedToTop` | `[]int` | — | IDs of pinned stories. |
-| `Chats` | `[]ChatClass` | yes | Mentioned chats |
-| `Users` | `[]UserClass` | yes | Mentioned users |
+| `Chats` | [`[]ChatClass`](/docs/reference/types/general/chat) | yes | Mentioned chats |
+| `Users` | [`[]UserClass`](/docs/reference/types/general/user) | yes | Mentioned users |
+
+## Returned by
+
+- [`stories.getAlbumStories`](/docs/reference/methods/stories/get-album-stories)
+- [`stories.getPinnedStories`](/docs/reference/methods/stories/get-pinned-stories)
+- [`stories.getStoriesArchive`](/docs/reference/methods/stories/get-stories-archive)
+- [`stories.getStoriesByID`](/docs/reference/methods/stories/get-stories-by-i-d)
 
 ## References
 

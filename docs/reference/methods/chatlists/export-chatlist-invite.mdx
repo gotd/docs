@@ -35,13 +35,13 @@ client.Run(ctx, func(ctx context.Context) error {
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| `Chatlist` | `InputChatlistDialogFilter` | yes | The folder to export |
+| `Chatlist` | [`InputChatlistDialogFilter`](/docs/reference/constructors/general/input-chatlist-dialog-filter) | yes | The folder to export |
 | `Title` | `string` | yes | An optional name for the link |
-| `Peers` | `[]InputPeerClass` | yes | The list of channels, group and supergroups to share with the link. Basic groups will automatically be converted to supergroups when invoking the method. |
+| `Peers` | [`[]InputPeerClass`](/docs/reference/types/general/input-peer) | yes | The list of channels, group and supergroups to share with the link. Basic groups will automatically be converted to supergroups when invoking the method. |
 
 ## Returns
 
-`*ChatlistsExportedChatlistInvite`
+[`*ChatlistsExportedChatlistInvite`](/docs/reference/constructors/chatlists/exported-chatlist-invite)
 
 ## Possible errors
 

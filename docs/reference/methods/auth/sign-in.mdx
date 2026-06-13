@@ -38,11 +38,11 @@ client.Run(ctx, func(ctx context.Context) error {
 | `PhoneNumber` | `string` | yes | Phone number in the international format |
 | `PhoneCodeHash` | `string` | yes | SMS-message ID, obtained from auth.sendCode |
 | `PhoneCode` | `string` | — | Valid numerical code from the SMS-message |
-| `EmailVerification` | `EmailVerificationClass` | — | Email verification code or token |
+| `EmailVerification` | [`EmailVerificationClass`](/docs/reference/types/general/email-verification) | — | Email verification code or token |
 
 ## Returns
 
-`AuthAuthorizationClass`
+[`AuthAuthorizationClass`](/docs/reference/types/auth/authorization)
 
 ## Possible errors
 

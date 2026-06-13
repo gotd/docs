@@ -36,14 +36,14 @@ client.Run(ctx, func(ctx context.Context) error {
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
 | `Force` | `bool` | — | Set to true to skip some possibly unneeded updates and reduce server-side load |
-| `Channel` | `InputChannelClass` | yes | The channel |
-| `Filter` | `ChannelMessagesFilterClass` | yes | Messsage filter |
+| `Channel` | [`InputChannelClass`](/docs/reference/types/general/input-channel) | yes | The channel |
+| `Filter` | [`ChannelMessagesFilterClass`](/docs/reference/types/general/channel-messages-filter) | yes | Messsage filter |
 | `Pts` | `int` | yes | Persistent timestamp (see updates) |
 | `Limit` | `int` | yes | How many updates to fetch, max 100000Ordinary (non-bot) users are supposed to pass 10-100 |
 
 ## Returns
 
-`UpdatesChannelDifferenceClass`
+[`UpdatesChannelDifferenceClass`](/docs/reference/types/updates/channel-difference)
 
 ## Possible errors
 

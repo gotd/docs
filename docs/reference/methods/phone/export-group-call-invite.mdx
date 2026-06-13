@@ -36,11 +36,11 @@ client.Run(ctx, func(ctx context.Context) error {
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
 | `CanSelfUnmute` | `bool` | — | For livestreams or muted group chats, if set, users that join using this link will be able to speak without explicitly requesting permission by (for example by raising their hand). |
-| `Call` | `InputGroupCallClass` | yes | The group call |
+| `Call` | [`InputGroupCallClass`](/docs/reference/types/general/input-group-call) | yes | The group call |
 
 ## Returns
 
-`*PhoneExportedGroupCallInvite`
+[`*PhoneExportedGroupCallInvite`](/docs/reference/constructors/phone/exported-group-call-invite)
 
 ## Possible errors
 

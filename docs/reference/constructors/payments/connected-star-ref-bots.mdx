@@ -19,8 +19,15 @@ type tg.PaymentsConnectedStarRefBots struct { /* ... */ }
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
 | `Count` | `int` | yes | Total number of active affiliations |
-| `ConnectedBots` | `[]ConnectedBotStarRef` | yes | The affiliations |
-| `Users` | `[]UserClass` | yes | Peers mentioned in connected_bots |
+| `ConnectedBots` | [`[]ConnectedBotStarRef`](/docs/reference/constructors/general/connected-bot-star-ref) | yes | The affiliations |
+| `Users` | [`[]UserClass`](/docs/reference/types/general/user) | yes | Peers mentioned in connected_bots |
+
+## Returned by
+
+- [`payments.connectStarRefBot`](/docs/reference/methods/payments/connect-star-ref-bot)
+- [`payments.editConnectedStarRefBot`](/docs/reference/methods/payments/edit-connected-star-ref-bot)
+- [`payments.getConnectedStarRefBot`](/docs/reference/methods/payments/get-connected-star-ref-bot)
+- [`payments.getConnectedStarRefBots`](/docs/reference/methods/payments/get-connected-star-ref-bots)
 
 ## References
 

@@ -21,7 +21,7 @@ Implements [`Update`](/docs/reference/types/general/update).
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
 | `ConnectionID` | `string` | yes | Business connection ID. |
-| `Peer` | `PeerClass` | yes | Peer where the messages were deleted. |
+| `Peer` | [`PeerClass`](/docs/reference/types/general/peer) | yes | Peer where the messages were deleted. |
 | `Messages` | `[]int` | yes | IDs of the messages that were deleted. |
 | `Qts` | `int` | yes | New qts value, see updates » for more info. |
 

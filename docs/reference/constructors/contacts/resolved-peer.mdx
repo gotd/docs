@@ -18,9 +18,14 @@ type tg.ContactsResolvedPeer struct { /* ... */ }
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| `Peer` | `PeerClass` | yes | The peer |
-| `Chats` | `[]ChatClass` | yes | Chats |
-| `Users` | `[]UserClass` | yes | Users |
+| `Peer` | [`PeerClass`](/docs/reference/types/general/peer) | yes | The peer |
+| `Chats` | [`[]ChatClass`](/docs/reference/types/general/chat) | yes | Chats |
+| `Users` | [`[]UserClass`](/docs/reference/types/general/user) | yes | Users |
+
+## Returned by
+
+- [`contacts.resolvePhone`](/docs/reference/methods/contacts/resolve-phone)
+- [`contacts.resolveUsername`](/docs/reference/methods/contacts/resolve-username)
 
 ## References
 

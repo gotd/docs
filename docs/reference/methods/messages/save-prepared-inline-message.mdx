@@ -35,13 +35,13 @@ client.Run(ctx, func(ctx context.Context) error {
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| `Result` | `InputBotInlineResultClass` | yes | The message |
-| `UserID` | `InputUserClass` | yes | The user to whom the web_app_send_prepared_message event event will be sent |
-| `PeerTypes` | `[]InlineQueryPeerTypeClass` | — | Types of chats where this message can be sent |
+| `Result` | [`InputBotInlineResultClass`](/docs/reference/types/general/input-bot-inline-result) | yes | The message |
+| `UserID` | [`InputUserClass`](/docs/reference/types/general/input-user) | yes | The user to whom the web_app_send_prepared_message event event will be sent |
+| `PeerTypes` | [`[]InlineQueryPeerTypeClass`](/docs/reference/types/general/inline-query-peer-type) | — | Types of chats where this message can be sent |
 
 ## Returns
 
-`*MessagesBotPreparedInlineMessage`
+[`*MessagesBotPreparedInlineMessage`](/docs/reference/constructors/messages/bot-prepared-inline-message)
 
 ## Possible errors
 

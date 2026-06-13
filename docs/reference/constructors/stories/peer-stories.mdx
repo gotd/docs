@@ -18,9 +18,13 @@ type tg.StoriesPeerStories struct { /* ... */ }
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| `Stories` | `PeerStories` | yes | Stories |
-| `Chats` | `[]ChatClass` | yes | Mentioned chats |
-| `Users` | `[]UserClass` | yes | Mentioned users |
+| `Stories` | [`PeerStories`](/docs/reference/constructors/general/peer-stories) | yes | Stories |
+| `Chats` | [`[]ChatClass`](/docs/reference/types/general/chat) | yes | Mentioned chats |
+| `Users` | [`[]UserClass`](/docs/reference/types/general/user) | yes | Mentioned users |
+
+## Returned by
+
+- [`stories.getPeerStories`](/docs/reference/methods/stories/get-peer-stories)
 
 ## References
 

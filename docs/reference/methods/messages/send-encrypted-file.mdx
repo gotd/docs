@@ -36,14 +36,14 @@ client.Run(ctx, func(ctx context.Context) error {
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
 | `Silent` | `bool` | — | Whether to send the file without triggering a notification |
-| `Peer` | `InputEncryptedChat` | yes | Secret chat ID |
+| `Peer` | [`InputEncryptedChat`](/docs/reference/constructors/general/input-encrypted-chat) | yes | Secret chat ID |
 | `RandomID` | `int64` | yes | Unique client message ID necessary to prevent message resending |
 | `Data` | `[]byte` | yes | TL-serialization of DecryptedMessage type, encrypted with a key generated during chat initialization |
-| `File` | `InputEncryptedFileClass` | yes | File attachment for the secret chat |
+| `File` | [`InputEncryptedFileClass`](/docs/reference/types/general/input-encrypted-file) | yes | File attachment for the secret chat |
 
 ## Returns
 
-`MessagesSentEncryptedMessageClass`
+[`MessagesSentEncryptedMessageClass`](/docs/reference/types/messages/sent-encrypted-message)
 
 ## Possible errors
 

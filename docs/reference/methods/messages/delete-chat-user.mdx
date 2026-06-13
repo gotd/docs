@@ -37,11 +37,11 @@ client.Run(ctx, func(ctx context.Context) error {
 | ---- | ---- | -------- | ----------- |
 | `RevokeHistory` | `bool` | — | Remove the entire chat history of the specified user in this chat. |
 | `ChatID` | `int64` | yes | Chat ID |
-| `UserID` | `InputUserClass` | yes | User ID to be deleted |
+| `UserID` | [`InputUserClass`](/docs/reference/types/general/input-user) | yes | User ID to be deleted |
 
 ## Returns
 
-`UpdatesClass`
+[`UpdatesClass`](/docs/reference/types/general/updates)
 
 ## Possible errors
 

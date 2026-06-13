@@ -22,11 +22,11 @@ Implements [`InputReplyTo`](/docs/reference/types/general/input-reply-to).
 | ---- | ---- | -------- | ----------- |
 | `ReplyToMsgID` | `int` | yes | The message ID to reply to. |
 | `TopMsgID` | `int` | — | This field must contain the topic ID only when replying to messages in forum topics different from the "General" topic (i.e. reply_to_msg_id is set and reply_to_msg_id != topicID and topicID != 1). If the replied-to message is deleted before the method finishes execution, the value in this field will be used to send the message to the correct topic, instead of the "General" topic. |
-| `ReplyToPeerID` | `InputPeerClass` | — | Used to reply to messages sent to another chat (specified here), can only be used for non-protected chats and messages. |
+| `ReplyToPeerID` | [`InputPeerClass`](/docs/reference/types/general/input-peer) | — | Used to reply to messages sent to another chat (specified here), can only be used for non-protected chats and messages. |
 | `QuoteText` | `string` | — | Used to quote-reply to only a certain section (specified here) of the original message The maximum UTF-8 length for quotes is specified in the quote_length_max config key. |
-| `QuoteEntities` | `[]MessageEntityClass` | — | Message entities for styled text from the quote_text field. |
+| `QuoteEntities` | [`[]MessageEntityClass`](/docs/reference/types/general/message-entity) | — | Message entities for styled text from the quote_text field. |
 | `QuoteOffset` | `int` | — | Offset of the message quote_text within the original message (in UTF-16 code units). |
-| `MonoforumPeerID` | `InputPeerClass` | — | Must be set to the ID of the topic when replying to a message within a monoforum topic. |
+| `MonoforumPeerID` | [`InputPeerClass`](/docs/reference/types/general/input-peer) | — | Must be set to the ID of the topic when replying to a message within a monoforum topic. |
 | `TodoItemID` | `int` | — | Can be set to reply to the specified item of a todo list ». |
 | `PollOption` | `[]byte` | — | PollOption field of InputReplyToMessage. |
 

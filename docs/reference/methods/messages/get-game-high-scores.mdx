@@ -35,13 +35,13 @@ client.Run(ctx, func(ctx context.Context) error {
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| `Peer` | `InputPeerClass` | yes | Where was the game sent |
+| `Peer` | [`InputPeerClass`](/docs/reference/types/general/input-peer) | yes | Where was the game sent |
 | `ID` | `int` | yes | ID of message with game media attachment |
-| `UserID` | `InputUserClass` | yes | Get high scores made by a certain user |
+| `UserID` | [`InputUserClass`](/docs/reference/types/general/input-user) | yes | Get high scores made by a certain user |
 
 ## Returns
 
-`*MessagesHighScores`
+[`*MessagesHighScores`](/docs/reference/constructors/messages/high-scores)
 
 ## Possible errors
 

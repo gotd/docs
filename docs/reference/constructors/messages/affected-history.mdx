@@ -22,6 +22,17 @@ type tg.MessagesAffectedHistory struct { /* ... */ }
 | `PtsCount` | `int` | yes | Number of affected events |
 | `Offset` | `int` | yes | If a parameter contains positive value, it is necessary to repeat the method call using the given value; during the proceeding of all the history the value itself shall gradually decrease |
 
+## Returned by
+
+- [`channels.deleteParticipantHistory`](/docs/reference/methods/channels/delete-participant-history)
+- [`messages.deleteHistory`](/docs/reference/methods/messages/delete-history)
+- [`messages.deleteSavedHistory`](/docs/reference/methods/messages/delete-saved-history)
+- [`messages.deleteTopicHistory`](/docs/reference/methods/messages/delete-topic-history)
+- [`messages.readMentions`](/docs/reference/methods/messages/read-mentions)
+- [`messages.readPollVotes`](/docs/reference/methods/messages/read-poll-votes)
+- [`messages.readReactions`](/docs/reference/methods/messages/read-reactions)
+- [`messages.unpinAllMessages`](/docs/reference/methods/messages/unpin-all-messages)
+
 ## References
 
 - [Official documentation](https://core.telegram.org/constructor/messages.affectedHistory)

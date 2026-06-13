@@ -18,15 +18,21 @@ type tg.SecureValue struct { /* ... */ }
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| `Type` | `SecureValueTypeClass` | yes | Secure passport value type |
-| `Data` | `SecureData` | — | Encrypted Telegram Passport element data |
-| `FrontSide` | `SecureFileClass` | — | Encrypted passport file with the front side of the document |
-| `ReverseSide` | `SecureFileClass` | — | Encrypted passport file with the reverse side of the document |
-| `Selfie` | `SecureFileClass` | — | Encrypted passport file with a selfie of the user holding the document |
-| `Translation` | `[]SecureFileClass` | — | Array of encrypted passport files with translated versions of the provided documents |
-| `Files` | `[]SecureFileClass` | — | Array of encrypted passport files with photos the of the documents |
-| `PlainData` | `SecurePlainDataClass` | — | Plaintext verified passport data |
+| `Type` | [`SecureValueTypeClass`](/docs/reference/types/general/secure-value-type) | yes | Secure passport value type |
+| `Data` | [`SecureData`](/docs/reference/constructors/general/secure-data) | — | Encrypted Telegram Passport element data |
+| `FrontSide` | [`SecureFileClass`](/docs/reference/types/general/secure-file) | — | Encrypted passport file with the front side of the document |
+| `ReverseSide` | [`SecureFileClass`](/docs/reference/types/general/secure-file) | — | Encrypted passport file with the reverse side of the document |
+| `Selfie` | [`SecureFileClass`](/docs/reference/types/general/secure-file) | — | Encrypted passport file with a selfie of the user holding the document |
+| `Translation` | [`[]SecureFileClass`](/docs/reference/types/general/secure-file) | — | Array of encrypted passport files with translated versions of the provided documents |
+| `Files` | [`[]SecureFileClass`](/docs/reference/types/general/secure-file) | — | Array of encrypted passport files with photos the of the documents |
+| `PlainData` | [`SecurePlainDataClass`](/docs/reference/types/general/secure-plain-data) | — | Plaintext verified passport data |
 | `Hash` | `[]byte` | yes | Data hash |
+
+## Returned by
+
+- [`account.getAllSecureValues`](/docs/reference/methods/account/get-all-secure-values)
+- [`account.getSecureValue`](/docs/reference/methods/account/get-secure-value)
+- [`account.saveSecureValue`](/docs/reference/methods/account/save-secure-value)
 
 ## References
 

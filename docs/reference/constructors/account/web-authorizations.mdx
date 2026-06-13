@@ -18,8 +18,12 @@ type tg.AccountWebAuthorizations struct { /* ... */ }
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| `Authorizations` | `[]WebAuthorization` | yes | Web authorization list |
-| `Users` | `[]UserClass` | yes | Users |
+| `Authorizations` | [`[]WebAuthorization`](/docs/reference/constructors/general/web-authorization) | yes | Web authorization list |
+| `Users` | [`[]UserClass`](/docs/reference/types/general/user) | yes | Users |
+
+## Returned by
+
+- [`account.getWebAuthorizations`](/docs/reference/methods/account/get-web-authorizations)
 
 ## References
 

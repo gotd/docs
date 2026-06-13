@@ -20,12 +20,12 @@ Implements [`Update`](/docs/reference/types/general/update).
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| `Peer` | `PeerClass` | yes | Peer of the reacted-to message. |
+| `Peer` | [`PeerClass`](/docs/reference/types/general/peer) | yes | Peer of the reacted-to message. |
 | `MsgID` | `int` | yes | ID of the reacted-to message. |
 | `Date` | `int` | yes | Date of the change. |
-| `Actor` | `PeerClass` | yes | The user that (un)reacted to the message. |
-| `OldReactions` | `[]ReactionClass` | yes | Old reactions |
-| `NewReactions` | `[]ReactionClass` | yes | New reactions |
+| `Actor` | [`PeerClass`](/docs/reference/types/general/peer) | yes | The user that (un)reacted to the message. |
+| `OldReactions` | [`[]ReactionClass`](/docs/reference/types/general/reaction) | yes | Old reactions |
+| `NewReactions` | [`[]ReactionClass`](/docs/reference/types/general/reaction) | yes | New reactions |
 | `Qts` | `int` | yes | QTS event sequence identifier |
 
 ## References

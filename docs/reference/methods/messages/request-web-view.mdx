@@ -39,18 +39,18 @@ client.Run(ctx, func(ctx context.Context) error {
 | `Silent` | `bool` | — | Whether the inline message that will be sent by the bot on behalf of the user once the web app interaction is terminated should be sent silently (no notifications for the receivers). |
 | `Compact` | `bool` | — | If set, requests to open the mini app in compact mode (as opposed to normal or fullscreen mode). Must be set if the mode parameter of the attachment menu deep link is equal to compact. |
 | `Fullscreen` | `bool` | — | If set, requests to open the mini app in fullscreen mode (as opposed to normal or compact mode). Must be set if the mode parameter of the attachment menu deep link is equal to fullscreen. |
-| `Peer` | `InputPeerClass` | yes | Dialog where the web app is being opened, and where the resulting message will be sent (see the docs for more info »). |
-| `Bot` | `InputUserClass` | yes | Bot that owns the web app |
+| `Peer` | [`InputPeerClass`](/docs/reference/types/general/input-peer) | yes | Dialog where the web app is being opened, and where the resulting message will be sent (see the docs for more info »). |
+| `Bot` | [`InputUserClass`](/docs/reference/types/general/input-user) | yes | Bot that owns the web app |
 | `URL` | `string` | — | Web app URL |
 | `StartParam` | `string` | — | If the web app was opened from the attachment menu using a attachment menu deep link start_param should contain the data from the startattach parameter. |
-| `ThemeParams` | `DataJSON` | — | Theme parameters » |
+| `ThemeParams` | [`DataJSON`](/docs/reference/constructors/general/data-j-s-o-n) | — | Theme parameters » |
 | `Platform` | `string` | yes | Short name of the application; 0-64 English letters, digits, and underscores |
-| `ReplyTo` | `InputReplyToClass` | — | If set, indicates that the inline message that will be sent by the bot on behalf of the user once the web app interaction is terminated should be sent in reply to the specified message or story. |
-| `SendAs` | `InputPeerClass` | — | Open the web app as the specified peer, sending the resulting the message as the specified peer. |
+| `ReplyTo` | [`InputReplyToClass`](/docs/reference/types/general/input-reply-to) | — | If set, indicates that the inline message that will be sent by the bot on behalf of the user once the web app interaction is terminated should be sent in reply to the specified message or story. |
+| `SendAs` | [`InputPeerClass`](/docs/reference/types/general/input-peer) | — | Open the web app as the specified peer, sending the resulting the message as the specified peer. |
 
 ## Returns
 
-`*WebViewResultURL`
+[`*WebViewResultURL`](/docs/reference/constructors/general/web-view-result-url)
 
 ## Possible errors
 

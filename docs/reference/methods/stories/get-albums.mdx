@@ -35,12 +35,12 @@ client.Run(ctx, func(ctx context.Context) error {
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| `Peer` | `InputPeerClass` | yes | The peer. |
+| `Peer` | [`InputPeerClass`](/docs/reference/types/general/input-peer) | yes | The peer. |
 | `Hash` | `int64` | yes | The hash from a previously returned stories.albums, to avoid returning any results if they haven't changed. |
 
 ## Returns
 
-`StoriesAlbumsClass`
+[`StoriesAlbumsClass`](/docs/reference/types/stories/albums)
 
 ## Possible errors
 

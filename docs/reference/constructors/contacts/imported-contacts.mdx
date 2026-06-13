@@ -18,10 +18,14 @@ type tg.ContactsImportedContacts struct { /* ... */ }
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| `Imported` | `[]ImportedContact` | yes | List of successfully imported contacts |
-| `PopularInvites` | `[]PopularContact` | yes | Popular contacts |
+| `Imported` | [`[]ImportedContact`](/docs/reference/constructors/general/imported-contact) | yes | List of successfully imported contacts |
+| `PopularInvites` | [`[]PopularContact`](/docs/reference/constructors/general/popular-contact) | yes | Popular contacts |
 | `RetryContacts` | `[]int64` | yes | List of contact ids that could not be imported due to system limitation and will need to be imported at a later date. |
-| `Users` | `[]UserClass` | yes | List of users |
+| `Users` | [`[]UserClass`](/docs/reference/types/general/user) | yes | List of users |
+
+## Returned by
+
+- [`contacts.importContacts`](/docs/reference/methods/contacts/import-contacts)
 
 ## References
 

@@ -20,7 +20,7 @@ Implements [`SecureValueError`](/docs/reference/types/general/secure-value-error
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| `Type` | `SecureValueTypeClass` | yes | The section of the user's Telegram Passport which has the error, one of secureValueTypePersonalDetails, secureValueTypePassport, secureValueTypeDriverLicense, secureValueTypeIdentityCard, secureValueTypeInternalPassport, secureValueTypeAddress |
+| `Type` | [`SecureValueTypeClass`](/docs/reference/types/general/secure-value-type) | yes | The section of the user's Telegram Passport which has the error, one of secureValueTypePersonalDetails, secureValueTypePassport, secureValueTypeDriverLicense, secureValueTypeIdentityCard, secureValueTypeInternalPassport, secureValueTypeAddress |
 | `DataHash` | `[]byte` | yes | Data hash |
 | `Field` | `string` | yes | Name of the data field which has the error |
 | `Text` | `string` | yes | Error message |

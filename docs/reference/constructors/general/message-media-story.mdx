@@ -21,9 +21,9 @@ Implements [`MessageMedia`](/docs/reference/types/general/message-media).
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
 | `ViaMention` | `bool` | — | If set, indicates that this someone has mentioned us in this story (i.e. by tagging us in the description) or vice versa, we have mentioned the other peer (if the message is outgoing). |
-| `Peer` | `PeerClass` | yes | Peer that posted the story. |
+| `Peer` | [`PeerClass`](/docs/reference/types/general/peer) | yes | Peer that posted the story. |
 | `ID` | `int` | yes | Story ID |
-| `Story` | `StoryItemClass` | — | The story itself, if absent fetch it using stories.getStoriesByID and the peer/id parameters specified above. |
+| `Story` | [`StoryItemClass`](/docs/reference/types/general/story-item) | — | The story itself, if absent fetch it using stories.getStoriesByID and the peer/id parameters specified above. |
 
 ## References
 

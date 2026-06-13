@@ -19,7 +19,7 @@ type tg.SponsoredPeer struct { /* ... */ }
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
 | `RandomID` | `[]byte` | yes | ID of the sponsored peer, to be passed to messages.viewSponsoredMessage, messages clickSponsoredMessage or messages.reportSponsoredMessage (the same methods used for sponsored messages &raquo). |
-| `Peer` | `PeerClass` | yes | The sponsored peer. |
+| `Peer` | [`PeerClass`](/docs/reference/types/general/peer) | yes | The sponsored peer. |
 | `SponsorInfo` | `string` | — | If set, contains additional information about the sponsor to be shown along with the peer. |
 | `AdditionalInfo` | `string` | — | If set, contains additional information about the sponsored message to be shown along with the peer. |
 

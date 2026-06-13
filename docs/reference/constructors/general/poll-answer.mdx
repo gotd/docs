@@ -20,10 +20,10 @@ Implements [`PollAnswer`](/docs/reference/types/general/poll-answer).
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| `Text` | `TextWithEntities` | yes | Textual representation of the answer (only Premium users can use custom emoji entities here). |
+| `Text` | [`TextWithEntities`](/docs/reference/constructors/general/text-with-entities) | yes | Textual representation of the answer (only Premium users can use custom emoji entities here). |
 | `Option` | `[]byte` | yes | The param that has to be passed to messages.sendVote. |
-| `Media` | `MessageMediaClass` | — | Media field of PollAnswer. |
-| `AddedBy` | `PeerClass` | — | AddedBy field of PollAnswer. |
+| `Media` | [`MessageMediaClass`](/docs/reference/types/general/message-media) | — | Media field of PollAnswer. |
+| `AddedBy` | [`PeerClass`](/docs/reference/types/general/peer) | — | AddedBy field of PollAnswer. |
 | `Date` | `int` | — | Date field of PollAnswer. |
 
 ## References

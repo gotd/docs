@@ -19,9 +19,13 @@ type tg.PaymentsSuggestedStarRefBots struct { /* ... */ }
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
 | `Count` | `int` | yes | Total number of results (for pagination) |
-| `SuggestedBots` | `[]StarRefProgram` | yes | Suggested affiliate programs (full or partial list to be fetched using pagination) |
-| `Users` | `[]UserClass` | yes | Peers mentioned in suggested_bots |
+| `SuggestedBots` | [`[]StarRefProgram`](/docs/reference/constructors/general/star-ref-program) | yes | Suggested affiliate programs (full or partial list to be fetched using pagination) |
+| `Users` | [`[]UserClass`](/docs/reference/types/general/user) | yes | Peers mentioned in suggested_bots |
 | `NextOffset` | `string` | — | Next offset for pagination |
+
+## Returned by
+
+- [`payments.getSuggestedStarRefBots`](/docs/reference/methods/payments/get-suggested-star-ref-bots)
 
 ## References
 

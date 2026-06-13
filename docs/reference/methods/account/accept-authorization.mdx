@@ -38,8 +38,8 @@ client.Run(ctx, func(ctx context.Context) error {
 | `BotID` | `int64` | yes | Bot ID |
 | `Scope` | `string` | yes | Telegram Passport element types requested by the service |
 | `PublicKey` | `string` | yes | Service's public key |
-| `ValueHashes` | `[]SecureValueHash` | yes | Types of values sent and their hashes |
-| `Credentials` | `SecureCredentialsEncrypted` | yes | Encrypted values |
+| `ValueHashes` | [`[]SecureValueHash`](/docs/reference/constructors/general/secure-value-hash) | yes | Types of values sent and their hashes |
+| `Credentials` | [`SecureCredentialsEncrypted`](/docs/reference/constructors/general/secure-credentials-encrypted) | yes | Encrypted values |
 
 ## Returns
 

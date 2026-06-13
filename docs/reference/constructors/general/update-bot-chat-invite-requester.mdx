@@ -20,11 +20,11 @@ Implements [`Update`](/docs/reference/types/general/update).
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| `Peer` | `PeerClass` | yes | The chat or channel in question |
+| `Peer` | [`PeerClass`](/docs/reference/types/general/peer) | yes | The chat or channel in question |
 | `Date` | `int` | yes | When was the join request » made |
 | `UserID` | `int64` | yes | The user ID that is asking to join the chat or channel |
 | `About` | `string` | yes | Bio of the user |
-| `Invite` | `ExportedChatInviteClass` | yes | Chat invite link that was used by the user to send the join request » |
+| `Invite` | [`ExportedChatInviteClass`](/docs/reference/types/general/exported-chat-invite) | yes | Chat invite link that was used by the user to send the join request » |
 | `Qts` | `int` | yes | QTS event sequence identifier |
 | `QueryID` | `int64` | — | QueryID field of UpdateBotChatInviteRequester. |
 

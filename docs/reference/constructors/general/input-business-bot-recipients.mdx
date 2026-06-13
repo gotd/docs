@@ -23,8 +23,8 @@ type tg.InputBusinessBotRecipients struct { /* ... */ }
 | `Contacts` | `bool` | — | Selects all private chats with contacts. |
 | `NonContacts` | `bool` | — | Selects all private chats with non-contacts. |
 | `ExcludeSelected` | `bool` | — | If set, then all private chats except the ones selected by existing_chats, new_chats, contacts, non_contacts and users are chosen. Note that if this flag is set, any values passed in exclude_users will be merged and moved into users by the server. |
-| `Users` | `[]InputUserClass` | — | Explicitly selected private chats. |
-| `ExcludeUsers` | `[]InputUserClass` | — | Identifiers of private chats that are always excluded. |
+| `Users` | [`[]InputUserClass`](/docs/reference/types/general/input-user) | — | Explicitly selected private chats. |
+| `ExcludeUsers` | [`[]InputUserClass`](/docs/reference/types/general/input-user) | — | Identifiers of private chats that are always excluded. |
 
 ## References
 

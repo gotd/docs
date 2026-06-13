@@ -27,7 +27,7 @@ type tg.Config struct { /* ... */ }
 | `Expires` | `int` | yes | Expiration date of this config: when it expires it'll have to be refetched using help getConfig |
 | `TestMode` | `bool` | — | Whether we're connected to the test DCs |
 | `ThisDC` | `int` | yes | ID of the DC that returned the reply |
-| `DCOptions` | `[]DCOption` | yes | DC IP list |
+| `DCOptions` | [`[]DCOption`](/docs/reference/constructors/general/dc-option) | yes | DC IP list |
 | `DCTxtDomainName` | `string` | yes | Domain name for fetching encrypted DC list from DNS TXT record |
 | `ChatSizeMax` | `int` | yes | Maximum member count for normal groups |
 | `MegagroupSizeMax` | `int` | yes | Maximum member count for supergroups |
@@ -63,8 +63,12 @@ type tg.Config struct { /* ... */ }
 | `SuggestedLangCode` | `string` | — | Suggested language code |
 | `LangPackVersion` | `int` | — | Language pack version |
 | `BaseLangPackVersion` | `int` | — | Basic language pack version |
-| `ReactionsDefault` | `ReactionClass` | — | Default message reaction |
+| `ReactionsDefault` | [`ReactionClass`](/docs/reference/types/general/reaction) | — | Default message reaction |
 | `AutologinToken` | `string` | — | Autologin token, click here for more info on URL authorization ». |
+
+## Returned by
+
+- [`help.getConfig`](/docs/reference/methods/help/get-config)
 
 ## References
 

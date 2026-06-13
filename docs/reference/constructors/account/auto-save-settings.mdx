@@ -18,12 +18,16 @@ type tg.AccountAutoSaveSettings struct { /* ... */ }
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| `UsersSettings` | `AutoSaveSettings` | yes | Default media autosave settings for private chats |
-| `ChatsSettings` | `AutoSaveSettings` | yes | Default media autosave settings for groups and supergroups |
-| `BroadcastsSettings` | `AutoSaveSettings` | yes | Default media autosave settings for channels |
-| `Exceptions` | `[]AutoSaveException` | yes | Peer-specific granular autosave settings |
-| `Chats` | `[]ChatClass` | yes | Chats mentioned in the peer-specific granular autosave settings |
-| `Users` | `[]UserClass` | yes | Users mentioned in the peer-specific granular autosave settings |
+| `UsersSettings` | [`AutoSaveSettings`](/docs/reference/constructors/general/auto-save-settings) | yes | Default media autosave settings for private chats |
+| `ChatsSettings` | [`AutoSaveSettings`](/docs/reference/constructors/general/auto-save-settings) | yes | Default media autosave settings for groups and supergroups |
+| `BroadcastsSettings` | [`AutoSaveSettings`](/docs/reference/constructors/general/auto-save-settings) | yes | Default media autosave settings for channels |
+| `Exceptions` | [`[]AutoSaveException`](/docs/reference/constructors/general/auto-save-exception) | yes | Peer-specific granular autosave settings |
+| `Chats` | [`[]ChatClass`](/docs/reference/types/general/chat) | yes | Chats mentioned in the peer-specific granular autosave settings |
+| `Users` | [`[]UserClass`](/docs/reference/types/general/user) | yes | Users mentioned in the peer-specific granular autosave settings |
+
+## Returned by
+
+- [`account.getAutoSaveSettings`](/docs/reference/methods/account/get-auto-save-settings)
 
 ## References
 

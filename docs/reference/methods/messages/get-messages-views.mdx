@@ -35,13 +35,13 @@ client.Run(ctx, func(ctx context.Context) error {
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| `Peer` | `InputPeerClass` | yes | Peer where the message was found |
+| `Peer` | [`InputPeerClass`](/docs/reference/types/general/input-peer) | yes | Peer where the message was found |
 | `ID` | `[]int` | yes | ID of message |
 | `Increment` | `bool` | yes | Whether to mark the message as viewed and increment the view counter |
 
 ## Returns
 
-`*MessagesMessageViews`
+[`*MessagesMessageViews`](/docs/reference/constructors/messages/message-views)
 
 ## Possible errors
 

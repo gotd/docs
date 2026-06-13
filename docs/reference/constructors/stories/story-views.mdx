@@ -18,8 +18,12 @@ type tg.StoriesStoryViews struct { /* ... */ }
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| `Views` | `[]StoryViews` | yes | View date and reaction information of multiple stories |
-| `Users` | `[]UserClass` | yes | Mentioned users |
+| `Views` | [`[]StoryViews`](/docs/reference/constructors/general/story-views) | yes | View date and reaction information of multiple stories |
+| `Users` | [`[]UserClass`](/docs/reference/types/general/user) | yes | Mentioned users |
+
+## Returned by
+
+- [`stories.getStoriesViews`](/docs/reference/methods/stories/get-stories-views)
 
 ## References
 

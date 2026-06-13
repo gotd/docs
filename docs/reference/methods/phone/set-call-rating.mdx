@@ -36,13 +36,13 @@ client.Run(ctx, func(ctx context.Context) error {
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
 | `UserInitiative` | `bool` | — | Whether the user decided on their own initiative to rate the call, must NOT be set if rating was requested by the server with phoneCallDiscarded.need_rating. |
-| `Peer` | `InputPhoneCall` | yes | The call to rate |
+| `Peer` | [`InputPhoneCall`](/docs/reference/constructors/general/input-phone-call) | yes | The call to rate |
 | `Rating` | `int` | yes | Rating in 1-5 stars |
 | `Comment` | `string` | yes | An additional comment with problem hashtags, see here » for more info on the full flow. |
 
 ## Returns
 
-`UpdatesClass`
+[`UpdatesClass`](/docs/reference/types/general/updates)
 
 ## Possible errors
 

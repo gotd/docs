@@ -25,7 +25,12 @@ type tg.GlobalPrivacySettings struct { /* ... */ }
 | `NewNoncontactPeersRequirePremium` | `bool` | — | See here for more info on this flag ». |
 | `DisplayGiftsButton` | `bool` | — | Enables or disables our userFull.display_gifts_button flag: if the userFull display_gifts_button flag of both us and another user is set, a gift button should always be displayed in the text field in private chats with the other user: once clicked, the gift UI should be displayed, offering the user options to gift Telegram Premium » subscriptions or Telegram Gifts ». |
 | `NoncontactPeersPaidStars` | `int64` | — | If configured, specifies the number of stars users must pay us to send us a message, see here » for more info on paid messages. |
-| `DisallowedGifts` | `DisallowedGiftsSettings` | — | Disallows the reception of specific gift types. |
+| `DisallowedGifts` | [`DisallowedGiftsSettings`](/docs/reference/constructors/general/disallowed-gifts-settings) | — | Disallows the reception of specific gift types. |
+
+## Returned by
+
+- [`account.getGlobalPrivacySettings`](/docs/reference/methods/account/get-global-privacy-settings)
+- [`account.setGlobalPrivacySettings`](/docs/reference/methods/account/set-global-privacy-settings)
 
 ## References
 

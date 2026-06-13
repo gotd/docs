@@ -37,8 +37,8 @@ client.Run(ctx, func(ctx context.Context) error {
 | ---- | ---- | -------- | ----------- |
 | `EditMessage` | `bool` | — | Set this flag if the game message should be automatically edited to include the current scoreboard |
 | `Force` | `bool` | — | Set this flag if the high score is allowed to decrease. This can be useful when fixing mistakes or banning cheaters |
-| `ID` | `InputBotInlineMessageIDClass` | yes | ID of the inline message |
-| `UserID` | `InputUserClass` | yes | User identifier |
+| `ID` | [`InputBotInlineMessageIDClass`](/docs/reference/types/general/input-bot-inline-message-i-d) | yes | ID of the inline message |
+| `UserID` | [`InputUserClass`](/docs/reference/types/general/input-user) | yes | User identifier |
 | `Score` | `int` | yes | New score |
 
 ## Returns

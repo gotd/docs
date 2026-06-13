@@ -18,8 +18,12 @@ type tg.StatsMessageStats struct { /* ... */ }
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| `ViewsGraph` | `StatsGraphClass` | yes | Message view graph |
-| `ReactionsByEmotionGraph` | `StatsGraphClass` | yes | A graph containing the number of reactions on stories categorized by emotion |
+| `ViewsGraph` | [`StatsGraphClass`](/docs/reference/types/general/stats-graph) | yes | Message view graph |
+| `ReactionsByEmotionGraph` | [`StatsGraphClass`](/docs/reference/types/general/stats-graph) | yes | A graph containing the number of reactions on stories categorized by emotion |
+
+## Returned by
+
+- [`stats.getMessageStats`](/docs/reference/methods/stats/get-message-stats)
 
 ## References
 

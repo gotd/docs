@@ -18,9 +18,14 @@ type tg.MessagesChatFull struct { /* ... */ }
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| `FullChat` | `ChatFullClass` | yes | Full info |
-| `Chats` | `[]ChatClass` | yes | Mentioned chats |
-| `Users` | `[]UserClass` | yes | Mentioned users |
+| `FullChat` | [`ChatFullClass`](/docs/reference/types/general/chat-full) | yes | Full info |
+| `Chats` | [`[]ChatClass`](/docs/reference/types/general/chat) | yes | Mentioned chats |
+| `Users` | [`[]UserClass`](/docs/reference/types/general/user) | yes | Mentioned users |
+
+## Returned by
+
+- [`channels.getFullChannel`](/docs/reference/methods/channels/get-full-channel)
+- [`messages.getFullChat`](/docs/reference/methods/messages/get-full-chat)
 
 ## References
 

@@ -31,10 +31,10 @@ Implements [`Updates`](/docs/reference/types/general/updates).
 | `Pts` | `int` | yes | PTS |
 | `PtsCount` | `int` | yes | PTS count |
 | `Date` | `int` | yes | date |
-| `FwdFrom` | `MessageFwdHeader` | — | Info about a forwarded message |
+| `FwdFrom` | [`MessageFwdHeader`](/docs/reference/constructors/general/message-fwd-header) | — | Info about a forwarded message |
 | `ViaBotID` | `int64` | — | Info about the inline bot used to generate this message |
-| `ReplyTo` | `MessageReplyHeaderClass` | — | Reply (thread) information |
-| `Entities` | `[]MessageEntityClass` | — | Entities for styled text |
+| `ReplyTo` | [`MessageReplyHeaderClass`](/docs/reference/types/general/message-reply-header) | — | Reply (thread) information |
+| `Entities` | [`[]MessageEntityClass`](/docs/reference/types/general/message-entity) | — | Entities for styled text |
 | `TTLPeriod` | `int` | — | Time To Live of the message, once updateShortChatMessage.date+updateShortChatMessage ttl_period === time(), the message will be deleted on the server, and must be deleted locally as well. |
 
 ## References

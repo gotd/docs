@@ -31,13 +31,13 @@ Implements [`ChatInvite`](/docs/reference/types/general/chat-invite).
 | `CanRefulfillSubscription` | `bool` | — | If set, indicates that the user has already paid for the associated Telegram Star subscriptions » and it hasn't expired yet, so they may re-join the channel using messages.importChatInvite without repeating the payment. |
 | `Title` | `string` | yes | Chat/supergroup/channel title |
 | `About` | `string` | — | Description of the group of channel |
-| `Photo` | `PhotoClass` | yes | Chat/supergroup/channel photo |
+| `Photo` | [`PhotoClass`](/docs/reference/types/general/photo) | yes | Chat/supergroup/channel photo |
 | `ParticipantsCount` | `int` | yes | Participant count |
-| `Participants` | `[]UserClass` | — | A few of the participants that are in the group |
+| `Participants` | [`[]UserClass`](/docs/reference/types/general/user) | — | A few of the participants that are in the group |
 | `Color` | `int` | yes | Profile color palette ID |
-| `SubscriptionPricing` | `StarsSubscriptionPricing` | — | For Telegram Star subscriptions », contains the pricing of the subscription the user must activate to join the private channel. |
+| `SubscriptionPricing` | [`StarsSubscriptionPricing`](/docs/reference/constructors/general/stars-subscription-pricing) | — | For Telegram Star subscriptions », contains the pricing of the subscription the user must activate to join the private channel. |
 | `SubscriptionFormID` | `int64` | — | For Telegram Star subscriptions », the ID of the payment form for the subscription. |
-| `BotVerification` | `BotVerification` | — | Describes a bot verification icon ». |
+| `BotVerification` | [`BotVerification`](/docs/reference/constructors/general/bot-verification) | — | Describes a bot verification icon ». |
 
 ## References
 

@@ -35,9 +35,9 @@ client.Run(ctx, func(ctx context.Context) error {
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| `Peer` | `InputPeerClass` | yes | Peer |
+| `Peer` | [`InputPeerClass`](/docs/reference/types/general/input-peer) | yes | Peer |
 | `TopMsgID` | `int` | — | If set, considers only reactions to messages within the specified forum topic |
-| `SavedPeerID` | `InputPeerClass` | — | If set, must be equal to the ID of a monoforum topic: will affect that topic in the monoforum passed in peer. |
+| `SavedPeerID` | [`InputPeerClass`](/docs/reference/types/general/input-peer) | — | If set, must be equal to the ID of a monoforum topic: will affect that topic in the monoforum passed in peer. |
 | `OffsetID` | `int` | yes | Offsets for pagination, for more info click here |
 | `AddOffset` | `int` | yes | Offsets for pagination, for more info click here |
 | `Limit` | `int` | yes | Maximum number of results to return, see pagination |
@@ -46,7 +46,7 @@ client.Run(ctx, func(ctx context.Context) error {
 
 ## Returns
 
-`MessagesMessagesClass`
+[`MessagesMessagesClass`](/docs/reference/types/messages/messages)
 
 ## Possible errors
 

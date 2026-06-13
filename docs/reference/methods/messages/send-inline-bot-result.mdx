@@ -39,19 +39,19 @@ client.Run(ctx, func(ctx context.Context) error {
 | `Background` | `bool` | — | Whether to send the message in background |
 | `ClearDraft` | `bool` | — | Whether to clear the draft |
 | `HideVia` | `bool` | — | Whether to hide the via @botname in the resulting message (only for bot usernames encountered in the config) |
-| `Peer` | `InputPeerClass` | yes | Destination |
-| `ReplyTo` | `InputReplyToClass` | — | If set, indicates that the message should be sent in reply to the specified message or story. |
+| `Peer` | [`InputPeerClass`](/docs/reference/types/general/input-peer) | yes | Destination |
+| `ReplyTo` | [`InputReplyToClass`](/docs/reference/types/general/input-reply-to) | — | If set, indicates that the message should be sent in reply to the specified message or story. |
 | `RandomID` | `int64` | yes | Random ID to avoid resending the same query |
 | `QueryID` | `int64` | yes | Query ID from messages.getInlineBotResults |
 | `ID` | `string` | yes | Result ID from messages.getInlineBotResults |
 | `ScheduleDate` | `int` | — | Scheduled message date for scheduled messages |
-| `SendAs` | `InputPeerClass` | — | Send this message as the specified peer |
-| `QuickReplyShortcut` | `InputQuickReplyShortcutClass` | — | Add the message to the specified quick reply shortcut », instead. |
+| `SendAs` | [`InputPeerClass`](/docs/reference/types/general/input-peer) | — | Send this message as the specified peer |
+| `QuickReplyShortcut` | [`InputQuickReplyShortcutClass`](/docs/reference/types/general/input-quick-reply-shortcut) | — | Add the message to the specified quick reply shortcut », instead. |
 | `AllowPaidStars` | `int64` | — | For paid messages », specifies the amount of Telegram Stars the user has agreed to pay in order to send the message. |
 
 ## Returns
 
-`UpdatesClass`
+[`UpdatesClass`](/docs/reference/types/general/updates)
 
 ## Possible errors
 

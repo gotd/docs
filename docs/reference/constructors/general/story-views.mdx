@@ -21,7 +21,7 @@ type tg.StoryViews struct { /* ... */ }
 | `HasViewers` | `bool` | — | If set, indicates that the viewers list is currently viewable, and was not yet deleted because the story has expired while the user didn't have a Premium account. |
 | `ViewsCount` | `int` | yes | View counter of the story |
 | `ForwardsCount` | `int` | — | Forward counter of the story |
-| `Reactions` | `[]ReactionCount` | — | All reactions sent to this story |
+| `Reactions` | [`[]ReactionCount`](/docs/reference/constructors/general/reaction-count) | — | All reactions sent to this story |
 | `ReactionsCount` | `int` | — | Number of reactions added to the story |
 | `RecentViewers` | `[]int64` | — | User IDs of some recent viewers of the story |
 

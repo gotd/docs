@@ -19,10 +19,14 @@ type tg.MessagesPreparedInlineMessage struct { /* ... */ }
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
 | `QueryID` | `int64` | yes | The query_id to pass to messages.sendInlineBotResult |
-| `Result` | `BotInlineResultClass` | yes | The contents of the message, to be shown in a preview |
-| `PeerTypes` | `[]InlineQueryPeerTypeClass` | yes | Types of chats where this message can be sent |
+| `Result` | [`BotInlineResultClass`](/docs/reference/types/general/bot-inline-result) | yes | The contents of the message, to be shown in a preview |
+| `PeerTypes` | [`[]InlineQueryPeerTypeClass`](/docs/reference/types/general/inline-query-peer-type) | yes | Types of chats where this message can be sent |
 | `CacheTime` | `int` | yes | Caching validity of the results |
-| `Users` | `[]UserClass` | yes | Users mentioned in the results |
+| `Users` | [`[]UserClass`](/docs/reference/types/general/user) | yes | Users mentioned in the results |
+
+## Returned by
+
+- [`messages.getPreparedInlineMessage`](/docs/reference/methods/messages/get-prepared-inline-message)
 
 ## References
 

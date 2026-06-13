@@ -18,8 +18,14 @@ type tg.PhonePhoneCall struct { /* ... */ }
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| `PhoneCall` | `PhoneCallClass` | yes | The VoIP phone call |
-| `Users` | `[]UserClass` | yes | VoIP phone call participants |
+| `PhoneCall` | [`PhoneCallClass`](/docs/reference/types/general/phone-call) | yes | The VoIP phone call |
+| `Users` | [`[]UserClass`](/docs/reference/types/general/user) | yes | VoIP phone call participants |
+
+## Returned by
+
+- [`phone.acceptCall`](/docs/reference/methods/phone/accept-call)
+- [`phone.confirmCall`](/docs/reference/methods/phone/confirm-call)
+- [`phone.requestCall`](/docs/reference/methods/phone/request-call)
 
 ## References
 

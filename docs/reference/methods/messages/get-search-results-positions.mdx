@@ -35,15 +35,15 @@ client.Run(ctx, func(ctx context.Context) error {
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| `Peer` | `InputPeerClass` | yes | Peer where to search |
-| `SavedPeerID` | `InputPeerClass` | — | Search within the saved message dialog » with this ID. |
-| `Filter` | `MessagesFilterClass` | yes | Message filter, inputMessagesFilterEmpty, inputMessagesFilterMyMentions filters are not supported by this method. |
+| `Peer` | [`InputPeerClass`](/docs/reference/types/general/input-peer) | yes | Peer where to search |
+| `SavedPeerID` | [`InputPeerClass`](/docs/reference/types/general/input-peer) | — | Search within the saved message dialog » with this ID. |
+| `Filter` | [`MessagesFilterClass`](/docs/reference/types/general/messages-filter) | yes | Message filter, inputMessagesFilterEmpty, inputMessagesFilterMyMentions filters are not supported by this method. |
 | `OffsetID` | `int` | yes | Offsets for pagination, for more info click here |
 | `Limit` | `int` | yes | Maximum number of results to return, see pagination |
 
 ## Returns
 
-`*MessagesSearchResultsPositions`
+[`*MessagesSearchResultsPositions`](/docs/reference/constructors/messages/search-results-positions)
 
 ## Possible errors
 

@@ -18,9 +18,14 @@ type tg.PremiumMyBoosts struct { /* ... */ }
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| `MyBoosts` | `[]MyBoost` | yes | Info about boosted peers and remaining boost slots. |
-| `Chats` | `[]ChatClass` | yes | Referenced chats |
-| `Users` | `[]UserClass` | yes | Referenced users |
+| `MyBoosts` | [`[]MyBoost`](/docs/reference/constructors/general/my-boost) | yes | Info about boosted peers and remaining boost slots. |
+| `Chats` | [`[]ChatClass`](/docs/reference/types/general/chat) | yes | Referenced chats |
+| `Users` | [`[]UserClass`](/docs/reference/types/general/user) | yes | Referenced users |
+
+## Returned by
+
+- [`premium.applyBoost`](/docs/reference/methods/premium/apply-boost)
+- [`premium.getMyBoosts`](/docs/reference/methods/premium/get-my-boosts)
 
 ## References
 

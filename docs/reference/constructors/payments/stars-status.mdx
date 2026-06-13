@@ -18,14 +18,21 @@ type tg.PaymentsStarsStatus struct { /* ... */ }
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| `Balance` | `StarsAmountClass` | yes | Current Telegram Star balance. |
-| `Subscriptions` | `[]StarsSubscription` | — | Info about current Telegram Star subscriptions, only returned when invoking payments getStarsTransactions and payments.getStarsSubscriptions. |
+| `Balance` | [`StarsAmountClass`](/docs/reference/types/general/stars-amount) | yes | Current Telegram Star balance. |
+| `Subscriptions` | [`[]StarsSubscription`](/docs/reference/constructors/general/stars-subscription) | — | Info about current Telegram Star subscriptions, only returned when invoking payments getStarsTransactions and payments.getStarsSubscriptions. |
 | `SubscriptionsNextOffset` | `string` | — | Offset for pagination of subscriptions: only usable and returned when invoking payments.getStarsSubscriptions. |
 | `SubscriptionsMissingBalance` | `int64` | — | The number of Telegram Stars the user should buy to be able to extend expired subscriptions soon (i.e. the current balance is not enough to extend all expired subscriptions). |
-| `History` | `[]StarsTransaction` | — | List of Telegram Star transactions (partial if next_offset is set). |
+| `History` | [`[]StarsTransaction`](/docs/reference/constructors/general/stars-transaction) | — | List of Telegram Star transactions (partial if next_offset is set). |
 | `NextOffset` | `string` | — | Offset to use to fetch more transactions from the transaction history using payments getStarsTransactions. |
-| `Chats` | `[]ChatClass` | yes | Chats mentioned in history. |
-| `Users` | `[]UserClass` | yes | Users mentioned in history. |
+| `Chats` | [`[]ChatClass`](/docs/reference/types/general/chat) | yes | Chats mentioned in history. |
+| `Users` | [`[]UserClass`](/docs/reference/types/general/user) | yes | Users mentioned in history. |
+
+## Returned by
+
+- [`payments.getStarsStatus`](/docs/reference/methods/payments/get-stars-status)
+- [`payments.getStarsSubscriptions`](/docs/reference/methods/payments/get-stars-subscriptions)
+- [`payments.getStarsTransactions`](/docs/reference/methods/payments/get-stars-transactions)
+- [`payments.getStarsTransactionsByID`](/docs/reference/methods/payments/get-stars-transactions-by-i-d)
 
 ## References
 

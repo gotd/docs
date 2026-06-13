@@ -38,17 +38,17 @@ client.Run(ctx, func(ctx context.Context) error {
 | `Pinned` | `bool` | — | Pinned field of StoriesStartLiveRequest. |
 | `Noforwards` | `bool` | — | Noforwards field of StoriesStartLiveRequest. |
 | `RtmpStream` | `bool` | — | RtmpStream field of StoriesStartLiveRequest. |
-| `Peer` | `InputPeerClass` | yes | Peer field of StoriesStartLiveRequest. |
+| `Peer` | [`InputPeerClass`](/docs/reference/types/general/input-peer) | yes | Peer field of StoriesStartLiveRequest. |
 | `Caption` | `string` | — | Caption field of StoriesStartLiveRequest. |
-| `Entities` | `[]MessageEntityClass` | — | Message entities for styled text |
-| `PrivacyRules` | `[]InputPrivacyRuleClass` | yes | PrivacyRules field of StoriesStartLiveRequest. |
+| `Entities` | [`[]MessageEntityClass`](/docs/reference/types/general/message-entity) | — | Message entities for styled text |
+| `PrivacyRules` | [`[]InputPrivacyRuleClass`](/docs/reference/types/general/input-privacy-rule) | yes | PrivacyRules field of StoriesStartLiveRequest. |
 | `RandomID` | `int64` | yes | RandomID field of StoriesStartLiveRequest. |
 | `MessagesEnabled` | `bool` | — | MessagesEnabled field of StoriesStartLiveRequest. |
 | `SendPaidMessagesStars` | `int64` | — | SendPaidMessagesStars field of StoriesStartLiveRequest. |
 
 ## Returns
 
-`UpdatesClass`
+[`UpdatesClass`](/docs/reference/types/general/updates)
 
 ## Possible errors
 

@@ -36,11 +36,11 @@ client.Run(ctx, func(ctx context.Context) error {
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
 | `Slug` | `string` | yes | slug obtained from a chat folder deep link ». |
-| `Peers` | `[]InputPeerClass` | yes | List of new chats to join, fetched using chatlists.checkChatlistInvite and filtered as specified in the documentation ». |
+| `Peers` | [`[]InputPeerClass`](/docs/reference/types/general/input-peer) | yes | List of new chats to join, fetched using chatlists.checkChatlistInvite and filtered as specified in the documentation ». |
 
 ## Returns
 
-`UpdatesClass`
+[`UpdatesClass`](/docs/reference/types/general/updates)
 
 ## Possible errors
 

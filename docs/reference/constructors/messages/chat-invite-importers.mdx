@@ -19,8 +19,12 @@ type tg.MessagesChatInviteImporters struct { /* ... */ }
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
 | `Count` | `int` | yes | Number of users that joined |
-| `Importers` | `[]ChatInviteImporter` | yes | The users that joined |
-| `Users` | `[]UserClass` | yes | The users that joined |
+| `Importers` | [`[]ChatInviteImporter`](/docs/reference/constructors/general/chat-invite-importer) | yes | The users that joined |
+| `Users` | [`[]UserClass`](/docs/reference/types/general/user) | yes | The users that joined |
+
+## Returned by
+
+- [`messages.getChatInviteImporters`](/docs/reference/methods/messages/get-chat-invite-importers)
 
 ## References
 

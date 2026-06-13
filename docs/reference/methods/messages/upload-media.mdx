@@ -36,12 +36,12 @@ client.Run(ctx, func(ctx context.Context) error {
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
 | `BusinessConnectionID` | `string` | — | Whether the media will be used only in the specified business connection », and not directly by the bot. |
-| `Peer` | `InputPeerClass` | yes | The chat, can be inputPeerEmpty for bots and inputPeerSelf for users. |
-| `Media` | `InputMediaClass` | yes | File uploaded in chunks as described in files » |
+| `Peer` | [`InputPeerClass`](/docs/reference/types/general/input-peer) | yes | The chat, can be inputPeerEmpty for bots and inputPeerSelf for users. |
+| `Media` | [`InputMediaClass`](/docs/reference/types/general/input-media) | yes | File uploaded in chunks as described in files » |
 
 ## Returns
 
-`MessageMediaClass`
+[`MessageMediaClass`](/docs/reference/types/general/message-media)
 
 ## Possible errors
 

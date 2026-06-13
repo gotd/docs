@@ -19,10 +19,14 @@ type tg.MessagesVotesList struct { /* ... */ }
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
 | `Count` | `int` | yes | Total number of votes for all options (or only for the chosen option, if provided to messages.getPollVotes) |
-| `Votes` | `[]MessagePeerVoteClass` | yes | Vote info for each user |
-| `Chats` | `[]ChatClass` | yes | Mentioned chats |
-| `Users` | `[]UserClass` | yes | Info about users that voted in the poll |
+| `Votes` | [`[]MessagePeerVoteClass`](/docs/reference/types/general/message-peer-vote) | yes | Vote info for each user |
+| `Chats` | [`[]ChatClass`](/docs/reference/types/general/chat) | yes | Mentioned chats |
+| `Users` | [`[]UserClass`](/docs/reference/types/general/user) | yes | Info about users that voted in the poll |
 | `NextOffset` | `string` | — | Offset to use with the next messages.getPollVotes request, empty string if no more results are available. |
+
+## Returned by
+
+- [`messages.getPollVotes`](/docs/reference/methods/messages/get-poll-votes)
 
 ## References
 

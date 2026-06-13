@@ -35,12 +35,12 @@ client.Run(ctx, func(ctx context.Context) error {
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| `Peer` | `InputPeerClass` | yes | Peer where the messages were sent. |
+| `Peer` | [`InputPeerClass`](/docs/reference/types/general/input-peer) | yes | Peer where the messages were sent. |
 | `MsgID` | `[]int` | yes | Messages that have associated factCheck constructors with the need_check flag set. |
 
 ## Returns
 
-`[]FactCheck`
+[`[]FactCheck`](/docs/reference/constructors/general/fact-check)
 
 ## Possible errors
 

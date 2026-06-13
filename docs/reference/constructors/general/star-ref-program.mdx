@@ -22,7 +22,11 @@ type tg.StarRefProgram struct { /* ... */ }
 | `CommissionPermille` | `int` | yes | An affiliate gets a commission of starRefProgram.commission_permille‰ Telegram Stars for every mini app transaction made by users they refer |
 | `DurationMonths` | `int` | — | An affiliate gets a commission for every mini app transaction made by users they refer for duration_months months after a referral link is imported, starting the bot for the first time |
 | `EndDate` | `int` | — | Point in time (Unix timestamp) when the affiliate program will be closed (optional, if not set the affiliate program isn't scheduled to be closed) |
-| `DailyRevenuePerUser` | `StarsAmountClass` | — | The amount of daily revenue per user in Telegram Stars of the bot that created the affiliate program. To obtain the approximated revenue per referred user, multiply this value by commission_permille and divide by 1000. |
+| `DailyRevenuePerUser` | [`StarsAmountClass`](/docs/reference/types/general/stars-amount) | — | The amount of daily revenue per user in Telegram Stars of the bot that created the affiliate program. To obtain the approximated revenue per referred user, multiply this value by commission_permille and divide by 1000. |
+
+## Returned by
+
+- [`bots.updateStarRefProgram`](/docs/reference/methods/bots/update-star-ref-program)
 
 ## References
 

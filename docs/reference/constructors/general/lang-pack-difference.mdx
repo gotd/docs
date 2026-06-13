@@ -21,7 +21,12 @@ type tg.LangPackDifference struct { /* ... */ }
 | `LangCode` | `string` | yes | Language code |
 | `FromVersion` | `int` | yes | Previous version number |
 | `Version` | `int` | yes | New version number |
-| `Strings` | `[]LangPackStringClass` | yes | Localized strings |
+| `Strings` | [`[]LangPackStringClass`](/docs/reference/types/general/lang-pack-string) | yes | Localized strings |
+
+## Returned by
+
+- [`langpack.getDifference`](/docs/reference/methods/langpack/get-difference)
+- [`langpack.getLangPack`](/docs/reference/methods/langpack/get-lang-pack)
 
 ## References
 

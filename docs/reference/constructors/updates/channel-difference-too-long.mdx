@@ -22,10 +22,10 @@ Implements [`updates.ChannelDifference`](/docs/reference/types/updates/channel-d
 | ---- | ---- | -------- | ----------- |
 | `Final` | `bool` | — | Whether there are more updates that must be fetched (always set) |
 | `Timeout` | `int` | — | Clients are supposed to refetch the channel difference after timeout seconds have elapsed |
-| `Dialog` | `DialogClass` | yes | Dialog containing the latest PTS that can be used to reset the channel state |
-| `Messages` | `[]MessageClass` | yes | The latest messages (not starting from the passed pts, just the latest messages). |
-| `Chats` | `[]ChatClass` | yes | Chats from messages |
-| `Users` | `[]UserClass` | yes | Users from messages |
+| `Dialog` | [`DialogClass`](/docs/reference/types/general/dialog) | yes | Dialog containing the latest PTS that can be used to reset the channel state |
+| `Messages` | [`[]MessageClass`](/docs/reference/types/general/message) | yes | The latest messages (not starting from the passed pts, just the latest messages). |
+| `Chats` | [`[]ChatClass`](/docs/reference/types/general/chat) | yes | Chats from messages |
+| `Users` | [`[]UserClass`](/docs/reference/types/general/user) | yes | Users from messages |
 
 ## References
 

@@ -20,8 +20,8 @@ type tg.InputBusinessAwayMessage struct { /* ... */ }
 | ---- | ---- | -------- | ----------- |
 | `OfflineOnly` | `bool` | — | If set, the messages will not be sent if the account was online in the last 10 minutes. |
 | `ShortcutID` | `int` | yes | ID of a quick reply shorcut, containing the away messages to send, see here » for more info. |
-| `Schedule` | `BusinessAwayMessageScheduleClass` | yes | Specifies when should the away messages be sent. |
-| `Recipients` | `InputBusinessRecipients` | yes | Allowed recipients for the away messages. |
+| `Schedule` | [`BusinessAwayMessageScheduleClass`](/docs/reference/types/general/business-away-message-schedule) | yes | Specifies when should the away messages be sent. |
+| `Recipients` | [`InputBusinessRecipients`](/docs/reference/constructors/general/input-business-recipients) | yes | Allowed recipients for the away messages. |
 
 ## References
 

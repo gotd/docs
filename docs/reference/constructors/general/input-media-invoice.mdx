@@ -22,13 +22,13 @@ Implements [`InputMedia`](/docs/reference/types/general/input-media).
 | ---- | ---- | -------- | ----------- |
 | `Title` | `string` | yes | Product name, 1-32 characters |
 | `Description` | `string` | yes | Product description, 1-255 characters |
-| `Photo` | `InputWebDocument` | — | URL of the product photo for the invoice. Can be a photo of the goods or a marketing image for a service. People like it better when they see what they are paying for. |
-| `Invoice` | `Invoice` | yes | The actual invoice |
+| `Photo` | [`InputWebDocument`](/docs/reference/constructors/general/input-web-document) | — | URL of the product photo for the invoice. Can be a photo of the goods or a marketing image for a service. People like it better when they see what they are paying for. |
+| `Invoice` | [`Invoice`](/docs/reference/constructors/general/invoice) | yes | The actual invoice |
 | `Payload` | `[]byte` | yes | Bot-defined invoice payload, 1-128 bytes. This will not be displayed to the user, use for your internal processes. |
 | `Provider` | `string` | — | Payments provider token, obtained via Botfather |
-| `ProviderData` | `DataJSON` | yes | JSON-encoded data about the invoice, which will be shared with the payment provider. A detailed description of required fields should be provided by the payment provider. |
+| `ProviderData` | [`DataJSON`](/docs/reference/constructors/general/data-j-s-o-n) | yes | JSON-encoded data about the invoice, which will be shared with the payment provider. A detailed description of required fields should be provided by the payment provider. |
 | `StartParam` | `string` | — | Unique bot deep links start parameter. If present, forwarded copies of the sent message will have a URL button with a deep link to the bot (instead of a Pay button) with the value used as the start parameter. If absent, forwarded copies of the sent message will have a Pay button, allowing multiple users to pay directly from the forwarded message, using the same invoice. |
-| `ExtendedMedia` | `InputMediaClass` | — | Deprecated |
+| `ExtendedMedia` | [`InputMediaClass`](/docs/reference/types/general/input-media) | — | Deprecated |
 
 ## References
 

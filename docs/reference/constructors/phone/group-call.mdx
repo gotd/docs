@@ -18,11 +18,15 @@ type tg.PhoneGroupCall struct { /* ... */ }
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| `Call` | `GroupCallClass` | yes | Info about the group call |
-| `Participants` | `[]GroupCallParticipant` | yes | A partial list of participants. |
+| `Call` | [`GroupCallClass`](/docs/reference/types/general/group-call) | yes | Info about the group call |
+| `Participants` | [`[]GroupCallParticipant`](/docs/reference/constructors/general/group-call-participant) | yes | A partial list of participants. |
 | `ParticipantsNextOffset` | `string` | yes | Next offset to use when fetching the remaining participants using phone getGroupParticipants |
-| `Chats` | `[]ChatClass` | yes | Chats mentioned in the participants vector |
-| `Users` | `[]UserClass` | yes | Users mentioned in the participants vector |
+| `Chats` | [`[]ChatClass`](/docs/reference/types/general/chat) | yes | Chats mentioned in the participants vector |
+| `Users` | [`[]UserClass`](/docs/reference/types/general/user) | yes | Users mentioned in the participants vector |
+
+## Returned by
+
+- [`phone.getGroupCall`](/docs/reference/methods/phone/get-group-call)
 
 ## References
 

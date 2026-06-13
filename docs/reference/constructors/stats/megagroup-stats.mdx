@@ -18,23 +18,27 @@ type tg.StatsMegagroupStats struct { /* ... */ }
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| `Period` | `StatsDateRangeDays` | yes | Period in consideration |
-| `Members` | `StatsAbsValueAndPrev` | yes | Member count change for period in consideration |
-| `Messages` | `StatsAbsValueAndPrev` | yes | Message number change for period in consideration |
-| `Viewers` | `StatsAbsValueAndPrev` | yes | Number of users that viewed messages, for range in consideration |
-| `Posters` | `StatsAbsValueAndPrev` | yes | Number of users that posted messages, for range in consideration |
-| `GrowthGraph` | `StatsGraphClass` | yes | Supergroup growth graph (absolute subscriber count) |
-| `MembersGraph` | `StatsGraphClass` | yes | Members growth (relative subscriber count) |
-| `NewMembersBySourceGraph` | `StatsGraphClass` | yes | New members by source graph |
-| `LanguagesGraph` | `StatsGraphClass` | yes | Subscriber language graph (pie chart) |
-| `MessagesGraph` | `StatsGraphClass` | yes | Message activity graph (stacked bar graph, message type) |
-| `ActionsGraph` | `StatsGraphClass` | yes | Group activity graph (deleted, modified messages, blocked users) |
-| `TopHoursGraph` | `StatsGraphClass` | yes | Activity per hour graph (absolute) |
-| `WeekdaysGraph` | `StatsGraphClass` | yes | Activity per day of week graph (absolute) |
-| `TopPosters` | `[]StatsGroupTopPoster` | yes | Info about most active group members |
-| `TopAdmins` | `[]StatsGroupTopAdmin` | yes | Info about most active group admins |
-| `TopInviters` | `[]StatsGroupTopInviter` | yes | Info about most active group inviters |
-| `Users` | `[]UserClass` | yes | Info about users mentioned in statistics |
+| `Period` | [`StatsDateRangeDays`](/docs/reference/constructors/general/stats-date-range-days) | yes | Period in consideration |
+| `Members` | [`StatsAbsValueAndPrev`](/docs/reference/constructors/general/stats-abs-value-and-prev) | yes | Member count change for period in consideration |
+| `Messages` | [`StatsAbsValueAndPrev`](/docs/reference/constructors/general/stats-abs-value-and-prev) | yes | Message number change for period in consideration |
+| `Viewers` | [`StatsAbsValueAndPrev`](/docs/reference/constructors/general/stats-abs-value-and-prev) | yes | Number of users that viewed messages, for range in consideration |
+| `Posters` | [`StatsAbsValueAndPrev`](/docs/reference/constructors/general/stats-abs-value-and-prev) | yes | Number of users that posted messages, for range in consideration |
+| `GrowthGraph` | [`StatsGraphClass`](/docs/reference/types/general/stats-graph) | yes | Supergroup growth graph (absolute subscriber count) |
+| `MembersGraph` | [`StatsGraphClass`](/docs/reference/types/general/stats-graph) | yes | Members growth (relative subscriber count) |
+| `NewMembersBySourceGraph` | [`StatsGraphClass`](/docs/reference/types/general/stats-graph) | yes | New members by source graph |
+| `LanguagesGraph` | [`StatsGraphClass`](/docs/reference/types/general/stats-graph) | yes | Subscriber language graph (pie chart) |
+| `MessagesGraph` | [`StatsGraphClass`](/docs/reference/types/general/stats-graph) | yes | Message activity graph (stacked bar graph, message type) |
+| `ActionsGraph` | [`StatsGraphClass`](/docs/reference/types/general/stats-graph) | yes | Group activity graph (deleted, modified messages, blocked users) |
+| `TopHoursGraph` | [`StatsGraphClass`](/docs/reference/types/general/stats-graph) | yes | Activity per hour graph (absolute) |
+| `WeekdaysGraph` | [`StatsGraphClass`](/docs/reference/types/general/stats-graph) | yes | Activity per day of week graph (absolute) |
+| `TopPosters` | [`[]StatsGroupTopPoster`](/docs/reference/constructors/general/stats-group-top-poster) | yes | Info about most active group members |
+| `TopAdmins` | [`[]StatsGroupTopAdmin`](/docs/reference/constructors/general/stats-group-top-admin) | yes | Info about most active group admins |
+| `TopInviters` | [`[]StatsGroupTopInviter`](/docs/reference/constructors/general/stats-group-top-inviter) | yes | Info about most active group inviters |
+| `Users` | [`[]UserClass`](/docs/reference/types/general/user) | yes | Info about users mentioned in statistics |
+
+## Returned by
+
+- [`stats.getMegagroupStats`](/docs/reference/methods/stats/get-megagroup-stats)
 
 ## References
 

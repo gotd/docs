@@ -35,16 +35,16 @@ client.Run(ctx, func(ctx context.Context) error {
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| `Peer` | `InputPeerClass` | yes | Owner of the collectible gift: equal to starGiftUnique.owner_id. |
+| `Peer` | [`InputPeerClass`](/docs/reference/types/general/input-peer) | yes | Owner of the collectible gift: equal to starGiftUnique.owner_id. |
 | `Slug` | `string` | yes | Identifier of the collectible gift: equal to starGiftUnique.slug. |
-| `Price` | `StarsAmountClass` | yes | Offer price, in stars or TON. |
+| `Price` | [`StarsAmountClass`](/docs/reference/types/general/stars-amount) | yes | Offer price, in stars or TON. |
 | `Duration` | `int` | yes | Duration of the offer, in seconds: must be one of 21600, 43200, 86400, 129600, 172800, or 259200; can also be 120 in test mode. |
 | `RandomID` | `int64` | yes | Random 64-bit identifier used to avoid sending the same offer twice in case of network issues. |
 | `AllowPaidStars` | `int64` | — | If the destination peer has paid messages » enabled, specifies the amount of Telegram Stars the sending user has agreed to pay in order to send the offer (in addition to the amount for the offer itself, contained in price). |
 
 ## Returns
 
-`UpdatesClass`
+[`UpdatesClass`](/docs/reference/types/general/updates)
 
 ## Possible errors
 

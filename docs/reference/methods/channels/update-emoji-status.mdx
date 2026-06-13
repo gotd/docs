@@ -35,12 +35,12 @@ client.Run(ctx, func(ctx context.Context) error {
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| `Channel` | `InputChannelClass` | yes | The channel/supergroup, must have at least channel_emoji_status_level_min/group_emoji_status_level_min boosts. |
-| `EmojiStatus` | `EmojiStatusClass` | yes | Emoji status to set |
+| `Channel` | [`InputChannelClass`](/docs/reference/types/general/input-channel) | yes | The channel/supergroup, must have at least channel_emoji_status_level_min/group_emoji_status_level_min boosts. |
+| `EmojiStatus` | [`EmojiStatusClass`](/docs/reference/types/general/emoji-status) | yes | Emoji status to set |
 
 ## Returns
 
-`UpdatesClass`
+[`UpdatesClass`](/docs/reference/types/general/updates)
 
 ## Possible errors
 

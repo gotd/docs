@@ -19,13 +19,17 @@ type tg.PaymentsResaleStarGifts struct { /* ... */ }
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
 | `Count` | `int` | yes | Total number of results. |
-| `Gifts` | `[]StarGiftClass` | yes | Collectible gifts on resale (may be less than count, in which case next_offset will be set). |
+| `Gifts` | [`[]StarGiftClass`](/docs/reference/types/general/star-gift) | yes | Collectible gifts on resale (may be less than count, in which case next_offset will be set). |
 | `NextOffset` | `string` | — | Offset for pagination, pass this to payments.getResaleStarGifts.offset to fetch the next results. |
-| `Attributes` | `[]StarGiftAttributeClass` | — | Possible gift attributes, only set if payments.getResaleStarGifts.attributes_hash is set (on the first call, it must be equal to 0). |
+| `Attributes` | [`[]StarGiftAttributeClass`](/docs/reference/types/general/star-gift-attribute) | — | Possible gift attributes, only set if payments.getResaleStarGifts.attributes_hash is set (on the first call, it must be equal to 0). |
 | `AttributesHash` | `int64` | — | Hash of the attributes field, pass this to payments.getResaleStarGifts attributes_hash to avoid returning any attributes (flag not set) if they haven't changed. |
-| `Chats` | `[]ChatClass` | yes | Chats mentioned in the attributes. |
-| `Counters` | `[]StarGiftAttributeCounter` | — | Indicates the total number of gifts that have a specific attribute, only set if payments.getResaleStarGifts.offset is empty (since this field is not related to the current result page but to all of them, it's only returned on the first page). |
-| `Users` | `[]UserClass` | yes | Users mentioned in the attributes. |
+| `Chats` | [`[]ChatClass`](/docs/reference/types/general/chat) | yes | Chats mentioned in the attributes. |
+| `Counters` | [`[]StarGiftAttributeCounter`](/docs/reference/constructors/general/star-gift-attribute-counter) | — | Indicates the total number of gifts that have a specific attribute, only set if payments.getResaleStarGifts.offset is empty (since this field is not related to the current result page but to all of them, it's only returned on the first page). |
+| `Users` | [`[]UserClass`](/docs/reference/types/general/user) | yes | Users mentioned in the attributes. |
+
+## Returned by
+
+- [`payments.getResaleStarGifts`](/docs/reference/methods/payments/get-resale-star-gifts)
 
 ## References
 

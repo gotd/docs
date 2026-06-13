@@ -20,10 +20,10 @@ Implements [`StarGiftAttribute`](/docs/reference/types/general/star-gift-attribu
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| `SenderID` | `PeerClass` | — | Original sender of the gift, absent if the gift was private. |
-| `RecipientID` | `PeerClass` | yes | Original receiver of the gift. |
+| `SenderID` | [`PeerClass`](/docs/reference/types/general/peer) | — | Original sender of the gift, absent if the gift was private. |
+| `RecipientID` | [`PeerClass`](/docs/reference/types/general/peer) | yes | Original receiver of the gift. |
 | `Date` | `int` | yes | When was the gift sent. |
-| `Message` | `TextWithEntities` | — | Original message attached to the gift, if present. |
+| `Message` | [`TextWithEntities`](/docs/reference/constructors/general/text-with-entities) | — | Original message attached to the gift, if present. |
 
 ## References
 

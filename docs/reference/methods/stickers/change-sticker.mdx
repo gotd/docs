@@ -35,14 +35,14 @@ client.Run(ctx, func(ctx context.Context) error {
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| `Sticker` | `InputDocumentClass` | yes | The sticker |
+| `Sticker` | [`InputDocumentClass`](/docs/reference/types/general/input-document) | yes | The sticker |
 | `Emoji` | `string` | — | If set, updates the emoji list associated to the sticker |
-| `MaskCoords` | `MaskCoords` | — | If set, updates the mask coordinates |
+| `MaskCoords` | [`MaskCoords`](/docs/reference/constructors/general/mask-coords) | — | If set, updates the mask coordinates |
 | `Keywords` | `string` | — | If set, updates the sticker keywords (separated by commas). Can't be provided for mask stickers. |
 
 ## Returns
 
-`MessagesStickerSetClass`
+[`MessagesStickerSetClass`](/docs/reference/types/messages/sticker-set)
 
 ## Possible errors
 

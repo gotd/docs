@@ -36,14 +36,14 @@ client.Run(ctx, func(ctx context.Context) error {
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
 | `Video` | `bool` | — | Whether this is a video call |
-| `Peer` | `InputPhoneCall` | yes | The phone call |
+| `Peer` | [`InputPhoneCall`](/docs/reference/constructors/general/input-phone-call) | yes | The phone call |
 | `Duration` | `int` | yes | Call duration |
-| `Reason` | `PhoneCallDiscardReasonClass` | yes | Why was the call discarded |
+| `Reason` | [`PhoneCallDiscardReasonClass`](/docs/reference/types/general/phone-call-discard-reason) | yes | Why was the call discarded |
 | `ConnectionID` | `int64` | yes | Preferred libtgvoip relay ID |
 
 ## Returns
 
-`UpdatesClass`
+[`UpdatesClass`](/docs/reference/types/general/updates)
 
 ## Possible errors
 

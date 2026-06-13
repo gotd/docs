@@ -18,8 +18,12 @@ type tg.AccountConnectedBots struct { /* ... */ }
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| `ConnectedBots` | `[]ConnectedBot` | yes | Info about the connected bots |
-| `Users` | `[]UserClass` | yes | Bot information |
+| `ConnectedBots` | [`[]ConnectedBot`](/docs/reference/constructors/general/connected-bot) | yes | Info about the connected bots |
+| `Users` | [`[]UserClass`](/docs/reference/types/general/user) | yes | Bot information |
+
+## Returned by
+
+- [`account.getConnectedBots`](/docs/reference/methods/account/get-connected-bots)
 
 ## References
 

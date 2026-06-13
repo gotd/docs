@@ -20,7 +20,7 @@ Implements [`InputStorePaymentPurpose`](/docs/reference/types/general/input-stor
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| `UserID` | `InputUserClass` | yes | The user to which the Telegram Premium subscription was gifted |
+| `UserID` | [`InputUserClass`](/docs/reference/types/general/input-user) | yes | The user to which the Telegram Premium subscription was gifted |
 | `Currency` | `string` | yes | Three-letter ISO 4217 currency code |
 | `Amount` | `int64` | yes | Price of the product in the smallest units of the currency (integer, not float/double) For example, for a price of US$ 1.45 pass amount = 145. See the exp parameter in currencies.json, it shows the number of digits past the decimal point for each currency (2 for the majority of currencies). |
 

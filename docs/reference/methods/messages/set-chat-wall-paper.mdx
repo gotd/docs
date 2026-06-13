@@ -37,14 +37,14 @@ client.Run(ctx, func(ctx context.Context) error {
 | ---- | ---- | -------- | ----------- |
 | `ForBoth` | `bool` | — | Only for Premium users, sets the specified wallpaper for both users of the chat, without requiring confirmation from the other user. |
 | `Revert` | `bool` | — | If we don't like the new wallpaper the other user of the chat has chosen for us using the for_both flag, we can re-set our previous wallpaper just on our side using this flag. |
-| `Peer` | `InputPeerClass` | yes | The private chat where the wallpaper will be set |
-| `Wallpaper` | `InputWallPaperClass` | — | The wallpaper », obtained as described in the wallpaper documentation »; must not be provided when installing a wallpaper obtained from a messageActionSetChatWallPaper service message (id must be provided, instead). |
-| `Settings` | `WallPaperSettings` | — | Wallpaper settings, obtained as described in the wallpaper documentation » or from messageActionSetChatWallPaper.wallpaper.settings. |
+| `Peer` | [`InputPeerClass`](/docs/reference/types/general/input-peer) | yes | The private chat where the wallpaper will be set |
+| `Wallpaper` | [`InputWallPaperClass`](/docs/reference/types/general/input-wall-paper) | — | The wallpaper », obtained as described in the wallpaper documentation »; must not be provided when installing a wallpaper obtained from a messageActionSetChatWallPaper service message (id must be provided, instead). |
+| `Settings` | [`WallPaperSettings`](/docs/reference/constructors/general/wall-paper-settings) | — | Wallpaper settings, obtained as described in the wallpaper documentation » or from messageActionSetChatWallPaper.wallpaper.settings. |
 | `ID` | `int` | — | If the wallpaper was obtained from a messageActionSetChatWallPaper service message, must contain the ID of that message. |
 
 ## Returns
 
-`UpdatesClass`
+[`UpdatesClass`](/docs/reference/types/general/updates)
 
 ## Possible errors
 

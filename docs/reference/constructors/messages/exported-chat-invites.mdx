@@ -19,8 +19,12 @@ type tg.MessagesExportedChatInvites struct { /* ... */ }
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
 | `Count` | `int` | yes | Number of invites exported by the admin |
-| `Invites` | `[]ExportedChatInviteClass` | yes | Exported invites |
-| `Users` | `[]UserClass` | yes | Info about the admin |
+| `Invites` | [`[]ExportedChatInviteClass`](/docs/reference/types/general/exported-chat-invite) | yes | Exported invites |
+| `Users` | [`[]UserClass`](/docs/reference/types/general/user) | yes | Info about the admin |
+
+## Returned by
+
+- [`messages.getExportedChatInvites`](/docs/reference/methods/messages/get-exported-chat-invites)
 
 ## References
 

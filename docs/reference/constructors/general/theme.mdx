@@ -25,10 +25,16 @@ type tg.Theme struct { /* ... */ }
 | `AccessHash` | `int64` | yes | Theme access hash |
 | `Slug` | `string` | yes | Unique theme ID |
 | `Title` | `string` | yes | Theme name |
-| `Document` | `DocumentClass` | — | Theme |
-| `Settings` | `[]ThemeSettings` | — | Theme settings |
+| `Document` | [`DocumentClass`](/docs/reference/types/general/document) | — | Theme |
+| `Settings` | [`[]ThemeSettings`](/docs/reference/constructors/general/theme-settings) | — | Theme settings |
 | `Emoticon` | `string` | — | Theme emoji |
 | `InstallsCount` | `int` | — | Installation count |
+
+## Returned by
+
+- [`account.createTheme`](/docs/reference/methods/account/create-theme)
+- [`account.getTheme`](/docs/reference/methods/account/get-theme)
+- [`account.updateTheme`](/docs/reference/methods/account/update-theme)
 
 ## References
 

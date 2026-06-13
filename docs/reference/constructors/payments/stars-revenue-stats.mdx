@@ -18,10 +18,14 @@ type tg.PaymentsStarsRevenueStats struct { /* ... */ }
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| `TopHoursGraph` | `StatsGraphClass` | — | For ad revenue statistics, ad impressions graph |
-| `RevenueGraph` | `StatsGraphClass` | yes | Star revenue graph (number of earned stars) |
-| `Status` | `StarsRevenueStatus` | yes | Current balance, current withdrawable balance and overall earned Telegram Stars |
+| `TopHoursGraph` | [`StatsGraphClass`](/docs/reference/types/general/stats-graph) | — | For ad revenue statistics, ad impressions graph |
+| `RevenueGraph` | [`StatsGraphClass`](/docs/reference/types/general/stats-graph) | yes | Star revenue graph (number of earned stars) |
+| `Status` | [`StarsRevenueStatus`](/docs/reference/constructors/general/stars-revenue-status) | yes | Current balance, current withdrawable balance and overall earned Telegram Stars |
 | `UsdRate` | `float64` | yes | Current conversion rate of Telegram Stars to USD |
+
+## Returned by
+
+- [`payments.getStarsRevenueStats`](/docs/reference/methods/payments/get-stars-revenue-stats)
 
 ## References
 

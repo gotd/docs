@@ -38,15 +38,15 @@ client.Run(ctx, func(ctx context.Context) error {
 | `WriteAllowed` | `bool` | — | Set this flag if the bot is asking permission to send messages to the user as specified in the direct Mini App deep link docs, and the user agreed. |
 | `Compact` | `bool` | — | If set, requests to open the mini app in compact mode (as opposed to normal or fullscreen mode). Must be set if the mode parameter of the direct Mini App deep link is equal to compact. |
 | `Fullscreen` | `bool` | — | If set, requests to open the mini app in fullscreen mode (as opposed to compact or normal mode). Must be set if the mode parameter of the direct Mini App deep link is equal to fullscreen. |
-| `Peer` | `InputPeerClass` | yes | If the client has clicked on the link in a Telegram chat, pass the chat's peer information; otherwise pass the bot's peer information, instead. |
-| `App` | `InputBotAppClass` | yes | The app obtained by invoking messages.getBotApp as specified in the direct Mini App deep link docs. |
+| `Peer` | [`InputPeerClass`](/docs/reference/types/general/input-peer) | yes | If the client has clicked on the link in a Telegram chat, pass the chat's peer information; otherwise pass the bot's peer information, instead. |
+| `App` | [`InputBotAppClass`](/docs/reference/types/general/input-bot-app) | yes | The app obtained by invoking messages.getBotApp as specified in the direct Mini App deep link docs. |
 | `StartParam` | `string` | — | If the startapp query string parameter is present in the direct Mini App deep link, pass it to start_param. |
-| `ThemeParams` | `DataJSON` | — | Theme parameters » |
+| `ThemeParams` | [`DataJSON`](/docs/reference/constructors/general/data-j-s-o-n) | — | Theme parameters » |
 | `Platform` | `string` | yes | Short name of the application; 0-64 English letters, digits, and underscores |
 
 ## Returns
 
-`*WebViewResultURL`
+[`*WebViewResultURL`](/docs/reference/constructors/general/web-view-result-url)
 
 ## Possible errors
 

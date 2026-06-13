@@ -35,13 +35,13 @@ client.Run(ctx, func(ctx context.Context) error {
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| `Peer` | `InputPeerClass` | yes | Peer where to create the collection. |
+| `Peer` | [`InputPeerClass`](/docs/reference/types/general/input-peer) | yes | Peer where to create the collection. |
 | `Title` | `string` | yes | Title of the collection. |
-| `Stargift` | `[]InputSavedStarGiftClass` | yes | Gifts added to the collection. |
+| `Stargift` | [`[]InputSavedStarGiftClass`](/docs/reference/types/general/input-saved-star-gift) | yes | Gifts added to the collection. |
 
 ## Returns
 
-`*StarGiftCollection`
+[`*StarGiftCollection`](/docs/reference/constructors/general/star-gift-collection)
 
 ## Possible errors
 

@@ -20,11 +20,15 @@ Implements [`{{.Implements.TLName}}`](/docs/reference/types/{{.Implements.Namesp
 {{if .Fields}}
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-{{range .Fields}}| `{{.Name}}` | `{{.GoType}}` | {{if .Optional}}—{{else}}yes{{end}} | {{.Description | mdxCell}} |
+{{range .Fields}}| `{{.Name}}` | {{.TypeMD}} | {{if .Optional}}—{{else}}yes{{end}} | {{.Description | mdxCell}} |
 {{end}}{{else}}
 This type has no fields.
 {{end}}
-## References
+{{if .ReturnedBy}}## Returned by
+
+{{range .ReturnedBy}}- [`{{.TLName}}`](/docs/reference/methods/{{.Namespace}}/{{.Slug}})
+{{end}}
+{{end}}## References
 
 - [Official documentation]({{.DocURL}})
 - [Generated Go reference](https://ref.gotd.dev/pkg/github.com/gotd/td/tg.html)

@@ -42,24 +42,24 @@ client.Run(ctx, func(ctx context.Context) error {
 | `DropMediaCaptions` | `bool` | — | Whether to strip captions from media |
 | `Noforwards` | `bool` | — | Only for bots, disallows further re-forwarding and saving of the messages, even if the destination chat doesn't have content protection enabled |
 | `AllowPaidFloodskip` | `bool` | — | Bots only: if set, allows sending up to 1000 messages per second, ignoring broadcasting limits for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance. |
-| `FromPeer` | `InputPeerClass` | yes | Source of messages |
+| `FromPeer` | [`InputPeerClass`](/docs/reference/types/general/input-peer) | yes | Source of messages |
 | `ID` | `[]int` | yes | IDs of messages |
 | `RandomID` | `[]int64` | yes | Random ID to prevent resending of messages |
-| `ToPeer` | `InputPeerClass` | yes | Destination peer |
+| `ToPeer` | [`InputPeerClass`](/docs/reference/types/general/input-peer) | yes | Destination peer |
 | `TopMsgID` | `int` | — | Destination forum topic |
-| `ReplyTo` | `InputReplyToClass` | — | Can only contain an inputReplyToMonoForum, to forward messages to a monoforum topic (mutually exclusive with top_msg_id). |
+| `ReplyTo` | [`InputReplyToClass`](/docs/reference/types/general/input-reply-to) | — | Can only contain an inputReplyToMonoForum, to forward messages to a monoforum topic (mutually exclusive with top_msg_id). |
 | `ScheduleDate` | `int` | — | Scheduled message date for scheduled messages |
 | `ScheduleRepeatPeriod` | `int` | — | Once sent, this message will be automatically re-scheduled to be re-sent again this many seconds in the future, see here » for more info on repeating scheduled messages. |
-| `SendAs` | `InputPeerClass` | — | Forward the messages as the specified peer |
-| `QuickReplyShortcut` | `InputQuickReplyShortcutClass` | — | Add the messages to the specified quick reply shortcut », instead. |
+| `SendAs` | [`InputPeerClass`](/docs/reference/types/general/input-peer) | — | Forward the messages as the specified peer |
+| `QuickReplyShortcut` | [`InputQuickReplyShortcutClass`](/docs/reference/types/general/input-quick-reply-shortcut) | — | Add the messages to the specified quick reply shortcut », instead. |
 | `Effect` | `int64` | — | Specifies a message effect » to use for the message. |
 | `VideoTimestamp` | `int` | — | Start playing the video at the specified timestamp (seconds). |
 | `AllowPaidStars` | `int64` | — | For paid messages », specifies the amount of Telegram Stars the user has agreed to pay in order to send the message. |
-| `SuggestedPost` | `SuggestedPost` | — | Used to suggest a post to a channel, see here » for more info on the full flow. |
+| `SuggestedPost` | [`SuggestedPost`](/docs/reference/constructors/general/suggested-post) | — | Used to suggest a post to a channel, see here » for more info on the full flow. |
 
 ## Returns
 
-`UpdatesClass`
+[`UpdatesClass`](/docs/reference/types/general/updates)
 
 ## Possible errors
 

@@ -20,10 +20,16 @@ type tg.PaymentsSavedStarGifts struct { /* ... */ }
 | ---- | ---- | -------- | ----------- |
 | `Count` | `int` | yes | Total number of results (can be less than the returned gifts, in which case next_offset will be set). |
 | `ChatNotificationsEnabled` | `bool` | — | Ternary value: can be not set, set&true, set&false. Can only be set for channels we own: the value indicates whether we enabled gift notifications for this channel. |
-| `Gifts` | `[]SavedStarGift` | yes | Gifts |
+| `Gifts` | [`[]SavedStarGift`](/docs/reference/constructors/general/saved-star-gift) | yes | Gifts |
 | `NextOffset` | `string` | — | Offset to pass to payments.getSavedStarGifts to fetch the next page of results. |
-| `Chats` | `[]ChatClass` | yes | Channels mentioned in gifts |
-| `Users` | `[]UserClass` | yes | Users mentioned in gifts |
+| `Chats` | [`[]ChatClass`](/docs/reference/types/general/chat) | yes | Channels mentioned in gifts |
+| `Users` | [`[]UserClass`](/docs/reference/types/general/user) | yes | Users mentioned in gifts |
+
+## Returned by
+
+- [`payments.getCraftStarGifts`](/docs/reference/methods/payments/get-craft-star-gifts)
+- [`payments.getSavedStarGift`](/docs/reference/methods/payments/get-saved-star-gift)
+- [`payments.getSavedStarGifts`](/docs/reference/methods/payments/get-saved-star-gifts)
 
 ## References
 

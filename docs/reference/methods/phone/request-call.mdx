@@ -36,14 +36,14 @@ client.Run(ctx, func(ctx context.Context) error {
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
 | `Video` | `bool` | — | Whether to start a video call |
-| `UserID` | `InputUserClass` | yes | Destination of the phone call |
+| `UserID` | [`InputUserClass`](/docs/reference/types/general/input-user) | yes | Destination of the phone call |
 | `RandomID` | `int` | yes | Random ID to avoid resending the same object |
 | `GAHash` | `[]byte` | yes | Parameter for E2E encryption key exchange » |
-| `Protocol` | `PhoneCallProtocol` | yes | Phone call settings |
+| `Protocol` | [`PhoneCallProtocol`](/docs/reference/constructors/general/phone-call-protocol) | yes | Phone call settings |
 
 ## Returns
 
-`*PhonePhoneCall`
+[`*PhonePhoneCall`](/docs/reference/constructors/phone/phone-call)
 
 ## Possible errors
 

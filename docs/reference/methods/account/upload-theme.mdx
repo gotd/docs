@@ -35,14 +35,14 @@ client.Run(ctx, func(ctx context.Context) error {
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| `File` | `InputFileClass` | yes | Previously uploaded theme file with platform-specific colors for UI components, can be left unset when creating themes that only modify the wallpaper or accent colors. |
-| `Thumb` | `InputFileClass` | — | Thumbnail |
+| `File` | [`InputFileClass`](/docs/reference/types/general/input-file) | yes | Previously uploaded theme file with platform-specific colors for UI components, can be left unset when creating themes that only modify the wallpaper or accent colors. |
+| `Thumb` | [`InputFileClass`](/docs/reference/types/general/input-file) | — | Thumbnail |
 | `FileName` | `string` | yes | File name |
 | `MimeType` | `string` | yes | MIME type, must be application/x-tgtheme-&#123;format&#125;, where format depends on the client |
 
 ## Returns
 
-`DocumentClass`
+[`DocumentClass`](/docs/reference/types/general/document)
 
 ## Possible errors
 

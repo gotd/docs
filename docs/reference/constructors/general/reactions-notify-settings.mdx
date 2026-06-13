@@ -18,11 +18,16 @@ type tg.ReactionsNotifySettings struct { /* ... */ }
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| `MessagesNotifyFrom` | `ReactionNotificationsFromClass` | — | Message reaction notification settings, if not set completely disables notifications/updates about message reactions. |
-| `StoriesNotifyFrom` | `ReactionNotificationsFromClass` | — | Story reaction notification settings, if not set completely disables notifications/updates about reactions to stories. |
-| `PollVotesNotifyFrom` | `ReactionNotificationsFromClass` | — | PollVotesNotifyFrom field of ReactionsNotifySettings. |
-| `Sound` | `NotificationSoundClass` | yes | Notification sound for reactions » |
+| `MessagesNotifyFrom` | [`ReactionNotificationsFromClass`](/docs/reference/types/general/reaction-notifications-from) | — | Message reaction notification settings, if not set completely disables notifications/updates about message reactions. |
+| `StoriesNotifyFrom` | [`ReactionNotificationsFromClass`](/docs/reference/types/general/reaction-notifications-from) | — | Story reaction notification settings, if not set completely disables notifications/updates about reactions to stories. |
+| `PollVotesNotifyFrom` | [`ReactionNotificationsFromClass`](/docs/reference/types/general/reaction-notifications-from) | — | PollVotesNotifyFrom field of ReactionsNotifySettings. |
+| `Sound` | [`NotificationSoundClass`](/docs/reference/types/general/notification-sound) | yes | Notification sound for reactions » |
 | `ShowPreviews` | `bool` | — | If false, push notifications » about message/story reactions will only be of type REACT_HIDDEN/REACT_STORY_HIDDEN, without any information about the reacted-to story or the reaction itself. |
+
+## Returned by
+
+- [`account.getReactionsNotifySettings`](/docs/reference/methods/account/get-reactions-notify-settings)
+- [`account.setReactionsNotifySettings`](/docs/reference/methods/account/set-reactions-notify-settings)
 
 ## References
 

@@ -19,10 +19,14 @@ type tg.StoriesFoundStories struct { /* ... */ }
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
 | `Count` | `int` | yes | Total number of results found for the query. |
-| `Stories` | `[]FoundStory` | yes | Matching stories. |
+| `Stories` | [`[]FoundStory`](/docs/reference/constructors/general/found-story) | yes | Matching stories. |
 | `NextOffset` | `string` | — | Offset used to fetch the next page, if not set this is the final page. |
-| `Chats` | `[]ChatClass` | yes | Mentioned chats |
-| `Users` | `[]UserClass` | yes | Mentioned users |
+| `Chats` | [`[]ChatClass`](/docs/reference/types/general/chat) | yes | Mentioned chats |
+| `Users` | [`[]UserClass`](/docs/reference/types/general/user) | yes | Mentioned users |
+
+## Returned by
+
+- [`stories.searchPosts`](/docs/reference/methods/stories/search-posts)
 
 ## References
 

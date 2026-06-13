@@ -38,16 +38,16 @@ client.Run(ctx, func(ctx context.Context) error {
 | `Masks` | `bool` | — | Whether this is a mask stickerset |
 | `Emojis` | `bool` | — | Whether this is a custom emoji stickerset. |
 | `TextColor` | `bool` | — | Whether the color of TGS custom emojis contained in this set should be changed to the text color when used in messages, the accent color if used as emoji status, white on chat photos, or another appropriate color based on context. For custom emoji stickersets only. |
-| `UserID` | `InputUserClass` | yes | Stickerset owner |
+| `UserID` | [`InputUserClass`](/docs/reference/types/general/input-user) | yes | Stickerset owner |
 | `Title` | `string` | yes | Stickerset name, 1-64 chars |
 | `ShortName` | `string` | yes | Short name of sticker set, to be used in sticker deep links ». Can contain only english letters, digits and underscores. Must begin with a letter, can't contain consecutive underscores and, if called by a bot, must end in "_by_&lt;bot_username&gt;". &lt;bot_username&gt; is case insensitive. 1-64 characters. |
-| `Thumb` | `InputDocumentClass` | — | Thumbnail |
-| `Stickers` | `[]InputStickerSetItem` | yes | Stickers |
+| `Thumb` | [`InputDocumentClass`](/docs/reference/types/general/input-document) | — | Thumbnail |
+| `Stickers` | [`[]InputStickerSetItem`](/docs/reference/constructors/general/input-sticker-set-item) | yes | Stickers |
 | `Software` | `string` | — | Used when importing stickers using the sticker import SDKs, specifies the name of the software that created the stickers |
 
 ## Returns
 
-`MessagesStickerSetClass`
+[`MessagesStickerSetClass`](/docs/reference/types/messages/sticker-set)
 
 ## Possible errors
 

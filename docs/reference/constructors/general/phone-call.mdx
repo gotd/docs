@@ -30,10 +30,10 @@ Implements [`PhoneCall`](/docs/reference/types/general/phone-call).
 | `ParticipantID` | `int64` | yes | User ID of the other participant in the call |
 | `GAOrB` | `[]byte` | yes | Parameter for key exchange |
 | `KeyFingerprint` | `int64` | yes | Key fingerprint |
-| `Protocol` | `PhoneCallProtocol` | yes | Call protocol info to be passed to libtgvoip |
-| `Connections` | `[]PhoneConnectionClass` | yes | List of endpoints the user can connect to exchange call data |
+| `Protocol` | [`PhoneCallProtocol`](/docs/reference/constructors/general/phone-call-protocol) | yes | Call protocol info to be passed to libtgvoip |
+| `Connections` | [`[]PhoneConnectionClass`](/docs/reference/types/general/phone-connection) | yes | List of endpoints the user can connect to exchange call data |
 | `StartDate` | `int` | yes | When was the call actually started |
-| `CustomParameters` | `DataJSON` | — | Custom JSON-encoded call parameters to be passed to tgcalls. |
+| `CustomParameters` | [`DataJSON`](/docs/reference/constructors/general/data-j-s-o-n) | — | Custom JSON-encoded call parameters to be passed to tgcalls. |
 
 ## References
 

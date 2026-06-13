@@ -25,8 +25,8 @@ Implements [`BotApp`](/docs/reference/types/general/bot-app).
 | `ShortName` | `string` | yes | bot mini app short name, used to generate Direct Mini App deep links. |
 | `Title` | `string` | yes | bot mini app title. |
 | `Description` | `string` | yes | bot mini app description. |
-| `Photo` | `PhotoClass` | yes | bot mini app photo. |
-| `Document` | `DocumentClass` | — | bot mini app animation. |
+| `Photo` | [`PhotoClass`](/docs/reference/types/general/photo) | yes | bot mini app photo. |
+| `Document` | [`DocumentClass`](/docs/reference/types/general/document) | — | bot mini app animation. |
 | `Hash` | `int64` | yes | Hash to pass to messages.getBotApp, to avoid refetching bot app info if it hasn't changed. |
 
 ## References

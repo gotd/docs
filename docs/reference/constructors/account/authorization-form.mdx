@@ -18,11 +18,15 @@ type tg.AccountAuthorizationForm struct { /* ... */ }
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| `RequiredTypes` | `[]SecureRequiredTypeClass` | yes | Required Telegram Passport documents |
-| `Values` | `[]SecureValue` | yes | Already submitted Telegram Passport documents |
-| `Errors` | `[]SecureValueErrorClass` | yes | Telegram Passport errors |
-| `Users` | `[]UserClass` | yes | Info about the bot to which the form will be submitted |
+| `RequiredTypes` | [`[]SecureRequiredTypeClass`](/docs/reference/types/general/secure-required-type) | yes | Required Telegram Passport documents |
+| `Values` | [`[]SecureValue`](/docs/reference/constructors/general/secure-value) | yes | Already submitted Telegram Passport documents |
+| `Errors` | [`[]SecureValueErrorClass`](/docs/reference/types/general/secure-value-error) | yes | Telegram Passport errors |
+| `Users` | [`[]UserClass`](/docs/reference/types/general/user) | yes | Info about the bot to which the form will be submitted |
 | `PrivacyPolicyURL` | `string` | — | URL of the service's privacy policy |
+
+## Returned by
+
+- [`account.getAuthorizationForm`](/docs/reference/methods/account/get-authorization-form)
 
 ## References
 

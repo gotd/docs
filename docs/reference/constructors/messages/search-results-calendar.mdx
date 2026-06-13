@@ -23,10 +23,14 @@ type tg.MessagesSearchResultsCalendar struct { /* ... */ }
 | `MinDate` | `int` | yes | Starting timestamp of attached messages |
 | `MinMsgID` | `int` | yes | Ending timestamp of attached messages |
 | `OffsetIDOffset` | `int` | — | Indicates the absolute position of messages[0] within the total result set with count count. This is useful, for example, if we need to display a progress/total counter (like photo 134 of 200, for all media in a chat, we could simply use photo $&#123;offset_id_offset&#125; of $&#123;count&#125;. |
-| `Periods` | `[]SearchResultsCalendarPeriod` | yes | Used to split the messages by days: multiple SearchResultsCalendarPeriod constructors are returned, each containing information about the first, last and total number of messages matching the filter that were sent on a specific day. This information can be easily used to split the returned messages by day. |
-| `Messages` | `[]MessageClass` | yes | Messages |
-| `Chats` | `[]ChatClass` | yes | Mentioned chats |
-| `Users` | `[]UserClass` | yes | Mentioned users |
+| `Periods` | [`[]SearchResultsCalendarPeriod`](/docs/reference/constructors/general/search-results-calendar-period) | yes | Used to split the messages by days: multiple SearchResultsCalendarPeriod constructors are returned, each containing information about the first, last and total number of messages matching the filter that were sent on a specific day. This information can be easily used to split the returned messages by day. |
+| `Messages` | [`[]MessageClass`](/docs/reference/types/general/message) | yes | Messages |
+| `Chats` | [`[]ChatClass`](/docs/reference/types/general/chat) | yes | Mentioned chats |
+| `Users` | [`[]UserClass`](/docs/reference/types/general/user) | yes | Mentioned users |
+
+## Returned by
+
+- [`messages.getSearchResultsCalendar`](/docs/reference/methods/messages/get-search-results-calendar)
 
 ## References
 

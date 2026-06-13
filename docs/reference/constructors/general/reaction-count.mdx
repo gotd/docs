@@ -19,7 +19,7 @@ type tg.ReactionCount struct { /* ... */ }
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
 | `ChosenOrder` | `int` | — | If set, indicates that the current user also sent this reaction. The integer value indicates when was the reaction added: the bigger the value, the newer the reaction. |
-| `Reaction` | `ReactionClass` | yes | The reaction. |
+| `Reaction` | [`ReactionClass`](/docs/reference/types/general/reaction) | yes | The reaction. |
 | `Count` | `int` | yes | Number of users that reacted with this emoji. |
 
 ## References

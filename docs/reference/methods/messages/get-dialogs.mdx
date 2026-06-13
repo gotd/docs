@@ -39,13 +39,13 @@ client.Run(ctx, func(ctx context.Context) error {
 | `FolderID` | `int` | — | Peer folder ID, for more info click here |
 | `OffsetDate` | `int` | yes | Offsets for pagination, for more info click here |
 | `OffsetID` | `int` | yes | Offsets for pagination, for more info click here (top_message ID used for pagination) |
-| `OffsetPeer` | `InputPeerClass` | yes | Offset peer for pagination |
+| `OffsetPeer` | [`InputPeerClass`](/docs/reference/types/general/input-peer) | yes | Offset peer for pagination |
 | `Limit` | `int` | yes | Number of list elements to be returned |
 | `Hash` | `int64` | yes | Hash used for caching, for more info click here |
 
 ## Returns
 
-`MessagesDialogsClass`
+[`MessagesDialogsClass`](/docs/reference/types/messages/dialogs)
 
 ## Possible errors
 

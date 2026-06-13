@@ -38,11 +38,11 @@ client.Run(ctx, func(ctx context.Context) error {
 | `Gallery` | `bool` | — | Set this flag if the results are composed of media files |
 | `Private` | `bool` | — | Set this flag if results may be cached on the server side only for the user that sent the query. By default, results may be returned to any user who sends the same query |
 | `QueryID` | `int64` | yes | Unique identifier for the answered query |
-| `Results` | `[]InputBotInlineResultClass` | yes | Vector of results for the inline query |
+| `Results` | [`[]InputBotInlineResultClass`](/docs/reference/types/general/input-bot-inline-result) | yes | Vector of results for the inline query |
 | `CacheTime` | `int` | yes | The maximum amount of time in seconds that the result of the inline query may be cached on the server. Defaults to 300. |
 | `NextOffset` | `string` | — | Pass the offset that a client should send in the next query with the same text to receive more results. Pass an empty string if there are no more results or if you don't support pagination. Offset length can't exceed 64 bytes. |
-| `SwitchPm` | `InlineBotSwitchPM` | — | If passed, clients will display a button on top of the remaining inline result list with the specified text, that switches the user to a private chat with the bot and sends the bot a start message with a certain parameter. |
-| `SwitchWebview` | `InlineBotWebView` | — | If passed, clients will display a button on top of the remaining inline result list with the specified text, that switches the user to the specified inline mode mini app. |
+| `SwitchPm` | [`InlineBotSwitchPM`](/docs/reference/constructors/general/inline-bot-switch-p-m) | — | If passed, clients will display a button on top of the remaining inline result list with the specified text, that switches the user to a private chat with the bot and sends the bot a start message with a certain parameter. |
+| `SwitchWebview` | [`InlineBotWebView`](/docs/reference/constructors/general/inline-bot-web-view) | — | If passed, clients will display a button on top of the remaining inline result list with the specified text, that switches the user to the specified inline mode mini app. |
 
 ## Returns
 

@@ -19,7 +19,13 @@ type tg.BotPreviewMedia struct { /* ... */ }
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
 | `Date` | `int` | yes | When was this media last updated. |
-| `Media` | `MessageMediaClass` | yes | The actual photo/video. |
+| `Media` | [`MessageMediaClass`](/docs/reference/types/general/message-media) | yes | The actual photo/video. |
+
+## Returned by
+
+- [`bots.addPreviewMedia`](/docs/reference/methods/bots/add-preview-media)
+- [`bots.editPreviewMedia`](/docs/reference/methods/bots/edit-preview-media)
+- [`bots.getPreviewMedias`](/docs/reference/methods/bots/get-preview-medias)
 
 ## References
 

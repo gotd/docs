@@ -19,8 +19,12 @@ type tg.MessagesSearchCounter struct { /* ... */ }
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
 | `Inexact` | `bool` | — | If set, the results may be inexact |
-| `Filter` | `MessagesFilterClass` | yes | Provided message filter |
+| `Filter` | [`MessagesFilterClass`](/docs/reference/types/general/messages-filter) | yes | Provided message filter |
 | `Count` | `int` | yes | Number of results that were found server-side |
+
+## Returned by
+
+- [`messages.getSearchCounters`](/docs/reference/methods/messages/get-search-counters)
 
 ## References
 

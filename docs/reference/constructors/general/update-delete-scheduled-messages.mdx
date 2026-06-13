@@ -20,7 +20,7 @@ Implements [`Update`](/docs/reference/types/general/update).
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| `Peer` | `PeerClass` | yes | Peer |
+| `Peer` | [`PeerClass`](/docs/reference/types/general/peer) | yes | Peer |
 | `Messages` | `[]int` | yes | Deleted scheduled messages |
 | `SentMessages` | `[]int` | — | If set, this update indicates that some scheduled messages were sent (not simply deleted from the schedule queue). In this case, the messages field will contain the scheduled message IDs for the sent messages (initially returned in updateNewScheduledMessage), and sent_messages will contain the real message IDs for the sent messages. |
 

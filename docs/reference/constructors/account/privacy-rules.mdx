@@ -18,9 +18,14 @@ type tg.AccountPrivacyRules struct { /* ... */ }
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| `Rules` | `[]PrivacyRuleClass` | yes | Privacy rules |
-| `Chats` | `[]ChatClass` | yes | Chats to which the rules apply |
-| `Users` | `[]UserClass` | yes | Users to which the rules apply |
+| `Rules` | [`[]PrivacyRuleClass`](/docs/reference/types/general/privacy-rule) | yes | Privacy rules |
+| `Chats` | [`[]ChatClass`](/docs/reference/types/general/chat) | yes | Chats to which the rules apply |
+| `Users` | [`[]UserClass`](/docs/reference/types/general/user) | yes | Users to which the rules apply |
+
+## Returned by
+
+- [`account.getPrivacy`](/docs/reference/methods/account/get-privacy)
+- [`account.setPrivacy`](/docs/reference/methods/account/set-privacy)
 
 ## References
 

@@ -18,9 +18,13 @@ type tg.ChannelsSendAsPeers struct { /* ... */ }
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| `Peers` | `[]SendAsPeer` | yes | Peers that can be used to send messages to the group |
-| `Chats` | `[]ChatClass` | yes | Mentioned chats |
-| `Users` | `[]UserClass` | yes | Mentioned users |
+| `Peers` | [`[]SendAsPeer`](/docs/reference/constructors/general/send-as-peer) | yes | Peers that can be used to send messages to the group |
+| `Chats` | [`[]ChatClass`](/docs/reference/types/general/chat) | yes | Mentioned chats |
+| `Users` | [`[]UserClass`](/docs/reference/types/general/user) | yes | Mentioned users |
+
+## Returned by
+
+- [`channels.getSendAs`](/docs/reference/methods/channels/get-send-as)
 
 ## References
 

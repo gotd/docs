@@ -36,16 +36,16 @@ client.Run(ctx, func(ctx context.Context) error {
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
 | `ExcludePinned` | `bool` | — | Exclude pinned dialogs |
-| `ParentPeer` | `InputPeerClass` | — | If set, fetches the topic list of the passed monoforum, otherwise fetches the saved dialog list. |
+| `ParentPeer` | [`InputPeerClass`](/docs/reference/types/general/input-peer) | — | If set, fetches the topic list of the passed monoforum, otherwise fetches the saved dialog list. |
 | `OffsetDate` | `int` | yes | Offsets for pagination, for more info click here |
 | `OffsetID` | `int` | yes | Offsets for pagination, for more info click here (top_message ID used for pagination) |
-| `OffsetPeer` | `InputPeerClass` | yes | Offset peer for pagination |
+| `OffsetPeer` | [`InputPeerClass`](/docs/reference/types/general/input-peer) | yes | Offset peer for pagination |
 | `Limit` | `int` | yes | Number of list elements to be returned |
 | `Hash` | `int64` | yes | Hash used for caching, for more info click here |
 
 ## Returns
 
-`MessagesSavedDialogsClass`
+[`MessagesSavedDialogsClass`](/docs/reference/types/messages/saved-dialogs)
 
 ## References
 

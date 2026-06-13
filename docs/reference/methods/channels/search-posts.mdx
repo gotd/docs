@@ -38,14 +38,14 @@ client.Run(ctx, func(ctx context.Context) error {
 | `Hashtag` | `string` | — | The hashtag to search, without the # character. |
 | `Query` | `string` | — | The full text query: each user has a limited amount of free full text search slots, after which payment is required, see here » for more info on the full flow. |
 | `OffsetRate` | `int` | yes | Initially 0, then set to the next_rate parameter of messages.messagesSlice, or if that is absent, the date of the last returned message. |
-| `OffsetPeer` | `InputPeerClass` | yes | Offsets for pagination, for more info click here |
+| `OffsetPeer` | [`InputPeerClass`](/docs/reference/types/general/input-peer) | yes | Offsets for pagination, for more info click here |
 | `OffsetID` | `int` | yes | Offsets for pagination, for more info click here |
 | `Limit` | `int` | yes | Maximum number of results to return, see pagination |
 | `AllowPaidStars` | `int64` | — | For full text post searches (query), allows payment of the specified amount of Stars for the search, see here » for more info on the full flow. |
 
 ## Returns
 
-`MessagesMessagesClass`
+[`MessagesMessagesClass`](/docs/reference/types/messages/messages)
 
 ## Possible errors
 

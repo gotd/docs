@@ -37,13 +37,13 @@ client.Run(ctx, func(ctx context.Context) error {
 | ---- | ---- | -------- | ----------- |
 | `OnlyLeft` | `bool` | — | Whether this is a removal of members that already left the conference call. |
 | `Kick` | `bool` | — | Whether this is a forced removal of active members in a conference call. |
-| `Call` | `InputGroupCallClass` | yes | The conference call. |
+| `Call` | [`InputGroupCallClass`](/docs/reference/types/general/input-group-call) | yes | The conference call. |
 | `IDs` | `[]int64` | yes | IDs of users to remove. |
 | `Block` | `[]byte` | yes | The block containing an appropriate e2e.chain.changeSetGroupState event |
 
 ## Returns
 
-`UpdatesClass`
+[`UpdatesClass`](/docs/reference/types/general/updates)
 
 ## Possible errors
 

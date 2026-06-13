@@ -35,14 +35,14 @@ client.Run(ctx, func(ctx context.Context) error {
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| `Peer` | `InputPeerClass` | yes | The peer where to send the shortcut (users only, for now). |
+| `Peer` | [`InputPeerClass`](/docs/reference/types/general/input-peer) | yes | The peer where to send the shortcut (users only, for now). |
 | `ShortcutID` | `int` | yes | The ID of the quick reply shortcut to send. |
 | `ID` | `[]int` | yes | Specify a subset of messages from the shortcut to send; if empty, defaults to all of them. |
 | `RandomID` | `[]int64` | yes | Unique client IDs required to prevent message resending, one for each message we're sending, may be empty (but not recommended). |
 
 ## Returns
 
-`UpdatesClass`
+[`UpdatesClass`](/docs/reference/types/general/updates)
 
 ## Possible errors
 

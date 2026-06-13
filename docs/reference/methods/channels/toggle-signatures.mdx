@@ -37,11 +37,11 @@ client.Run(ctx, func(ctx context.Context) error {
 | ---- | ---- | -------- | ----------- |
 | `SignaturesEnabled` | `bool` | — | If set, enables message signatures. |
 | `ProfilesEnabled` | `bool` | — | If set, messages from channel admins will link to their profiles, just like for group messages: can only be set if the signatures_enabled flag is set. |
-| `Channel` | `InputChannelClass` | yes | Channel |
+| `Channel` | [`InputChannelClass`](/docs/reference/types/general/input-channel) | yes | Channel |
 
 ## Returns
 
-`UpdatesClass`
+[`UpdatesClass`](/docs/reference/types/general/updates)
 
 ## Possible errors
 

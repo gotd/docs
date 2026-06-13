@@ -18,14 +18,14 @@ type tg.InputSecureValue struct { /* ... */ }
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| `Type` | `SecureValueTypeClass` | yes | Secure passport value type |
-| `Data` | `SecureData` | — | Encrypted Telegram Passport element data |
-| `FrontSide` | `InputSecureFileClass` | — | Encrypted passport file with the front side of the document |
-| `ReverseSide` | `InputSecureFileClass` | — | Encrypted passport file with the reverse side of the document |
-| `Selfie` | `InputSecureFileClass` | — | Encrypted passport file with a selfie of the user holding the document |
-| `Translation` | `[]InputSecureFileClass` | — | Array of encrypted passport files with translated versions of the provided documents |
-| `Files` | `[]InputSecureFileClass` | — | Array of encrypted passport files with photos the of the documents |
-| `PlainData` | `SecurePlainDataClass` | — | Plaintext verified passport data |
+| `Type` | [`SecureValueTypeClass`](/docs/reference/types/general/secure-value-type) | yes | Secure passport value type |
+| `Data` | [`SecureData`](/docs/reference/constructors/general/secure-data) | — | Encrypted Telegram Passport element data |
+| `FrontSide` | [`InputSecureFileClass`](/docs/reference/types/general/input-secure-file) | — | Encrypted passport file with the front side of the document |
+| `ReverseSide` | [`InputSecureFileClass`](/docs/reference/types/general/input-secure-file) | — | Encrypted passport file with the reverse side of the document |
+| `Selfie` | [`InputSecureFileClass`](/docs/reference/types/general/input-secure-file) | — | Encrypted passport file with a selfie of the user holding the document |
+| `Translation` | [`[]InputSecureFileClass`](/docs/reference/types/general/input-secure-file) | — | Array of encrypted passport files with translated versions of the provided documents |
+| `Files` | [`[]InputSecureFileClass`](/docs/reference/types/general/input-secure-file) | — | Array of encrypted passport files with photos the of the documents |
+| `PlainData` | [`SecurePlainDataClass`](/docs/reference/types/general/secure-plain-data) | — | Plaintext verified passport data |
 
 ## References
 

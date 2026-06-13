@@ -20,12 +20,12 @@ Implements [`Update`](/docs/reference/types/general/update).
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| `Peer` | `PeerClass` | — | Peer field of UpdateMessagePoll. |
+| `Peer` | [`PeerClass`](/docs/reference/types/general/peer) | — | Peer field of UpdateMessagePoll. |
 | `MsgID` | `int` | — | MsgID field of UpdateMessagePoll. |
 | `TopMsgID` | `int` | — | TopMsgID field of UpdateMessagePoll. |
 | `PollID` | `int64` | yes | Poll ID |
-| `Poll` | `Poll` | — | If the server knows the client hasn't cached this poll yet, the poll itself |
-| `Results` | `PollResults` | yes | New poll results |
+| `Poll` | [`Poll`](/docs/reference/constructors/general/poll) | — | If the server knows the client hasn't cached this poll yet, the poll itself |
+| `Results` | [`PollResults`](/docs/reference/constructors/general/poll-results) | yes | New poll results |
 
 ## References
 

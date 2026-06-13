@@ -19,7 +19,11 @@ type tg.AccountAuthorizations struct { /* ... */ }
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
 | `AuthorizationTTLDays` | `int` | yes | Time-to-live of session |
-| `Authorizations` | `[]Authorization` | yes | Logged-in sessions |
+| `Authorizations` | [`[]Authorization`](/docs/reference/constructors/general/authorization) | yes | Logged-in sessions |
+
+## Returned by
+
+- [`account.getAuthorizations`](/docs/reference/methods/account/get-authorizations)
 
 ## References
 

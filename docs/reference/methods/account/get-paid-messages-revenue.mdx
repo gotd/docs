@@ -35,12 +35,12 @@ client.Run(ctx, func(ctx context.Context) error {
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| `ParentPeer` | `InputPeerClass` | — | If set, can contain the ID of a monoforum (channel direct messages) to obtain the number of stars the user has spent to send us direct messages via the channel. |
-| `UserID` | `InputUserClass` | yes | The user that paid to send us messages. |
+| `ParentPeer` | [`InputPeerClass`](/docs/reference/types/general/input-peer) | — | If set, can contain the ID of a monoforum (channel direct messages) to obtain the number of stars the user has spent to send us direct messages via the channel. |
+| `UserID` | [`InputUserClass`](/docs/reference/types/general/input-user) | yes | The user that paid to send us messages. |
 
 ## Returns
 
-`*AccountPaidMessagesRevenue`
+[`*AccountPaidMessagesRevenue`](/docs/reference/constructors/account/paid-messages-revenue)
 
 ## Possible errors
 

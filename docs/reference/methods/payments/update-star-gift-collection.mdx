@@ -35,16 +35,16 @@ client.Run(ctx, func(ctx context.Context) error {
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| `Peer` | `InputPeerClass` | yes | Peer that owns the collection. |
+| `Peer` | [`InputPeerClass`](/docs/reference/types/general/input-peer) | yes | Peer that owns the collection. |
 | `CollectionID` | `int` | yes | Collection ID. |
 | `Title` | `string` | — | Title of the collection, to rename the collection. |
-| `DeleteStargift` | `[]InputSavedStarGiftClass` | — | Can contain a list of gifts to remove from the collection. |
-| `AddStargift` | `[]InputSavedStarGiftClass` | — | Can contain a list of gifts to add to the collection. |
-| `Order` | `[]InputSavedStarGiftClass` | — | Can contain the new gift order. |
+| `DeleteStargift` | [`[]InputSavedStarGiftClass`](/docs/reference/types/general/input-saved-star-gift) | — | Can contain a list of gifts to remove from the collection. |
+| `AddStargift` | [`[]InputSavedStarGiftClass`](/docs/reference/types/general/input-saved-star-gift) | — | Can contain a list of gifts to add to the collection. |
+| `Order` | [`[]InputSavedStarGiftClass`](/docs/reference/types/general/input-saved-star-gift) | — | Can contain the new gift order. |
 
 ## Returns
 
-`*StarGiftCollection`
+[`*StarGiftCollection`](/docs/reference/constructors/general/star-gift-collection)
 
 ## Possible errors
 

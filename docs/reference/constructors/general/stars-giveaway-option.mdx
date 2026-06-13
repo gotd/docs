@@ -25,7 +25,11 @@ type tg.StarsGiveawayOption struct { /* ... */ }
 | `StoreProduct` | `string` | — | Identifier of the store product associated with the option, official apps only. |
 | `Currency` | `string` | yes | Three-letter ISO 4217 currency code |
 | `Amount` | `int64` | yes | Total price in the smallest units of the currency (integer, not float/double). For example, for a price of US$ 1.45 pass amount = 145. See the exp parameter in currencies.json, it shows the number of digits past the decimal point for each currency (2 for the majority of currencies). |
-| `Winners` | `[]StarsGiveawayWinnersOption` | yes | Allowed options for the number of giveaway winners. |
+| `Winners` | [`[]StarsGiveawayWinnersOption`](/docs/reference/constructors/general/stars-giveaway-winners-option) | yes | Allowed options for the number of giveaway winners. |
+
+## Returned by
+
+- [`payments.getStarsGiveawayOptions`](/docs/reference/methods/payments/get-stars-giveaway-options)
 
 ## References
 

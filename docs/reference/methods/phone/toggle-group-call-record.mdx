@@ -37,13 +37,13 @@ client.Run(ctx, func(ctx context.Context) error {
 | ---- | ---- | -------- | ----------- |
 | `Start` | `bool` | — | Whether to start or stop recording |
 | `Video` | `bool` | — | Whether to also record video streams |
-| `Call` | `InputGroupCallClass` | yes | The group call or livestream |
+| `Call` | [`InputGroupCallClass`](/docs/reference/types/general/input-group-call) | yes | The group call or livestream |
 | `Title` | `string` | — | Recording title |
 | `VideoPortrait` | `bool` | — | If video stream recording is enabled, whether to record in portrait or landscape mode |
 
 ## Returns
 
-`UpdatesClass`
+[`UpdatesClass`](/docs/reference/types/general/updates)
 
 ## Possible errors
 

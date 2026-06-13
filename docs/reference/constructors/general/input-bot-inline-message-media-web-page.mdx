@@ -25,9 +25,9 @@ Implements [`InputBotInlineMessage`](/docs/reference/types/general/input-bot-inl
 | `ForceSmallMedia` | `bool` | — | If set, specifies that a small media preview should be used. |
 | `Optional` | `bool` | — | If not set, a WEBPAGE_NOT_FOUND RPC error will be emitted if a webpage preview cannot be generated for the specified url; otherwise, no error will be emitted (unless the provided message is also empty, in which case a MESSAGE_EMPTY will be emitted, instead). |
 | `Message` | `string` | yes | The message, can be empty. |
-| `Entities` | `[]MessageEntityClass` | — | Message entities for styled text |
+| `Entities` | [`[]MessageEntityClass`](/docs/reference/types/general/message-entity) | — | Message entities for styled text |
 | `URL` | `string` | yes | The URL to use for the link preview. |
-| `ReplyMarkup` | `ReplyMarkupClass` | — | Inline keyboard |
+| `ReplyMarkup` | [`ReplyMarkupClass`](/docs/reference/types/general/reply-markup) | — | Inline keyboard |
 
 ## References
 

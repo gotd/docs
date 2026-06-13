@@ -37,13 +37,13 @@ client.Run(ctx, func(ctx context.Context) error {
 | ---- | ---- | -------- | ----------- |
 | `Big` | `bool` | — | Whether a bigger and longer reaction should be shown |
 | `AddToRecent` | `bool` | — | Whether to add this reaction to the recent reactions list ». |
-| `Peer` | `InputPeerClass` | yes | Peer |
+| `Peer` | [`InputPeerClass`](/docs/reference/types/general/input-peer) | yes | Peer |
 | `MsgID` | `int` | yes | Message ID to react to |
-| `Reaction` | `[]ReactionClass` | — | A list of reactions (doesn't accept reactionPaid constructors, use messages sendPaidReaction to send paid reactions, instead). |
+| `Reaction` | [`[]ReactionClass`](/docs/reference/types/general/reaction) | — | A list of reactions (doesn't accept reactionPaid constructors, use messages sendPaidReaction to send paid reactions, instead). |
 
 ## Returns
 
-`UpdatesClass`
+[`UpdatesClass`](/docs/reference/types/general/updates)
 
 ## Possible errors
 

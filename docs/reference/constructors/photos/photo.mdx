@@ -18,8 +18,14 @@ type tg.PhotosPhoto struct { /* ... */ }
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| `Photo` | `PhotoClass` | yes | Photo |
-| `Users` | `[]UserClass` | yes | Users |
+| `Photo` | [`PhotoClass`](/docs/reference/types/general/photo) | yes | Photo |
+| `Users` | [`[]UserClass`](/docs/reference/types/general/user) | yes | Users |
+
+## Returned by
+
+- [`photos.updateProfilePhoto`](/docs/reference/methods/photos/update-profile-photo)
+- [`photos.uploadContactProfilePhoto`](/docs/reference/methods/photos/upload-contact-profile-photo)
+- [`photos.uploadProfilePhoto`](/docs/reference/methods/photos/upload-profile-photo)
 
 ## References
 

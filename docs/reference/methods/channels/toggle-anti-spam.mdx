@@ -35,12 +35,12 @@ client.Run(ctx, func(ctx context.Context) error {
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| `Channel` | `InputChannelClass` | yes | Supergroup ID. The specified supergroup must have at least telegram_antispam_group_size_min members to enable antispam functionality, as specified by the client configuration parameters. |
+| `Channel` | [`InputChannelClass`](/docs/reference/types/general/input-channel) | yes | Supergroup ID. The specified supergroup must have at least telegram_antispam_group_size_min members to enable antispam functionality, as specified by the client configuration parameters. |
 | `Enabled` | `bool` | yes | Enable or disable the native antispam system. |
 
 ## Returns
 
-`UpdatesClass`
+[`UpdatesClass`](/docs/reference/types/general/updates)
 
 ## Possible errors
 

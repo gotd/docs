@@ -36,12 +36,12 @@ client.Run(ctx, func(ctx context.Context) error {
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
 | `Approved` | `bool` | — | Whether to dismiss or approve the chat join request » |
-| `Peer` | `InputPeerClass` | yes | The chat or channel |
-| `UserID` | `InputUserClass` | yes | The user whose join request » should be dismissed or approved |
+| `Peer` | [`InputPeerClass`](/docs/reference/types/general/input-peer) | yes | The chat or channel |
+| `UserID` | [`InputUserClass`](/docs/reference/types/general/input-user) | yes | The user whose join request » should be dismissed or approved |
 
 ## Returns
 
-`UpdatesClass`
+[`UpdatesClass`](/docs/reference/types/general/updates)
 
 ## Possible errors
 

@@ -20,8 +20,12 @@ type tg.FactCheck struct { /* ... */ }
 | ---- | ---- | -------- | ----------- |
 | `NeedCheck` | `bool` | — | If set, the country/text fields will not be set, and the fact check must be fetched manually by the client (if it isn't already cached with the key specified in hash) using bundled messages.getFactCheck requests, when the message with the factcheck scrolls into view. |
 | `Country` | `string` | — | A two-letter ISO 3166-1 alpha-2 country code of the country for which the fact-check should be shown. |
-| `Text` | `TextWithEntities` | — | The fact-check. |
+| `Text` | [`TextWithEntities`](/docs/reference/constructors/general/text-with-entities) | — | The fact-check. |
 | `Hash` | `int64` | yes | Hash used for caching, for more info click here |
+
+## Returned by
+
+- [`messages.getFactCheck`](/docs/reference/methods/messages/get-fact-check)
 
 ## References
 

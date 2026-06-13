@@ -38,12 +38,12 @@ client.Run(ctx, func(ctx context.Context) error {
 | `Silent` | `bool` | — | Pin the message silently, without triggering a notification |
 | `Unpin` | `bool` | — | Whether the message should unpinned or pinned |
 | `PmOneside` | `bool` | — | Whether the message should only be pinned on the local side of a one-to-one chat |
-| `Peer` | `InputPeerClass` | yes | The peer where to pin the message |
+| `Peer` | [`InputPeerClass`](/docs/reference/types/general/input-peer) | yes | The peer where to pin the message |
 | `ID` | `int` | yes | The message to pin or unpin |
 
 ## Returns
 
-`UpdatesClass`
+[`UpdatesClass`](/docs/reference/types/general/updates)
 
 ## Possible errors
 

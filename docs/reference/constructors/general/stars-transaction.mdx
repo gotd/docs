@@ -33,24 +33,24 @@ type tg.StarsTransaction struct { /* ... */ }
 | `StargiftAuctionBid` | `bool` | — | Represents payment for placing a collectible gift auction bid ». |
 | `Offer` | `bool` | — | Represents payment for a collectible gift purchase offer ». |
 | `ID` | `string` | yes | Transaction ID. |
-| `Amount` | `StarsAmountClass` | yes | Amount of Telegram Stars or TON. |
+| `Amount` | [`StarsAmountClass`](/docs/reference/types/general/stars-amount) | yes | Amount of Telegram Stars or TON. |
 | `Date` | `int` | yes | Date of the transaction (unixtime). |
-| `Peer` | `StarsTransactionPeerClass` | yes | Source of the incoming transaction, or its recipient for outgoing transactions. |
+| `Peer` | [`StarsTransactionPeerClass`](/docs/reference/types/general/stars-transaction-peer) | yes | Source of the incoming transaction, or its recipient for outgoing transactions. |
 | `Title` | `string` | — | For transactions with bots, title of the bought product. |
 | `Description` | `string` | — | For transactions with bots, description of the bought product. |
-| `Photo` | `WebDocumentClass` | — | For transactions with bots, photo of the bought product. |
+| `Photo` | [`WebDocumentClass`](/docs/reference/types/general/web-document) | — | For transactions with bots, photo of the bought product. |
 | `TransactionDate` | `int` | — | If neither pending nor failed are set, the transaction was completed successfully, and this field will contain the point in time (Unix timestamp) when the withdrawal was completed successfully. |
 | `TransactionURL` | `string` | — | If neither pending nor failed are set, the transaction was completed successfully, and this field will contain a URL where the withdrawal transaction can be viewed. |
 | `BotPayload` | `[]byte` | — | Bot specified invoice payload (i.e. the payload passed to inputMediaInvoice when creating the invoice). |
 | `MsgID` | `int` | — | For paid media transactions », message ID of the paid media posted to peer.peer (can point to a deleted message; either way, extended_media will always contain the bought media). |
-| `ExtendedMedia` | `[]MessageMediaClass` | — | The purchased paid media ». |
+| `ExtendedMedia` | [`[]MessageMediaClass`](/docs/reference/types/general/message-media) | — | The purchased paid media ». |
 | `SubscriptionPeriod` | `int` | — | The number of seconds between consecutive Telegram Star debiting for Telegram Star subscriptions ». |
 | `GiveawayPostID` | `int` | — | ID of the message containing the messageMediaGiveaway, for incoming star giveaway prizes. |
-| `Stargift` | `StarGiftClass` | — | This transaction indicates a purchase or a sale (conversion back to Stars) of a gift ». |
+| `Stargift` | [`StarGiftClass`](/docs/reference/types/general/star-gift) | — | This transaction indicates a purchase or a sale (conversion back to Stars) of a gift ». |
 | `FloodskipNumber` | `int` | — | This transaction is payment for paid bot broadcasts. Paid broadcasts are only allowed if the allow_paid_floodskip parameter of messages.sendMessage and other message sending methods is set while trying to broadcast more than 30 messages per second to bot users. The integer value returned by this flag indicates the number of billed API calls. |
 | `StarrefCommissionPermille` | `int` | — | This transaction is the receival (or refund) of an affiliate commission (i.e. this is the transaction received by the peer that created the referral link, flag 17 is for transactions made by users that imported the referral link). |
-| `StarrefPeer` | `PeerClass` | — | For transactions made by referred users, the peer that received the affiliate commission. |
-| `StarrefAmount` | `StarsAmountClass` | — | For transactions made by referred users, the amount of Telegram Stars received by the affiliate, can be negative for refunds. |
+| `StarrefPeer` | [`PeerClass`](/docs/reference/types/general/peer) | — | For transactions made by referred users, the peer that received the affiliate commission. |
+| `StarrefAmount` | [`StarsAmountClass`](/docs/reference/types/general/stars-amount) | — | For transactions made by referred users, the amount of Telegram Stars received by the affiliate, can be negative for refunds. |
 | `PaidMessages` | `int` | — | This transaction is related to the reception or transmission of a paid message ». |
 | `PremiumGiftMonths` | `int` | — | This transaction indicates the payment for a gifted Telegram Premium subscription ». |
 | `AdsProceedsFromDate` | `int` | — | Indicates that this is payment for ad revenue from the specified unixtime (always set together with ads_proceeds_to_date). |

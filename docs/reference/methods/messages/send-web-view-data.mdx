@@ -35,14 +35,14 @@ client.Run(ctx, func(ctx context.Context) error {
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| `Bot` | `InputUserClass` | yes | Bot that owns the web app |
+| `Bot` | [`InputUserClass`](/docs/reference/types/general/input-user) | yes | Bot that owns the web app |
 | `RandomID` | `int64` | yes | Unique client message ID to prevent duplicate sending of the same event |
 | `ButtonText` | `string` | yes | Text of the keyboardButtonSimpleWebView that was pressed to open the web app. |
 | `Data` | `string` | yes | Data to relay to the bot, obtained from a web_app_data_send JS event. |
 
 ## Returns
 
-`UpdatesClass`
+[`UpdatesClass`](/docs/reference/types/general/updates)
 
 ## Possible errors
 

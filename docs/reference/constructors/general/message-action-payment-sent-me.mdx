@@ -25,9 +25,9 @@ Implements [`MessageAction`](/docs/reference/types/general/message-action).
 | `Currency` | `string` | yes | Three-letter ISO 4217 currency code, or XTR for Telegram Stars. |
 | `TotalAmount` | `int64` | yes | Price of the product in the smallest units of the currency (integer, not float/double) For example, for a price of US$ 1.45 pass amount = 145. See the exp parameter in currencies.json, it shows the number of digits past the decimal point for each currency (2 for the majority of currencies). |
 | `Payload` | `[]byte` | yes | Bot specified invoice payload |
-| `Info` | `PaymentRequestedInfo` | — | Order info provided by the user |
+| `Info` | [`PaymentRequestedInfo`](/docs/reference/constructors/general/payment-requested-info) | — | Order info provided by the user |
 | `ShippingOptionID` | `string` | — | Identifier of the shipping option chosen by the user |
-| `Charge` | `PaymentCharge` | yes | Provider payment identifier |
+| `Charge` | [`PaymentCharge`](/docs/reference/constructors/general/payment-charge) | yes | Provider payment identifier |
 | `SubscriptionUntilDate` | `int` | — | Expiration date of the Telegram Star subscription ». |
 
 ## References

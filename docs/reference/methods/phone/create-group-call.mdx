@@ -36,14 +36,14 @@ client.Run(ctx, func(ctx context.Context) error {
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
 | `RtmpStream` | `bool` | — | Whether RTMP stream support should be enabled: only the group/supergroup/channel owner can use this flag. |
-| `Peer` | `InputPeerClass` | yes | Associate the group call or livestream to the provided group/supergroup/channel |
+| `Peer` | [`InputPeerClass`](/docs/reference/types/general/input-peer) | yes | Associate the group call or livestream to the provided group/supergroup/channel |
 | `RandomID` | `int` | yes | Unique client message ID required to prevent creation of duplicate group calls |
 | `Title` | `string` | — | Call title, if not set defaults to the group/channel's name. |
 | `ScheduleDate` | `int` | — | For scheduled group call or livestreams, the absolute date (unixtime) when the group call is expected to start: the date must be at least 10 seconds and at most 8 days in the future. |
 
 ## Returns
 
-`UpdatesClass`
+[`UpdatesClass`](/docs/reference/types/general/updates)
 
 ## Possible errors
 

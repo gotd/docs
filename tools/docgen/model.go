@@ -12,15 +12,17 @@ type Method struct {
 	DocURL     string  // https://core.telegram.org/method/<TLName>
 	Signature  string  // full Go signature as users call it
 	Usage      string  // runnable "calling this method" snippet
-	Params     []Param // request parameters
-	ReturnType string  // Go return type (excluding error), e.g. UpdatesClass
-	Errors     []ErrorRow
+	Params       []Param // request parameters
+	ReturnType   string  // Go return type (excluding error), e.g. UpdatesClass
+	ReturnTypeMD string  // ReturnType rendered as Markdown, linked when it has a reference page
+	Errors       []ErrorRow
 }
 
 // Param is one field of a method request or a constructor.
 type Param struct {
 	Name        string
 	GoType      string
+	TypeMD      string // GoType rendered as Markdown, linked when it has a reference page
 	Optional    bool
 	Description string
 }
@@ -43,7 +45,8 @@ type Constructor struct {
 	Summary    string
 	DocURL     string // https://core.telegram.org/constructor/<TLName>
 	Fields     []Param
-	Implements *Ref // the class it constructs, or nil for bare types
+	Implements *Ref   // the class it constructs, or nil for bare types
+	ReturnedBy []*Ref // methods that return this constructor
 }
 
 // Type is a TL class: an interface implemented by one or more constructors.
@@ -56,10 +59,12 @@ type Type struct {
 	Summary      string
 	DocURL       string // https://core.telegram.org/type/<TLName>
 	Constructors []*Ref
+	ReturnedBy   []*Ref // methods that return this type
 }
 
 // Ref is a cross-reference to another generated page.
 type Ref struct {
+	Kind      string // "types" or "constructors"
 	GoName    string
 	TLName    string
 	Namespace string

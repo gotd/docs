@@ -20,7 +20,7 @@ Implements [`InputPasskeyResponse`](/docs/reference/types/general/input-passkey-
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| `ClientData` | `DataJSON` | yes | Base64url-decoded clientDataJSON field of an AuthenticatorAssertionResponse, wrapped in dataJSON |
+| `ClientData` | [`DataJSON`](/docs/reference/constructors/general/data-j-s-o-n) | yes | Base64url-decoded clientDataJSON field of an AuthenticatorAssertionResponse, wrapped in dataJSON |
 | `AuthenticatorData` | `[]byte` | yes | Base64url-decoded authenticatorData field of an AuthenticatorAssertionResponse |
 | `Signature` | `[]byte` | yes | Base64url-decoded signature field of an AuthenticatorAssertionResponse |
 | `UserHandle` | `string` | yes | Base64url-decoded userHandle field of an AuthenticatorAssertionResponse. The user handle specified by the server is in &lt;dc_id&gt;:&lt;user_id&gt; format. |

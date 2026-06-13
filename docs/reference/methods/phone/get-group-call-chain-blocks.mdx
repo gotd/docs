@@ -35,14 +35,14 @@ client.Run(ctx, func(ctx context.Context) error {
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| `Call` | `InputGroupCallClass` | yes | The conference. |
+| `Call` | [`InputGroupCallClass`](/docs/reference/types/general/input-group-call) | yes | The conference. |
 | `SubChainID` | `int` | yes | Subchain ID. |
 | `Offset` | `int` | yes | Offset for pagination. |
 | `Limit` | `int` | yes | Maximum number of blocks to return in this call, see pagination |
 
 ## Returns
 
-`UpdatesClass`
+[`UpdatesClass`](/docs/reference/types/general/updates)
 
 ## Possible errors
 

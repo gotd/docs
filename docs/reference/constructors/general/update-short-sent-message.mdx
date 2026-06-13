@@ -25,8 +25,8 @@ Implements [`Updates`](/docs/reference/types/general/updates).
 | `Pts` | `int` | yes | PTS |
 | `PtsCount` | `int` | yes | PTS count |
 | `Date` | `int` | yes | date |
-| `Media` | `MessageMediaClass` | — | Attached media |
-| `Entities` | `[]MessageEntityClass` | — | Entities for styled text |
+| `Media` | [`MessageMediaClass`](/docs/reference/types/general/message-media) | — | Attached media |
+| `Entities` | [`[]MessageEntityClass`](/docs/reference/types/general/message-entity) | — | Entities for styled text |
 | `TTLPeriod` | `int` | — | Time To Live of the message, once message.date+message.ttl_period === time(), the message will be deleted on the server, and must be deleted locally as well. |
 
 ## References

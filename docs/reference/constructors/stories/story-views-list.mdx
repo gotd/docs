@@ -22,10 +22,14 @@ type tg.StoriesStoryViewsList struct { /* ... */ }
 | `ViewsCount` | `int` | yes | Total number of story views |
 | `ForwardsCount` | `int` | yes | Total number of story forwards/reposts |
 | `ReactionsCount` | `int` | yes | Number of reactions that were added to the story |
-| `Views` | `[]StoryViewClass` | yes | Story view date and reaction information |
-| `Chats` | `[]ChatClass` | yes | Mentioned chats |
-| `Users` | `[]UserClass` | yes | Mentioned users |
+| `Views` | [`[]StoryViewClass`](/docs/reference/types/general/story-view) | yes | Story view date and reaction information |
+| `Chats` | [`[]ChatClass`](/docs/reference/types/general/chat) | yes | Mentioned chats |
+| `Users` | [`[]UserClass`](/docs/reference/types/general/user) | yes | Mentioned users |
 | `NextOffset` | `string` | — | Offset for pagination |
+
+## Returned by
+
+- [`stories.getStoryViewsList`](/docs/reference/methods/stories/get-story-views-list)
 
 ## References
 

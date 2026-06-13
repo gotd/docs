@@ -36,12 +36,12 @@ client.Run(ctx, func(ctx context.Context) error {
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
 | `Background` | `bool` | — | While the geolocation of the current user is public, clients should update it in the background every half-an-hour or so, while setting this flag. Do this only if the new location is more than 1 KM away from the previous one, or if the previous location is unknown. |
-| `GeoPoint` | `InputGeoPointClass` | yes | Geolocation |
+| `GeoPoint` | [`InputGeoPointClass`](/docs/reference/types/general/input-geo-point) | yes | Geolocation |
 | `SelfExpires` | `int` | — | If set, the geolocation of the current user will be public for the specified number of seconds; pass 0x7fffffff to disable expiry, 0 to make the current geolocation private; if the flag isn't set, no changes will be applied. |
 
 ## Returns
 
-`UpdatesClass`
+[`UpdatesClass`](/docs/reference/types/general/updates)
 
 ## Possible errors
 

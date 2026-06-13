@@ -35,15 +35,15 @@ client.Run(ctx, func(ctx context.Context) error {
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| `Peer` | `InputPeerClass` | yes | Peer |
+| `Peer` | [`InputPeerClass`](/docs/reference/types/general/input-peer) | yes | Peer |
 | `ID` | `int` | yes | Message ID |
-| `Reaction` | `ReactionClass` | — | Get only reactions of this type |
+| `Reaction` | [`ReactionClass`](/docs/reference/types/general/reaction) | — | Get only reactions of this type |
 | `Offset` | `string` | — | Offset for pagination (taken from the next_offset field of the returned messages MessageReactionsList); empty in the first request. |
 | `Limit` | `int` | yes | Maximum number of results to return, see pagination |
 
 ## Returns
 
-`*MessagesMessageReactionsList`
+[`*MessagesMessageReactionsList`](/docs/reference/constructors/messages/message-reactions-list)
 
 ## Possible errors
 

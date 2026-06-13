@@ -20,9 +20,14 @@ type tg.BusinessChatLink struct { /* ... */ }
 | ---- | ---- | -------- | ----------- |
 | `Link` | `string` | yes | Business chat deep link. |
 | `Message` | `string` | yes | Message to pre-fill in the message input field. |
-| `Entities` | `[]MessageEntityClass` | — | Message entities for styled text |
+| `Entities` | [`[]MessageEntityClass`](/docs/reference/types/general/message-entity) | — | Message entities for styled text |
 | `Title` | `string` | — | Human-readable name of the link, to simplify management in the UI (only visible to the creator of the link). |
 | `Views` | `int` | yes | Number of times the link was resolved (clicked/scanned/etc...). |
+
+## Returned by
+
+- [`account.createBusinessChatLink`](/docs/reference/methods/account/create-business-chat-link)
+- [`account.editBusinessChatLink`](/docs/reference/methods/account/edit-business-chat-link)
 
 ## References
 

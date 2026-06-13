@@ -37,8 +37,8 @@ client.Run(ctx, func(ctx context.Context) error {
 | ---- | ---- | -------- | ----------- |
 | `RefundCharged` | `bool` | — | If set and require_payment is not set, refunds the amounts the user has already paid us to send us messages (directly or via a monoforum). |
 | `RequirePayment` | `bool` | — | If set, requires the user to pay in order to send us messages. Can only be set by monoforums, not users, i.e. parent_peer must be set if this flag is set; users must instead use the inputPrivacyKeyNoPaidMessages privacy setting to remove a previously added exemption. If not set, allows the user to send us messages without paying (can be unset by both monoforums and users). |
-| `ParentPeer` | `InputPeerClass` | — | If set, applies the setting within the monoforum aka direct messages » (pass the ID of the monoforum, not the ID of the associated channel). |
-| `UserID` | `InputUserClass` | yes | The user to exempt or unexempt. |
+| `ParentPeer` | [`InputPeerClass`](/docs/reference/types/general/input-peer) | — | If set, applies the setting within the monoforum aka direct messages » (pass the ID of the monoforum, not the ID of the associated channel). |
+| `UserID` | [`InputUserClass`](/docs/reference/types/general/input-user) | yes | The user to exempt or unexempt. |
 
 ## Returns
 

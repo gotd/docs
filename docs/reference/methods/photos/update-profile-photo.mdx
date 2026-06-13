@@ -36,12 +36,12 @@ client.Run(ctx, func(ctx context.Context) error {
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
 | `Fallback` | `bool` | — | If set, the chosen profile photo will be shown to users that can't display your main profile photo due to your privacy settings. |
-| `Bot` | `InputUserClass` | — | Can contain info of a bot we own, to change the profile photo of that bot, instead of the current user. |
-| `ID` | `InputPhotoClass` | yes | Input photo |
+| `Bot` | [`InputUserClass`](/docs/reference/types/general/input-user) | — | Can contain info of a bot we own, to change the profile photo of that bot, instead of the current user. |
+| `ID` | [`InputPhotoClass`](/docs/reference/types/general/input-photo) | yes | Input photo |
 
 ## Returns
 
-`*PhotosPhoto`
+[`*PhotosPhoto`](/docs/reference/constructors/photos/photo)
 
 ## Possible errors
 

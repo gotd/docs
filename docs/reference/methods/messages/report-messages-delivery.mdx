@@ -36,7 +36,7 @@ client.Run(ctx, func(ctx context.Context) error {
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
 | `Push` | `bool` | — | Must be set if the messages were received from a push notification. |
-| `Peer` | `InputPeerClass` | yes | The peer where the messages were received. |
+| `Peer` | [`InputPeerClass`](/docs/reference/types/general/input-peer) | yes | The peer where the messages were received. |
 | `ID` | `[]int` | yes | The IDs of the received messages. |
 
 ## Returns

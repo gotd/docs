@@ -24,10 +24,10 @@ type tg.SponsoredMessage struct { /* ... */ }
 | `URL` | `string` | yes | Contains the URL to open when the user clicks on the sponsored message. |
 | `Title` | `string` | yes | Contains the title of the sponsored message. |
 | `Message` | `string` | yes | Sponsored message |
-| `Entities` | `[]MessageEntityClass` | — | Message entities for styled text in message. |
-| `Photo` | `PhotoClass` | — | If set, contains a custom profile photo bubble that should be displayed for the sponsored message, like for messages sent in groups. |
-| `Media` | `MessageMediaClass` | — | If set, contains some media. |
-| `Color` | `PeerColorClass` | — | If set, the sponsored message should use the message accent color » specified in color. |
+| `Entities` | [`[]MessageEntityClass`](/docs/reference/types/general/message-entity) | — | Message entities for styled text in message. |
+| `Photo` | [`PhotoClass`](/docs/reference/types/general/photo) | — | If set, contains a custom profile photo bubble that should be displayed for the sponsored message, like for messages sent in groups. |
+| `Media` | [`MessageMediaClass`](/docs/reference/types/general/message-media) | — | If set, contains some media. |
+| `Color` | [`PeerColorClass`](/docs/reference/types/general/peer-color) | — | If set, the sponsored message should use the message accent color » specified in color. |
 | `ButtonText` | `string` | yes | Label of the sponsored message button. |
 | `SponsorInfo` | `string` | — | If set, contains additional information about the sponsor to be shown along with the message. |
 | `AdditionalInfo` | `string` | — | If set, contains additional information about the sponsored message to be shown along with the message. |

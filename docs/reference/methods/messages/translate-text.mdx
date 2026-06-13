@@ -35,15 +35,15 @@ client.Run(ctx, func(ctx context.Context) error {
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| `Peer` | `InputPeerClass` | — | If the text is a chat message, the peer ID |
+| `Peer` | [`InputPeerClass`](/docs/reference/types/general/input-peer) | — | If the text is a chat message, the peer ID |
 | `ID` | `[]int` | — | A list of message IDs to translate |
-| `Text` | `[]TextWithEntities` | — | A list of styled messages to translate |
+| `Text` | [`[]TextWithEntities`](/docs/reference/constructors/general/text-with-entities) | — | A list of styled messages to translate |
 | `ToLang` | `string` | yes | Two-letter ISO 639-1 language code of the language to which the message is translated |
 | `Tone` | `string` | — | Tone field of MessagesTranslateTextRequest. |
 
 ## Returns
 
-`*MessagesTranslateResult`
+[`*MessagesTranslateResult`](/docs/reference/constructors/messages/translate-result)
 
 ## Possible errors
 

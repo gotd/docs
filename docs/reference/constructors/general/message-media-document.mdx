@@ -25,9 +25,9 @@ Implements [`MessageMedia`](/docs/reference/types/general/message-media).
 | `Video` | `bool` | — | Whether this is a video. |
 | `Round` | `bool` | — | Whether this is a round video. |
 | `Voice` | `bool` | — | Whether this is a voice message. |
-| `Document` | `DocumentClass` | — | Attached document |
-| `AltDocuments` | `[]DocumentClass` | — | Videos only, contains alternative qualities of the video. |
-| `VideoCover` | `PhotoClass` | — | Custom video cover. |
+| `Document` | [`DocumentClass`](/docs/reference/types/general/document) | — | Attached document |
+| `AltDocuments` | [`[]DocumentClass`](/docs/reference/types/general/document) | — | Videos only, contains alternative qualities of the video. |
+| `VideoCover` | [`PhotoClass`](/docs/reference/types/general/photo) | — | Custom video cover. |
 | `VideoTimestamp` | `int` | — | Start playing the video at the specified timestamp (seconds). |
 | `TTLSeconds` | `int` | — | Time to live of self-destructing document |
 

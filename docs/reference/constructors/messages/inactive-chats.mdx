@@ -19,8 +19,12 @@ type tg.MessagesInactiveChats struct { /* ... */ }
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
 | `Dates` | `[]int` | yes | When was the chat last active |
-| `Chats` | `[]ChatClass` | yes | Chat list |
-| `Users` | `[]UserClass` | yes | Users mentioned in the chat list |
+| `Chats` | [`[]ChatClass`](/docs/reference/types/general/chat) | yes | Chat list |
+| `Users` | [`[]UserClass`](/docs/reference/types/general/user) | yes | Users mentioned in the chat list |
+
+## Returned by
+
+- [`channels.getInactiveChannels`](/docs/reference/methods/channels/get-inactive-channels)
 
 ## References
 

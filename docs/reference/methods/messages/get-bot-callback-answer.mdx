@@ -36,14 +36,14 @@ client.Run(ctx, func(ctx context.Context) error {
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
 | `Game` | `bool` | — | Whether this is a "play game" button |
-| `Peer` | `InputPeerClass` | yes | Where was the inline keyboard sent |
+| `Peer` | [`InputPeerClass`](/docs/reference/types/general/input-peer) | yes | Where was the inline keyboard sent |
 | `MsgID` | `int` | yes | ID of the Message with the inline keyboard |
 | `Data` | `[]byte` | — | Callback data |
-| `Password` | `InputCheckPasswordSRPClass` | — | For buttons requiring you to verify your identity with your 2FA password, the SRP payload generated using SRP. |
+| `Password` | [`InputCheckPasswordSRPClass`](/docs/reference/types/general/input-check-password-s-r-p) | — | For buttons requiring you to verify your identity with your 2FA password, the SRP payload generated using SRP. |
 
 ## Returns
 
-`*MessagesBotCallbackAnswer`
+[`*MessagesBotCallbackAnswer`](/docs/reference/constructors/messages/bot-callback-answer)
 
 ## Possible errors
 

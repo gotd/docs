@@ -36,13 +36,13 @@ client.Run(ctx, func(ctx context.Context) error {
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
 | `AddToRecent` | `bool` | — | Whether to add this reaction to the recent reactions list ». |
-| `Peer` | `InputPeerClass` | yes | The peer that sent the story |
+| `Peer` | [`InputPeerClass`](/docs/reference/types/general/input-peer) | yes | The peer that sent the story |
 | `StoryID` | `int` | yes | ID of the story to react to |
-| `Reaction` | `ReactionClass` | yes | Reaction |
+| `Reaction` | [`ReactionClass`](/docs/reference/types/general/reaction) | yes | Reaction |
 
 ## Returns
 
-`UpdatesClass`
+[`UpdatesClass`](/docs/reference/types/general/updates)
 
 ## Possible errors
 

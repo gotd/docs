@@ -19,9 +19,9 @@ type tg.HelpTermsOfService struct { /* ... */ }
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
 | `Popup` | `bool` | — | Whether a prompt must be showed to the user, in order to accept the new terms. |
-| `ID` | `DataJSON` | yes | ID of the new terms |
+| `ID` | [`DataJSON`](/docs/reference/constructors/general/data-j-s-o-n) | yes | ID of the new terms |
 | `Text` | `string` | yes | Text of the new terms |
-| `Entities` | `[]MessageEntityClass` | yes | Message entities for styled text |
+| `Entities` | [`[]MessageEntityClass`](/docs/reference/types/general/message-entity) | yes | Message entities for styled text |
 | `MinAgeConfirm` | `int` | — | Minimum age required to sign up to telegram, the user must confirm that they is older than the minimum age. |
 
 ## References

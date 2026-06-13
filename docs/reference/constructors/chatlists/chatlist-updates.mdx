@@ -18,9 +18,13 @@ type tg.ChatlistsChatlistUpdates struct { /* ... */ }
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| `MissingPeers` | `[]PeerClass` | yes | New peers to join |
-| `Chats` | `[]ChatClass` | yes | Related chat information |
-| `Users` | `[]UserClass` | yes | Related user information |
+| `MissingPeers` | [`[]PeerClass`](/docs/reference/types/general/peer) | yes | New peers to join |
+| `Chats` | [`[]ChatClass`](/docs/reference/types/general/chat) | yes | Related chat information |
+| `Users` | [`[]UserClass`](/docs/reference/types/general/user) | yes | Related user information |
+
+## Returned by
+
+- [`chatlists.getChatlistUpdates`](/docs/reference/methods/chatlists/get-chatlist-updates)
 
 ## References
 

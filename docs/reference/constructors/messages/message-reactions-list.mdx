@@ -19,10 +19,14 @@ type tg.MessagesMessageReactionsList struct { /* ... */ }
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
 | `Count` | `int` | yes | Total number of reactions matching query |
-| `Reactions` | `[]MessagePeerReaction` | yes | List of peers that reacted to a specific message |
-| `Chats` | `[]ChatClass` | yes | Mentioned chats |
-| `Users` | `[]UserClass` | yes | Mentioned users |
+| `Reactions` | [`[]MessagePeerReaction`](/docs/reference/constructors/general/message-peer-reaction) | yes | List of peers that reacted to a specific message |
+| `Chats` | [`[]ChatClass`](/docs/reference/types/general/chat) | yes | Mentioned chats |
+| `Users` | [`[]UserClass`](/docs/reference/types/general/user) | yes | Mentioned users |
 | `NextOffset` | `string` | — | If set, indicates the next offset to use to load more results by invoking messages getMessageReactionsList. |
+
+## Returned by
+
+- [`messages.getMessageReactionsList`](/docs/reference/methods/messages/get-message-reactions-list)
 
 ## References
 

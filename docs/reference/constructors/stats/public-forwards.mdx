@@ -19,10 +19,15 @@ type tg.StatsPublicForwards struct { /* ... */ }
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
 | `Count` | `int` | yes | Total number of results |
-| `Forwards` | `[]PublicForwardClass` | yes | Info about the forwards of a story. |
+| `Forwards` | [`[]PublicForwardClass`](/docs/reference/types/general/public-forward) | yes | Info about the forwards of a story. |
 | `NextOffset` | `string` | — | Offset used for pagination. |
-| `Chats` | `[]ChatClass` | yes | Mentioned chats |
-| `Users` | `[]UserClass` | yes | Mentioned users |
+| `Chats` | [`[]ChatClass`](/docs/reference/types/general/chat) | yes | Mentioned chats |
+| `Users` | [`[]UserClass`](/docs/reference/types/general/user) | yes | Mentioned users |
+
+## Returned by
+
+- [`stats.getMessagePublicForwards`](/docs/reference/methods/stats/get-message-public-forwards)
+- [`stats.getStoryPublicForwards`](/docs/reference/methods/stats/get-story-public-forwards)
 
 ## References
 

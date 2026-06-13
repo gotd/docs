@@ -36,7 +36,7 @@ client.Run(ctx, func(ctx context.Context) error {
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
 | `Reason` | `string` | yes | Why is the account being deleted, can be empty |
-| `Password` | `InputCheckPasswordSRPClass` | — | 2FA password: this field can be omitted even for accounts with 2FA enabled: in this case account account deletion will be delayed by 7 days as specified in the docs » |
+| `Password` | [`InputCheckPasswordSRPClass`](/docs/reference/types/general/input-check-password-s-r-p) | — | 2FA password: this field can be omitted even for accounts with 2FA enabled: in this case account account deletion will be delayed by 7 days as specified in the docs » |
 
 ## Returns
 

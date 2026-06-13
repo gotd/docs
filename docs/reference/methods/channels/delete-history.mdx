@@ -36,12 +36,12 @@ client.Run(ctx, func(ctx context.Context) error {
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
 | `ForEveryone` | `bool` | — | Whether the history should be deleted for everyone |
-| `Channel` | `InputChannelClass` | yes | Supergroup whose history must be deleted |
+| `Channel` | [`InputChannelClass`](/docs/reference/types/general/input-channel) | yes | Supergroup whose history must be deleted |
 | `MaxID` | `int` | yes | ID of message up to which the history must be deleted |
 
 ## Returns
 
-`UpdatesClass`
+[`UpdatesClass`](/docs/reference/types/general/updates)
 
 ## Possible errors
 

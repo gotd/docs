@@ -25,15 +25,15 @@ Implements [`payments.PaymentReceipt`](/docs/reference/types/payments/payment-re
 | `ProviderID` | `int64` | yes | Provider ID |
 | `Title` | `string` | yes | Title |
 | `Description` | `string` | yes | Description |
-| `Photo` | `WebDocumentClass` | — | Photo |
-| `Invoice` | `Invoice` | yes | Invoice |
-| `Info` | `PaymentRequestedInfo` | — | Info |
-| `Shipping` | `ShippingOption` | — | Selected shipping option |
+| `Photo` | [`WebDocumentClass`](/docs/reference/types/general/web-document) | — | Photo |
+| `Invoice` | [`Invoice`](/docs/reference/constructors/general/invoice) | yes | Invoice |
+| `Info` | [`PaymentRequestedInfo`](/docs/reference/constructors/general/payment-requested-info) | — | Info |
+| `Shipping` | [`ShippingOption`](/docs/reference/constructors/general/shipping-option) | — | Selected shipping option |
 | `TipAmount` | `int64` | — | Tipped amount |
 | `Currency` | `string` | yes | Three-letter ISO 4217 currency code |
 | `TotalAmount` | `int64` | yes | Total amount in the smallest units of the currency (integer, not float/double). For example, for a price of US$ 1.45 pass amount = 145. See the exp parameter in currencies.json, it shows the number of digits past the decimal point for each currency (2 for the majority of currencies). |
 | `CredentialsTitle` | `string` | yes | Payment credential name |
-| `Users` | `[]UserClass` | yes | Users |
+| `Users` | [`[]UserClass`](/docs/reference/types/general/user) | yes | Users |
 
 ## References
 

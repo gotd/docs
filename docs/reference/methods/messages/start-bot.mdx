@@ -35,14 +35,14 @@ client.Run(ctx, func(ctx context.Context) error {
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| `Bot` | `InputUserClass` | yes | The bot |
-| `Peer` | `InputPeerClass` | yes | The chat where to start the bot, can be the bot's private chat or a group |
+| `Bot` | [`InputUserClass`](/docs/reference/types/general/input-user) | yes | The bot |
+| `Peer` | [`InputPeerClass`](/docs/reference/types/general/input-peer) | yes | The chat where to start the bot, can be the bot's private chat or a group |
 | `RandomID` | `int64` | yes | Random ID to avoid resending the same message |
 | `StartParam` | `string` | yes | Deep linking parameter |
 
 ## Returns
 
-`UpdatesClass`
+[`UpdatesClass`](/docs/reference/types/general/updates)
 
 ## Possible errors
 

@@ -36,12 +36,12 @@ client.Run(ctx, func(ctx context.Context) error {
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
 | `MissingBalance` | `bool` | — | Whether to return only subscriptions expired due to an excessively low Telegram Star balance. |
-| `Peer` | `InputPeerClass` | yes | Always pass inputPeerSelf. |
+| `Peer` | [`InputPeerClass`](/docs/reference/types/general/input-peer) | yes | Always pass inputPeerSelf. |
 | `Offset` | `string` | yes | Offset for pagination, taken from payments.starsStatus.subscriptions_next_offset. |
 
 ## Returns
 
-`*PaymentsStarsStatus`
+[`*PaymentsStarsStatus`](/docs/reference/constructors/payments/stars-status)
 
 ## Possible errors
 

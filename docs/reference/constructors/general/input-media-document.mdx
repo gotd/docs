@@ -21,8 +21,8 @@ Implements [`InputMedia`](/docs/reference/types/general/input-media).
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
 | `Spoiler` | `bool` | — | Whether this media should be hidden behind a spoiler warning |
-| `ID` | `InputDocumentClass` | yes | The document to be forwarded. |
-| `VideoCover` | `InputPhotoClass` | — | Custom video cover. |
+| `ID` | [`InputDocumentClass`](/docs/reference/types/general/input-document) | yes | The document to be forwarded. |
+| `VideoCover` | [`InputPhotoClass`](/docs/reference/types/general/input-photo) | — | Custom video cover. |
 | `VideoTimestamp` | `int` | — | Start playing the video at the specified timestamp (seconds). |
 | `TTLSeconds` | `int` | — | Time to live of self-destructing document |
 | `Query` | `string` | — | Text query or emoji that was used by the user to find this sticker or GIF: used to improve search result relevance. |

@@ -38,22 +38,22 @@ client.Run(ctx, func(ctx context.Context) error {
 | `Pinned` | `bool` | — | Whether to add the story to the profile automatically upon expiration. If not set, the story will only be added to the archive, see here » for more info. |
 | `Noforwards` | `bool` | — | If set, disables forwards, screenshots, and downloads. |
 | `FwdModified` | `bool` | — | Set this flag when reposting stories with fwd_from_id+fwd_from_id, if the media was modified before reposting. |
-| `Peer` | `InputPeerClass` | yes | The peer to send the story as. |
-| `Media` | `InputMediaClass` | yes | The story media. |
-| `MediaAreas` | `[]MediaAreaClass` | — | Media areas associated to the story, see here » for more info. |
+| `Peer` | [`InputPeerClass`](/docs/reference/types/general/input-peer) | yes | The peer to send the story as. |
+| `Media` | [`InputMediaClass`](/docs/reference/types/general/input-media) | yes | The story media. |
+| `MediaAreas` | [`[]MediaAreaClass`](/docs/reference/types/general/media-area) | — | Media areas associated to the story, see here » for more info. |
 | `Caption` | `string` | — | Story caption. |
-| `Entities` | `[]MessageEntityClass` | — | Message entities for styled text, if allowed by the stories_entities client configuration parameter ». |
-| `PrivacyRules` | `[]InputPrivacyRuleClass` | yes | Privacy rules for the story, indicating who can or can't view the story. |
+| `Entities` | [`[]MessageEntityClass`](/docs/reference/types/general/message-entity) | — | Message entities for styled text, if allowed by the stories_entities client configuration parameter ». |
+| `PrivacyRules` | [`[]InputPrivacyRuleClass`](/docs/reference/types/general/input-privacy-rule) | yes | Privacy rules for the story, indicating who can or can't view the story. |
 | `RandomID` | `int64` | yes | Unique client message ID required to prevent message resending. |
 | `Period` | `int` | — | Period after which the story is moved to archive (and to the profile if pinned is set) in seconds; must be one of 6 * 3600, 12 * 3600, 86400, or 2 * 86400 for Telegram Premium users, and 86400 otherwise. |
-| `FwdFromID` | `InputPeerClass` | — | If set, indicates that this story is a repost of story with ID fwd_from_story posted by the peer in fwd_from_id. |
+| `FwdFromID` | [`InputPeerClass`](/docs/reference/types/general/input-peer) | — | If set, indicates that this story is a repost of story with ID fwd_from_story posted by the peer in fwd_from_id. |
 | `FwdFromStory` | `int` | — | If set, indicates that this story is a repost of story with ID fwd_from_story posted by the peer in fwd_from_id. |
 | `Albums` | `[]int` | — | If set, adds the story to the specified albums. |
-| `Music` | `InputDocumentClass` | — | Music field of StoriesSendStoryRequest. |
+| `Music` | [`InputDocumentClass`](/docs/reference/types/general/input-document) | — | Music field of StoriesSendStoryRequest. |
 
 ## Returns
 
-`UpdatesClass`
+[`UpdatesClass`](/docs/reference/types/general/updates)
 
 ## Possible errors
 

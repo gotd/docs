@@ -19,7 +19,11 @@ type tg.PaymentsSavedInfo struct { /* ... */ }
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
 | `HasSavedCredentials` | `bool` | — | Whether the user has some saved payment credentials |
-| `SavedInfo` | `PaymentRequestedInfo` | — | Saved server-side order information |
+| `SavedInfo` | [`PaymentRequestedInfo`](/docs/reference/constructors/general/payment-requested-info) | — | Saved server-side order information |
+
+## Returned by
+
+- [`payments.getSavedInfo`](/docs/reference/methods/payments/get-saved-info)
 
 ## References
 

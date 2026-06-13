@@ -26,16 +26,16 @@ Implements [`payments.PaymentForm`](/docs/reference/types/payments/payment-form)
 | `BotID` | `int64` | yes | Bot ID |
 | `Title` | `string` | yes | Form title |
 | `Description` | `string` | yes | Description |
-| `Photo` | `WebDocumentClass` | — | Product photo |
-| `Invoice` | `Invoice` | yes | Invoice |
+| `Photo` | [`WebDocumentClass`](/docs/reference/types/general/web-document) | — | Product photo |
+| `Invoice` | [`Invoice`](/docs/reference/constructors/general/invoice) | yes | Invoice |
 | `ProviderID` | `int64` | yes | Payment provider ID. |
 | `URL` | `string` | yes | Payment form URL |
 | `NativeProvider` | `string` | — | Payment provider name.One of the following:- stripe |
-| `NativeParams` | `DataJSON` | — | Contains information about the payment provider, if available, to support it natively without the need for opening the URL.A JSON object that can contain the following fields:- apple_pay_merchant_id: Apple Pay merchant ID- google_pay_public_key: Google Pay public key- need_country: True, if the user country must be provided,- need_zip: True, if the user ZIP/postal code must be provided,- need_cardholder_name: True, if the cardholder name must be provided |
-| `AdditionalMethods` | `[]PaymentFormMethod` | — | Additional payment methods |
-| `SavedInfo` | `PaymentRequestedInfo` | — | Saved server-side order information |
-| `SavedCredentials` | `[]PaymentSavedCredentialsCard` | — | Contains information about saved card credentials |
-| `Users` | `[]UserClass` | yes | Users |
+| `NativeParams` | [`DataJSON`](/docs/reference/constructors/general/data-j-s-o-n) | — | Contains information about the payment provider, if available, to support it natively without the need for opening the URL.A JSON object that can contain the following fields:- apple_pay_merchant_id: Apple Pay merchant ID- google_pay_public_key: Google Pay public key- need_country: True, if the user country must be provided,- need_zip: True, if the user ZIP/postal code must be provided,- need_cardholder_name: True, if the cardholder name must be provided |
+| `AdditionalMethods` | [`[]PaymentFormMethod`](/docs/reference/constructors/general/payment-form-method) | — | Additional payment methods |
+| `SavedInfo` | [`PaymentRequestedInfo`](/docs/reference/constructors/general/payment-requested-info) | — | Saved server-side order information |
+| `SavedCredentials` | [`[]PaymentSavedCredentialsCard`](/docs/reference/constructors/general/payment-saved-credentials-card) | — | Contains information about saved card credentials |
+| `Users` | [`[]UserClass`](/docs/reference/types/general/user) | yes | Users |
 
 ## References
 

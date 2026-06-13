@@ -36,12 +36,12 @@ client.Run(ctx, func(ctx context.Context) error {
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
 | `ChatID` | `int64` | yes | Chat ID |
-| `UserID` | `InputUserClass` | yes | User ID to be added |
+| `UserID` | [`InputUserClass`](/docs/reference/types/general/input-user) | yes | User ID to be added |
 | `FwdLimit` | `int` | yes | Number of last messages to be forwarded |
 
 ## Returns
 
-`*MessagesInvitedUsers`
+[`*MessagesInvitedUsers`](/docs/reference/constructors/messages/invited-users)
 
 ## Possible errors
 

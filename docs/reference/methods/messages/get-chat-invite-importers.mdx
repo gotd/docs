@@ -37,16 +37,16 @@ client.Run(ctx, func(ctx context.Context) error {
 | ---- | ---- | -------- | ----------- |
 | `Requested` | `bool` | — | If set, only returns info about users with pending join requests » |
 | `SubscriptionExpired` | `bool` | — | Set this flag if the link is a Telegram Star subscription link » and only members with already expired subscription must be returned. |
-| `Peer` | `InputPeerClass` | yes | Chat |
+| `Peer` | [`InputPeerClass`](/docs/reference/types/general/input-peer) | yes | Chat |
 | `Link` | `string` | — | Invite link |
 | `Q` | `string` | — | Search for a user in the pending join requests » list: only available when the requested flag is set, cannot be used together with a specific link. |
 | `OffsetDate` | `int` | yes | Offsets for pagination, for more info click here |
-| `OffsetUser` | `InputUserClass` | yes | User ID for pagination: if set, offset_date must also be set. |
+| `OffsetUser` | [`InputUserClass`](/docs/reference/types/general/input-user) | yes | User ID for pagination: if set, offset_date must also be set. |
 | `Limit` | `int` | yes | Maximum number of results to return, see pagination |
 
 ## Returns
 
-`*MessagesChatInviteImporters`
+[`*MessagesChatInviteImporters`](/docs/reference/constructors/messages/chat-invite-importers)
 
 ## Possible errors
 

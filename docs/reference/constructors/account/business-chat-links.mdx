@@ -18,9 +18,13 @@ type tg.AccountBusinessChatLinks struct { /* ... */ }
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| `Links` | `[]BusinessChatLink` | yes | Links |
-| `Chats` | `[]ChatClass` | yes | Mentioned chats |
-| `Users` | `[]UserClass` | yes | Mentioned users |
+| `Links` | [`[]BusinessChatLink`](/docs/reference/constructors/general/business-chat-link) | yes | Links |
+| `Chats` | [`[]ChatClass`](/docs/reference/types/general/chat) | yes | Mentioned chats |
+| `Users` | [`[]UserClass`](/docs/reference/types/general/user) | yes | Mentioned users |
+
+## Returned by
+
+- [`account.getBusinessChatLinks`](/docs/reference/methods/account/get-business-chat-links)
 
 ## References
 

@@ -18,9 +18,13 @@ type tg.MessagesPeerSettings struct { /* ... */ }
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| `Settings` | `PeerSettings` | yes | Peer settings |
-| `Chats` | `[]ChatClass` | yes | Mentioned chats |
-| `Users` | `[]UserClass` | yes | Mentioned users |
+| `Settings` | [`PeerSettings`](/docs/reference/constructors/general/peer-settings) | yes | Peer settings |
+| `Chats` | [`[]ChatClass`](/docs/reference/types/general/chat) | yes | Mentioned chats |
+| `Users` | [`[]UserClass`](/docs/reference/types/general/user) | yes | Mentioned users |
+
+## Returned by
+
+- [`messages.getPeerSettings`](/docs/reference/methods/messages/get-peer-settings)
 
 ## References
 

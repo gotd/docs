@@ -18,9 +18,13 @@ type tg.PhoneJoinAsPeers struct { /* ... */ }
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| `Peers` | `[]PeerClass` | yes | Peers |
-| `Chats` | `[]ChatClass` | yes | Chats mentioned in the peers vector |
-| `Users` | `[]UserClass` | yes | Users mentioned in the peers vector |
+| `Peers` | [`[]PeerClass`](/docs/reference/types/general/peer) | yes | Peers |
+| `Chats` | [`[]ChatClass`](/docs/reference/types/general/chat) | yes | Chats mentioned in the peers vector |
+| `Users` | [`[]UserClass`](/docs/reference/types/general/user) | yes | Users mentioned in the peers vector |
+
+## Returned by
+
+- [`phone.getGroupCallJoinAs`](/docs/reference/methods/phone/get-group-call-join-as)
 
 ## References
 

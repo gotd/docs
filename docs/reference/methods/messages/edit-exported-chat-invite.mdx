@@ -36,7 +36,7 @@ client.Run(ctx, func(ctx context.Context) error {
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
 | `Revoked` | `bool` | — | Whether to revoke the chat invite |
-| `Peer` | `InputPeerClass` | yes | Chat |
+| `Peer` | [`InputPeerClass`](/docs/reference/types/general/input-peer) | yes | Chat |
 | `Link` | `string` | yes | Invite link |
 | `ExpireDate` | `int` | — | New expiration date |
 | `UsageLimit` | `int` | — | Maximum number of users that can join using this link |
@@ -45,7 +45,7 @@ client.Run(ctx, func(ctx context.Context) error {
 
 ## Returns
 
-`MessagesExportedChatInviteClass`
+[`MessagesExportedChatInviteClass`](/docs/reference/types/messages/exported-chat-invite)
 
 ## Possible errors
 

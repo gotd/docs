@@ -35,8 +35,8 @@ client.Run(ctx, func(ctx context.Context) error {
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| `ParentPeer` | `InputPeerClass` | — | If set, fetches messages from the specified monoforum, otherwise fetches from saved messages. |
-| `Peer` | `InputPeerClass` | yes | Target peer (or topic) |
+| `ParentPeer` | [`InputPeerClass`](/docs/reference/types/general/input-peer) | — | If set, fetches messages from the specified monoforum, otherwise fetches from saved messages. |
+| `Peer` | [`InputPeerClass`](/docs/reference/types/general/input-peer) | yes | Target peer (or topic) |
 | `OffsetID` | `int` | yes | Only return messages starting from the specified message ID |
 | `OffsetDate` | `int` | yes | Only return messages sent before the specified date |
 | `AddOffset` | `int` | yes | Number of list elements to be skipped, negative values are also accepted. |
@@ -47,7 +47,7 @@ client.Run(ctx, func(ctx context.Context) error {
 
 ## Returns
 
-`MessagesMessagesClass`
+[`MessagesMessagesClass`](/docs/reference/types/messages/messages)
 
 ## Possible errors
 

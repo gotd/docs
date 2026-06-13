@@ -18,9 +18,13 @@ type tg.MessagesMessageViews struct { /* ... */ }
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| `Views` | `[]MessageViews` | yes | View, forward counter + info about replies |
-| `Chats` | `[]ChatClass` | yes | Chats mentioned in constructor |
-| `Users` | `[]UserClass` | yes | Users mentioned in constructor |
+| `Views` | [`[]MessageViews`](/docs/reference/constructors/general/message-views) | yes | View, forward counter + info about replies |
+| `Chats` | [`[]ChatClass`](/docs/reference/types/general/chat) | yes | Chats mentioned in constructor |
+| `Users` | [`[]UserClass`](/docs/reference/types/general/user) | yes | Users mentioned in constructor |
+
+## Returned by
+
+- [`messages.getMessagesViews`](/docs/reference/methods/messages/get-messages-views)
 
 ## References
 

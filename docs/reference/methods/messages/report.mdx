@@ -35,14 +35,14 @@ client.Run(ctx, func(ctx context.Context) error {
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| `Peer` | `InputPeerClass` | yes | Peer |
+| `Peer` | [`InputPeerClass`](/docs/reference/types/general/input-peer) | yes | Peer |
 | `ID` | `[]int` | yes | IDs of messages to report |
 | `Option` | `[]byte` | yes | Menu option, intially empty |
 | `Message` | `string` | yes | Comment for report moderation |
 
 ## Returns
 
-`ReportResultClass`
+[`ReportResultClass`](/docs/reference/types/general/report-result)
 
 ## Possible errors
 

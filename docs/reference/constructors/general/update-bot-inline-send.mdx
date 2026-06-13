@@ -22,9 +22,9 @@ Implements [`Update`](/docs/reference/types/general/update).
 | ---- | ---- | -------- | ----------- |
 | `UserID` | `int64` | yes | The user that chose the result |
 | `Query` | `string` | yes | The query that was used to obtain the result |
-| `Geo` | `GeoPointClass` | — | Optional. Sender location, only for bots that require user location |
+| `Geo` | [`GeoPointClass`](/docs/reference/types/general/geo-point) | — | Optional. Sender location, only for bots that require user location |
 | `ID` | `string` | yes | The unique identifier for the result that was chosen |
-| `MsgID` | `InputBotInlineMessageIDClass` | — | Identifier of the sent inline message. Available only if there is an inline keyboard attached to the message. Will be also received in callback queries and can be used to edit the message. |
+| `MsgID` | [`InputBotInlineMessageIDClass`](/docs/reference/types/general/input-bot-inline-message-i-d) | — | Identifier of the sent inline message. Available only if there is an inline keyboard attached to the message. Will be also received in callback queries and can be used to edit the message. |
 
 ## References
 

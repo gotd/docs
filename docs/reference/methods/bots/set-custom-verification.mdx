@@ -36,8 +36,8 @@ client.Run(ctx, func(ctx context.Context) error {
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
 | `Enabled` | `bool` | — | If set, adds the verification; otherwise removes verification. |
-| `Bot` | `InputUserClass` | — | Must not be set if invoked by a bot, must be set to the ID of an owned bot if invoked by a user. |
-| `Peer` | `InputPeerClass` | yes | The peer to verify |
+| `Bot` | [`InputUserClass`](/docs/reference/types/general/input-user) | — | Must not be set if invoked by a bot, must be set to the ID of an owned bot if invoked by a user. |
+| `Peer` | [`InputPeerClass`](/docs/reference/types/general/input-peer) | yes | The peer to verify |
 | `CustomDescription` | `string` | — | Custom description for the verification, the UTF-8 length limit for this field is contained in bot_verification_description_length_limit ». If not set, Was verified by organization "organization_name" will be used as description. |
 
 ## Returns

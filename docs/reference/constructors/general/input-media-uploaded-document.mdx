@@ -23,12 +23,12 @@ Implements [`InputMedia`](/docs/reference/types/general/input-media).
 | `NosoundVideo` | `bool` | — | Whether to send the file as a video even if it doesn't have an audio track (i.e. if set, the documentAttributeAnimated attribute will not be set even for videos without audio) |
 | `ForceFile` | `bool` | — | Force the media file to be uploaded as document |
 | `Spoiler` | `bool` | — | Whether this media should be hidden behind a spoiler warning |
-| `File` | `InputFileClass` | yes | The uploaded file |
-| `Thumb` | `InputFileClass` | — | Thumbnail of the document, uploaded as for the file |
+| `File` | [`InputFileClass`](/docs/reference/types/general/input-file) | yes | The uploaded file |
+| `Thumb` | [`InputFileClass`](/docs/reference/types/general/input-file) | — | Thumbnail of the document, uploaded as for the file |
 | `MimeType` | `string` | yes | MIME type of document |
-| `Attributes` | `[]DocumentAttributeClass` | yes | Attributes that specify the type of the document (video, audio, voice, sticker, etc.) |
-| `Stickers` | `[]InputDocumentClass` | — | Attached stickers |
-| `VideoCover` | `InputPhotoClass` | — | Start playing the video at the specified timestamp (seconds). |
+| `Attributes` | [`[]DocumentAttributeClass`](/docs/reference/types/general/document-attribute) | yes | Attributes that specify the type of the document (video, audio, voice, sticker, etc.) |
+| `Stickers` | [`[]InputDocumentClass`](/docs/reference/types/general/input-document) | — | Attached stickers |
+| `VideoCover` | [`InputPhotoClass`](/docs/reference/types/general/input-photo) | — | Start playing the video at the specified timestamp (seconds). |
 | `VideoTimestamp` | `int` | — | Start playing the video at the specified timestamp (seconds). |
 | `TTLSeconds` | `int` | — | Time to live in seconds of self-destructing document |
 

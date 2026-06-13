@@ -23,7 +23,7 @@ Implements [`MessageAction`](/docs/reference/types/general/message-action).
 | `Unclaimed` | `bool` | — | If set, this indicates the reverse transaction that refunds the remaining stars to the creator of a giveaway if, when the giveaway ends, the number of members in the channel is smaller than the number of winners in the giveaway. |
 | `Stars` | `int64` | yes | The number of Telegram Stars you won |
 | `TransactionID` | `string` | yes | ID of the telegram star transaction. |
-| `BoostPeer` | `PeerClass` | yes | Identifier of the peer that was automatically boosted by the winners of the giveaway. |
+| `BoostPeer` | [`PeerClass`](/docs/reference/types/general/peer) | yes | Identifier of the peer that was automatically boosted by the winners of the giveaway. |
 | `GiveawayMsgID` | `int` | yes | ID of the message containing the messageMediaGiveaway |
 
 ## References

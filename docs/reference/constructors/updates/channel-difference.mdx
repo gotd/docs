@@ -23,10 +23,10 @@ Implements [`updates.ChannelDifference`](/docs/reference/types/updates/channel-d
 | `Final` | `bool` | — | Whether there are more updates to be fetched using getDifference, starting from the provided pts |
 | `Pts` | `int` | yes | The PTS from which to start getting updates the next time |
 | `Timeout` | `int` | — | Clients are supposed to refetch the channel difference after timeout seconds have elapsed, if the user is currently viewing the chat, see here » for more info. |
-| `NewMessages` | `[]MessageClass` | yes | New messages |
-| `OtherUpdates` | `[]UpdateClass` | yes | Other updates |
-| `Chats` | `[]ChatClass` | yes | Chats |
-| `Users` | `[]UserClass` | yes | Users |
+| `NewMessages` | [`[]MessageClass`](/docs/reference/types/general/message) | yes | New messages |
+| `OtherUpdates` | [`[]UpdateClass`](/docs/reference/types/general/update) | yes | Other updates |
+| `Chats` | [`[]ChatClass`](/docs/reference/types/general/chat) | yes | Chats |
+| `Users` | [`[]UserClass`](/docs/reference/types/general/user) | yes | Users |
 
 ## References
 

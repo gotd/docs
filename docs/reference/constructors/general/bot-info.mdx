@@ -21,13 +21,13 @@ type tg.BotInfo struct { /* ... */ }
 | `HasPreviewMedias` | `bool` | — | If set, the bot has some preview medias for the configured Main Mini App, see here » for more info on Main Mini App preview medias. |
 | `UserID` | `int64` | — | ID of the bot |
 | `Description` | `string` | — | Description of the bot |
-| `DescriptionPhoto` | `PhotoClass` | — | Description photo |
-| `DescriptionDocument` | `DocumentClass` | — | Description animation in MPEG4 format |
-| `Commands` | `[]BotCommand` | — | Bot commands that can be used in the chat |
-| `MenuButton` | `BotMenuButtonClass` | — | Indicates the action to execute when pressing the in-UI menu button for bots |
+| `DescriptionPhoto` | [`PhotoClass`](/docs/reference/types/general/photo) | — | Description photo |
+| `DescriptionDocument` | [`DocumentClass`](/docs/reference/types/general/document) | — | Description animation in MPEG4 format |
+| `Commands` | [`[]BotCommand`](/docs/reference/constructors/general/bot-command) | — | Bot commands that can be used in the chat |
+| `MenuButton` | [`BotMenuButtonClass`](/docs/reference/types/general/bot-menu-button) | — | Indicates the action to execute when pressing the in-UI menu button for bots |
 | `PrivacyPolicyURL` | `string` | — | The HTTP link to the privacy policy of the bot. If not set, then the /privacy command must be used, if supported by the bot (i.e. if it's present in the commands vector). If it isn't supported, then https://telegram.org/privacy-tpa must be opened, instead. |
-| `AppSettings` | `BotAppSettings` | — | Mini app » settings |
-| `VerifierSettings` | `BotVerifierSettings` | — | This bot can verify peers: this field contains more info about the verification the bot can assign to peers. |
+| `AppSettings` | [`BotAppSettings`](/docs/reference/constructors/general/bot-app-settings) | — | Mini app » settings |
+| `VerifierSettings` | [`BotVerifierSettings`](/docs/reference/constructors/general/bot-verifier-settings) | — | This bot can verify peers: this field contains more info about the verification the bot can assign to peers. |
 
 ## References
 

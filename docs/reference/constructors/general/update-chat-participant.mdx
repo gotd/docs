@@ -24,9 +24,9 @@ Implements [`Update`](/docs/reference/types/general/update).
 | `Date` | `int` | yes | When did this event occur |
 | `ActorID` | `int64` | yes | User that triggered the change (inviter, admin that kicked the user, or the even the user_id itself) |
 | `UserID` | `int64` | yes | User that was affected by the change |
-| `PrevParticipant` | `ChatParticipantClass` | — | Previous participant info (empty if this participant just joined) |
-| `NewParticipant` | `ChatParticipantClass` | — | New participant info (empty if this participant just left) |
-| `Invite` | `ExportedChatInviteClass` | — | The invite that was used to join the group |
+| `PrevParticipant` | [`ChatParticipantClass`](/docs/reference/types/general/chat-participant) | — | Previous participant info (empty if this participant just joined) |
+| `NewParticipant` | [`ChatParticipantClass`](/docs/reference/types/general/chat-participant) | — | New participant info (empty if this participant just left) |
+| `Invite` | [`ExportedChatInviteClass`](/docs/reference/types/general/exported-chat-invite) | — | The invite that was used to join the group |
 | `Qts` | `int` | yes | New qts value, see updates » for more info. |
 
 ## References

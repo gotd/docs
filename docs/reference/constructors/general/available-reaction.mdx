@@ -22,13 +22,13 @@ type tg.AvailableReaction struct { /* ... */ }
 | `Premium` | `bool` | — | Whether this reaction can only be used by Telegram Premium users |
 | `Reaction` | `string` | yes | Reaction emoji |
 | `Title` | `string` | yes | Reaction description |
-| `StaticIcon` | `DocumentClass` | yes | Static icon for the reaction |
-| `AppearAnimation` | `DocumentClass` | yes | The animated sticker to show when the user opens the reaction dropdown |
-| `SelectAnimation` | `DocumentClass` | yes | The animated sticker to show when the user hovers over the reaction |
-| `ActivateAnimation` | `DocumentClass` | yes | The animated sticker to show when the reaction is chosen and activated |
-| `EffectAnimation` | `DocumentClass` | yes | The background effect (still an animated sticker) to play under the activate_animation when the reaction is chosen and activated |
-| `AroundAnimation` | `DocumentClass` | — | The animation that plays around the button when you press an existing reaction (played together with center_icon). |
-| `CenterIcon` | `DocumentClass` | — | The animation of the emoji inside the button when you press an existing reaction (played together with around_animation). |
+| `StaticIcon` | [`DocumentClass`](/docs/reference/types/general/document) | yes | Static icon for the reaction |
+| `AppearAnimation` | [`DocumentClass`](/docs/reference/types/general/document) | yes | The animated sticker to show when the user opens the reaction dropdown |
+| `SelectAnimation` | [`DocumentClass`](/docs/reference/types/general/document) | yes | The animated sticker to show when the user hovers over the reaction |
+| `ActivateAnimation` | [`DocumentClass`](/docs/reference/types/general/document) | yes | The animated sticker to show when the reaction is chosen and activated |
+| `EffectAnimation` | [`DocumentClass`](/docs/reference/types/general/document) | yes | The background effect (still an animated sticker) to play under the activate_animation when the reaction is chosen and activated |
+| `AroundAnimation` | [`DocumentClass`](/docs/reference/types/general/document) | — | The animation that plays around the button when you press an existing reaction (played together with center_icon). |
+| `CenterIcon` | [`DocumentClass`](/docs/reference/types/general/document) | — | The animation of the emoji inside the button when you press an existing reaction (played together with around_animation). |
 
 ## References
 

@@ -18,9 +18,13 @@ type tg.PaymentsUniqueStarGift struct { /* ... */ }
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| `Gift` | `StarGiftClass` | yes | The starGiftUnique constructor. |
-| `Chats` | `[]ChatClass` | yes | Chats mentioned in the gift field. |
-| `Users` | `[]UserClass` | yes | Users mentioned in the gift field. |
+| `Gift` | [`StarGiftClass`](/docs/reference/types/general/star-gift) | yes | The starGiftUnique constructor. |
+| `Chats` | [`[]ChatClass`](/docs/reference/types/general/chat) | yes | Chats mentioned in the gift field. |
+| `Users` | [`[]UserClass`](/docs/reference/types/general/user) | yes | Users mentioned in the gift field. |
+
+## Returned by
+
+- [`payments.getUniqueStarGift`](/docs/reference/methods/payments/get-unique-star-gift)
 
 ## References
 

@@ -23,12 +23,12 @@ type tg.StarsSubscription struct { /* ... */ }
 | `MissingBalance` | `bool` | — | Whether this subscription has expired because there are not enough stars on the user's balance to extend it. |
 | `BotCanceled` | `bool` | — | Set if this bot subscription was cancelled by the bot |
 | `ID` | `string` | yes | Subscription ID. |
-| `Peer` | `PeerClass` | yes | Identifier of the associated private chat. |
+| `Peer` | [`PeerClass`](/docs/reference/types/general/peer) | yes | Identifier of the associated private chat. |
 | `UntilDate` | `int` | yes | Expiration date of the current subscription period. |
-| `Pricing` | `StarsSubscriptionPricing` | yes | Pricing of the subscription in Telegram Stars. |
+| `Pricing` | [`StarsSubscriptionPricing`](/docs/reference/constructors/general/stars-subscription-pricing) | yes | Pricing of the subscription in Telegram Stars. |
 | `ChatInviteHash` | `string` | — | Invitation link, used to renew the subscription after cancellation or expiration. |
 | `Title` | `string` | — | For bot subscriptions, the title of the subscription invoice |
-| `Photo` | `WebDocumentClass` | — | For bot subscriptions, the photo from the subscription invoice |
+| `Photo` | [`WebDocumentClass`](/docs/reference/types/general/web-document) | — | For bot subscriptions, the photo from the subscription invoice |
 | `InvoiceSlug` | `string` | — | For bot subscriptions, the identifier of the subscription invoice |
 
 ## References

@@ -22,8 +22,8 @@ Implements [`MessageAction`](/docs/reference/types/general/message-action).
 | ---- | ---- | -------- | ----------- |
 | `Accepted` | `bool` | — | If set, the gift owner accepted this offer. |
 | `Declined` | `bool` | — | If set, the gift owner declined this offer. |
-| `Gift` | `StarGiftClass` | yes | The collectible gift the offer is about. |
-| `Price` | `StarsAmountClass` | yes | Offered price. |
+| `Gift` | [`StarGiftClass`](/docs/reference/types/general/star-gift) | yes | The collectible gift the offer is about. |
+| `Price` | [`StarsAmountClass`](/docs/reference/types/general/stars-amount) | yes | Offered price. |
 | `ExpiresAt` | `int` | yes | Offer expiration date (UNIX timestamp): if the owner doesn't act before this date, the offer will expire and the buyer will be refunded automatically. |
 
 ## References

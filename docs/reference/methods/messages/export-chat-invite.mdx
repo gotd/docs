@@ -37,15 +37,15 @@ client.Run(ctx, func(ctx context.Context) error {
 | ---- | ---- | -------- | ----------- |
 | `LegacyRevokePermanent` | `bool` | — | Legacy flag, reproducing legacy behavior of this method: if set, revokes all previous links before creating a new one. Kept for bot API BC, should not be used by modern clients. |
 | `RequestNeeded` | `bool` | — | Whether admin confirmation is required before admitting each separate user into the chat |
-| `Peer` | `InputPeerClass` | yes | Chat |
+| `Peer` | [`InputPeerClass`](/docs/reference/types/general/input-peer) | yes | Chat |
 | `ExpireDate` | `int` | — | Expiration date |
 | `UsageLimit` | `int` | — | Maximum number of users that can join using this link |
 | `Title` | `string` | — | Description of the invite link, visible only to administrators |
-| `SubscriptionPricing` | `StarsSubscriptionPricing` | — | For Telegram Star subscriptions », contains the pricing of the subscription the user must activate to join the private channel. |
+| `SubscriptionPricing` | [`StarsSubscriptionPricing`](/docs/reference/constructors/general/stars-subscription-pricing) | — | For Telegram Star subscriptions », contains the pricing of the subscription the user must activate to join the private channel. |
 
 ## Returns
 
-`ExportedChatInviteClass`
+[`ExportedChatInviteClass`](/docs/reference/types/general/exported-chat-invite)
 
 ## Possible errors
 

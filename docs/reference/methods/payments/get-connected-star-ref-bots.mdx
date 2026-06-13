@@ -35,14 +35,14 @@ client.Run(ctx, func(ctx context.Context) error {
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| `Peer` | `InputPeerClass` | yes | The affiliated peer |
+| `Peer` | [`InputPeerClass`](/docs/reference/types/general/input-peer) | yes | The affiliated peer |
 | `OffsetDate` | `int` | — | If set, returns only results older than the specified unixtime |
 | `OffsetLink` | `string` | — | Offset for pagination, taken from the last returned connectedBotStarRef.url (initially empty) |
 | `Limit` | `int` | yes | Maximum number of results to return, see pagination |
 
 ## Returns
 
-`*PaymentsConnectedStarRefBots`
+[`*PaymentsConnectedStarRefBots`](/docs/reference/constructors/payments/connected-star-ref-bots)
 
 ## References
 

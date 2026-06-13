@@ -35,13 +35,13 @@ client.Run(ctx, func(ctx context.Context) error {
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| `Peer` | `InputPeerClass` | yes | Peer |
+| `Peer` | [`InputPeerClass`](/docs/reference/types/general/input-peer) | yes | Peer |
 | `TopMsgID` | `int` | — | Mark as read only reactions to messages within the specified forum topic |
-| `SavedPeerID` | `InputPeerClass` | — | If set, must be equal to the ID of a monoforum topic: will affect that topic in the monoforum passed in peer. |
+| `SavedPeerID` | [`InputPeerClass`](/docs/reference/types/general/input-peer) | — | If set, must be equal to the ID of a monoforum topic: will affect that topic in the monoforum passed in peer. |
 
 ## Returns
 
-`*MessagesAffectedHistory`
+[`*MessagesAffectedHistory`](/docs/reference/constructors/messages/affected-history)
 
 ## Possible errors
 

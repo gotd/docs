@@ -35,7 +35,7 @@ client.Run(ctx, func(ctx context.Context) error {
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| `Peer` | `InputPeerClass` | yes | Peer where to look for mentions |
+| `Peer` | [`InputPeerClass`](/docs/reference/types/general/input-peer) | yes | Peer where to look for mentions |
 | `TopMsgID` | `int` | — | If set, considers only messages within the specified forum topic |
 | `OffsetID` | `int` | yes | Offsets for pagination, for more info click here |
 | `AddOffset` | `int` | yes | Offsets for pagination, for more info click here |
@@ -45,7 +45,7 @@ client.Run(ctx, func(ctx context.Context) error {
 
 ## Returns
 
-`MessagesMessagesClass`
+[`MessagesMessagesClass`](/docs/reference/types/messages/messages)
 
 ## Possible errors
 

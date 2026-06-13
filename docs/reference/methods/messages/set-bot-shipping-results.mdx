@@ -37,7 +37,7 @@ client.Run(ctx, func(ctx context.Context) error {
 | ---- | ---- | -------- | ----------- |
 | `QueryID` | `int64` | yes | Unique identifier for the query to be answered |
 | `Error` | `string` | — | Error message in human readable form that explains why it is impossible to complete the order (e.g. "Sorry, delivery to your desired address is unavailable"). Telegram will display this message to the user. |
-| `ShippingOptions` | `[]ShippingOption` | — | A vector of available shipping options. |
+| `ShippingOptions` | [`[]ShippingOption`](/docs/reference/constructors/general/shipping-option) | — | A vector of available shipping options. |
 
 ## Returns
 

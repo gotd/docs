@@ -18,8 +18,12 @@ type tg.BotsPreviewInfo struct { /* ... */ }
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| `Media` | `[]BotPreviewMedia` | yes | All preview medias for the language code passed to bots.getPreviewInfo. |
+| `Media` | [`[]BotPreviewMedia`](/docs/reference/constructors/general/bot-preview-media) | yes | All preview medias for the language code passed to bots.getPreviewInfo. |
 | `LangCodes` | `[]string` | yes | All available language codes for which preview medias were uploaded (regardless of the language code passed to bots.getPreviewInfo). |
+
+## Returned by
+
+- [`bots.getPreviewInfo`](/docs/reference/methods/bots/get-preview-info)
 
 ## References
 

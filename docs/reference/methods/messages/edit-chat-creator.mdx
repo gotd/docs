@@ -35,13 +35,13 @@ client.Run(ctx, func(ctx context.Context) error {
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| `Peer` | `InputPeerClass` | yes | Owned group/supergroup/channel. |
-| `UserID` | `InputUserClass` | yes | ID of the new owner. |
-| `Password` | `InputCheckPasswordSRPClass` | yes | The current account's 2FA password. |
+| `Peer` | [`InputPeerClass`](/docs/reference/types/general/input-peer) | yes | Owned group/supergroup/channel. |
+| `UserID` | [`InputUserClass`](/docs/reference/types/general/input-user) | yes | ID of the new owner. |
+| `Password` | [`InputCheckPasswordSRPClass`](/docs/reference/types/general/input-check-password-s-r-p) | yes | The current account's 2FA password. |
 
 ## Returns
 
-`UpdatesClass`
+[`UpdatesClass`](/docs/reference/types/general/updates)
 
 ## References
 

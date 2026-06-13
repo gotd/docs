@@ -19,10 +19,14 @@ type tg.StoriesStoryReactionsList struct { /* ... */ }
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
 | `Count` | `int` | yes | Total number of reactions matching query |
-| `Reactions` | `[]StoryReactionClass` | yes | List of peers that reacted to or interacted with a specific story |
-| `Chats` | `[]ChatClass` | yes | Mentioned chats |
-| `Users` | `[]UserClass` | yes | Mentioned users |
+| `Reactions` | [`[]StoryReactionClass`](/docs/reference/types/general/story-reaction) | yes | List of peers that reacted to or interacted with a specific story |
+| `Chats` | [`[]ChatClass`](/docs/reference/types/general/chat) | yes | Mentioned chats |
+| `Users` | [`[]UserClass`](/docs/reference/types/general/user) | yes | Mentioned users |
 | `NextOffset` | `string` | — | If set, indicates the next offset to use to load more results by invoking stories getStoryReactionsList. |
+
+## Returned by
+
+- [`stories.getStoryReactionsList`](/docs/reference/methods/stories/get-story-reactions-list)
 
 ## References
 

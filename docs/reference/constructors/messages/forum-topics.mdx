@@ -20,11 +20,16 @@ type tg.MessagesForumTopics struct { /* ... */ }
 | ---- | ---- | -------- | ----------- |
 | `OrderByCreateDate` | `bool` | — | Whether the returned topics are ordered by creation date; if set, pagination by offset_date should use forumTopic.date; otherwise topics are ordered by the last message date, so paginate by the date of the message referenced by forumTopic top_message. |
 | `Count` | `int` | yes | Total number of topics matching query; may be more than the topics contained in topics in which case pagination is required. |
-| `Topics` | `[]ForumTopicClass` | yes | Forum topics |
-| `Messages` | `[]MessageClass` | yes | Related messages (contains the messages mentioned by forumTopic.top_message). |
-| `Chats` | `[]ChatClass` | yes | Related chats |
-| `Users` | `[]UserClass` | yes | Related users |
+| `Topics` | [`[]ForumTopicClass`](/docs/reference/types/general/forum-topic) | yes | Forum topics |
+| `Messages` | [`[]MessageClass`](/docs/reference/types/general/message) | yes | Related messages (contains the messages mentioned by forumTopic.top_message). |
+| `Chats` | [`[]ChatClass`](/docs/reference/types/general/chat) | yes | Related chats |
+| `Users` | [`[]UserClass`](/docs/reference/types/general/user) | yes | Related users |
 | `Pts` | `int` | yes | Event count after generation |
+
+## Returned by
+
+- [`messages.getForumTopics`](/docs/reference/methods/messages/get-forum-topics)
+- [`messages.getForumTopicsByID`](/docs/reference/methods/messages/get-forum-topics-by-i-d)
 
 ## References
 

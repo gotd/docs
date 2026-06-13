@@ -35,14 +35,14 @@ client.Run(ctx, func(ctx context.Context) error {
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| `Peer` | `InputPeerClass` | yes | Group where to apply changes |
-| `AvailableReactions` | `ChatReactionsClass` | yes | Allowed reaction emojis |
+| `Peer` | [`InputPeerClass`](/docs/reference/types/general/input-peer) | yes | Group where to apply changes |
+| `AvailableReactions` | [`ChatReactionsClass`](/docs/reference/types/general/chat-reactions) | yes | Allowed reaction emojis |
 | `ReactionsLimit` | `int` | — | This flag may be used to impose a custom limit of unique reactions (i.e. a customizable version of appConfig.reactions_uniq_max); this field and the other info set by the method will then be available to users in channelFull and chatFull. If this flag is not set, the previously configured reactions_limit will not be altered. |
 | `PaidEnabled` | `bool` | — | If this flag is set and a Bool is passed, the method will enable or disable paid message reactions ». If this flag is not set, the previously stored setting will not be changed. |
 
 ## Returns
 
-`UpdatesClass`
+[`UpdatesClass`](/docs/reference/types/general/updates)
 
 ## Possible errors
 

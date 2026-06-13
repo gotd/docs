@@ -21,14 +21,18 @@ type tg.PeerNotifySettings struct { /* ... */ }
 | `ShowPreviews` | `bool` | — | (Ternary value) If set, indicates whether or not to display previews of messages in notifications; otherwise the default behavior should be used. |
 | `Silent` | `bool` | — | (Ternary value) If set, indicates whether to mute or unmute the peer; otherwise the default behavior should be used. |
 | `MuteUntil` | `int` | — | Mute all notifications until this date |
-| `IosSound` | `NotificationSoundClass` | — | Notification sound for the official iOS application |
-| `AndroidSound` | `NotificationSoundClass` | — | Notification sound for the official android application |
-| `OtherSound` | `NotificationSoundClass` | — | Notification sound for other applications |
+| `IosSound` | [`NotificationSoundClass`](/docs/reference/types/general/notification-sound) | — | Notification sound for the official iOS application |
+| `AndroidSound` | [`NotificationSoundClass`](/docs/reference/types/general/notification-sound) | — | Notification sound for the official android application |
+| `OtherSound` | [`NotificationSoundClass`](/docs/reference/types/general/notification-sound) | — | Notification sound for other applications |
 | `StoriesMuted` | `bool` | — | Whether story notifications should be disabled. |
 | `StoriesHideSender` | `bool` | — | Whether the sender name should be displayed in story notifications. |
-| `StoriesIosSound` | `NotificationSoundClass` | — | Sound for story notifications on the official iOS application |
-| `StoriesAndroidSound` | `NotificationSoundClass` | — | Sound for story notifications on the official Android application |
-| `StoriesOtherSound` | `NotificationSoundClass` | — | Sound for story notifications on other applications |
+| `StoriesIosSound` | [`NotificationSoundClass`](/docs/reference/types/general/notification-sound) | — | Sound for story notifications on the official iOS application |
+| `StoriesAndroidSound` | [`NotificationSoundClass`](/docs/reference/types/general/notification-sound) | — | Sound for story notifications on the official Android application |
+| `StoriesOtherSound` | [`NotificationSoundClass`](/docs/reference/types/general/notification-sound) | — | Sound for story notifications on other applications |
+
+## Returned by
+
+- [`account.getNotifySettings`](/docs/reference/methods/account/get-notify-settings)
 
 ## References
 

@@ -36,15 +36,15 @@ client.Run(ctx, func(ctx context.Context) error {
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
 | `Revoked` | `bool` | — | Whether to fetch revoked chat invites |
-| `Peer` | `InputPeerClass` | yes | Chat |
-| `AdminID` | `InputUserClass` | yes | Whether to only fetch chat invites from this admin |
+| `Peer` | [`InputPeerClass`](/docs/reference/types/general/input-peer) | yes | Chat |
+| `AdminID` | [`InputUserClass`](/docs/reference/types/general/input-user) | yes | Whether to only fetch chat invites from this admin |
 | `OffsetDate` | `int` | — | Offsets for pagination, for more info click here |
 | `OffsetLink` | `string` | — | Offsets for pagination, for more info click here |
 | `Limit` | `int` | yes | Maximum number of results to return, see pagination |
 
 ## Returns
 
-`*MessagesExportedChatInvites`
+[`*MessagesExportedChatInvites`](/docs/reference/constructors/messages/exported-chat-invites)
 
 ## Possible errors
 

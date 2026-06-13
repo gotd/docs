@@ -35,13 +35,13 @@ client.Run(ctx, func(ctx context.Context) error {
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| `Peer` | `InputPeerClass` | yes | Other user |
-| `ReplyTo` | `InputReplyToClass` | yes | Indicates the message that was screenshotted (the specified message ID can also be 0 to avoid indicating any specific message). |
+| `Peer` | [`InputPeerClass`](/docs/reference/types/general/input-peer) | yes | Other user |
+| `ReplyTo` | [`InputReplyToClass`](/docs/reference/types/general/input-reply-to) | yes | Indicates the message that was screenshotted (the specified message ID can also be 0 to avoid indicating any specific message). |
 | `RandomID` | `int64` | yes | Random ID to avoid message resending |
 
 ## Returns
 
-`UpdatesClass`
+[`UpdatesClass`](/docs/reference/types/general/updates)
 
 ## Possible errors
 

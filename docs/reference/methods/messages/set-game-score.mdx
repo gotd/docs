@@ -37,14 +37,14 @@ client.Run(ctx, func(ctx context.Context) error {
 | ---- | ---- | -------- | ----------- |
 | `EditMessage` | `bool` | — | Set this flag if the game message should be automatically edited to include the current scoreboard |
 | `Force` | `bool` | — | Set this flag if the high score is allowed to decrease. This can be useful when fixing mistakes or banning cheaters |
-| `Peer` | `InputPeerClass` | yes | Unique identifier of target chat |
+| `Peer` | [`InputPeerClass`](/docs/reference/types/general/input-peer) | yes | Unique identifier of target chat |
 | `ID` | `int` | yes | Identifier of the sent message |
-| `UserID` | `InputUserClass` | yes | User identifier |
+| `UserID` | [`InputUserClass`](/docs/reference/types/general/input-user) | yes | User identifier |
 | `Score` | `int` | yes | New score |
 
 ## Returns
 
-`UpdatesClass`
+[`UpdatesClass`](/docs/reference/types/general/updates)
 
 ## Possible errors
 

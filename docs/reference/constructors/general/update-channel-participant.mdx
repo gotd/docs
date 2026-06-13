@@ -25,9 +25,9 @@ Implements [`Update`](/docs/reference/types/general/update).
 | `Date` | `int` | yes | Date of the event |
 | `ActorID` | `int64` | yes | User that triggered the change (inviter, admin that kicked the user, or the even the user_id itself) |
 | `UserID` | `int64` | yes | User that was affected by the change |
-| `PrevParticipant` | `ChannelParticipantClass` | — | Previous participant status |
-| `NewParticipant` | `ChannelParticipantClass` | — | New participant status |
-| `Invite` | `ExportedChatInviteClass` | — | Chat invite used to join the channel/supergroup |
+| `PrevParticipant` | [`ChannelParticipantClass`](/docs/reference/types/general/channel-participant) | — | Previous participant status |
+| `NewParticipant` | [`ChannelParticipantClass`](/docs/reference/types/general/channel-participant) | — | New participant status |
+| `Invite` | [`ExportedChatInviteClass`](/docs/reference/types/general/exported-chat-invite) | — | Chat invite used to join the channel/supergroup |
 | `Qts` | `int` | yes | New qts value, see updates » for more info. |
 
 ## References

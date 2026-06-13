@@ -28,13 +28,13 @@ Implements [`Chat`](/docs/reference/types/general/chat).
 | `Noforwards` | `bool` | — | Whether this group is protected, thus does not allow forwarding messages from it |
 | `ID` | `int64` | yes | ID of the group, see here » for more info and the available ID range. |
 | `Title` | `string` | yes | Title |
-| `Photo` | `ChatPhotoClass` | yes | Chat photo |
+| `Photo` | [`ChatPhotoClass`](/docs/reference/types/general/chat-photo) | yes | Chat photo |
 | `ParticipantsCount` | `int` | yes | Participant count |
 | `Date` | `int` | yes | Date of creation of the group |
 | `Version` | `int` | yes | Used in basic groups to reorder updates and make sure that all of them were received. |
-| `MigratedTo` | `InputChannelClass` | — | Means this chat was upgraded to a supergroup |
-| `AdminRights` | `ChatAdminRights` | — | Admin rights of the user in the group |
-| `DefaultBannedRights` | `ChatBannedRights` | — | Default banned rights of all users in the group |
+| `MigratedTo` | [`InputChannelClass`](/docs/reference/types/general/input-channel) | — | Means this chat was upgraded to a supergroup |
+| `AdminRights` | [`ChatAdminRights`](/docs/reference/constructors/general/chat-admin-rights) | — | Admin rights of the user in the group |
+| `DefaultBannedRights` | [`ChatBannedRights`](/docs/reference/constructors/general/chat-banned-rights) | — | Default banned rights of all users in the group |
 
 ## References
 

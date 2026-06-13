@@ -35,12 +35,12 @@ client.Run(ctx, func(ctx context.Context) error {
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| `Auction` | `InputStarGiftAuctionClass` | yes | Either the ID of the gift linked to the auction, or an auction deep link slug ». |
+| `Auction` | [`InputStarGiftAuctionClass`](/docs/reference/types/general/input-star-gift-auction) | yes | Either the ID of the gift linked to the auction, or an auction deep link slug ». |
 | `Version` | `int` | yes | Initially 0, then set to the returned starGiftAuctionState.version, to avoid refetching results if they haven't changed. |
 
 ## Returns
 
-`*PaymentsStarGiftAuctionState`
+[`*PaymentsStarGiftAuctionState`](/docs/reference/constructors/payments/star-gift-auction-state)
 
 ## Possible errors
 

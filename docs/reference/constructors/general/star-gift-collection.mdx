@@ -20,9 +20,14 @@ type tg.StarGiftCollection struct { /* ... */ }
 | ---- | ---- | -------- | ----------- |
 | `CollectionID` | `int` | yes | The ID of the collection. |
 | `Title` | `string` | yes | Title of the collection. |
-| `Icon` | `DocumentClass` | — | Optional icon for the collection, taken from the first gift in the collection. |
+| `Icon` | [`DocumentClass`](/docs/reference/types/general/document) | — | Optional icon for the collection, taken from the first gift in the collection. |
 | `GiftsCount` | `int` | yes | Number of gifts in the collection. |
 | `Hash` | `int64` | yes | Field to use instead of collection_id when generating the hash to pass to payments getStarGiftCollections. |
+
+## Returned by
+
+- [`payments.createStarGiftCollection`](/docs/reference/methods/payments/create-star-gift-collection)
+- [`payments.updateStarGiftCollection`](/docs/reference/methods/payments/update-star-gift-collection)
 
 ## References
 

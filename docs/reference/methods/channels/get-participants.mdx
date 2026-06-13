@@ -35,15 +35,15 @@ client.Run(ctx, func(ctx context.Context) error {
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| `Channel` | `InputChannelClass` | yes | Channel |
-| `Filter` | `ChannelParticipantsFilterClass` | yes | Which participant types to fetch |
+| `Channel` | [`InputChannelClass`](/docs/reference/types/general/input-channel) | yes | Channel |
+| `Filter` | [`ChannelParticipantsFilterClass`](/docs/reference/types/general/channel-participants-filter) | yes | Which participant types to fetch |
 | `Offset` | `int` | yes | Offset |
 | `Limit` | `int` | yes | Limit |
 | `Hash` | `int64` | yes | Hash |
 
 ## Returns
 
-`ChannelsChannelParticipantsClass`
+[`ChannelsChannelParticipantsClass`](/docs/reference/types/channels/channel-participants)
 
 ## Possible errors
 

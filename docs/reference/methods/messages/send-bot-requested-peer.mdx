@@ -35,15 +35,15 @@ client.Run(ctx, func(ctx context.Context) error {
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| `Peer` | `InputPeerClass` | yes | The bot that sent the keyboardButtonRequestPeer button. |
+| `Peer` | [`InputPeerClass`](/docs/reference/types/general/input-peer) | yes | The bot that sent the keyboardButtonRequestPeer button. |
 | `MsgID` | `int` | — | ID of the message that contained the reply keyboard with the keyboardButtonRequestPeer button. |
 | `WebappReqID` | `string` | — | WebappReqID field of MessagesSendBotRequestedPeerRequest. |
 | `ButtonID` | `int` | yes | The button_id field from the keyboardButtonRequestPeer constructor. |
-| `RequestedPeers` | `[]InputPeerClass` | yes | The chosen peers. |
+| `RequestedPeers` | [`[]InputPeerClass`](/docs/reference/types/general/input-peer) | yes | The chosen peers. |
 
 ## Returns
 
-`UpdatesClass`
+[`UpdatesClass`](/docs/reference/types/general/updates)
 
 ## Possible errors
 

@@ -37,14 +37,14 @@ client.Run(ctx, func(ctx context.Context) error {
 | ---- | ---- | -------- | ----------- |
 | `NoWebpage` | `bool` | — | Disable generation of the webpage preview |
 | `InvertMedia` | `bool` | — | If set, any eventual webpage preview will be shown on top of the message instead of at the bottom. |
-| `ReplyTo` | `InputReplyToClass` | — | If set, indicates that the message should be sent in reply to the specified message or story. |
-| `Peer` | `InputPeerClass` | yes | Destination of the message that should be sent |
+| `ReplyTo` | [`InputReplyToClass`](/docs/reference/types/general/input-reply-to) | — | If set, indicates that the message should be sent in reply to the specified message or story. |
+| `Peer` | [`InputPeerClass`](/docs/reference/types/general/input-peer) | yes | Destination of the message that should be sent |
 | `Message` | `string` | yes | The draft |
-| `Entities` | `[]MessageEntityClass` | — | Message entities for styled text |
-| `Media` | `InputMediaClass` | — | Attached media |
+| `Entities` | [`[]MessageEntityClass`](/docs/reference/types/general/message-entity) | — | Message entities for styled text |
+| `Media` | [`InputMediaClass`](/docs/reference/types/general/input-media) | — | Attached media |
 | `Effect` | `int64` | — | Specifies a message effect » to use for the message. |
-| `SuggestedPost` | `SuggestedPost` | — | Used to suggest a post to a channel, see here » for more info on the full flow. |
-| `RichMessage` | `InputRichMessageClass` | — | RichMessage field of MessagesSaveDraftRequest. |
+| `SuggestedPost` | [`SuggestedPost`](/docs/reference/constructors/general/suggested-post) | — | Used to suggest a post to a channel, see here » for more info on the full flow. |
+| `RichMessage` | [`InputRichMessageClass`](/docs/reference/types/general/input-rich-message) | — | RichMessage field of MessagesSaveDraftRequest. |
 
 ## Returns
 

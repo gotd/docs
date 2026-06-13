@@ -19,7 +19,7 @@ type tg.MyBoost struct { /* ... */ }
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
 | `Slot` | `int` | yes | Boost slot ID » |
-| `Peer` | `PeerClass` | — | If set, indicates this slot is currently occupied, i.e. we are boosting this peer. Note that we can assign multiple boost slots to the same peer. |
+| `Peer` | [`PeerClass`](/docs/reference/types/general/peer) | — | If set, indicates this slot is currently occupied, i.e. we are boosting this peer. Note that we can assign multiple boost slots to the same peer. |
 | `Date` | `int` | yes | When (unixtime) we started boosting the peer, 0 otherwise. |
 | `Expires` | `int` | yes | Indicates the (unixtime) expiration date of the boost in peer (0 if peer is not set). |
 | `CooldownUntilDate` | `int` | — | If peer is set, indicates the (unixtime) date after which this boost can be reassigned to another channel. |

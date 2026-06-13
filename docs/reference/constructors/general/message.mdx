@@ -37,39 +37,39 @@ Implements [`Message`](/docs/reference/types/general/message).
 | `PaidSuggestedPostStars` | `bool` | — | Set if this is a suggested channel post » that was paid using Telegram Stars. |
 | `PaidSuggestedPostTon` | `bool` | — | Set if this is a suggested channel post » that was paid using Toncoins. |
 | `ID` | `int` | yes | ID of the message |
-| `FromID` | `PeerClass` | — | ID of the sender of the message |
+| `FromID` | [`PeerClass`](/docs/reference/types/general/peer) | — | ID of the sender of the message |
 | `FromBoostsApplied` | `int` | — | Supergroups only, contains the number of boosts this user has given the current supergroup, and should be shown in the UI in the header of the message. Only present for incoming messages from non-anonymous supergroup members that have boosted the supergroup. Note that this counter should be locally overridden for non-anonymous outgoing messages, according to the current value of channelFull.boosts_applied, to ensure the value is correct even for messages sent by the current user before a supergroup was boosted (or after a boost has expired or the number of boosts has changed); do not update this value for incoming messages from other users, even if their boosts have changed. |
 | `FromRank` | `string` | — | Only in supergroups » (never basic groups, where this information is contained elsewhere »), contains the sender's tag ». |
-| `PeerID` | `PeerClass` | yes | Peer ID, the chat where this message was sent |
-| `SavedPeerID` | `PeerClass` | — | Messages from a saved messages dialog » will have peer=inputPeerSelf and the saved_peer_id flag set to the ID of the saved dialog.Messages from a monoforum » will have peer=ID of the monoforum and the saved_peer_id flag set to the ID of a topic. |
-| `FwdFrom` | `MessageFwdHeader` | — | Info about forwarded messages |
+| `PeerID` | [`PeerClass`](/docs/reference/types/general/peer) | yes | Peer ID, the chat where this message was sent |
+| `SavedPeerID` | [`PeerClass`](/docs/reference/types/general/peer) | — | Messages from a saved messages dialog » will have peer=inputPeerSelf and the saved_peer_id flag set to the ID of the saved dialog.Messages from a monoforum » will have peer=ID of the monoforum and the saved_peer_id flag set to the ID of a topic. |
+| `FwdFrom` | [`MessageFwdHeader`](/docs/reference/constructors/general/message-fwd-header) | — | Info about forwarded messages |
 | `ViaBotID` | `int64` | — | ID of the inline bot that generated the message |
 | `ViaBusinessBotID` | `int64` | — | Whether the message was sent by the business bot specified in via_bot_id on behalf of the user. |
-| `GuestchatViaFrom` | `PeerClass` | — | GuestchatViaFrom field of Message. |
-| `ReplyTo` | `MessageReplyHeaderClass` | — | Reply information |
+| `GuestchatViaFrom` | [`PeerClass`](/docs/reference/types/general/peer) | — | GuestchatViaFrom field of Message. |
+| `ReplyTo` | [`MessageReplyHeaderClass`](/docs/reference/types/general/message-reply-header) | — | Reply information |
 | `Date` | `int` | yes | Date of the message |
 | `Message` | `string` | yes | The message |
-| `Media` | `MessageMediaClass` | — | Media attachment |
-| `ReplyMarkup` | `ReplyMarkupClass` | — | Reply markup (bot/inline keyboards) |
-| `Entities` | `[]MessageEntityClass` | — | Message entities for styled text |
+| `Media` | [`MessageMediaClass`](/docs/reference/types/general/message-media) | — | Media attachment |
+| `ReplyMarkup` | [`ReplyMarkupClass`](/docs/reference/types/general/reply-markup) | — | Reply markup (bot/inline keyboards) |
+| `Entities` | [`[]MessageEntityClass`](/docs/reference/types/general/message-entity) | — | Message entities for styled text |
 | `Views` | `int` | — | View count for channel posts |
 | `Forwards` | `int` | — | Forward counter |
-| `Replies` | `MessageReplies` | — | Info about post comments (for channels) or message replies (for groups) |
+| `Replies` | [`MessageReplies`](/docs/reference/constructors/general/message-replies) | — | Info about post comments (for channels) or message replies (for groups) |
 | `EditDate` | `int` | — | Last edit date of this message |
 | `PostAuthor` | `string` | — | Name of the author of this message for channel posts (with signatures enabled) |
 | `GroupedID` | `int64` | — | Multiple media messages sent using messages.sendMultiMedia with the same grouped ID indicate an album or media group |
-| `Reactions` | `MessageReactions` | — | Reactions to this message |
-| `RestrictionReason` | `[]RestrictionReason` | — | Contains the reason why access to this message must be restricted. |
+| `Reactions` | [`MessageReactions`](/docs/reference/constructors/general/message-reactions) | — | Reactions to this message |
+| `RestrictionReason` | [`[]RestrictionReason`](/docs/reference/constructors/general/restriction-reason) | — | Contains the reason why access to this message must be restricted. |
 | `TTLPeriod` | `int` | — | Time To Live of the message, once message.date+message.ttl_period === time(), the message will be deleted on the server, and must be deleted locally as well. |
 | `QuickReplyShortcutID` | `int` | — | If set, this message is a quick reply shortcut message » (note that quick reply shortcut messages sent to a private chat will not have this field set). |
 | `Effect` | `int64` | — | A message effect that should be played as specified here ». |
-| `Factcheck` | `FactCheck` | — | Represents a fact-check ». |
+| `Factcheck` | [`FactCheck`](/docs/reference/constructors/general/fact-check) | — | Represents a fact-check ». |
 | `ReportDeliveryUntilDate` | `int` | — | Used for Telegram Gateway verification messages: if set and the current unixtime is bigger than the specified unixtime, invoke messages.reportMessagesDelivery passing the ID and the peer of this message as soon as it is received by the client (optionally batching requests for the same peer). |
 | `PaidMessageStars` | `int64` | — | The amount of stars the sender has paid to send the message, see here » for more info. |
-| `SuggestedPost` | `SuggestedPost` | — | Used to suggest a post to a channel, see here » for more info on the full flow. |
+| `SuggestedPost` | [`SuggestedPost`](/docs/reference/constructors/general/suggested-post) | — | Used to suggest a post to a channel, see here » for more info on the full flow. |
 | `ScheduleRepeatPeriod` | `int` | — | Once sent, this message will be automatically re-scheduled to be re-sent again this many seconds in the future, see here » for more info on repeating scheduled messages. |
 | `SummaryFromLanguage` | `string` | — | SummaryFromLanguage field of Message. |
-| `RichMessage` | `RichMessage` | — | RichMessage field of Message. |
+| `RichMessage` | [`RichMessage`](/docs/reference/constructors/general/rich-message) | — | RichMessage field of Message. |
 
 ## References
 

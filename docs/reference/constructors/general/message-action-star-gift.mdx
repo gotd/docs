@@ -29,17 +29,17 @@ Implements [`MessageAction`](/docs/reference/types/general/message-action).
 | `PrepaidUpgrade` | `bool` | — | The sender has already pre-paid for the upgrade of this gift to a collectible gift. |
 | `UpgradeSeparate` | `bool` | — | This service message is the notification of a separate pre-payment for the upgrade of a gift we own. |
 | `AuctionAcquired` | `bool` | — | If set, this gift was acquired in a collectible gifts auction ». |
-| `Gift` | `StarGiftClass` | yes | Info about the gift |
-| `Message` | `TextWithEntities` | — | Additional message from the sender of the gift |
+| `Gift` | [`StarGiftClass`](/docs/reference/types/general/star-gift) | yes | Info about the gift |
+| `Message` | [`TextWithEntities`](/docs/reference/constructors/general/text-with-entities) | — | Additional message from the sender of the gift |
 | `ConvertStars` | `int64` | — | The receiver of this gift may convert it to this many Telegram Stars, instead of displaying it on their profile page.convert_stars will be equal to stars only if the gift was bought using recently bought Telegram Stars, otherwise it will be less than stars. |
 | `UpgradeMsgID` | `int` | — | If set, this gift was upgraded to a collectible gift, and the corresponding messageActionStarGiftUnique is available at the specified message ID. |
 | `UpgradeStars` | `int64` | — | The number of Telegram Stars the user can pay to convert the gift into a collectible gift ». |
-| `FromID` | `PeerClass` | — | Sender of the gift (unset for anonymous gifts). |
-| `Peer` | `PeerClass` | — | Receiver of the gift. |
+| `FromID` | [`PeerClass`](/docs/reference/types/general/peer) | — | Sender of the gift (unset for anonymous gifts). |
+| `Peer` | [`PeerClass`](/docs/reference/types/general/peer) | — | Receiver of the gift. |
 | `SavedID` | `int64` | — | For channel gifts, ID to use in inputSavedStarGiftChat constructors. |
 | `PrepaidUpgradeHash` | `string` | — | Hash to prepay for a gift upgrade separately ». |
 | `GiftMsgID` | `int` | — | For separate upgrades, the identifier of the message with the gift whose upgrade was prepaid (only valid for the receiver of the service message). |
-| `ToID` | `PeerClass` | — | ToID field of MessageActionStarGift. |
+| `ToID` | [`PeerClass`](/docs/reference/types/general/peer) | — | ToID field of MessageActionStarGift. |
 | `GiftNum` | `int` | — | GiftNum field of MessageActionStarGift. |
 
 ## References

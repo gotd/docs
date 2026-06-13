@@ -35,8 +35,8 @@ client.Run(ctx, func(ctx context.Context) error {
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| `Call` | `InputGroupCallClass` | yes | The group call |
-| `Participant` | `InputPeerClass` | yes | The group call participant (can also be the user itself) |
+| `Call` | [`InputGroupCallClass`](/docs/reference/types/general/input-group-call) | yes | The group call |
+| `Participant` | [`InputPeerClass`](/docs/reference/types/general/input-peer) | yes | The group call participant (can also be the user itself) |
 | `Muted` | `bool` | — | Whether to mute or unmute the specified participant |
 | `Volume` | `int` | — | New volume |
 | `RaiseHand` | `bool` | — | Raise or lower hand |
@@ -46,7 +46,7 @@ client.Run(ctx, func(ctx context.Context) error {
 
 ## Returns
 
-`UpdatesClass`
+[`UpdatesClass`](/docs/reference/types/general/updates)
 
 ## Possible errors
 

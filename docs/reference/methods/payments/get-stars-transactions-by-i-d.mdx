@@ -36,12 +36,12 @@ client.Run(ctx, func(ctx context.Context) error {
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
 | `Ton` | `bool` | — | If set, returns channel/bot ad revenue transactions in nanotons. |
-| `Peer` | `InputPeerClass` | yes | Channel or bot. |
-| `ID` | `[]InputStarsTransaction` | yes | Transaction IDs. |
+| `Peer` | [`InputPeerClass`](/docs/reference/types/general/input-peer) | yes | Channel or bot. |
+| `ID` | [`[]InputStarsTransaction`](/docs/reference/constructors/general/input-stars-transaction) | yes | Transaction IDs. |
 
 ## Returns
 
-`*PaymentsStarsStatus`
+[`*PaymentsStarsStatus`](/docs/reference/constructors/payments/stars-status)
 
 ## Possible errors
 

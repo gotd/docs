@@ -19,12 +19,12 @@ type tg.StarGiftAuctionAcquiredGift struct { /* ... */ }
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
 | `NameHidden` | `bool` | — | If set, your name will be hidden if the destination peer decides to display the gift on their profile (they will still see that you sent the gift). |
-| `Peer` | `PeerClass` | yes | The peer that received the gift. |
+| `Peer` | [`PeerClass`](/docs/reference/types/general/peer) | yes | The peer that received the gift. |
 | `Date` | `int` | yes | When was the gift obtained. |
 | `BidAmount` | `int64` | yes | The amount in Telegram Stars that was bid in order to obtain the gift. |
 | `Round` | `int` | yes | The round number where the gift was obtained. |
 | `Pos` | `int` | yes | The position of the gift in the auction. |
-| `Message` | `TextWithEntities` | — | Optional message that attached with the gift, passed when making the bid. |
+| `Message` | [`TextWithEntities`](/docs/reference/constructors/general/text-with-entities) | — | Optional message that attached with the gift, passed when making the bid. |
 | `GiftNum` | `int` | — | If set, the collectible number of the won gift among all collectibles of the same type. |
 
 ## References

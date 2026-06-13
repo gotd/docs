@@ -24,7 +24,7 @@ Implements [`auth.Authorization`](/docs/reference/types/auth/authorization).
 | `OtherwiseReloginDays` | `int` | — | If and only if setup_password_required is set and the user declines to set a 2-step verification password, they will be able to log into their account via SMS again only after this many days pass. |
 | `TmpSessions` | `int` | — | Temporary passport sessions |
 | `FutureAuthToken` | `[]byte` | — | A future auth token |
-| `User` | `UserClass` | yes | Info on authorized user |
+| `User` | [`UserClass`](/docs/reference/types/general/user) | yes | Info on authorized user |
 
 ## References
 

@@ -35,13 +35,13 @@ client.Run(ctx, func(ctx context.Context) error {
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| `Peer` | `InputPeerClass` | yes | The owned peer where to create the album. |
+| `Peer` | [`InputPeerClass`](/docs/reference/types/general/input-peer) | yes | The owned peer where to create the album. |
 | `Title` | `string` | yes | Album name. |
 | `Stories` | `[]int` | yes | Stories to add to the album. |
 
 ## Returns
 
-`*StoryAlbum`
+[`*StoryAlbum`](/docs/reference/constructors/general/story-album)
 
 ## Possible errors
 

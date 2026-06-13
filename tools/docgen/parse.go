@@ -170,7 +170,72 @@ func Parse(dir string) (*Result, error) {
 	}
 	sort.Slice(res.Constructors, func(i, j int) bool { return res.Constructors[i].TLName < res.Constructors[j].TLName })
 
+	linkTypes(res)
 	return res, nil
+}
+
+// linkTypes renders Markdown for every parameter, field and return type
+// (linking Go types that have a reference page) and builds the reverse
+// "returned by" index on types and constructors.
+func linkTypes(res *Result) {
+	reg := map[string]*Ref{}
+	types := map[string]*Type{}
+	ctors := map[string]*Constructor{}
+	for _, t := range res.Types {
+		reg[t.GoName] = &Ref{Kind: "types", Namespace: t.Namespace, Slug: t.Slug}
+		types[t.GoName] = t
+	}
+	for _, c := range res.Constructors {
+		reg[c.GoName] = &Ref{Kind: "constructors", Namespace: c.Namespace, Slug: c.Slug}
+		ctors[c.GoName] = c
+	}
+
+	for _, m := range res.Methods {
+		for i := range m.Params {
+			m.Params[i].TypeMD = typeMarkdown(m.Params[i].GoType, reg)
+		}
+		m.ReturnTypeMD = typeMarkdown(m.ReturnType, reg)
+
+		// Reverse index: record the method on the type/constructor it returns.
+		ref := &Ref{Kind: "methods", TLName: m.TLName, Namespace: m.Namespace, Slug: m.Slug}
+		switch base := baseType(m.ReturnType); {
+		case types[base] != nil:
+			types[base].ReturnedBy = append(types[base].ReturnedBy, ref)
+		case ctors[base] != nil:
+			ctors[base].ReturnedBy = append(ctors[base].ReturnedBy, ref)
+		}
+	}
+	for _, c := range res.Constructors {
+		for i := range c.Fields {
+			c.Fields[i].TypeMD = typeMarkdown(c.Fields[i].GoType, reg)
+		}
+	}
+}
+
+// baseType strips leading slice and pointer markers from a Go type.
+func baseType(goType string) string {
+	for {
+		switch {
+		case strings.HasPrefix(goType, "[]"):
+			goType = goType[2:]
+		case strings.HasPrefix(goType, "*"):
+			goType = goType[1:]
+		default:
+			return goType
+		}
+	}
+}
+
+// typeMarkdown renders a Go type as Markdown, linking the base identifier to
+// its reference page when one exists (slices/pointers are unwrapped).
+func typeMarkdown(goType string, reg map[string]*Ref) string {
+	if goType == "" {
+		return ""
+	}
+	if ref, ok := reg[baseType(goType)]; ok {
+		return "[`" + goType + "`](/docs/reference/" + ref.Kind + "/" + ref.Namespace + "/" + ref.Slug + ")"
+	}
+	return "`" + goType + "`"
 }
 
 // docText returns the doc comment attached to a type spec (either on the spec

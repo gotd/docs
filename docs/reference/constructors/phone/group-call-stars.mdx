@@ -19,9 +19,13 @@ type tg.PhoneGroupCallStars struct { /* ... */ }
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
 | `TotalStars` | `int64` | yes | TotalStars field of PhoneGroupCallStars. |
-| `TopDonors` | `[]GroupCallDonor` | yes | TopDonors field of PhoneGroupCallStars. |
-| `Chats` | `[]ChatClass` | yes | Chats field of PhoneGroupCallStars. |
-| `Users` | `[]UserClass` | yes | Users field of PhoneGroupCallStars. |
+| `TopDonors` | [`[]GroupCallDonor`](/docs/reference/constructors/general/group-call-donor) | yes | TopDonors field of PhoneGroupCallStars. |
+| `Chats` | [`[]ChatClass`](/docs/reference/types/general/chat) | yes | Chats field of PhoneGroupCallStars. |
+| `Users` | [`[]UserClass`](/docs/reference/types/general/user) | yes | Users field of PhoneGroupCallStars. |
+
+## Returned by
+
+- [`phone.getGroupCallStars`](/docs/reference/methods/phone/get-group-call-stars)
 
 ## References
 

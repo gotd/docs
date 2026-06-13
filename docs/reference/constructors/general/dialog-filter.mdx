@@ -30,12 +30,12 @@ Implements [`DialogFilter`](/docs/reference/types/general/dialog-filter).
 | `ExcludeArchived` | `bool` | — | Whether to exclude archived chats from this folder |
 | `TitleNoanimate` | `bool` | — | If set, any animated emojis present in title should not be animated and should be instead frozen on the first frame. |
 | `ID` | `int` | yes | Folder ID |
-| `Title` | `TextWithEntities` | yes | Folder name (max 12 UTF-8 chars) |
+| `Title` | [`TextWithEntities`](/docs/reference/constructors/general/text-with-entities) | yes | Folder name (max 12 UTF-8 chars) |
 | `Emoticon` | `string` | — | Emoji to use as icon for the folder. |
 | `Color` | `int` | — | A color ID for the folder tag associated to this folder, see here » for more info. |
-| `PinnedPeers` | `[]InputPeerClass` | yes | Pinned chats, folders can have unlimited pinned chats |
-| `IncludePeers` | `[]InputPeerClass` | yes | Include the following chats in this folder |
-| `ExcludePeers` | `[]InputPeerClass` | yes | Exclude the following chats from this folder |
+| `PinnedPeers` | [`[]InputPeerClass`](/docs/reference/types/general/input-peer) | yes | Pinned chats, folders can have unlimited pinned chats |
+| `IncludePeers` | [`[]InputPeerClass`](/docs/reference/types/general/input-peer) | yes | Include the following chats in this folder |
+| `ExcludePeers` | [`[]InputPeerClass`](/docs/reference/types/general/input-peer) | yes | Exclude the following chats from this folder |
 
 ## References
 

@@ -18,9 +18,13 @@ type tg.UsersUserFull struct { /* ... */ }
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| `FullUser` | `UserFull` | yes | Full user information |
-| `Chats` | `[]ChatClass` | yes | Mentioned chats |
-| `Users` | `[]UserClass` | yes | Mentioned users |
+| `FullUser` | [`UserFull`](/docs/reference/constructors/general/user-full) | yes | Full user information |
+| `Chats` | [`[]ChatClass`](/docs/reference/types/general/chat) | yes | Mentioned chats |
+| `Users` | [`[]UserClass`](/docs/reference/types/general/user) | yes | Mentioned users |
+
+## Returned by
+
+- [`users.getFullUser`](/docs/reference/methods/users/get-full-user)
 
 ## References
 

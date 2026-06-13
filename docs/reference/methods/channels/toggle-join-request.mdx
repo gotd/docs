@@ -36,13 +36,13 @@ client.Run(ctx, func(ctx context.Context) error {
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
 | `ApplyToInvites` | `bool` | — | ApplyToInvites field of ChannelsToggleJoinRequestRequest. |
-| `Channel` | `InputChannelClass` | yes | Group |
+| `Channel` | [`InputChannelClass`](/docs/reference/types/general/input-channel) | yes | Group |
 | `Enabled` | `bool` | — | Toggle |
-| `GuardBot` | `InputUserClass` | — | GuardBot field of ChannelsToggleJoinRequestRequest. |
+| `GuardBot` | [`InputUserClass`](/docs/reference/types/general/input-user) | — | GuardBot field of ChannelsToggleJoinRequestRequest. |
 
 ## Returns
 
-`UpdatesClass`
+[`UpdatesClass`](/docs/reference/types/general/updates)
 
 ## Possible errors
 

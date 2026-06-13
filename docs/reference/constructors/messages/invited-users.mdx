@@ -18,8 +18,14 @@ type tg.MessagesInvitedUsers struct { /* ... */ }
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| `Updates` | `UpdatesClass` | yes | List of updates about successfully invited users (and eventually info about the created group) |
-| `MissingInvitees` | `[]MissingInvitee` | yes | A list of users that could not be invited, along with the reason why they couldn't be invited. |
+| `Updates` | [`UpdatesClass`](/docs/reference/types/general/updates) | yes | List of updates about successfully invited users (and eventually info about the created group) |
+| `MissingInvitees` | [`[]MissingInvitee`](/docs/reference/constructors/general/missing-invitee) | yes | A list of users that could not be invited, along with the reason why they couldn't be invited. |
+
+## Returned by
+
+- [`channels.inviteToChannel`](/docs/reference/methods/channels/invite-to-channel)
+- [`messages.addChatUser`](/docs/reference/methods/messages/add-chat-user)
+- [`messages.createChat`](/docs/reference/methods/messages/create-chat)
 
 ## References
 

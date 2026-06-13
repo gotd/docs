@@ -19,9 +19,14 @@ type tg.PremiumBoostsList struct { /* ... */ }
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
 | `Count` | `int` | yes | Total number of results |
-| `Boosts` | `[]Boost` | yes | Boosts |
+| `Boosts` | [`[]Boost`](/docs/reference/constructors/general/boost) | yes | Boosts |
 | `NextOffset` | `string` | — | Offset that can be used for pagination. |
-| `Users` | `[]UserClass` | yes | Mentioned users |
+| `Users` | [`[]UserClass`](/docs/reference/types/general/user) | yes | Mentioned users |
+
+## Returned by
+
+- [`premium.getBoostsList`](/docs/reference/methods/premium/get-boosts-list)
+- [`premium.getUserBoosts`](/docs/reference/methods/premium/get-user-boosts)
 
 ## References
 

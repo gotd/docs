@@ -36,11 +36,11 @@ client.Run(ctx, func(ctx context.Context) error {
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
 | `Silent` | `bool` | — | Whether the inline message that will be sent by the bot on behalf of the user once the web app interaction is terminated should be sent silently (no notifications for the receivers). |
-| `Peer` | `InputPeerClass` | yes | Dialog where the web app was opened. |
-| `Bot` | `InputUserClass` | yes | Bot that owns the web app |
+| `Peer` | [`InputPeerClass`](/docs/reference/types/general/input-peer) | yes | Dialog where the web app was opened. |
+| `Bot` | [`InputUserClass`](/docs/reference/types/general/input-user) | yes | Bot that owns the web app |
 | `QueryID` | `int64` | yes | Web app interaction ID obtained from messages.requestWebView |
-| `ReplyTo` | `InputReplyToClass` | — | If set, indicates that the inline message that will be sent by the bot on behalf of the user once the web app interaction is terminated should be sent in reply to the specified message or story. |
-| `SendAs` | `InputPeerClass` | — | Open the web app as the specified peer |
+| `ReplyTo` | [`InputReplyToClass`](/docs/reference/types/general/input-reply-to) | — | If set, indicates that the inline message that will be sent by the bot on behalf of the user once the web app interaction is terminated should be sent in reply to the specified message or story. |
+| `SendAs` | [`InputPeerClass`](/docs/reference/types/general/input-peer) | — | Open the web app as the specified peer |
 
 ## Returns
 

@@ -28,7 +28,7 @@ Implements [`StarGift`](/docs/reference/types/general/star-gift).
 | `PeerColorAvailable` | `bool` | — | If set, collectible gifts of this type may be used to generate a message color palette and pattern ». |
 | `Auction` | `bool` | — | If set, this is a collectible gift that can only be bought through a collectible gift auction ». |
 | `ID` | `int64` | yes | Identifier of the gift |
-| `Sticker` | `DocumentClass` | yes | Sticker that represents the gift. |
+| `Sticker` | [`DocumentClass`](/docs/reference/types/general/document) | yes | Sticker that represents the gift. |
 | `Stars` | `int64` | yes | Price of the gift in Telegram Stars. |
 | `AvailabilityRemains` | `int` | — | For limited-supply gifts: the remaining number of gifts that may be bought. |
 | `AvailabilityTotal` | `int` | — | For limited-supply gifts: the total number of gifts that was available in the initial supply. |
@@ -39,7 +39,7 @@ Implements [`StarGift`](/docs/reference/types/general/star-gift).
 | `UpgradeStars` | `int64` | — | The number of Telegram Stars the user can pay to convert the gift into a collectible gift ». |
 | `ResellMinStars` | `int64` | — | The minimum price in Stars for gifts of this type currently on resale. |
 | `Title` | `string` | — | Title of the gift |
-| `ReleasedBy` | `PeerClass` | — | This gift was released by the specified peer. |
+| `ReleasedBy` | [`PeerClass`](/docs/reference/types/general/peer) | — | This gift was released by the specified peer. |
 | `PerUserTotal` | `int` | — | Maximum number of gifts of this type that can be owned by any user. |
 | `PerUserRemains` | `int` | — | Remaining number of gifts of this type that can be owned by the current user. |
 | `LockedUntilDate` | `int` | — | If set, the specified gift possibly cannot be sent until the specified date, see here » for the full flow. |
@@ -47,7 +47,7 @@ Implements [`StarGift`](/docs/reference/types/general/star-gift).
 | `GiftsPerRound` | `int` | — | Always set for gifts that can be bought on auctions », contains the number of gifts of this kind that are distributed on every round. |
 | `AuctionStartDate` | `int` | — | Always set for gifts that can be bought on auctions », contains the UNIX timestamp indicating when will the auction start (or when the auction started, if it points to the past). |
 | `UpgradeVariants` | `int` | — | Total number of possible collectible variants » for this gift type. |
-| `Background` | `StarGiftBackground` | — | Default background palette for this gift type, used when rendering gift cards and previews before a specific collectible backdrop is chosen. |
+| `Background` | [`StarGiftBackground`](/docs/reference/constructors/general/star-gift-background) | — | Default background palette for this gift type, used when rendering gift cards and previews before a specific collectible backdrop is chosen. |
 
 ## References
 

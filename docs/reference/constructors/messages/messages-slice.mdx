@@ -24,11 +24,11 @@ Implements [`messages.Messages`](/docs/reference/types/messages/messages).
 | `Count` | `int` | yes | Total number of messages in the list |
 | `NextRate` | `int` | — | Rate to use in the offset_rate parameter in the next call to messages.searchGlobal |
 | `OffsetIDOffset` | `int` | — | Indicates the absolute position of messages[0] within the total result set with count count. This is useful, for example, if the result was fetched using offset_id, and we need to display a progress/total counter (like photo 134 of 200, for all media in a chat, we could simply use photo $&#123;offset_id_offset&#125; of $&#123;count&#125;). |
-| `SearchFlood` | `SearchPostsFlood` | — | For global post searches », the remaining amount of free searches, here query_is_free is related to the current call only, not to the next paginated call, and all subsequent pagination calls will always be free. |
-| `Messages` | `[]MessageClass` | yes | List of messages |
-| `Topics` | `[]ForumTopicClass` | yes | Topics field of MessagesMessagesSlice. |
-| `Chats` | `[]ChatClass` | yes | List of chats mentioned in messages |
-| `Users` | `[]UserClass` | yes | List of users mentioned in messages and chats |
+| `SearchFlood` | [`SearchPostsFlood`](/docs/reference/constructors/general/search-posts-flood) | — | For global post searches », the remaining amount of free searches, here query_is_free is related to the current call only, not to the next paginated call, and all subsequent pagination calls will always be free. |
+| `Messages` | [`[]MessageClass`](/docs/reference/types/general/message) | yes | List of messages |
+| `Topics` | [`[]ForumTopicClass`](/docs/reference/types/general/forum-topic) | yes | Topics field of MessagesMessagesSlice. |
+| `Chats` | [`[]ChatClass`](/docs/reference/types/general/chat) | yes | List of chats mentioned in messages |
+| `Users` | [`[]UserClass`](/docs/reference/types/general/user) | yes | List of users mentioned in messages and chats |
 
 ## References
 

@@ -35,14 +35,14 @@ client.Run(ctx, func(ctx context.Context) error {
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| `ID` | `InputUserClass` | yes | The ID of the user. |
+| `ID` | [`InputUserClass`](/docs/reference/types/general/input-user) | yes | The ID of the user. |
 | `Offset` | `int` | yes | Offset for pagination. |
 | `Limit` | `int` | yes | Maximum number of results to return, see pagination |
 | `Hash` | `int64` | yes | Hash » of the IDs of previously added songs, to avoid returning any result if there was no change. |
 
 ## Returns
 
-`UsersSavedMusicClass`
+[`UsersSavedMusicClass`](/docs/reference/types/users/saved-music)
 
 ## Possible errors
 

@@ -35,13 +35,13 @@ client.Run(ctx, func(ctx context.Context) error {
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| `Peer` | `InputPeerClass` | yes | Peer whose pinned stories should be fetched |
+| `Peer` | [`InputPeerClass`](/docs/reference/types/general/input-peer) | yes | Peer whose pinned stories should be fetched |
 | `OffsetID` | `int` | yes | Offsets for pagination, for more info click here |
 | `Limit` | `int` | yes | Maximum number of results to return, see pagination |
 
 ## Returns
 
-`*StoriesStories`
+[`*StoriesStories`](/docs/reference/constructors/stories/stories)
 
 ## Possible errors
 

@@ -35,12 +35,12 @@ client.Run(ctx, func(ctx context.Context) error {
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| `Bot` | `InputUserClass` | — | If called by a user, must contain the peer of a bot we own. |
+| `Bot` | [`InputUserClass`](/docs/reference/types/general/input-user) | — | If called by a user, must contain the peer of a bot we own. |
 | `LangCode` | `string` | yes | Language code, if left empty this method will return the fallback about text and description. |
 
 ## Returns
 
-`*BotsBotInfo`
+[`*BotsBotInfo`](/docs/reference/constructors/bots/bot-info)
 
 ## Possible errors
 

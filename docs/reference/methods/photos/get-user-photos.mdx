@@ -35,14 +35,14 @@ client.Run(ctx, func(ctx context.Context) error {
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| `UserID` | `InputUserClass` | yes | User ID |
+| `UserID` | [`InputUserClass`](/docs/reference/types/general/input-user) | yes | User ID |
 | `Offset` | `int` | yes | Number of list elements to be skipped |
 | `MaxID` | `int64` | yes | If a positive value was transferred, the method will return only photos with IDs less than the set one. This parameter is often useful when refetching file references », as in conjuction with limit=1 and offset=-1 the photo object with the id specified in max_id can be fetched. |
 | `Limit` | `int` | yes | Number of list elements to be returned |
 
 ## Returns
 
-`PhotosPhotosClass`
+[`PhotosPhotosClass`](/docs/reference/types/photos/photos)
 
 ## Possible errors
 

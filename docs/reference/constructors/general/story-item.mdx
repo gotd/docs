@@ -31,18 +31,18 @@ Implements [`StoryItem`](/docs/reference/types/general/story-item).
 | `Out` | `bool` | — | indicates whether we sent this story. |
 | `ID` | `int` | yes | ID of the story. |
 | `Date` | `int` | yes | When was the story posted. |
-| `FromID` | `PeerClass` | — | Sender of the story. |
-| `FwdFrom` | `StoryFwdHeader` | — | For reposted stories », contains info about the original story. |
+| `FromID` | [`PeerClass`](/docs/reference/types/general/peer) | — | Sender of the story. |
+| `FwdFrom` | [`StoryFwdHeader`](/docs/reference/constructors/general/story-fwd-header) | — | For reposted stories », contains info about the original story. |
 | `ExpireDate` | `int` | yes | When does the story expire. |
 | `Caption` | `string` | — | Story caption. |
-| `Entities` | `[]MessageEntityClass` | — | Message entities for styled text |
-| `Media` | `MessageMediaClass` | yes | Story media. |
-| `MediaAreas` | `[]MediaAreaClass` | — | List of media areas, see here » for more info on media areas. |
-| `Privacy` | `[]PrivacyRuleClass` | — | Privacy rules indicating who can and can't view this story |
-| `Views` | `StoryViews` | — | View date and reaction information |
-| `SentReaction` | `ReactionClass` | — | The reaction we sent. |
+| `Entities` | [`[]MessageEntityClass`](/docs/reference/types/general/message-entity) | — | Message entities for styled text |
+| `Media` | [`MessageMediaClass`](/docs/reference/types/general/message-media) | yes | Story media. |
+| `MediaAreas` | [`[]MediaAreaClass`](/docs/reference/types/general/media-area) | — | List of media areas, see here » for more info on media areas. |
+| `Privacy` | [`[]PrivacyRuleClass`](/docs/reference/types/general/privacy-rule) | — | Privacy rules indicating who can and can't view this story |
+| `Views` | [`StoryViews`](/docs/reference/constructors/general/story-views) | — | View date and reaction information |
+| `SentReaction` | [`ReactionClass`](/docs/reference/types/general/reaction) | — | The reaction we sent. |
 | `Albums` | `[]int` | — | Albums this story is part of. |
-| `Music` | `DocumentClass` | — | Music field of StoryItem. |
+| `Music` | [`DocumentClass`](/docs/reference/types/general/document) | — | Music field of StoryItem. |
 
 ## References
 

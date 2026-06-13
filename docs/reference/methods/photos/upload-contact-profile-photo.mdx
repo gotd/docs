@@ -37,15 +37,15 @@ client.Run(ctx, func(ctx context.Context) error {
 | ---- | ---- | -------- | ----------- |
 | `Suggest` | `bool` | — | If set, will send a messageActionSuggestProfilePhoto service message to user_id, suggesting them to use the specified profile picture; otherwise, will set a personal profile picture for the user (only visible to the current user). |
 | `Save` | `bool` | — | If set, removes a previously set personal profile picture (does not affect suggested profile pictures, to remove them simply delete the messageActionSuggestProfilePhoto service message with messages.deleteMessages). |
-| `UserID` | `InputUserClass` | yes | The contact |
-| `File` | `InputFileClass` | — | Profile photo |
-| `Video` | `InputFileClass` | — | Animated profile picture video |
+| `UserID` | [`InputUserClass`](/docs/reference/types/general/input-user) | yes | The contact |
+| `File` | [`InputFileClass`](/docs/reference/types/general/input-file) | — | Profile photo |
+| `Video` | [`InputFileClass`](/docs/reference/types/general/input-file) | — | Animated profile picture video |
 | `VideoStartTs` | `float64` | — | Floating point UNIX timestamp in seconds, indicating the frame of the video/sticker that should be used as static preview; can only be used if video or video_emoji_markup is set. |
-| `VideoEmojiMarkup` | `VideoSizeClass` | — | Animated sticker profile picture, must contain either a videoSizeEmojiMarkup or a videoSizeStickerMarkup constructor. |
+| `VideoEmojiMarkup` | [`VideoSizeClass`](/docs/reference/types/general/video-size) | — | Animated sticker profile picture, must contain either a videoSizeEmojiMarkup or a videoSizeStickerMarkup constructor. |
 
 ## Returns
 
-`*PhotosPhoto`
+[`*PhotosPhoto`](/docs/reference/constructors/photos/photo)
 
 ## Possible errors
 

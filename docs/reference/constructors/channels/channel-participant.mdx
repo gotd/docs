@@ -18,9 +18,13 @@ type tg.ChannelsChannelParticipant struct { /* ... */ }
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| `Participant` | `ChannelParticipantClass` | yes | The channel participant |
-| `Chats` | `[]ChatClass` | yes | Mentioned chats |
-| `Users` | `[]UserClass` | yes | Users |
+| `Participant` | [`ChannelParticipantClass`](/docs/reference/types/general/channel-participant) | yes | The channel participant |
+| `Chats` | [`[]ChatClass`](/docs/reference/types/general/chat) | yes | Mentioned chats |
+| `Users` | [`[]UserClass`](/docs/reference/types/general/user) | yes | Users |
+
+## Returned by
+
+- [`channels.getParticipant`](/docs/reference/methods/channels/get-participant)
 
 ## References
 

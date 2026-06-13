@@ -18,11 +18,15 @@ type tg.AccountResolvedBusinessChatLinks struct { /* ... */ }
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| `Peer` | `PeerClass` | yes | Destination peer |
+| `Peer` | [`PeerClass`](/docs/reference/types/general/peer) | yes | Destination peer |
 | `Message` | `string` | yes | Message to pre-fill in the message input field. |
-| `Entities` | `[]MessageEntityClass` | — | Message entities for styled text |
-| `Chats` | `[]ChatClass` | yes | Mentioned chats |
-| `Users` | `[]UserClass` | yes | Mentioned users |
+| `Entities` | [`[]MessageEntityClass`](/docs/reference/types/general/message-entity) | — | Message entities for styled text |
+| `Chats` | [`[]ChatClass`](/docs/reference/types/general/chat) | yes | Mentioned chats |
+| `Users` | [`[]UserClass`](/docs/reference/types/general/user) | yes | Mentioned users |
+
+## Returned by
+
+- [`account.resolveBusinessChatLink`](/docs/reference/methods/account/resolve-business-chat-link)
 
 ## References
 

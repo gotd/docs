@@ -22,12 +22,12 @@ Implements [`InputBotInlineMessage`](/docs/reference/types/general/input-bot-inl
 | ---- | ---- | -------- | ----------- |
 | `Title` | `string` | yes | Product name, 1-32 characters |
 | `Description` | `string` | yes | Product description, 1-255 characters |
-| `Photo` | `InputWebDocument` | — | Invoice photo |
-| `Invoice` | `Invoice` | yes | The invoice |
+| `Photo` | [`InputWebDocument`](/docs/reference/constructors/general/input-web-document) | — | Invoice photo |
+| `Invoice` | [`Invoice`](/docs/reference/constructors/general/invoice) | yes | The invoice |
 | `Payload` | `[]byte` | yes | Bot-defined invoice payload, 1-128 bytes. This will not be displayed to the user, use for your internal processes. |
 | `Provider` | `string` | yes | Payments provider token, obtained via Botfather |
-| `ProviderData` | `DataJSON` | yes | A JSON-serialized object for data about the invoice, which will be shared with the payment provider. A detailed description of the required fields should be provided by the payment provider. |
-| `ReplyMarkup` | `ReplyMarkupClass` | — | Inline keyboard |
+| `ProviderData` | [`DataJSON`](/docs/reference/constructors/general/data-j-s-o-n) | yes | A JSON-serialized object for data about the invoice, which will be shared with the payment provider. A detailed description of the required fields should be provided by the payment provider. |
+| `ReplyMarkup` | [`ReplyMarkupClass`](/docs/reference/types/general/reply-markup) | — | Inline keyboard |
 
 ## References
 

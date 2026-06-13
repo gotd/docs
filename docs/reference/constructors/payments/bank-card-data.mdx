@@ -19,7 +19,11 @@ type tg.PaymentsBankCardData struct { /* ... */ }
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
 | `Title` | `string` | yes | Credit card title |
-| `OpenURLs` | `[]BankCardOpenURL` | yes | Info URL(s) provided by the card's bank(s) |
+| `OpenURLs` | [`[]BankCardOpenURL`](/docs/reference/constructors/general/bank-card-open-url) | yes | Info URL(s) provided by the card's bank(s) |
+
+## Returned by
+
+- [`payments.getBankCardData`](/docs/reference/methods/payments/get-bank-card-data)
 
 ## References
 

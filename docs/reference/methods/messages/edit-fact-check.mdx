@@ -35,13 +35,13 @@ client.Run(ctx, func(ctx context.Context) error {
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| `Peer` | `InputPeerClass` | yes | Peer where the message was sent |
+| `Peer` | [`InputPeerClass`](/docs/reference/types/general/input-peer) | yes | Peer where the message was sent |
 | `MsgID` | `int` | yes | Message ID |
-| `Text` | `TextWithEntities` | yes | Fact-check (maximum UTF-8 length specified in appConfig.factcheck_length_limit). |
+| `Text` | [`TextWithEntities`](/docs/reference/constructors/general/text-with-entities) | yes | Fact-check (maximum UTF-8 length specified in appConfig.factcheck_length_limit). |
 
 ## Returns
 
-`UpdatesClass`
+[`UpdatesClass`](/docs/reference/types/general/updates)
 
 ## Possible errors
 

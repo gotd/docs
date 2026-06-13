@@ -37,14 +37,14 @@ client.Run(ctx, func(ctx context.Context) error {
 | ---- | ---- | -------- | ----------- |
 | `JustClear` | `bool` | — | Just clear history for the current user, without actually removing messages for every chat user |
 | `Revoke` | `bool` | — | Whether to delete the message history for all chat participants |
-| `Peer` | `InputPeerClass` | yes | User or chat, communication history of which will be deleted |
+| `Peer` | [`InputPeerClass`](/docs/reference/types/general/input-peer) | yes | User or chat, communication history of which will be deleted |
 | `MaxID` | `int` | yes | Maximum ID of message to delete |
 | `MinDate` | `int` | — | Delete all messages newer than this UNIX timestamp |
 | `MaxDate` | `int` | — | Delete all messages older than this UNIX timestamp |
 
 ## Returns
 
-`*MessagesAffectedHistory`
+[`*MessagesAffectedHistory`](/docs/reference/constructors/messages/affected-history)
 
 ## Possible errors
 

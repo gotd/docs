@@ -21,7 +21,7 @@ type tg.MessageReactor struct { /* ... */ }
 | `Top` | `bool` | — | If set, the reactor is one of the most active reactors; may be unset if the reactor is the current user. |
 | `My` | `bool` | — | If set, this reactor is the current user. |
 | `Anonymous` | `bool` | — | If set, the reactor is anonymous. |
-| `PeerID` | `PeerClass` | — | Identifier of the peer that reacted: may be unset for anonymous reactors different from the current user (i.e. if the current user sent an anonymous reaction anonymous will be set but this field will also be set). |
+| `PeerID` | [`PeerClass`](/docs/reference/types/general/peer) | — | Identifier of the peer that reacted: may be unset for anonymous reactors different from the current user (i.e. if the current user sent an anonymous reaction anonymous will be set but this field will also be set). |
 | `Count` | `int` | yes | The number of sent Telegram Stars. |
 
 ## References

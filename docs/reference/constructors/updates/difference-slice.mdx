@@ -20,12 +20,12 @@ Implements [`updates.Difference`](/docs/reference/types/updates/difference).
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| `NewMessages` | `[]MessageClass` | yes | List of new messages |
-| `NewEncryptedMessages` | `[]EncryptedMessageClass` | yes | New messages from the encrypted event sequence |
-| `OtherUpdates` | `[]UpdateClass` | yes | List of updates |
-| `Chats` | `[]ChatClass` | yes | List of chats mentioned in events |
-| `Users` | `[]UserClass` | yes | List of users mentioned in events |
-| `IntermediateState` | `UpdatesState` | yes | Intermediary state |
+| `NewMessages` | [`[]MessageClass`](/docs/reference/types/general/message) | yes | List of new messages |
+| `NewEncryptedMessages` | [`[]EncryptedMessageClass`](/docs/reference/types/general/encrypted-message) | yes | New messages from the encrypted event sequence |
+| `OtherUpdates` | [`[]UpdateClass`](/docs/reference/types/general/update) | yes | List of updates |
+| `Chats` | [`[]ChatClass`](/docs/reference/types/general/chat) | yes | List of chats mentioned in events |
+| `Users` | [`[]UserClass`](/docs/reference/types/general/user) | yes | List of users mentioned in events |
+| `IntermediateState` | [`UpdatesState`](/docs/reference/constructors/updates/state) | yes | Intermediary state |
 
 ## References
 

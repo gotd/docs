@@ -28,15 +28,15 @@ type tg.GroupCallParticipant struct { /* ... */ }
 | `VolumeByAdmin` | `bool` | — | Whether our volume can only changed by an admin |
 | `Self` | `bool` | — | Whether this participant is the current user |
 | `VideoJoined` | `bool` | — | Whether this participant is currently broadcasting video |
-| `Peer` | `PeerClass` | yes | Peer information |
+| `Peer` | [`PeerClass`](/docs/reference/types/general/peer) | yes | Peer information |
 | `Date` | `int` | yes | When did this participant join the group call |
 | `ActiveDate` | `int` | — | When was this participant last active in the group call |
 | `Source` | `int` | yes | Source ID |
 | `Volume` | `int` | — | Volume, if not set the volume is set to 100%. |
 | `About` | `string` | — | Info about this participant |
 | `RaiseHandRating` | `int64` | — | Specifies the UI visualization order of peers with raised hands: peers with a higher rating should be showed first in the list. |
-| `Video` | `GroupCallParticipantVideo` | — | Info about the video stream the participant is currently broadcasting |
-| `Presentation` | `GroupCallParticipantVideo` | — | Info about the screen sharing stream the participant is currently broadcasting |
+| `Video` | [`GroupCallParticipantVideo`](/docs/reference/constructors/general/group-call-participant-video) | — | Info about the video stream the participant is currently broadcasting |
+| `Presentation` | [`GroupCallParticipantVideo`](/docs/reference/constructors/general/group-call-participant-video) | — | Info about the screen sharing stream the participant is currently broadcasting |
 | `PaidStarsTotal` | `int64` | — | PaidStarsTotal field of GroupCallParticipant. |
 
 ## References

@@ -21,8 +21,8 @@ Implements [`MessageAction`](/docs/reference/types/general/message-action).
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
 | `Expired` | `bool` | — | If set, the owner didn't act before the messageActionStarGiftPurchaseOffer expires_at deadline and the offer expired automatically; otherwise, the owner explicitly declined the offer. |
-| `Gift` | `StarGiftClass` | yes | The collectible gift the declined or expired offer was about. |
-| `Price` | `StarsAmountClass` | yes | Offered price that is refunded automatically to the buyer. |
+| `Gift` | [`StarGiftClass`](/docs/reference/types/general/star-gift) | yes | The collectible gift the declined or expired offer was about. |
+| `Price` | [`StarsAmountClass`](/docs/reference/types/general/stars-amount) | yes | Offered price that is refunded automatically to the buyer. |
 
 ## References
 

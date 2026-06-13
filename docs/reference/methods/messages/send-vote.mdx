@@ -35,13 +35,13 @@ client.Run(ctx, func(ctx context.Context) error {
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| `Peer` | `InputPeerClass` | yes | The chat where the poll was sent |
+| `Peer` | [`InputPeerClass`](/docs/reference/types/general/input-peer) | yes | The chat where the poll was sent |
 | `MsgID` | `int` | yes | The message ID of the poll |
 | `Options` | `[][]byte` | yes | The options that were chosen |
 
 ## Returns
 
-`UpdatesClass`
+[`UpdatesClass`](/docs/reference/types/general/updates)
 
 ## Possible errors
 

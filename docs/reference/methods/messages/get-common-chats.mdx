@@ -35,13 +35,13 @@ client.Run(ctx, func(ctx context.Context) error {
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| `UserID` | `InputUserClass` | yes | User ID |
+| `UserID` | [`InputUserClass`](/docs/reference/types/general/input-user) | yes | User ID |
 | `MaxID` | `int64` | yes | Maximum ID of chat to return (see pagination) |
 | `Limit` | `int` | yes | Maximum number of results to return, see pagination |
 
 ## Returns
 
-`MessagesChatsClass`
+[`MessagesChatsClass`](/docs/reference/types/messages/chats)
 
 ## Possible errors
 

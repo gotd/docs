@@ -36,12 +36,12 @@ client.Run(ctx, func(ctx context.Context) error {
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
 | `Video` | `bool` | — | Invite the user to also turn on their video feed. |
-| `Call` | `InputGroupCallClass` | yes | The conference call. |
-| `UserID` | `InputUserClass` | yes | The user to invite. |
+| `Call` | [`InputGroupCallClass`](/docs/reference/types/general/input-group-call) | yes | The conference call. |
+| `UserID` | [`InputUserClass`](/docs/reference/types/general/input-user) | yes | The user to invite. |
 
 ## Returns
 
-`UpdatesClass`
+[`UpdatesClass`](/docs/reference/types/general/updates)
 
 ## Possible errors
 

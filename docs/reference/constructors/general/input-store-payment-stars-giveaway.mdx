@@ -23,8 +23,8 @@ Implements [`InputStorePaymentPurpose`](/docs/reference/types/general/input-stor
 | `OnlyNewSubscribers` | `bool` | — | If set, only new subscribers starting from the giveaway creation date will be able to participate to the giveaway. |
 | `WinnersAreVisible` | `bool` | — | If set, giveaway winners are public and will be listed in a messageMediaGiveawayResults message that will be automatically sent to the channel once the giveaway ends. |
 | `Stars` | `int64` | yes | Total number of Telegram Stars being given away (each user will receive stars/users stars). |
-| `BoostPeer` | `InputPeerClass` | yes | The channel/supergroup starting the giveaway, that the user must join to participate, that will receive the giveaway boosts; see here » for more info on giveaways. |
-| `AdditionalPeers` | `[]InputPeerClass` | — | Additional channels that the user must join to participate to the giveaway can be specified here. |
+| `BoostPeer` | [`InputPeerClass`](/docs/reference/types/general/input-peer) | yes | The channel/supergroup starting the giveaway, that the user must join to participate, that will receive the giveaway boosts; see here » for more info on giveaways. |
+| `AdditionalPeers` | [`[]InputPeerClass`](/docs/reference/types/general/input-peer) | — | Additional channels that the user must join to participate to the giveaway can be specified here. |
 | `CountriesISO2` | `[]string` | — | The set of users that can participate to the giveaway can be restricted by passing here an explicit whitelist of up to giveaway_countries_max countries, specified as two-letter ISO 3166-1 alpha-2 country codes. |
 | `PrizeDescription` | `string` | — | Can contain a textual description of additional giveaway prizes. |
 | `RandomID` | `int64` | yes | Random ID to avoid resending the giveaway |

@@ -35,13 +35,13 @@ client.Run(ctx, func(ctx context.Context) error {
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| `Peer` | `InputPeerClass` | yes | The peer where to launch the giveaway. |
+| `Peer` | [`InputPeerClass`](/docs/reference/types/general/input-peer) | yes | The peer where to launch the giveaway. |
 | `GiveawayID` | `int64` | yes | The prepaid giveaway ID. |
-| `Purpose` | `InputStorePaymentPurposeClass` | yes | Giveway parameters |
+| `Purpose` | [`InputStorePaymentPurposeClass`](/docs/reference/types/general/input-store-payment-purpose) | yes | Giveway parameters |
 
 ## Returns
 
-`UpdatesClass`
+[`UpdatesClass`](/docs/reference/types/general/updates)
 
 ## Possible errors
 

@@ -21,12 +21,12 @@ type tg.PollResults struct { /* ... */ }
 | `Min` | `bool` | — | Similar to min objects, used for poll constructors that are the same for all users so they don't have the option chosen by the current user (you can use messages getPollResults to get the full poll results). |
 | `HasUnreadVotes` | `bool` | — | HasUnreadVotes field of PollResults. |
 | `CanViewStats` | `bool` | — | CanViewStats field of PollResults. |
-| `Results` | `[]PollAnswerVoters` | — | Poll results |
+| `Results` | [`[]PollAnswerVoters`](/docs/reference/constructors/general/poll-answer-voters) | — | Poll results |
 | `TotalVoters` | `int` | — | Total number of people that voted in the poll |
-| `RecentVoters` | `[]PeerClass` | — | IDs of the last users that recently voted in the poll |
+| `RecentVoters` | [`[]PeerClass`](/docs/reference/types/general/peer) | — | IDs of the last users that recently voted in the poll |
 | `Solution` | `string` | — | Explanation of quiz solution |
-| `SolutionEntities` | `[]MessageEntityClass` | — | Message entities for styled text in quiz solution |
-| `SolutionMedia` | `MessageMediaClass` | — | SolutionMedia field of PollResults. |
+| `SolutionEntities` | [`[]MessageEntityClass`](/docs/reference/types/general/message-entity) | — | Message entities for styled text in quiz solution |
+| `SolutionMedia` | [`MessageMediaClass`](/docs/reference/types/general/message-media) | — | SolutionMedia field of PollResults. |
 
 ## References
 

@@ -19,9 +19,9 @@ type tg.StarsRevenueStatus struct { /* ... */ }
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
 | `WithdrawalEnabled` | `bool` | — | If set, the user may withdraw up to available_balance stars. |
-| `CurrentBalance` | `StarsAmountClass` | yes | Amount of not-yet-withdrawn Telegram Stars. |
-| `AvailableBalance` | `StarsAmountClass` | yes | Amount of withdrawable Telegram Stars. |
-| `OverallRevenue` | `StarsAmountClass` | yes | Total amount of earned Telegram Stars. |
+| `CurrentBalance` | [`StarsAmountClass`](/docs/reference/types/general/stars-amount) | yes | Amount of not-yet-withdrawn Telegram Stars. |
+| `AvailableBalance` | [`StarsAmountClass`](/docs/reference/types/general/stars-amount) | yes | Amount of withdrawable Telegram Stars. |
+| `OverallRevenue` | [`StarsAmountClass`](/docs/reference/types/general/stars-amount) | yes | Total amount of earned Telegram Stars. |
 | `NextWithdrawalAt` | `int` | — | Unixtime indicating when will withdrawal be available to the user. If not set, withdrawal can be started now. |
 
 ## References

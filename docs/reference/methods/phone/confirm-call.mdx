@@ -35,14 +35,14 @@ client.Run(ctx, func(ctx context.Context) error {
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| `Peer` | `InputPhoneCall` | yes | The phone call |
+| `Peer` | [`InputPhoneCall`](/docs/reference/constructors/general/input-phone-call) | yes | The phone call |
 | `GA` | `[]byte` | yes | Parameter for E2E encryption key exchange » |
 | `KeyFingerprint` | `int64` | yes | Key fingerprint |
-| `Protocol` | `PhoneCallProtocol` | yes | Phone call settings |
+| `Protocol` | [`PhoneCallProtocol`](/docs/reference/constructors/general/phone-call-protocol) | yes | Phone call settings |
 
 ## Returns
 
-`*PhonePhoneCall`
+[`*PhonePhoneCall`](/docs/reference/constructors/phone/phone-call)
 
 ## Possible errors
 

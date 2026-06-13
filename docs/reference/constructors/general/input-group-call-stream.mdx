@@ -20,7 +20,7 @@ Implements [`InputFileLocation`](/docs/reference/types/general/input-file-locati
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| `Call` | `InputGroupCallClass` | yes | Livestream info |
+| `Call` | [`InputGroupCallClass`](/docs/reference/types/general/input-group-call) | yes | Livestream info |
 | `TimeMs` | `int64` | yes | Timestamp in milliseconds |
 | `Scale` | `int` | yes | Specifies the duration of the video segment to fetch in milliseconds, by bitshifting 1000 to the right scale times: duration_ms := 1000 &gt;&gt; scale |
 | `VideoChannel` | `int` | — | Selected video channel |

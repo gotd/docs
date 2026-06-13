@@ -37,12 +37,12 @@ client.Run(ctx, func(ctx context.Context) error {
 | ---- | ---- | -------- | ----------- |
 | `Grouped` | `bool` | — | Whether to include other grouped media (for albums) |
 | `Thread` | `bool` | — | Whether to also include a thread ID, if available, inside of the link |
-| `Channel` | `InputChannelClass` | yes | Channel |
+| `Channel` | [`InputChannelClass`](/docs/reference/types/general/input-channel) | yes | Channel |
 | `ID` | `int` | yes | Message ID |
 
 ## Returns
 
-`*ExportedMessageLink`
+[`*ExportedMessageLink`](/docs/reference/constructors/general/exported-message-link)
 
 ## Possible errors
 

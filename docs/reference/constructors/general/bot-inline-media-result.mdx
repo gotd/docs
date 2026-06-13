@@ -22,11 +22,11 @@ Implements [`BotInlineResult`](/docs/reference/types/general/bot-inline-result).
 | ---- | ---- | -------- | ----------- |
 | `ID` | `string` | yes | Result ID |
 | `Type` | `string` | yes | Result type (see bot API docs) |
-| `Photo` | `PhotoClass` | — | If type is photo, the photo to send |
-| `Document` | `DocumentClass` | — | If type is document, the document to send |
+| `Photo` | [`PhotoClass`](/docs/reference/types/general/photo) | — | If type is photo, the photo to send |
+| `Document` | [`DocumentClass`](/docs/reference/types/general/document) | — | If type is document, the document to send |
 | `Title` | `string` | — | Result title |
 | `Description` | `string` | — | Description |
-| `SendMessage` | `BotInlineMessageClass` | yes | Depending on the type and on the constructor, contains the caption of the media or the content of the message to be sent instead of the media |
+| `SendMessage` | [`BotInlineMessageClass`](/docs/reference/types/general/bot-inline-message) | yes | Depending on the type and on the constructor, contains the caption of the media or the content of the message to be sent instead of the media |
 
 ## References
 

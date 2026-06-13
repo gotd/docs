@@ -20,8 +20,8 @@ type tg.TodoList struct { /* ... */ }
 | ---- | ---- | -------- | ----------- |
 | `OthersCanAppend` | `bool` | — | If set, users different from the creator of the list can append items to the list. |
 | `OthersCanComplete` | `bool` | — | If set, users different from the creator of the list can complete items in the list. |
-| `Title` | `TextWithEntities` | yes | Title of the todo list, maximum length equal to todo_title_length_max ». |
-| `List` | `[]TodoItem` | yes | Items of the list. |
+| `Title` | [`TextWithEntities`](/docs/reference/constructors/general/text-with-entities) | yes | Title of the todo list, maximum length equal to todo_title_length_max ». |
+| `List` | [`[]TodoItem`](/docs/reference/constructors/general/todo-item) | yes | Items of the list. |
 
 ## References
 

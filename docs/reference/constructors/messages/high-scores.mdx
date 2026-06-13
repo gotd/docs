@@ -18,8 +18,13 @@ type tg.MessagesHighScores struct { /* ... */ }
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| `Scores` | `[]HighScore` | yes | Highscores |
-| `Users` | `[]UserClass` | yes | Users, associated to the highscores |
+| `Scores` | [`[]HighScore`](/docs/reference/constructors/general/high-score) | yes | Highscores |
+| `Users` | [`[]UserClass`](/docs/reference/types/general/user) | yes | Users, associated to the highscores |
+
+## Returned by
+
+- [`messages.getGameHighScores`](/docs/reference/methods/messages/get-game-high-scores)
+- [`messages.getInlineGameHighScores`](/docs/reference/methods/messages/get-inline-game-high-scores)
 
 ## References
 

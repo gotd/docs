@@ -35,12 +35,12 @@ client.Run(ctx, func(ctx context.Context) error {
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| `Bot` | `InputUserClass` | yes | The bot that owns the mini app that emitted the web_app_send_prepared_message event |
+| `Bot` | [`InputUserClass`](/docs/reference/types/general/input-user) | yes | The bot that owns the mini app that emitted the web_app_send_prepared_message event |
 | `ID` | `string` | yes | The id from the web_app_send_prepared_message event |
 
 ## Returns
 
-`*MessagesPreparedInlineMessage`
+[`*MessagesPreparedInlineMessage`](/docs/reference/constructors/messages/prepared-inline-message)
 
 ## Possible errors
 

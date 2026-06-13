@@ -22,7 +22,7 @@ type tg.PollAnswerVoters struct { /* ... */ }
 | `Correct` | `bool` | — | For quizzes, whether the option we have chosen is correct |
 | `Option` | `[]byte` | yes | The param that has to be passed to messages.sendVote. |
 | `Voters` | `int` | — | How many users voted for this option |
-| `RecentVoters` | `[]PeerClass` | — | RecentVoters field of PollAnswerVoters. |
+| `RecentVoters` | [`[]PeerClass`](/docs/reference/types/general/peer) | — | RecentVoters field of PollAnswerVoters. |
 
 ## References
 

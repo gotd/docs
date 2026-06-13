@@ -41,11 +41,11 @@ client.Run(ctx, func(ctx context.Context) error {
 | `RandomID` | `int` | yes | Unique client message ID required to prevent creation of duplicate group calls. |
 | `PublicKey` | `bin.Int256` | — | Public key (can only be used if join is set). |
 | `Block` | `[]byte` | — | Initial blockchain block (can only be used if join is set). |
-| `Params` | `DataJSON` | — | Parameters from tgcalls (can only be used if join is set). |
+| `Params` | [`DataJSON`](/docs/reference/constructors/general/data-j-s-o-n) | — | Parameters from tgcalls (can only be used if join is set). |
 
 ## Returns
 
-`UpdatesClass`
+[`UpdatesClass`](/docs/reference/types/general/updates)
 
 ## References
 

@@ -36,13 +36,13 @@ client.Run(ctx, func(ctx context.Context) error {
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
 | `Ton` | `bool` | — | If set, withdraws channel/ad revenue in TON. |
-| `Peer` | `InputPeerClass` | yes | Channel or bot from which to withdraw funds. |
+| `Peer` | [`InputPeerClass`](/docs/reference/types/general/input-peer) | yes | Channel or bot from which to withdraw funds. |
 | `Amount` | `int64` | — | The amount of stars or nanotons to withdraw. |
-| `Password` | `InputCheckPasswordSRPClass` | yes | 2FA password, see here » for more info. |
+| `Password` | [`InputCheckPasswordSRPClass`](/docs/reference/types/general/input-check-password-s-r-p) | yes | 2FA password, see here » for more info. |
 
 ## Returns
 
-`*PaymentsStarsRevenueWithdrawalURL`
+[`*PaymentsStarsRevenueWithdrawalURL`](/docs/reference/constructors/payments/stars-revenue-withdrawal-url)
 
 ## Possible errors
 

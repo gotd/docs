@@ -35,13 +35,13 @@ client.Run(ctx, func(ctx context.Context) error {
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| `Channel` | `InputChannelClass` | yes | The supergroup/channel. |
-| `Participant` | `InputPeerClass` | yes | Participant to ban |
-| `BannedRights` | `ChatBannedRights` | yes | The banned rights |
+| `Channel` | [`InputChannelClass`](/docs/reference/types/general/input-channel) | yes | The supergroup/channel. |
+| `Participant` | [`InputPeerClass`](/docs/reference/types/general/input-peer) | yes | Participant to ban |
+| `BannedRights` | [`ChatBannedRights`](/docs/reference/constructors/general/chat-banned-rights) | yes | The banned rights |
 
 ## Returns
 
-`UpdatesClass`
+[`UpdatesClass`](/docs/reference/types/general/updates)
 
 ## Possible errors
 

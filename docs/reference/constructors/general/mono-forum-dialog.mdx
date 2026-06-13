@@ -22,13 +22,13 @@ Implements [`SavedDialog`](/docs/reference/types/general/saved-dialog).
 | ---- | ---- | -------- | ----------- |
 | `UnreadMark` | `bool` | — | Whether this topic has a manually set (with messages.markDialogUnread) unread mark. |
 | `NopaidMessagesException` | `bool` | — | If set, an admin has exempted this peer from payment to send messages using account toggleNoPaidMessagesException. |
-| `Peer` | `PeerClass` | yes | The peer associated to the topic, AKA the topic ID. |
+| `Peer` | [`PeerClass`](/docs/reference/types/general/peer) | yes | The peer associated to the topic, AKA the topic ID. |
 | `TopMessage` | `int` | yes | The latest message ID |
 | `ReadInboxMaxID` | `int` | yes | Position up to which all incoming messages are read. |
 | `ReadOutboxMaxID` | `int` | yes | Position up to which all outgoing messages are read. |
 | `UnreadCount` | `int` | yes | Number of unread messages. |
 | `UnreadReactionsCount` | `int` | yes | Number of unread reactions. |
-| `Draft` | `DraftMessageClass` | — | A pending message draft. |
+| `Draft` | [`DraftMessageClass`](/docs/reference/types/general/draft-message) | — | A pending message draft. |
 
 ## References
 

@@ -19,11 +19,15 @@ type tg.PhoneGroupParticipants struct { /* ... */ }
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
 | `Count` | `int` | yes | Number of participants |
-| `Participants` | `[]GroupCallParticipant` | yes | List of participants |
+| `Participants` | [`[]GroupCallParticipant`](/docs/reference/constructors/general/group-call-participant) | yes | List of participants |
 | `NextOffset` | `string` | yes | If not empty, the specified list of participants is partial, and more participants can be fetched specifying this parameter as offset in phone.getGroupParticipants. |
-| `Chats` | `[]ChatClass` | yes | Mentioned chats |
-| `Users` | `[]UserClass` | yes | Mentioned users |
+| `Chats` | [`[]ChatClass`](/docs/reference/types/general/chat) | yes | Mentioned chats |
+| `Users` | [`[]UserClass`](/docs/reference/types/general/user) | yes | Mentioned users |
 | `Version` | `int` | yes | Version info |
+
+## Returned by
+
+- [`phone.getGroupParticipants`](/docs/reference/methods/phone/get-group-participants)
 
 ## References
 

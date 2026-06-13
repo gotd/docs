@@ -35,14 +35,14 @@ client.Run(ctx, func(ctx context.Context) error {
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| `Peer` | `InputPeerClass` | yes | Peer where to search |
-| `SavedPeerID` | `InputPeerClass` | — | Search within the saved message dialog » with this ID. |
+| `Peer` | [`InputPeerClass`](/docs/reference/types/general/input-peer) | yes | Peer where to search |
+| `SavedPeerID` | [`InputPeerClass`](/docs/reference/types/general/input-peer) | — | Search within the saved message dialog » with this ID. |
 | `TopMsgID` | `int` | — | If set, consider only messages within the specified forum topic |
-| `Filters` | `[]MessagesFilterClass` | yes | Search filters |
+| `Filters` | [`[]MessagesFilterClass`](/docs/reference/types/general/messages-filter) | yes | Search filters |
 
 ## Returns
 
-`[]MessagesSearchCounter`
+[`[]MessagesSearchCounter`](/docs/reference/constructors/messages/search-counter)
 
 ## Possible errors
 

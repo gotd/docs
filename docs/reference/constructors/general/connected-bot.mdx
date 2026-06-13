@@ -19,8 +19,8 @@ type tg.ConnectedBot struct { /* ... */ }
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
 | `BotID` | `int64` | yes | ID of the connected bot |
-| `Recipients` | `BusinessBotRecipients` | yes | Specifies the private chats that a connected business bot » may receive messages and interact with. |
-| `Rights` | `BusinessBotRights` | yes | Business bot rights. |
+| `Recipients` | [`BusinessBotRecipients`](/docs/reference/constructors/general/business-bot-recipients) | yes | Specifies the private chats that a connected business bot » may receive messages and interact with. |
+| `Rights` | [`BusinessBotRights`](/docs/reference/constructors/general/business-bot-rights) | yes | Business bot rights. |
 | `Device` | `string` | — | Device field of ConnectedBot. |
 | `Date` | `int` | — | Date field of ConnectedBot. |
 | `Location` | `string` | — | Location field of ConnectedBot. |

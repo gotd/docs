@@ -29,8 +29,8 @@ type tg.Poll struct { /* ... */ }
 | `HideResultsUntilClose` | `bool` | — | HideResultsUntilClose field of Poll. |
 | `Creator` | `bool` | — | Creator field of Poll. |
 | `SubscribersOnly` | `bool` | — | SubscribersOnly field of Poll. |
-| `Question` | `TextWithEntities` | yes | The question of the poll (only Premium users can use custom emoji entities here). |
-| `Answers` | `[]PollAnswerClass` | yes | The possible answers (2-poll_answers_max), vote using messages.sendVote. |
+| `Question` | [`TextWithEntities`](/docs/reference/constructors/general/text-with-entities) | yes | The question of the poll (only Premium users can use custom emoji entities here). |
+| `Answers` | [`[]PollAnswerClass`](/docs/reference/types/general/poll-answer) | yes | The possible answers (2-poll_answers_max), vote using messages.sendVote. |
 | `ClosePeriod` | `int` | — | Amount of time in seconds the poll will be active after creation, 5-600. Can't be used together with close_date. |
 | `CloseDate` | `int` | — | Point in time (Unix timestamp) when the poll will be automatically closed. Must be at least 5 and no more than 600 seconds in the future; can't be used together with close_period. |
 | `CountriesISO2` | `[]string` | — | CountriesISO2 field of Poll. |

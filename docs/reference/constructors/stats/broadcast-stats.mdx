@@ -18,28 +18,32 @@ type tg.StatsBroadcastStats struct { /* ... */ }
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| `Period` | `StatsDateRangeDays` | yes | Period in consideration |
-| `Followers` | `StatsAbsValueAndPrev` | yes | Follower count change for period in consideration |
-| `ViewsPerPost` | `StatsAbsValueAndPrev` | yes | total_viewcount/postcount, for posts posted during the period in consideration. Note that in this case, current refers to the period in consideration (min_date till max_date), and prev refers to the previous period ((min_date - (max_date - min_date)) till min_date). |
-| `SharesPerPost` | `StatsAbsValueAndPrev` | yes | total_sharecount/postcount, for posts posted during the period in consideration. Note that in this case, current refers to the period in consideration (min_date till max_date), and prev refers to the previous period ((min_date - (max_date - min_date)) till min_date) |
-| `ReactionsPerPost` | `StatsAbsValueAndPrev` | yes | total_reactions/postcount, for posts posted during the period in consideration. Note that in this case, current refers to the period in consideration (min_date till max_date), and prev refers to the previous period ((min_date - (max_date - min_date)) till min_date) |
-| `ViewsPerStory` | `StatsAbsValueAndPrev` | yes | total_views/storycount, for posts posted during the period in consideration. Note that in this case, current refers to the period in consideration (min_date till max_date), and prev refers to the previous period ((min_date - (max_date - min_date)) till min_date) |
-| `SharesPerStory` | `StatsAbsValueAndPrev` | yes | total_shares/storycount, for posts posted during the period in consideration. Note that in this case, current refers to the period in consideration (min_date till max_date), and prev refers to the previous period ((min_date - (max_date - min_date)) till min_date) |
-| `ReactionsPerStory` | `StatsAbsValueAndPrev` | yes | total_reactions/storycount, for posts posted during the period in consideration. Note that in this case, current refers to the period in consideration (min_date till max_date), and prev refers to the previous period ((min_date - (max_date - min_date)) till min_date) |
-| `EnabledNotifications` | `StatsPercentValue` | yes | Percentage of subscribers with enabled notifications |
-| `GrowthGraph` | `StatsGraphClass` | yes | Channel growth graph (absolute subscriber count) |
-| `FollowersGraph` | `StatsGraphClass` | yes | Followers growth graph (relative subscriber count) |
-| `MuteGraph` | `StatsGraphClass` | yes | Muted users graph (relative) |
-| `TopHoursGraph` | `StatsGraphClass` | yes | Views per hour graph (absolute) |
-| `InteractionsGraph` | `StatsGraphClass` | yes | Interactions graph (absolute) |
-| `IvInteractionsGraph` | `StatsGraphClass` | yes | IV interactions graph (absolute) |
-| `ViewsBySourceGraph` | `StatsGraphClass` | yes | Views by source graph (absolute) |
-| `NewFollowersBySourceGraph` | `StatsGraphClass` | yes | New followers by source graph (absolute) |
-| `LanguagesGraph` | `StatsGraphClass` | yes | Subscriber language graph (pie chart) |
-| `ReactionsByEmotionGraph` | `StatsGraphClass` | yes | A graph containing the number of reactions on posts categorized by emotion |
-| `StoryInteractionsGraph` | `StatsGraphClass` | yes | A graph containing the number of story views and shares |
-| `StoryReactionsByEmotionGraph` | `StatsGraphClass` | yes | A graph containing the number of reactions on stories categorized by emotion |
-| `RecentPostsInteractions` | `[]PostInteractionCountersClass` | yes | Detailed statistics about number of views and shares of recently sent messages and stories |
+| `Period` | [`StatsDateRangeDays`](/docs/reference/constructors/general/stats-date-range-days) | yes | Period in consideration |
+| `Followers` | [`StatsAbsValueAndPrev`](/docs/reference/constructors/general/stats-abs-value-and-prev) | yes | Follower count change for period in consideration |
+| `ViewsPerPost` | [`StatsAbsValueAndPrev`](/docs/reference/constructors/general/stats-abs-value-and-prev) | yes | total_viewcount/postcount, for posts posted during the period in consideration. Note that in this case, current refers to the period in consideration (min_date till max_date), and prev refers to the previous period ((min_date - (max_date - min_date)) till min_date). |
+| `SharesPerPost` | [`StatsAbsValueAndPrev`](/docs/reference/constructors/general/stats-abs-value-and-prev) | yes | total_sharecount/postcount, for posts posted during the period in consideration. Note that in this case, current refers to the period in consideration (min_date till max_date), and prev refers to the previous period ((min_date - (max_date - min_date)) till min_date) |
+| `ReactionsPerPost` | [`StatsAbsValueAndPrev`](/docs/reference/constructors/general/stats-abs-value-and-prev) | yes | total_reactions/postcount, for posts posted during the period in consideration. Note that in this case, current refers to the period in consideration (min_date till max_date), and prev refers to the previous period ((min_date - (max_date - min_date)) till min_date) |
+| `ViewsPerStory` | [`StatsAbsValueAndPrev`](/docs/reference/constructors/general/stats-abs-value-and-prev) | yes | total_views/storycount, for posts posted during the period in consideration. Note that in this case, current refers to the period in consideration (min_date till max_date), and prev refers to the previous period ((min_date - (max_date - min_date)) till min_date) |
+| `SharesPerStory` | [`StatsAbsValueAndPrev`](/docs/reference/constructors/general/stats-abs-value-and-prev) | yes | total_shares/storycount, for posts posted during the period in consideration. Note that in this case, current refers to the period in consideration (min_date till max_date), and prev refers to the previous period ((min_date - (max_date - min_date)) till min_date) |
+| `ReactionsPerStory` | [`StatsAbsValueAndPrev`](/docs/reference/constructors/general/stats-abs-value-and-prev) | yes | total_reactions/storycount, for posts posted during the period in consideration. Note that in this case, current refers to the period in consideration (min_date till max_date), and prev refers to the previous period ((min_date - (max_date - min_date)) till min_date) |
+| `EnabledNotifications` | [`StatsPercentValue`](/docs/reference/constructors/general/stats-percent-value) | yes | Percentage of subscribers with enabled notifications |
+| `GrowthGraph` | [`StatsGraphClass`](/docs/reference/types/general/stats-graph) | yes | Channel growth graph (absolute subscriber count) |
+| `FollowersGraph` | [`StatsGraphClass`](/docs/reference/types/general/stats-graph) | yes | Followers growth graph (relative subscriber count) |
+| `MuteGraph` | [`StatsGraphClass`](/docs/reference/types/general/stats-graph) | yes | Muted users graph (relative) |
+| `TopHoursGraph` | [`StatsGraphClass`](/docs/reference/types/general/stats-graph) | yes | Views per hour graph (absolute) |
+| `InteractionsGraph` | [`StatsGraphClass`](/docs/reference/types/general/stats-graph) | yes | Interactions graph (absolute) |
+| `IvInteractionsGraph` | [`StatsGraphClass`](/docs/reference/types/general/stats-graph) | yes | IV interactions graph (absolute) |
+| `ViewsBySourceGraph` | [`StatsGraphClass`](/docs/reference/types/general/stats-graph) | yes | Views by source graph (absolute) |
+| `NewFollowersBySourceGraph` | [`StatsGraphClass`](/docs/reference/types/general/stats-graph) | yes | New followers by source graph (absolute) |
+| `LanguagesGraph` | [`StatsGraphClass`](/docs/reference/types/general/stats-graph) | yes | Subscriber language graph (pie chart) |
+| `ReactionsByEmotionGraph` | [`StatsGraphClass`](/docs/reference/types/general/stats-graph) | yes | A graph containing the number of reactions on posts categorized by emotion |
+| `StoryInteractionsGraph` | [`StatsGraphClass`](/docs/reference/types/general/stats-graph) | yes | A graph containing the number of story views and shares |
+| `StoryReactionsByEmotionGraph` | [`StatsGraphClass`](/docs/reference/types/general/stats-graph) | yes | A graph containing the number of reactions on stories categorized by emotion |
+| `RecentPostsInteractions` | [`[]PostInteractionCountersClass`](/docs/reference/types/general/post-interaction-counters) | yes | Detailed statistics about number of views and shares of recently sent messages and stories |
+
+## Returned by
+
+- [`stats.getBroadcastStats`](/docs/reference/methods/stats/get-broadcast-stats)
 
 ## References
 

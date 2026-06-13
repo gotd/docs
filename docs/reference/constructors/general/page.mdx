@@ -22,9 +22,9 @@ type tg.Page struct { /* ... */ }
 | `Rtl` | `bool` | — | Whether the page contains RTL text |
 | `V2` | `bool` | — | Whether this is an IV v2 page |
 | `URL` | `string` | yes | Original page HTTP URL |
-| `Blocks` | `[]PageBlockClass` | yes | Page elements (like with HTML elements, only as TL constructors) |
-| `Photos` | `[]PhotoClass` | yes | Photos in page |
-| `Documents` | `[]DocumentClass` | yes | Media in page |
+| `Blocks` | [`[]PageBlockClass`](/docs/reference/types/general/page-block) | yes | Page elements (like with HTML elements, only as TL constructors) |
+| `Photos` | [`[]PhotoClass`](/docs/reference/types/general/photo) | yes | Photos in page |
+| `Documents` | [`[]DocumentClass`](/docs/reference/types/general/document) | yes | Media in page |
 | `Views` | `int` | — | View count |
 
 ## References

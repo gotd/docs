@@ -35,8 +35,8 @@ client.Run(ctx, func(ctx context.Context) error {
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| `ParentPeer` | `InputPeerClass` | yes | ID of the monoforum group. |
-| `Peer` | `InputPeerClass` | yes | ID of the topic. |
+| `ParentPeer` | [`InputPeerClass`](/docs/reference/types/general/input-peer) | yes | ID of the monoforum group. |
+| `Peer` | [`InputPeerClass`](/docs/reference/types/general/input-peer) | yes | ID of the topic. |
 | `MaxID` | `int` | yes | If a positive value is passed, only messages with identifiers less or equal than the given one will be read. |
 
 ## Returns

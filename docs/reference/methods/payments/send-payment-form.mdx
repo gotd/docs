@@ -36,15 +36,15 @@ client.Run(ctx, func(ctx context.Context) error {
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
 | `FormID` | `int64` | yes | Form ID |
-| `Invoice` | `InputInvoiceClass` | yes | Invoice |
+| `Invoice` | [`InputInvoiceClass`](/docs/reference/types/general/input-invoice) | yes | Invoice |
 | `RequestedInfoID` | `string` | — | ID of saved and validated order info |
 | `ShippingOptionID` | `string` | — | Chosen shipping option ID |
-| `Credentials` | `InputPaymentCredentialsClass` | yes | Payment credentials |
+| `Credentials` | [`InputPaymentCredentialsClass`](/docs/reference/types/general/input-payment-credentials) | yes | Payment credentials |
 | `TipAmount` | `int64` | — | Tip, in the smallest units of the currency (integer, not float/double). For example, for a price of US$ 1.45 pass amount = 145. See the exp parameter in currencies.json, it shows the number of digits past the decimal point for each currency (2 for the majority of currencies). |
 
 ## Returns
 
-`PaymentsPaymentResultClass`
+[`PaymentsPaymentResultClass`](/docs/reference/types/payments/payment-result)
 
 ## Possible errors
 

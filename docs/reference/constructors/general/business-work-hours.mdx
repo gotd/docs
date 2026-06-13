@@ -20,7 +20,7 @@ type tg.BusinessWorkHours struct { /* ... */ }
 | ---- | ---- | -------- | ----------- |
 | `OpenNow` | `bool` | — | Ignored if set while invoking account.updateBusinessWorkHours, only returned by the server in userFull.business_work_hours, indicating whether the business is currently open according to the current time and the values in weekly_open and timezone. |
 | `TimezoneID` | `string` | yes | An ID of one of the timezones returned by help.getTimezonesList. The timezone ID is contained timezone.id, a human-readable, localized name of the timezone is available in timezone.name and the timezone.utc_offset field contains the UTC offset in seconds, which may be displayed in hh:mm format by the client together with the human-readable name (i.e. $name UTC -01:00). |
-| `WeeklyOpen` | `[]BusinessWeeklyOpen` | yes | A list of time intervals (max 28) represented by businessWeeklyOpen », indicating the opening hours of their business. |
+| `WeeklyOpen` | [`[]BusinessWeeklyOpen`](/docs/reference/constructors/general/business-weekly-open) | yes | A list of time intervals (max 28) represented by businessWeeklyOpen », indicating the opening hours of their business. |
 
 ## References
 

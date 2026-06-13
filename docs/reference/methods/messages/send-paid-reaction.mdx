@@ -35,15 +35,15 @@ client.Run(ctx, func(ctx context.Context) error {
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| `Peer` | `InputPeerClass` | yes | The channel |
+| `Peer` | [`InputPeerClass`](/docs/reference/types/general/input-peer) | yes | The channel |
 | `MsgID` | `int` | yes | The message to react to |
 | `Count` | `int` | yes | The number of stars to send (each will increment the reaction counter by one). |
 | `RandomID` | `int64` | yes | Unique client message ID required to prevent message resending. Note: this argument must be composed of a 64-bit integer where the lower 32 bits are random, and the higher 32 bits are equal to the current unixtime, i.e. `uint64_t random_id = (time() &lt;&lt; 32) |
-| `Private` | `PaidReactionPrivacyClass` | — | Each post with star reactions has a leaderboard with the top senders, but users can opt out of appearing there if they prefer more privacy. Not populating this field will use the default reaction privacy, stored on the server and synced to clients using updatePaidReactionPrivacy (see here for more info). |
+| `Private` | [`PaidReactionPrivacyClass`](/docs/reference/types/general/paid-reaction-privacy) | — | Each post with star reactions has a leaderboard with the top senders, but users can opt out of appearing there if they prefer more privacy. Not populating this field will use the default reaction privacy, stored on the server and synced to clients using updatePaidReactionPrivacy (see here for more info). |
 
 ## Returns
 
-`UpdatesClass`
+[`UpdatesClass`](/docs/reference/types/general/updates)
 
 ## Possible errors
 

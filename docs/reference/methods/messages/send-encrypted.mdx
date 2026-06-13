@@ -36,13 +36,13 @@ client.Run(ctx, func(ctx context.Context) error {
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
 | `Silent` | `bool` | — | Send encrypted message without a notification |
-| `Peer` | `InputEncryptedChat` | yes | Secret chat ID |
+| `Peer` | [`InputEncryptedChat`](/docs/reference/constructors/general/input-encrypted-chat) | yes | Secret chat ID |
 | `RandomID` | `int64` | yes | Unique client message ID, necessary to avoid message resending |
 | `Data` | `[]byte` | yes | TL-serialization of DecryptedMessage type, encrypted with a key that was created during chat initialization |
 
 ## Returns
 
-`MessagesSentEncryptedMessageClass`
+[`MessagesSentEncryptedMessageClass`](/docs/reference/types/messages/sent-encrypted-message)
 
 ## Possible errors
 

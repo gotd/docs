@@ -20,10 +20,10 @@ Implements [`InputChatPhoto`](/docs/reference/types/general/input-chat-photo).
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| `File` | `InputFileClass` | — | File saved in parts using the method upload.saveFilePart |
-| `Video` | `InputFileClass` | — | Square video for animated profile picture |
+| `File` | [`InputFileClass`](/docs/reference/types/general/input-file) | — | File saved in parts using the method upload.saveFilePart |
+| `Video` | [`InputFileClass`](/docs/reference/types/general/input-file) | — | Square video for animated profile picture |
 | `VideoStartTs` | `float64` | — | Floating point UNIX timestamp in seconds, indicating the frame of the video/sticker that should be used as static preview; can only be used if video or video_emoji_markup is set. |
-| `VideoEmojiMarkup` | `VideoSizeClass` | — | Animated sticker profile picture, must contain either a videoSizeEmojiMarkup or a videoSizeStickerMarkup constructor. |
+| `VideoEmojiMarkup` | [`VideoSizeClass`](/docs/reference/types/general/video-size) | — | Animated sticker profile picture, must contain either a videoSizeEmojiMarkup or a videoSizeStickerMarkup constructor. |
 
 ## References
 

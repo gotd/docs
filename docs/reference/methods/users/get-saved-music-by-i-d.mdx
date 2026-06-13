@@ -35,12 +35,12 @@ client.Run(ctx, func(ctx context.Context) error {
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| `ID` | `InputUserClass` | yes | The ID of the user. |
-| `Documents` | `[]InputDocumentClass` | yes | The songs (here, file_reference can be empty to refresh file references). |
+| `ID` | [`InputUserClass`](/docs/reference/types/general/input-user) | yes | The ID of the user. |
+| `Documents` | [`[]InputDocumentClass`](/docs/reference/types/general/input-document) | yes | The songs (here, file_reference can be empty to refresh file references). |
 
 ## Returns
 
-`UsersSavedMusicClass`
+[`UsersSavedMusicClass`](/docs/reference/types/users/saved-music)
 
 ## Possible errors
 

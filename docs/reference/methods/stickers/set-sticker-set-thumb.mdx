@@ -35,13 +35,13 @@ client.Run(ctx, func(ctx context.Context) error {
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| `Stickerset` | `InputStickerSetClass` | yes | Stickerset |
-| `Thumb` | `InputDocumentClass` | — | Thumbnail (only for normal stickersets, not custom emoji stickersets). |
+| `Stickerset` | [`InputStickerSetClass`](/docs/reference/types/general/input-sticker-set) | yes | Stickerset |
+| `Thumb` | [`InputDocumentClass`](/docs/reference/types/general/input-document) | — | Thumbnail (only for normal stickersets, not custom emoji stickersets). |
 | `ThumbDocumentID` | `int64` | — | Only for custom emoji stickersets, ID of a custom emoji present in the set to use as thumbnail; pass 0 to fallback to the first custom emoji of the set. |
 
 ## Returns
 
-`MessagesStickerSetClass`
+[`MessagesStickerSetClass`](/docs/reference/types/messages/sticker-set)
 
 ## Possible errors
 

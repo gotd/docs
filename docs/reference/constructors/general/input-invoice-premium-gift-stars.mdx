@@ -20,9 +20,9 @@ Implements [`InputInvoice`](/docs/reference/types/general/input-invoice).
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| `UserID` | `InputUserClass` | yes | Who will receive the gifted subscription. |
+| `UserID` | [`InputUserClass`](/docs/reference/types/general/input-user) | yes | Who will receive the gifted subscription. |
 | `Months` | `int` | yes | Duration of the subscription in months, must be one of the options with currency == "XTR" returned by payments.getPremiumGiftCodeOptions. |
-| `Message` | `TextWithEntities` | — | Message attached with the gift. |
+| `Message` | [`TextWithEntities`](/docs/reference/constructors/general/text-with-entities) | — | Message attached with the gift. |
 
 ## References
 

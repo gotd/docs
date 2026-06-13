@@ -19,7 +19,11 @@ type tg.ContactStatus struct { /* ... */ }
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
 | `UserID` | `int64` | yes | User identifier |
-| `Status` | `UserStatusClass` | yes | Online status |
+| `Status` | [`UserStatusClass`](/docs/reference/types/general/user-status) | yes | Online status |
+
+## Returned by
+
+- [`contacts.getStatuses`](/docs/reference/methods/contacts/get-statuses)
 
 ## References
 

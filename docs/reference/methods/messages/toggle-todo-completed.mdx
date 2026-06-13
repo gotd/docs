@@ -35,14 +35,14 @@ client.Run(ctx, func(ctx context.Context) error {
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| `Peer` | `InputPeerClass` | yes | Peer where the todo list was posted. |
+| `Peer` | [`InputPeerClass`](/docs/reference/types/general/input-peer) | yes | Peer where the todo list was posted. |
 | `MsgID` | `int` | yes | ID of the message with the todo list. |
 | `Completed` | `[]int` | yes | Items to mark as completed. |
 | `Incompleted` | `[]int` | yes | Items to mark as not completed. |
 
 ## Returns
 
-`UpdatesClass`
+[`UpdatesClass`](/docs/reference/types/general/updates)
 
 ## Possible errors
 

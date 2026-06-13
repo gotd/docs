@@ -36,12 +36,12 @@ client.Run(ctx, func(ctx context.Context) error {
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
 | `Save` | `bool` | — | Save order information to re-use it for future orders |
-| `Invoice` | `InputInvoiceClass` | yes | Invoice |
-| `Info` | `PaymentRequestedInfo` | yes | Requested order information |
+| `Invoice` | [`InputInvoiceClass`](/docs/reference/types/general/input-invoice) | yes | Invoice |
+| `Info` | [`PaymentRequestedInfo`](/docs/reference/constructors/general/payment-requested-info) | yes | Requested order information |
 
 ## Returns
 
-`*PaymentsValidatedRequestedInfo`
+[`*PaymentsValidatedRequestedInfo`](/docs/reference/constructors/payments/validated-requested-info)
 
 ## Possible errors
 

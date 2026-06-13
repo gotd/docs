@@ -22,7 +22,7 @@ Implements [`Update`](/docs/reference/types/general/update).
 | ---- | ---- | -------- | ----------- |
 | `QueryID` | `int64` | yes | Query ID |
 | `UserID` | `int64` | yes | ID of the user that pressed the button |
-| `Peer` | `PeerClass` | yes | Chat where the inline keyboard was sent |
+| `Peer` | [`PeerClass`](/docs/reference/types/general/peer) | yes | Chat where the inline keyboard was sent |
 | `MsgID` | `int` | yes | Message ID |
 | `ChatInstance` | `int64` | yes | Global identifier, uniquely corresponding to the chat to which the message with the callback button was sent. Useful for high scores in games. |
 | `Data` | `[]byte` | — | Callback data |

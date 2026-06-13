@@ -35,14 +35,14 @@ client.Run(ctx, func(ctx context.Context) error {
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| `Chatlist` | `InputChatlistDialogFilter` | yes | Folder ID |
+| `Chatlist` | [`InputChatlistDialogFilter`](/docs/reference/constructors/general/input-chatlist-dialog-filter) | yes | Folder ID |
 | `Slug` | `string` | yes | slug obtained from the chat folder deep link ». |
 | `Title` | `string` | — | If set, sets a new name for the link |
-| `Peers` | `[]InputPeerClass` | — | If set, changes the list of peers shared with the link |
+| `Peers` | [`[]InputPeerClass`](/docs/reference/types/general/input-peer) | — | If set, changes the list of peers shared with the link |
 
 ## Returns
 
-`*ExportedChatlistInvite`
+[`*ExportedChatlistInvite`](/docs/reference/constructors/general/exported-chatlist-invite)
 
 ## Possible errors
 

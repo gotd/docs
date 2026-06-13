@@ -40,13 +40,13 @@ client.Run(ctx, func(ctx context.Context) error {
 | `Ascending` | `bool` | — | Return transactions in ascending order by date (instead of descending order by date). |
 | `Ton` | `bool` | — | If set, returns the channel/ad revenue transactions in nanotons, instead. |
 | `SubscriptionID` | `string` | — | If set, fetches only transactions for the specified Telegram Star subscription ». |
-| `Peer` | `InputPeerClass` | yes | Fetch the transaction history of the peer (inputPeerSelf or a bot we own). |
+| `Peer` | [`InputPeerClass`](/docs/reference/types/general/input-peer) | yes | Fetch the transaction history of the peer (inputPeerSelf or a bot we own). |
 | `Offset` | `string` | yes | Offset for pagination, obtained from the returned next_offset, initially an empty string ». |
 | `Limit` | `int` | yes | Maximum number of results to return, see pagination |
 
 ## Returns
 
-`*PaymentsStarsStatus`
+[`*PaymentsStarsStatus`](/docs/reference/constructors/payments/stars-status)
 
 ## Possible errors
 

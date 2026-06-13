@@ -39,15 +39,15 @@ client.Run(ctx, func(ctx context.Context) error {
 | `FromSideMenu` | `bool` | — | Set this flag if opening the Mini App from the installed side menu entry ». |
 | `Compact` | `bool` | — | Deprecated. |
 | `Fullscreen` | `bool` | — | Requests to open the app in fullscreen mode. |
-| `Bot` | `InputUserClass` | yes | Bot that owns the mini app |
+| `Bot` | [`InputUserClass`](/docs/reference/types/general/input-user) | yes | Bot that owns the mini app |
 | `URL` | `string` | — | Web app URL, if opening from a keyboard button or inline result |
 | `StartParam` | `string` | — | Deprecated. |
-| `ThemeParams` | `DataJSON` | — | Theme parameters » |
+| `ThemeParams` | [`DataJSON`](/docs/reference/constructors/general/data-j-s-o-n) | — | Theme parameters » |
 | `Platform` | `string` | yes | Short name of the application; 0-64 English letters, digits, and underscores |
 
 ## Returns
 
-`*WebViewResultURL`
+[`*WebViewResultURL`](/docs/reference/constructors/general/web-view-result-url)
 
 ## Possible errors
 

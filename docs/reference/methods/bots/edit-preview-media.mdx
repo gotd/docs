@@ -35,14 +35,14 @@ client.Run(ctx, func(ctx context.Context) error {
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| `Bot` | `InputUserClass` | yes | The bot that owns the Main Mini App. |
+| `Bot` | [`InputUserClass`](/docs/reference/types/general/input-user) | yes | The bot that owns the Main Mini App. |
 | `LangCode` | `string` | yes | ISO 639-1 language code, indicating the localization of the preview to edit. |
-| `Media` | `InputMediaClass` | yes | The photo/video preview to replace, previously fetched as specified here ». |
-| `NewMedia` | `InputMediaClass` | yes | The new photo/video preview, uploaded using messages.uploadMedia. |
+| `Media` | [`InputMediaClass`](/docs/reference/types/general/input-media) | yes | The photo/video preview to replace, previously fetched as specified here ». |
+| `NewMedia` | [`InputMediaClass`](/docs/reference/types/general/input-media) | yes | The new photo/video preview, uploaded using messages.uploadMedia. |
 
 ## Returns
 
-`*BotPreviewMedia`
+[`*BotPreviewMedia`](/docs/reference/constructors/general/bot-preview-media)
 
 ## Possible errors
 

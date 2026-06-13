@@ -35,13 +35,13 @@ client.Run(ctx, func(ctx context.Context) error {
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| `Peer` | `InputPeerClass` | yes | User or chat, histories with which are searched, or (inputPeerEmpty) constructor to search in all private chats and normal groups (not channels) ». Use messages searchGlobal to search globally in all chats, groups, supergroups and channels. |
+| `Peer` | [`InputPeerClass`](/docs/reference/types/general/input-peer) | yes | User or chat, histories with which are searched, or (inputPeerEmpty) constructor to search in all private chats and normal groups (not channels) ». Use messages searchGlobal to search globally in all chats, groups, supergroups and channels. |
 | `Q` | `string` | yes | Text search request |
-| `FromID` | `InputPeerClass` | — | Only return messages sent by the specified user ID |
-| `SavedPeerID` | `InputPeerClass` | — | Search within the saved message dialog » with this ID. |
-| `SavedReaction` | `[]ReactionClass` | — | You may search for saved messages tagged » with one or more reactions using this flag. |
+| `FromID` | [`InputPeerClass`](/docs/reference/types/general/input-peer) | — | Only return messages sent by the specified user ID |
+| `SavedPeerID` | [`InputPeerClass`](/docs/reference/types/general/input-peer) | — | Search within the saved message dialog » with this ID. |
+| `SavedReaction` | [`[]ReactionClass`](/docs/reference/types/general/reaction) | — | You may search for saved messages tagged » with one or more reactions using this flag. |
 | `TopMsgID` | `int` | — | Thread ID |
-| `Filter` | `MessagesFilterClass` | yes | Filter to return only specified message types |
+| `Filter` | [`MessagesFilterClass`](/docs/reference/types/general/messages-filter) | yes | Filter to return only specified message types |
 | `MinDate` | `int` | yes | If a positive value was transferred, only messages with a sending date bigger than the transferred one will be returned |
 | `MaxDate` | `int` | yes | If a positive value was transferred, only messages with a sending date smaller than the transferred one will be returned |
 | `OffsetID` | `int` | yes | Only return messages starting from the specified message ID |
@@ -53,7 +53,7 @@ client.Run(ctx, func(ctx context.Context) error {
 
 ## Returns
 
-`MessagesMessagesClass`
+[`MessagesMessagesClass`](/docs/reference/types/messages/messages)
 
 ## Possible errors
 

@@ -19,11 +19,15 @@ type tg.HelpPremiumPromo struct { /* ... */ }
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
 | `StatusText` | `string` | yes | Description of the current state of the user's Telegram Premium subscription |
-| `StatusEntities` | `[]MessageEntityClass` | yes | Message entities for styled text |
+| `StatusEntities` | [`[]MessageEntityClass`](/docs/reference/types/general/message-entity) | yes | Message entities for styled text |
 | `VideoSections` | `[]string` | yes | A list of premium feature identifiers », associated to each video |
-| `Videos` | `[]DocumentClass` | yes | A list of videos |
-| `PeriodOptions` | `[]PremiumSubscriptionOption` | yes | Telegram Premium subscription options |
-| `Users` | `[]UserClass` | yes | Related user information |
+| `Videos` | [`[]DocumentClass`](/docs/reference/types/general/document) | yes | A list of videos |
+| `PeriodOptions` | [`[]PremiumSubscriptionOption`](/docs/reference/constructors/general/premium-subscription-option) | yes | Telegram Premium subscription options |
+| `Users` | [`[]UserClass`](/docs/reference/types/general/user) | yes | Related user information |
+
+## Returned by
+
+- [`help.getPremiumPromo`](/docs/reference/methods/help/get-premium-promo)
 
 ## References
 

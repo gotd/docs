@@ -28,7 +28,11 @@ switch v := value.(type) {
 {{end}}{{else}}
 _No constructors found._
 {{end}}
-## References
+{{if .ReturnedBy}}## Returned by
+
+{{range .ReturnedBy}}- [`{{.TLName}}`](/docs/reference/methods/{{.Namespace}}/{{.Slug}})
+{{end}}
+{{end}}## References
 
 - [Official documentation]({{.DocURL}})
 - [Generated Go reference](https://ref.gotd.dev/pkg/github.com/gotd/td/tg.html)

@@ -41,13 +41,13 @@ client.Run(ctx, func(ctx context.Context) error {
 | `StarsOnly` | `bool` | — | Only return gifts that can be bought using Stars. |
 | `AttributesHash` | `int64` | — | If a previous call to the method was made and payments.resaleStarGifts attributes_hash was set, pass it here to avoid returning any results if they haven't changed. Otherwise, set this flag and pass 0 to return payments.resaleStarGifts attributes_hash and payments.resaleStarGifts.attributes, these two fields will not be set if this flag is not set. |
 | `GiftID` | `int64` | yes | Mandatory identifier of the base gift from which the collectible gift was upgraded. |
-| `Attributes` | `[]StarGiftAttributeIDClass` | — | Optionally filter gifts with the specified attributes. If no attributes of a specific type are specified, all attributes of that type are allowed. |
+| `Attributes` | [`[]StarGiftAttributeIDClass`](/docs/reference/types/general/star-gift-attribute-id) | — | Optionally filter gifts with the specified attributes. If no attributes of a specific type are specified, all attributes of that type are allowed. |
 | `Offset` | `string` | yes | Offset for pagination. If not equal to an empty string, payments.resaleStarGifts counters will not be set to avoid returning the counters every time a new page is fetched. |
 | `Limit` | `int` | yes | Maximum number of results to return, see pagination |
 
 ## Returns
 
-`*PaymentsResaleStarGifts`
+[`*PaymentsResaleStarGifts`](/docs/reference/constructors/payments/resale-star-gifts)
 
 ## Possible errors
 

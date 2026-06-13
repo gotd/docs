@@ -25,20 +25,20 @@ Implements [`ChatFull`](/docs/reference/types/general/chat-full).
 | `TranslationsDisabled` | `bool` | — | Whether the real-time chat translation popup should be hidden. |
 | `ID` | `int64` | yes | ID of the chat |
 | `About` | `string` | yes | About string for this chat |
-| `Participants` | `ChatParticipantsClass` | yes | Participant list |
-| `ChatPhoto` | `PhotoClass` | — | Chat photo |
-| `NotifySettings` | `PeerNotifySettings` | yes | Notification settings |
-| `ExportedInvite` | `ExportedChatInviteClass` | — | Chat invite |
-| `BotInfo` | `[]BotInfo` | — | Info about bots that are in this chat |
+| `Participants` | [`ChatParticipantsClass`](/docs/reference/types/general/chat-participants) | yes | Participant list |
+| `ChatPhoto` | [`PhotoClass`](/docs/reference/types/general/photo) | — | Chat photo |
+| `NotifySettings` | [`PeerNotifySettings`](/docs/reference/constructors/general/peer-notify-settings) | yes | Notification settings |
+| `ExportedInvite` | [`ExportedChatInviteClass`](/docs/reference/types/general/exported-chat-invite) | — | Chat invite |
+| `BotInfo` | [`[]BotInfo`](/docs/reference/constructors/general/bot-info) | — | Info about bots that are in this chat |
 | `PinnedMsgID` | `int` | — | Message ID of the last pinned message |
 | `FolderID` | `int` | — | Peer folder ID, for more info click here |
-| `Call` | `InputGroupCallClass` | — | Group call information |
+| `Call` | [`InputGroupCallClass`](/docs/reference/types/general/input-group-call) | — | Group call information |
 | `TTLPeriod` | `int` | — | Time-To-Live of messages sent by the current user to this chat |
-| `GroupcallDefaultJoinAs` | `PeerClass` | — | When using phone.getGroupCallJoinAs to get a list of peers that can be used to join a group call, this field indicates the peer that should be selected by default. |
+| `GroupcallDefaultJoinAs` | [`PeerClass`](/docs/reference/types/general/peer) | — | When using phone.getGroupCallJoinAs to get a list of peers that can be used to join a group call, this field indicates the peer that should be selected by default. |
 | `ThemeEmoticon` | `string` | — | Emoji representing a specific chat theme |
 | `RequestsPending` | `int` | — | Pending join requests » |
 | `RecentRequesters` | `[]int64` | — | IDs of users who requested to join recently |
-| `AvailableReactions` | `ChatReactionsClass` | — | Allowed message reactions » |
+| `AvailableReactions` | [`ChatReactionsClass`](/docs/reference/types/general/chat-reactions) | — | Allowed message reactions » |
 | `ReactionsLimit` | `int` | — | This flag may be used to impose a custom limit of unique reactions (i.e. a customizable version of appConfig.reactions_uniq_max). |
 
 ## References

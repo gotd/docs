@@ -24,10 +24,10 @@ Implements [`messages.Messages`](/docs/reference/types/messages/messages).
 | `Pts` | `int` | yes | Event count after generation |
 | `Count` | `int` | yes | Total number of results were found server-side (may not be all included here) |
 | `OffsetIDOffset` | `int` | — | Indicates the absolute position of messages[0] within the total result set with count count. This is useful, for example, if the result was fetched using offset_id, and we need to display a progress/total counter (like photo 134 of 200, for all media in a chat, we could simply use photo $&#123;offset_id_offset&#125; of $&#123;count&#125;. |
-| `Messages` | `[]MessageClass` | yes | Found messages |
-| `Topics` | `[]ForumTopicClass` | yes | Forum topic information |
-| `Chats` | `[]ChatClass` | yes | Chats |
-| `Users` | `[]UserClass` | yes | Users |
+| `Messages` | [`[]MessageClass`](/docs/reference/types/general/message) | yes | Found messages |
+| `Topics` | [`[]ForumTopicClass`](/docs/reference/types/general/forum-topic) | yes | Forum topic information |
+| `Chats` | [`[]ChatClass`](/docs/reference/types/general/chat) | yes | Chats |
+| `Users` | [`[]UserClass`](/docs/reference/types/general/user) | yes | Users |
 
 ## References
 

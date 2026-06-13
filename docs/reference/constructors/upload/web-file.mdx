@@ -20,9 +20,13 @@ type tg.UploadWebFile struct { /* ... */ }
 | ---- | ---- | -------- | ----------- |
 | `Size` | `int` | yes | File size |
 | `MimeType` | `string` | yes | Mime type |
-| `FileType` | `StorageFileTypeClass` | yes | File type |
+| `FileType` | [`StorageFileTypeClass`](/docs/reference/types/storage/file-type) | yes | File type |
 | `Mtime` | `int` | yes | Modified time |
 | `Bytes` | `[]byte` | yes | Data |
+
+## Returned by
+
+- [`upload.getWebFile`](/docs/reference/methods/upload/get-web-file)
 
 ## References
 

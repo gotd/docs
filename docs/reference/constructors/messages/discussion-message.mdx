@@ -18,13 +18,17 @@ type tg.MessagesDiscussionMessage struct { /* ... */ }
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| `Messages` | `[]MessageClass` | yes | The messages from which the thread starts. The messages are returned in reverse chronological order (i.e., in order of decreasing message ID). |
+| `Messages` | [`[]MessageClass`](/docs/reference/types/general/message) | yes | The messages from which the thread starts. The messages are returned in reverse chronological order (i.e., in order of decreasing message ID). |
 | `MaxID` | `int` | — | Message ID of latest reply in this thread |
 | `ReadInboxMaxID` | `int` | — | Message ID of latest read incoming message in this thread |
 | `ReadOutboxMaxID` | `int` | — | Message ID of latest read outgoing message in this thread |
 | `UnreadCount` | `int` | yes | Number of unread messages |
-| `Chats` | `[]ChatClass` | yes | Chats mentioned in constructor |
-| `Users` | `[]UserClass` | yes | Users mentioned in constructor |
+| `Chats` | [`[]ChatClass`](/docs/reference/types/general/chat) | yes | Chats mentioned in constructor |
+| `Users` | [`[]UserClass`](/docs/reference/types/general/user) | yes | Users mentioned in constructor |
+
+## Returned by
+
+- [`messages.getDiscussionMessage`](/docs/reference/methods/messages/get-discussion-message)
 
 ## References
 

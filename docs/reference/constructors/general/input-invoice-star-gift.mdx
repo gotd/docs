@@ -22,9 +22,9 @@ Implements [`InputInvoice`](/docs/reference/types/general/input-invoice).
 | ---- | ---- | -------- | ----------- |
 | `HideName` | `bool` | — | If set, your name will be hidden if the destination user decides to display the gift on their profile (they will still see that you sent the gift) |
 | `IncludeUpgrade` | `bool` | — | Also pay for an eventual upgrade of the gift to a collectible gift ». |
-| `Peer` | `InputPeerClass` | yes | Receiver of the gift. |
+| `Peer` | [`InputPeerClass`](/docs/reference/types/general/input-peer) | yes | Receiver of the gift. |
 | `GiftID` | `int64` | yes | Identifier of the gift, from starGift.id |
-| `Message` | `TextWithEntities` | — | Optional message, attached with the gift. The maximum length for this field is specified in the stargifts_message_length_max client configuration value ». |
+| `Message` | [`TextWithEntities`](/docs/reference/constructors/general/text-with-entities) | — | Optional message, attached with the gift. The maximum length for this field is specified in the stargifts_message_length_max client configuration value ». |
 
 ## References
 

@@ -35,17 +35,17 @@ client.Run(ctx, func(ctx context.Context) error {
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| `Channel` | `InputChannelClass` | yes | Channel |
+| `Channel` | [`InputChannelClass`](/docs/reference/types/general/input-channel) | yes | Channel |
 | `Q` | `string` | yes | Search query, can be empty |
-| `EventsFilter` | `ChannelAdminLogEventsFilter` | — | Event filter |
-| `Admins` | `[]InputUserClass` | — | Only show events from these admins |
+| `EventsFilter` | [`ChannelAdminLogEventsFilter`](/docs/reference/constructors/general/channel-admin-log-events-filter) | — | Event filter |
+| `Admins` | [`[]InputUserClass`](/docs/reference/types/general/input-user) | — | Only show events from these admins |
 | `MaxID` | `int64` | yes | Maximum ID of message to return (see pagination) |
 | `MinID` | `int64` | yes | Minimum ID of message to return (see pagination) |
 | `Limit` | `int` | yes | Maximum number of results to return, see pagination |
 
 ## Returns
 
-`*ChannelsAdminLogResults`
+[`*ChannelsAdminLogResults`](/docs/reference/constructors/channels/admin-log-results)
 
 ## Possible errors
 

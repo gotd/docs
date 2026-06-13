@@ -36,15 +36,15 @@ client.Run(ctx, func(ctx context.Context) error {
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
 | `Format` | `string` | yes | Theme format, a string that identifies the theming engines supported by the client |
-| `Theme` | `InputThemeClass` | yes | Theme to update |
+| `Theme` | [`InputThemeClass`](/docs/reference/types/general/input-theme) | yes | Theme to update |
 | `Slug` | `string` | — | Unique theme ID |
 | `Title` | `string` | — | Theme name |
-| `Document` | `InputDocumentClass` | — | Theme file |
-| `Settings` | `[]InputThemeSettings` | — | Theme settings |
+| `Document` | [`InputDocumentClass`](/docs/reference/types/general/input-document) | — | Theme file |
+| `Settings` | [`[]InputThemeSettings`](/docs/reference/constructors/general/input-theme-settings) | — | Theme settings |
 
 ## Returns
 
-`*Theme`
+[`*Theme`](/docs/reference/constructors/general/theme)
 
 ## Possible errors
 

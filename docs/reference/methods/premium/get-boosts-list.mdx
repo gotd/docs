@@ -36,13 +36,13 @@ client.Run(ctx, func(ctx context.Context) error {
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
 | `Gifts` | `bool` | — | Whether to return only info about boosts received from gift codes and giveaways created by the channel/supergroup » |
-| `Peer` | `InputPeerClass` | yes | The channel/supergroup |
+| `Peer` | [`InputPeerClass`](/docs/reference/types/general/input-peer) | yes | The channel/supergroup |
 | `Offset` | `string` | yes | Offset for pagination, obtained from premium.boostsList.next_offset |
 | `Limit` | `int` | yes | Maximum number of results to return, see pagination |
 
 ## Returns
 
-`*PremiumBoostsList`
+[`*PremiumBoostsList`](/docs/reference/constructors/premium/boosts-list)
 
 ## Possible errors
 

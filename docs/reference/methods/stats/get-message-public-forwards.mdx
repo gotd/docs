@@ -35,14 +35,14 @@ client.Run(ctx, func(ctx context.Context) error {
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| `Channel` | `InputChannelClass` | yes | Source channel |
+| `Channel` | [`InputChannelClass`](/docs/reference/types/general/input-channel) | yes | Source channel |
 | `MsgID` | `int` | yes | Source message ID |
 | `Offset` | `string` | yes | Offset for pagination, empty string on first call, then use the next_offset field of the returned constructor (if present, otherwise no more results are available). |
 | `Limit` | `int` | yes | Maximum number of results to return, see pagination |
 
 ## Returns
 
-`*StatsPublicForwards`
+[`*StatsPublicForwards`](/docs/reference/constructors/stats/public-forwards)
 
 ## Possible errors
 

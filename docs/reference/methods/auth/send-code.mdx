@@ -38,11 +38,11 @@ client.Run(ctx, func(ctx context.Context) error {
 | `PhoneNumber` | `string` | yes | Phone number in international format |
 | `APIID` | `int` | yes | Application identifier (see App configuration) |
 | `APIHash` | `string` | yes | Application secret hash (see App configuration) |
-| `Settings` | `CodeSettings` | yes | Settings for the code type to send |
+| `Settings` | [`CodeSettings`](/docs/reference/constructors/general/code-settings) | yes | Settings for the code type to send |
 
 ## Returns
 
-`AuthSentCodeClass`
+[`AuthSentCodeClass`](/docs/reference/types/auth/sent-code)
 
 ## Possible errors
 

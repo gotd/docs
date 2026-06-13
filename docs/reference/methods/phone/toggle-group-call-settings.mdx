@@ -36,14 +36,14 @@ client.Run(ctx, func(ctx context.Context) error {
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
 | `ResetInviteHash` | `bool` | — | Invalidate existing invite links |
-| `Call` | `InputGroupCallClass` | yes | Group call |
+| `Call` | [`InputGroupCallClass`](/docs/reference/types/general/input-group-call) | yes | Group call |
 | `JoinMuted` | `bool` | — | Whether all users will that join this group call are muted by default upon joining the group call |
 | `MessagesEnabled` | `bool` | — | MessagesEnabled field of PhoneToggleGroupCallSettingsRequest. |
 | `SendPaidMessagesStars` | `int64` | — | SendPaidMessagesStars field of PhoneToggleGroupCallSettingsRequest. |
 
 ## Returns
 
-`UpdatesClass`
+[`UpdatesClass`](/docs/reference/types/general/updates)
 
 ## Possible errors
 

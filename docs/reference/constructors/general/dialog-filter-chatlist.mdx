@@ -23,11 +23,11 @@ Implements [`DialogFilter`](/docs/reference/types/general/dialog-filter).
 | `HasMyInvites` | `bool` | — | Whether the current user has created some chat folder deep links » to share the folder as well. |
 | `TitleNoanimate` | `bool` | — | If set, any animated emojis present in title should not be animated and should be instead frozen on the first frame. |
 | `ID` | `int` | yes | ID of the folder |
-| `Title` | `TextWithEntities` | yes | Name of the folder (max 12 UTF-8 chars) |
+| `Title` | [`TextWithEntities`](/docs/reference/constructors/general/text-with-entities) | yes | Name of the folder (max 12 UTF-8 chars) |
 | `Emoticon` | `string` | — | Emoji to use as icon for the folder. |
 | `Color` | `int` | — | A color ID for the folder tag associated to this folder, see here » for more info. |
-| `PinnedPeers` | `[]InputPeerClass` | yes | Pinned chats, folders can have unlimited pinned chats |
-| `IncludePeers` | `[]InputPeerClass` | yes | Chats to include in the folder |
+| `PinnedPeers` | [`[]InputPeerClass`](/docs/reference/types/general/input-peer) | yes | Pinned chats, folders can have unlimited pinned chats |
+| `IncludePeers` | [`[]InputPeerClass`](/docs/reference/types/general/input-peer) | yes | Chats to include in the folder |
 
 ## References
 

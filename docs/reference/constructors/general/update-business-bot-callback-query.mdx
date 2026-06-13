@@ -23,8 +23,8 @@ Implements [`Update`](/docs/reference/types/general/update).
 | `QueryID` | `int64` | yes | Query ID |
 | `UserID` | `int64` | yes | ID of the user that pressed the button |
 | `ConnectionID` | `string` | yes | Business connection ID |
-| `Message` | `MessageClass` | yes | Message that contains the keyboard (also contains info about the chat where the message was sent). |
-| `ReplyToMessage` | `MessageClass` | — | The message that message is replying to. |
+| `Message` | [`MessageClass`](/docs/reference/types/general/message) | yes | Message that contains the keyboard (also contains info about the chat where the message was sent). |
+| `ReplyToMessage` | [`MessageClass`](/docs/reference/types/general/message) | — | The message that message is replying to. |
 | `ChatInstance` | `int64` | yes | Global identifier, uniquely corresponding to the chat to which the message with the callback button was sent. Useful for high scores in games. |
 | `Data` | `[]byte` | — | Callback data |
 

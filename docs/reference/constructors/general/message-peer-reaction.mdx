@@ -21,9 +21,9 @@ type tg.MessagePeerReaction struct { /* ... */ }
 | `Big` | `bool` | — | Whether the specified message reaction » should elicit a bigger and longer reaction |
 | `Unread` | `bool` | — | Whether the reaction wasn't yet marked as read by the current user |
 | `My` | `bool` | — | Starting from layer 159, messages.sendReaction will send reactions from the peer (user or channel) specified using messages.saveDefaultSendAs. If set, this flag indicates that this reaction was sent by us, even if the peer doesn't point to the current account. |
-| `PeerID` | `PeerClass` | yes | Peer that reacted to the message |
+| `PeerID` | [`PeerClass`](/docs/reference/types/general/peer) | yes | Peer that reacted to the message |
 | `Date` | `int` | yes | When was this reaction added |
-| `Reaction` | `ReactionClass` | yes | Reaction emoji |
+| `Reaction` | [`ReactionClass`](/docs/reference/types/general/reaction) | yes | Reaction emoji |
 
 ## References
 

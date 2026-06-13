@@ -22,7 +22,7 @@ type tg.StarGiftAuctionUserState struct { /* ... */ }
 | `BidAmount` | `int64` | — | Contains the amount of the placed bid in Telegram Stars. |
 | `BidDate` | `int` | — | Contains a UNIX timestamp, indicating when the bid was placed. |
 | `MinBidAmount` | `int64` | — | Contains the minumum allowed bid amount in Telegram Stars, if set overrides starGiftAuctionState.min_bid_amount for the current user. |
-| `BidPeer` | `PeerClass` | — | Contains the peer that will receive the gift, if you end up winning this round |
+| `BidPeer` | [`PeerClass`](/docs/reference/types/general/peer) | — | Contains the peer that will receive the gift, if you end up winning this round |
 | `AcquiredCount` | `int` | yes | Contains the number of gifts that were purchased so far in the auction by the current user. |
 
 ## References

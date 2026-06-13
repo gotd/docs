@@ -42,24 +42,24 @@ client.Run(ctx, func(ctx context.Context) error {
 | `UpdateStickersetsOrder` | `bool` | — | Whether to move used stickersets to top, see here for more info on this flag » |
 | `InvertMedia` | `bool` | — | If set, any eventual webpage preview will be shown on top of the message instead of at the bottom. |
 | `AllowPaidFloodskip` | `bool` | — | Bots only: if set, allows sending up to 1000 messages per second, ignoring broadcasting limits for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance. |
-| `Peer` | `InputPeerClass` | yes | Destination |
-| `ReplyTo` | `InputReplyToClass` | — | If set, indicates that the message should be sent in reply to the specified message or story. |
-| `Media` | `InputMediaClass` | yes | Attached media |
+| `Peer` | [`InputPeerClass`](/docs/reference/types/general/input-peer) | yes | Destination |
+| `ReplyTo` | [`InputReplyToClass`](/docs/reference/types/general/input-reply-to) | — | If set, indicates that the message should be sent in reply to the specified message or story. |
+| `Media` | [`InputMediaClass`](/docs/reference/types/general/input-media) | yes | Attached media |
 | `Message` | `string` | yes | Caption |
 | `RandomID` | `int64` | yes | Random ID to avoid resending the same message |
-| `ReplyMarkup` | `ReplyMarkupClass` | — | Reply markup for bot keyboards |
-| `Entities` | `[]MessageEntityClass` | — | Message entities for styled text |
+| `ReplyMarkup` | [`ReplyMarkupClass`](/docs/reference/types/general/reply-markup) | — | Reply markup for bot keyboards |
+| `Entities` | [`[]MessageEntityClass`](/docs/reference/types/general/message-entity) | — | Message entities for styled text |
 | `ScheduleDate` | `int` | — | Scheduled message date for scheduled messages |
 | `ScheduleRepeatPeriod` | `int` | — | Once sent, this message will be automatically re-scheduled to be re-sent again this many seconds in the future, see here » for more info on repeating scheduled messages. |
-| `SendAs` | `InputPeerClass` | — | Send this message as the specified peer |
-| `QuickReplyShortcut` | `InputQuickReplyShortcutClass` | — | Add the message to the specified quick reply shortcut », instead. |
+| `SendAs` | [`InputPeerClass`](/docs/reference/types/general/input-peer) | — | Send this message as the specified peer |
+| `QuickReplyShortcut` | [`InputQuickReplyShortcutClass`](/docs/reference/types/general/input-quick-reply-shortcut) | — | Add the message to the specified quick reply shortcut », instead. |
 | `Effect` | `int64` | — | Specifies a message effect » to use for the message. |
 | `AllowPaidStars` | `int64` | — | For paid messages », specifies the amount of Telegram Stars the user has agreed to pay in order to send the message. |
-| `SuggestedPost` | `SuggestedPost` | — | Used to suggest a post to a channel, see here » for more info on the full flow. |
+| `SuggestedPost` | [`SuggestedPost`](/docs/reference/constructors/general/suggested-post) | — | Used to suggest a post to a channel, see here » for more info on the full flow. |
 
 ## Returns
 
-`UpdatesClass`
+[`UpdatesClass`](/docs/reference/types/general/updates)
 
 ## Possible errors
 

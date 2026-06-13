@@ -18,9 +18,13 @@ type tg.PaymentsStarGiftUpgradePreview struct { /* ... */ }
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| `SampleAttributes` | `[]StarGiftAttributeClass` | yes | Possible gift attributes |
-| `Prices` | `[]StarGiftUpgradePrice` | yes | Contains a similar list of upgrade prices and timestamps, not as granular as in next_prices (i.e. prices are approximately 1 month apart), to be used mainly to scale the price graph, and to show a more general future overview of the upgrade price. |
-| `NextPrices` | `[]StarGiftUpgradePrice` | yes | Contains the current upgrade price and a list of future prices, each associated to a UNIX timestamp that indicates when the price comes in effect (the current price is valid only until the next one comes into effect, and so on for all prices in the list). |
+| `SampleAttributes` | [`[]StarGiftAttributeClass`](/docs/reference/types/general/star-gift-attribute) | yes | Possible gift attributes |
+| `Prices` | [`[]StarGiftUpgradePrice`](/docs/reference/constructors/general/star-gift-upgrade-price) | yes | Contains a similar list of upgrade prices and timestamps, not as granular as in next_prices (i.e. prices are approximately 1 month apart), to be used mainly to scale the price graph, and to show a more general future overview of the upgrade price. |
+| `NextPrices` | [`[]StarGiftUpgradePrice`](/docs/reference/constructors/general/star-gift-upgrade-price) | yes | Contains the current upgrade price and a list of future prices, each associated to a UNIX timestamp that indicates when the price comes in effect (the current price is valid only until the next one comes into effect, and so on for all prices in the list). |
+
+## Returned by
+
+- [`payments.getStarGiftUpgradePreview`](/docs/reference/methods/payments/get-star-gift-upgrade-preview)
 
 ## References
 

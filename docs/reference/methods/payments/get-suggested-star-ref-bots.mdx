@@ -37,13 +37,13 @@ client.Run(ctx, func(ctx context.Context) error {
 | ---- | ---- | -------- | ----------- |
 | `OrderByRevenue` | `bool` | — | If set, orders results by the expected revenue |
 | `OrderByDate` | `bool` | — | If set, orders results by the creation date of the affiliate program |
-| `Peer` | `InputPeerClass` | yes | The peer that will become the affiliate: star commissions will be transferred to this peer's star balance. |
+| `Peer` | [`InputPeerClass`](/docs/reference/types/general/input-peer) | yes | The peer that will become the affiliate: star commissions will be transferred to this peer's star balance. |
 | `Offset` | `string` | yes | Offset for pagination, taken from payments.suggestedStarRefBots.next_offset, initially empty. |
 | `Limit` | `int` | yes | Maximum number of results to return, see pagination |
 
 ## Returns
 
-`*PaymentsSuggestedStarRefBots`
+[`*PaymentsSuggestedStarRefBots`](/docs/reference/constructors/payments/suggested-star-ref-bots)
 
 ## Possible errors
 

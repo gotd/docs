@@ -37,11 +37,11 @@ client.Run(ctx, func(ctx context.Context) error {
 | ---- | ---- | -------- | ----------- |
 | `ForPaidReactions` | `bool` | — | If set, fetches the list of peers that can be used to send paid reactions to messages of a specific peer. |
 | `ForLiveStories` | `bool` | — | ForLiveStories field of ChannelsGetSendAsRequest. |
-| `Peer` | `InputPeerClass` | yes | The group where we intend to send messages |
+| `Peer` | [`InputPeerClass`](/docs/reference/types/general/input-peer) | yes | The group where we intend to send messages |
 
 ## Returns
 
-`*ChannelsSendAsPeers`
+[`*ChannelsSendAsPeers`](/docs/reference/constructors/channels/send-as-peers)
 
 ## Possible errors
 

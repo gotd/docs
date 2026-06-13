@@ -19,14 +19,18 @@ type tg.PaymentsCheckedGiftCode struct { /* ... */ }
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
 | `ViaGiveaway` | `bool` | — | Whether this giftcode was created by a giveaway. |
-| `FromID` | `PeerClass` | — | The peer that created the gift code. |
+| `FromID` | [`PeerClass`](/docs/reference/types/general/peer) | — | The peer that created the gift code. |
 | `GiveawayMsgID` | `int` | — | Message ID of the giveaway in the channel specified in from_id. |
 | `ToID` | `int64` | — | The destination user of the gift. |
 | `Date` | `int` | yes | Creation date of the gift code. |
 | `Days` | `int` | yes | Duration of the gifted Telegram Premium subscription, in days. |
 | `UsedDate` | `int` | — | When was the giftcode imported, if it was imported. |
-| `Chats` | `[]ChatClass` | yes | Mentioned chats |
-| `Users` | `[]UserClass` | yes | Mentioned users |
+| `Chats` | [`[]ChatClass`](/docs/reference/types/general/chat) | yes | Mentioned chats |
+| `Users` | [`[]UserClass`](/docs/reference/types/general/user) | yes | Mentioned users |
+
+## Returned by
+
+- [`payments.checkGiftCode`](/docs/reference/methods/payments/check-gift-code)
 
 ## References
 

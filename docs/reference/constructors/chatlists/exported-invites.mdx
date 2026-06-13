@@ -18,9 +18,13 @@ type tg.ChatlistsExportedInvites struct { /* ... */ }
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| `Invites` | `[]ExportedChatlistInvite` | yes | The chat folder deep links ». |
-| `Chats` | `[]ChatClass` | yes | Related chat information |
-| `Users` | `[]UserClass` | yes | Related user information |
+| `Invites` | [`[]ExportedChatlistInvite`](/docs/reference/constructors/general/exported-chatlist-invite) | yes | The chat folder deep links ». |
+| `Chats` | [`[]ChatClass`](/docs/reference/types/general/chat) | yes | Related chat information |
+| `Users` | [`[]UserClass`](/docs/reference/types/general/user) | yes | Related user information |
+
+## Returned by
+
+- [`chatlists.getExportedInvites`](/docs/reference/methods/chatlists/get-exported-invites)
 
 ## References
 

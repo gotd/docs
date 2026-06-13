@@ -37,15 +37,15 @@ client.Run(ctx, func(ctx context.Context) error {
 | ---- | ---- | -------- | ----------- |
 | `Compact` | `bool` | — | If set, requests to open the mini app in compact mode (as opposed to normal or fullscreen mode). Must be set if the mode parameter of the Main Mini App link is equal to compact. |
 | `Fullscreen` | `bool` | — | If set, requests to open the mini app in fullscreen mode (as opposed to compact or normal mode). Must be set if the mode parameter of the Main Mini App link is equal to fullscreen. |
-| `Peer` | `InputPeerClass` | yes | Currently open chat, may be inputPeerEmpty if no chat is currently open. |
-| `Bot` | `InputUserClass` | yes | Bot that owns the main mini app. |
+| `Peer` | [`InputPeerClass`](/docs/reference/types/general/input-peer) | yes | Currently open chat, may be inputPeerEmpty if no chat is currently open. |
+| `Bot` | [`InputUserClass`](/docs/reference/types/general/input-user) | yes | Bot that owns the main mini app. |
 | `StartParam` | `string` | — | Start parameter, if opening from a Main Mini App link ». |
-| `ThemeParams` | `DataJSON` | — | Theme parameters » |
+| `ThemeParams` | [`DataJSON`](/docs/reference/constructors/general/data-j-s-o-n) | — | Theme parameters » |
 | `Platform` | `string` | yes | Short name of the application; 0-64 English letters, digits, and underscores |
 
 ## Returns
 
-`*WebViewResultURL`
+[`*WebViewResultURL`](/docs/reference/constructors/general/web-view-result-url)
 
 ## Possible errors
 

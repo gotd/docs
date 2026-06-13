@@ -23,7 +23,7 @@ Implements [`Dialog`](/docs/reference/types/general/dialog).
 | `Pinned` | `bool` | — | Is the dialog pinned |
 | `UnreadMark` | `bool` | — | Whether the chat was manually marked as unread |
 | `ViewForumAsMessages` | `bool` | — | Users may also choose to display messages from all topics of a forum as if they were sent to a normal group, using a "View as messages" setting in the local client. This setting only affects the current account, and is synced to other logged in sessions using the channels.toggleViewForumAsMessages method; invoking this method will update the value of this flag. |
-| `Peer` | `PeerClass` | yes | The chat |
+| `Peer` | [`PeerClass`](/docs/reference/types/general/peer) | yes | The chat |
 | `TopMessage` | `int` | yes | The latest message ID |
 | `ReadInboxMaxID` | `int` | yes | Position up to which all incoming messages are read. |
 | `ReadOutboxMaxID` | `int` | yes | Position up to which all outgoing messages are read. |
@@ -31,9 +31,9 @@ Implements [`Dialog`](/docs/reference/types/general/dialog).
 | `UnreadMentionsCount` | `int` | yes | Number of unread mentions |
 | `UnreadReactionsCount` | `int` | yes | Number of unread reactions to messages you sent |
 | `UnreadPollVotesCount` | `int` | yes | UnreadPollVotesCount field of Dialog. |
-| `NotifySettings` | `PeerNotifySettings` | yes | Notification settings |
+| `NotifySettings` | [`PeerNotifySettings`](/docs/reference/constructors/general/peer-notify-settings) | yes | Notification settings |
 | `Pts` | `int` | — | PTS |
-| `Draft` | `DraftMessageClass` | — | Message draft |
+| `Draft` | [`DraftMessageClass`](/docs/reference/types/general/draft-message) | — | Message draft |
 | `FolderID` | `int` | — | Peer folder ID, for more info click here |
 | `TTLPeriod` | `int` | — | Time-to-live of all messages sent in this dialog |
 

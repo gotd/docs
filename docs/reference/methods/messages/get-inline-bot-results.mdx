@@ -35,15 +35,15 @@ client.Run(ctx, func(ctx context.Context) error {
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| `Bot` | `InputUserClass` | yes | The bot to query |
-| `Peer` | `InputPeerClass` | yes | The currently opened chat |
-| `GeoPoint` | `InputGeoPointClass` | — | The geolocation, if requested |
+| `Bot` | [`InputUserClass`](/docs/reference/types/general/input-user) | yes | The bot to query |
+| `Peer` | [`InputPeerClass`](/docs/reference/types/general/input-peer) | yes | The currently opened chat |
+| `GeoPoint` | [`InputGeoPointClass`](/docs/reference/types/general/input-geo-point) | — | The geolocation, if requested |
 | `Query` | `string` | yes | The query |
 | `Offset` | `string` | yes | The offset within the results, will be passed directly as-is to the bot. |
 
 ## Returns
 
-`*MessagesBotResults`
+[`*MessagesBotResults`](/docs/reference/constructors/messages/bot-results)
 
 ## Possible errors
 

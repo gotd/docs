@@ -35,12 +35,12 @@ client.Run(ctx, func(ctx context.Context) error {
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| `Call` | `InputGroupCallClass` | yes | The group call |
+| `Call` | [`InputGroupCallClass`](/docs/reference/types/general/input-group-call) | yes | The group call |
 | `Limit` | `int` | yes | Maximum number of participants to return in this call (0 to return a server-defined amount). If the number of returned participants is less than groupCall participants_count, paginate through the remaining participants using phone getGroupParticipants, passing to offset the phone.groupCall participants_next_offset returned by this call. This parameter behaves in a different way compared to the limit of phone.getGroupParticipants, see here » for more info. |
 
 ## Returns
 
-`*PhoneGroupCall`
+[`*PhoneGroupCall`](/docs/reference/constructors/phone/group-call)
 
 ## Possible errors
 

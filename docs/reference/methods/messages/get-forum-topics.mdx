@@ -35,7 +35,7 @@ client.Run(ctx, func(ctx context.Context) error {
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| `Peer` | `InputPeerClass` | yes | The supergroup forum, private chat (for forum-enabled bots) or bot forum (for users) where the topic is located. |
+| `Peer` | [`InputPeerClass`](/docs/reference/types/general/input-peer) | yes | The supergroup forum, private chat (for forum-enabled bots) or bot forum (for users) where the topic is located. |
 | `Q` | `string` | — | Search query |
 | `OffsetDate` | `int` | yes | Offsets for pagination, for more info click here, date of the last message of the last found topic. Use 0 or any date in the future to get results from the last topic. |
 | `OffsetID` | `int` | yes | Offsets for pagination, for more info click here, ID of the last message of the last found topic (or initially 0). |
@@ -44,7 +44,7 @@ client.Run(ctx, func(ctx context.Context) error {
 
 ## Returns
 
-`*MessagesForumTopics`
+[`*MessagesForumTopics`](/docs/reference/constructors/messages/forum-topics)
 
 ## Possible errors
 

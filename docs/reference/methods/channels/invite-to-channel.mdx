@@ -35,12 +35,12 @@ client.Run(ctx, func(ctx context.Context) error {
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| `Channel` | `InputChannelClass` | yes | Channel/supergroup |
-| `Users` | `[]InputUserClass` | yes | Users to invite |
+| `Channel` | [`InputChannelClass`](/docs/reference/types/general/input-channel) | yes | Channel/supergroup |
+| `Users` | [`[]InputUserClass`](/docs/reference/types/general/input-user) | yes | Users to invite |
 
 ## Returns
 
-`*MessagesInvitedUsers`
+[`*MessagesInvitedUsers`](/docs/reference/constructors/messages/invited-users)
 
 ## Possible errors
 

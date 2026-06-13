@@ -20,9 +20,9 @@ Implements [`WebPageAttribute`](/docs/reference/types/general/web-page-attribute
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| `Peer` | `PeerClass` | yes | Peer that posted the story |
+| `Peer` | [`PeerClass`](/docs/reference/types/general/peer) | yes | Peer that posted the story |
 | `ID` | `int` | yes | Story ID |
-| `Story` | `StoryItemClass` | — | May contain the story, if not the story should be fetched when and if needed using stories.getStoriesByID with the above id and peer. |
+| `Story` | [`StoryItemClass`](/docs/reference/types/general/story-item) | — | May contain the story, if not the story should be fetched when and if needed using stories.getStoriesByID with the above id and peer. |
 
 ## References
 

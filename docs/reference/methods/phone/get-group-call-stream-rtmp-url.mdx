@@ -36,12 +36,12 @@ client.Run(ctx, func(ctx context.Context) error {
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
 | `LiveStory` | `bool` | — | LiveStory field of PhoneGetGroupCallStreamRtmpURLRequest. |
-| `Peer` | `InputPeerClass` | yes | Peer to livestream into |
+| `Peer` | [`InputPeerClass`](/docs/reference/types/general/input-peer) | yes | Peer to livestream into |
 | `Revoke` | `bool` | — | Whether to revoke the previous stream key or simply return the existing one |
 
 ## Returns
 
-`*PhoneGroupCallStreamRtmpURL`
+[`*PhoneGroupCallStreamRtmpURL`](/docs/reference/constructors/phone/group-call-stream-rtmp-url)
 
 ## Possible errors
 

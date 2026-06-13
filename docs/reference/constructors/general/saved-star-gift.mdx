@@ -24,10 +24,10 @@ type tg.SavedStarGift struct { /* ... */ }
 | `CanUpgrade` | `bool` | — | Only set for non-collectible gifts, if they can be upgraded to a collectible gift ». |
 | `PinnedToTop` | `bool` | — | Whether this gift is pinned on top of the user's profile page. |
 | `UpgradeSeparate` | `bool` | — | If set, someone already separately pre-paid for the upgrade of this gift. |
-| `FromID` | `PeerClass` | — | Sender of the gift (unset for anonymous gifts). |
+| `FromID` | [`PeerClass`](/docs/reference/types/general/peer) | — | Sender of the gift (unset for anonymous gifts). |
 | `Date` | `int` | yes | Reception date of the gift. |
-| `Gift` | `StarGiftClass` | yes | The collectible gift. |
-| `Message` | `TextWithEntities` | — | Message attached to the gift. |
+| `Gift` | [`StarGiftClass`](/docs/reference/types/general/star-gift) | yes | The collectible gift. |
+| `Message` | [`TextWithEntities`](/docs/reference/constructors/general/text-with-entities) | — | Message attached to the gift. |
 | `MsgID` | `int` | — | For gifts received by users, ID to use in inputSavedStarGiftUser constructors. |
 | `SavedID` | `int64` | — | For gifts received by channels, ID to use in inputSavedStarGiftChat constructors. |
 | `ConvertStars` | `int64` | — | For non-collectible gifts, the receiver of this gift may convert it to this many Telegram Stars, instead of displaying it on their profile page. |

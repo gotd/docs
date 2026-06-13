@@ -35,14 +35,14 @@ client.Run(ctx, func(ctx context.Context) error {
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| `Peer` | `InputPeerClass` | yes | The Telegram chat where the media will be imported |
+| `Peer` | [`InputPeerClass`](/docs/reference/types/general/input-peer) | yes | The Telegram chat where the media will be imported |
 | `ImportID` | `int64` | yes | Identifier of a history import session, returned by messages.initHistoryImport |
 | `FileName` | `string` | yes | File name |
-| `Media` | `InputMediaClass` | yes | Media metadata |
+| `Media` | [`InputMediaClass`](/docs/reference/types/general/input-media) | yes | Media metadata |
 
 ## Returns
 
-`MessageMediaClass`
+[`MessageMediaClass`](/docs/reference/types/general/message-media)
 
 ## Possible errors
 

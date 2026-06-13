@@ -18,9 +18,13 @@ type tg.ChannelsAdminLogResults struct { /* ... */ }
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| `Events` | `[]ChannelAdminLogEvent` | yes | Admin log events |
-| `Chats` | `[]ChatClass` | yes | Chats mentioned in events |
-| `Users` | `[]UserClass` | yes | Users mentioned in events |
+| `Events` | [`[]ChannelAdminLogEvent`](/docs/reference/constructors/general/channel-admin-log-event) | yes | Admin log events |
+| `Chats` | [`[]ChatClass`](/docs/reference/types/general/chat) | yes | Chats mentioned in events |
+| `Users` | [`[]UserClass`](/docs/reference/types/general/user) | yes | Users mentioned in events |
+
+## Returned by
+
+- [`channels.getAdminLog`](/docs/reference/methods/channels/get-admin-log)
 
 ## References
 

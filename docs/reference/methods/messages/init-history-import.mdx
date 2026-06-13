@@ -35,13 +35,13 @@ client.Run(ctx, func(ctx context.Context) error {
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| `Peer` | `InputPeerClass` | yes | The Telegram chat where the history should be imported. |
-| `File` | `InputFileClass` | yes | File with messages to import. |
+| `Peer` | [`InputPeerClass`](/docs/reference/types/general/input-peer) | yes | The Telegram chat where the history should be imported. |
+| `File` | [`InputFileClass`](/docs/reference/types/general/input-file) | yes | File with messages to import. |
 | `MediaCount` | `int` | yes | Number of media files associated with the chat that will be uploaded using messages uploadImportedMedia. |
 
 ## Returns
 
-`*MessagesHistoryImport`
+[`*MessagesHistoryImport`](/docs/reference/constructors/messages/history-import)
 
 ## Possible errors
 

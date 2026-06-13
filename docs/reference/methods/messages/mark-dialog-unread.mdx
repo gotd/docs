@@ -36,8 +36,8 @@ client.Run(ctx, func(ctx context.Context) error {
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
 | `Unread` | `bool` | — | Mark as unread/read |
-| `ParentPeer` | `InputPeerClass` | — | If set, must be equal to the ID of a monoforum, and will affect the monoforum topic passed in peer. |
-| `Peer` | `InputDialogPeerClass` | yes | Dialog |
+| `ParentPeer` | [`InputPeerClass`](/docs/reference/types/general/input-peer) | — | If set, must be equal to the ID of a monoforum, and will affect the monoforum topic passed in peer. |
+| `Peer` | [`InputDialogPeerClass`](/docs/reference/types/general/input-dialog-peer) | yes | Dialog |
 
 ## Returns
 

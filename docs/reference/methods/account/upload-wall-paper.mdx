@@ -36,13 +36,13 @@ client.Run(ctx, func(ctx context.Context) error {
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
 | `ForChat` | `bool` | — | Set this flag when uploading wallpapers to be passed to messages.setChatWallPaper. |
-| `File` | `InputFileClass` | yes | The JPG/PNG wallpaper |
+| `File` | [`InputFileClass`](/docs/reference/types/general/input-file) | yes | The JPG/PNG wallpaper |
 | `MimeType` | `string` | yes | MIME type of uploaded wallpaper |
-| `Settings` | `WallPaperSettings` | yes | Wallpaper settings |
+| `Settings` | [`WallPaperSettings`](/docs/reference/constructors/general/wall-paper-settings) | yes | Wallpaper settings |
 
 ## Returns
 
-`WallPaperClass`
+[`WallPaperClass`](/docs/reference/types/general/wall-paper)
 
 ## Possible errors
 

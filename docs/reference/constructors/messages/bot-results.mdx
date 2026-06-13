@@ -21,11 +21,15 @@ type tg.MessagesBotResults struct { /* ... */ }
 | `Gallery` | `bool` | — | Whether the result is a picture gallery |
 | `QueryID` | `int64` | yes | Query ID |
 | `NextOffset` | `string` | — | The next offset to use when navigating through results |
-| `SwitchPm` | `InlineBotSwitchPM` | — | Shown as a button on top of the remaining inline result list; if clicked, redirects the user to a private chat with the bot with the specified start parameter. |
-| `SwitchWebview` | `InlineBotWebView` | — | Shown as a button on top of the remaining inline result list; if clicked, opens the specified inline mode mini app. |
-| `Results` | `[]BotInlineResultClass` | yes | The results |
+| `SwitchPm` | [`InlineBotSwitchPM`](/docs/reference/constructors/general/inline-bot-switch-p-m) | — | Shown as a button on top of the remaining inline result list; if clicked, redirects the user to a private chat with the bot with the specified start parameter. |
+| `SwitchWebview` | [`InlineBotWebView`](/docs/reference/constructors/general/inline-bot-web-view) | — | Shown as a button on top of the remaining inline result list; if clicked, opens the specified inline mode mini app. |
+| `Results` | [`[]BotInlineResultClass`](/docs/reference/types/general/bot-inline-result) | yes | The results |
 | `CacheTime` | `int` | yes | Caching validity of the results |
-| `Users` | `[]UserClass` | yes | Users mentioned in the results |
+| `Users` | [`[]UserClass`](/docs/reference/types/general/user) | yes | Users mentioned in the results |
+
+## Returned by
+
+- [`messages.getInlineBotResults`](/docs/reference/methods/messages/get-inline-bot-results)
 
 ## References
 

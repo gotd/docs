@@ -35,13 +35,13 @@ client.Run(ctx, func(ctx context.Context) error {
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| `Peer` | `InputPeerClass` | yes | Chat where to unpin |
+| `Peer` | [`InputPeerClass`](/docs/reference/types/general/input-peer) | yes | Chat where to unpin |
 | `TopMsgID` | `int` | — | Forum topic where to unpin |
-| `SavedPeerID` | `InputPeerClass` | — | If set, must be equal to the ID of a monoforum topic, and will unpin all messages pinned in the passed monoforum topic. |
+| `SavedPeerID` | [`InputPeerClass`](/docs/reference/types/general/input-peer) | — | If set, must be equal to the ID of a monoforum topic, and will unpin all messages pinned in the passed monoforum topic. |
 
 ## Returns
 
-`*MessagesAffectedHistory`
+[`*MessagesAffectedHistory`](/docs/reference/constructors/messages/affected-history)
 
 ## Possible errors
 

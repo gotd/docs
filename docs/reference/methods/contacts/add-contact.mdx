@@ -36,15 +36,15 @@ client.Run(ctx, func(ctx context.Context) error {
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
 | `AddPhonePrivacyException` | `bool` | — | Allow the other user to see our phone number? |
-| `ID` | `InputUserClass` | yes | Telegram ID of the other user |
+| `ID` | [`InputUserClass`](/docs/reference/types/general/input-user) | yes | Telegram ID of the other user |
 | `FirstName` | `string` | yes | First name |
 | `LastName` | `string` | yes | Last name |
 | `Phone` | `string` | yes | User's phone number, may be omitted to simply add the user to the contact list, without a phone number. |
-| `Note` | `TextWithEntities` | — | A private note for this contact, only visible to us; see here » for more info on contact notes. |
+| `Note` | [`TextWithEntities`](/docs/reference/constructors/general/text-with-entities) | — | A private note for this contact, only visible to us; see here » for more info on contact notes. |
 
 ## Returns
 
-`UpdatesClass`
+[`UpdatesClass`](/docs/reference/types/general/updates)
 
 ## Possible errors
 

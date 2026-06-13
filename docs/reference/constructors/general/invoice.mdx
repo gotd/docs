@@ -28,7 +28,7 @@ type tg.Invoice struct { /* ... */ }
 | `EmailToProvider` | `bool` | — | Set this flag if user's email address should be sent to provider |
 | `Recurring` | `bool` | — | Whether this is a recurring payment |
 | `Currency` | `string` | yes | Three-letter ISO 4217 currency code, or XTR for Telegram Stars. |
-| `Prices` | `[]LabeledPrice` | yes | Price breakdown, a list of components (e.g. product price, tax, discount, delivery cost, delivery tax, bonus, etc.) |
+| `Prices` | [`[]LabeledPrice`](/docs/reference/constructors/general/labeled-price) | yes | Price breakdown, a list of components (e.g. product price, tax, discount, delivery cost, delivery tax, bonus, etc.) |
 | `MaxTipAmount` | `int64` | — | The maximum accepted amount for tips in the smallest units of the currency (integer, not float/double). For example, for a price of US$ 1.45 pass amount = 145. See the exp parameter in currencies.json, it shows the number of digits past the decimal point for each currency (2 for the majority of currencies). |
 | `SuggestedTipAmounts` | `[]int64` | — | A vector of suggested amounts of tips in the smallest units of the currency (integer, not float/double). At most 4 suggested tip amounts can be specified. The suggested tip amounts must be positive, passed in a strictly increased order and must not exceed max_tip_amount. |
 | `TermsURL` | `string` | — | Terms of service URL |

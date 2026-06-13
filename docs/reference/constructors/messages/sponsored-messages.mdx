@@ -23,9 +23,9 @@ Implements [`messages.SponsoredMessages`](/docs/reference/types/messages/sponsor
 | `PostsBetween` | `int` | — | If set, specifies the minimum number of messages between shown sponsored messages; otherwise, only one sponsored message must be shown after all ordinary messages. |
 | `StartDelay` | `int` | — | For sponsored messages to show on channel videos », the number of seconds to wait before showing the first ad. |
 | `BetweenDelay` | `int` | — | For sponsored messages to show on channel videos », the number of seconds to wait after the previous ad is hidden, before showing the next ad. |
-| `Messages` | `[]SponsoredMessage` | yes | Sponsored messages |
-| `Chats` | `[]ChatClass` | yes | Chats mentioned in the sponsored messages |
-| `Users` | `[]UserClass` | yes | Users mentioned in the sponsored messages |
+| `Messages` | [`[]SponsoredMessage`](/docs/reference/constructors/general/sponsored-message) | yes | Sponsored messages |
+| `Chats` | [`[]ChatClass`](/docs/reference/types/general/chat) | yes | Chats mentioned in the sponsored messages |
+| `Users` | [`[]UserClass`](/docs/reference/types/general/user) | yes | Users mentioned in the sponsored messages |
 
 ## References
 

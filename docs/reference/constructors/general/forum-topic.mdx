@@ -28,7 +28,7 @@ Implements [`ForumTopic`](/docs/reference/types/general/forum-topic).
 | `TitleMissing` | `bool` | — | TitleMissing field of ForumTopic. |
 | `ID` | `int` | yes | Topic ID |
 | `Date` | `int` | yes | Topic creation date |
-| `Peer` | `PeerClass` | yes | Contains the supergroup/private chat where the topic is located. |
+| `Peer` | [`PeerClass`](/docs/reference/types/general/peer) | yes | Contains the supergroup/private chat where the topic is located. |
 | `Title` | `string` | yes | Topic title |
 | `IconColor` | `int` | yes | If no custom emoji icon is specified, specifies the color of the fallback topic icon (RGB), one of 0x6FB9F0, 0xFFD67E, 0xCB86DB, 0x8EEE98, 0xFF93B2, or 0xFB6F5F. |
 | `IconEmojiID` | `int64` | — | ID of the custom emoji used as topic icon. |
@@ -39,9 +39,9 @@ Implements [`ForumTopic`](/docs/reference/types/general/forum-topic).
 | `UnreadMentionsCount` | `int` | yes | Number of unread mentions |
 | `UnreadReactionsCount` | `int` | yes | Number of unread reactions to messages you sent |
 | `UnreadPollVotesCount` | `int` | yes | UnreadPollVotesCount field of ForumTopic. |
-| `FromID` | `PeerClass` | yes | ID of the peer that created the topic |
-| `NotifySettings` | `PeerNotifySettings` | yes | Notification settings |
-| `Draft` | `DraftMessageClass` | — | Message draft |
+| `FromID` | [`PeerClass`](/docs/reference/types/general/peer) | yes | ID of the peer that created the topic |
+| `NotifySettings` | [`PeerNotifySettings`](/docs/reference/constructors/general/peer-notify-settings) | yes | Notification settings |
+| `Draft` | [`DraftMessageClass`](/docs/reference/types/general/draft-message) | — | Message draft |
 
 ## References
 

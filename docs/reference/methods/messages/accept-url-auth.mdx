@@ -37,7 +37,7 @@ client.Run(ctx, func(ctx context.Context) error {
 | ---- | ---- | -------- | ----------- |
 | `WriteAllowed` | `bool` | — | Set this flag to allow the bot to send messages to you (if requested) |
 | `SharePhoneNumber` | `bool` | — | Set this flag to share the user's phone number with the bot (if requested via urlAuthResultRequest.request_phone_number and consented to by the user) |
-| `Peer` | `InputPeerClass` | — | The location of the message |
+| `Peer` | [`InputPeerClass`](/docs/reference/types/general/input-peer) | — | The location of the message |
 | `MsgID` | `int` | — | Message ID of the message with the login button |
 | `ButtonID` | `int` | — | ID of the login button |
 | `URL` | `string` | — | URL used for link URL authorization, click here for more info » |
@@ -45,7 +45,7 @@ client.Run(ctx, func(ctx context.Context) error {
 
 ## Returns
 
-`URLAuthResultClass`
+[`URLAuthResultClass`](/docs/reference/types/general/url-auth-result)
 
 ## References
 

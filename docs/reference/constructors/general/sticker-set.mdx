@@ -30,7 +30,7 @@ type tg.StickerSet struct { /* ... */ }
 | `AccessHash` | `int64` | yes | Access hash of stickerset |
 | `Title` | `string` | yes | Title of stickerset |
 | `ShortName` | `string` | yes | Short name of stickerset, used when sharing stickerset using stickerset deep links. |
-| `Thumbs` | `[]PhotoSizeClass` | — | Stickerset thumbnail |
+| `Thumbs` | [`[]PhotoSizeClass`](/docs/reference/types/general/photo-size) | — | Stickerset thumbnail |
 | `ThumbDCID` | `int` | — | DC ID of thumbnail |
 | `ThumbVersion` | `int` | — | Thumbnail version |
 | `ThumbDocumentID` | `int64` | — | Document ID of custom emoji thumbnail, fetch the document using messages getCustomEmojiDocuments |

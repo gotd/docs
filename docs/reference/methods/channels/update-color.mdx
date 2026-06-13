@@ -36,13 +36,13 @@ client.Run(ctx, func(ctx context.Context) error {
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
 | `ForProfile` | `bool` | — | Whether to change the accent color emoji pattern of the profile page; otherwise, the accent color and emoji pattern of messages will be changed. Channels can change both message and profile palettes; supergroups can only change the profile palette, of course after reaching the appropriate boost level. |
-| `Channel` | `InputChannelClass` | yes | Channel whose accent color should be changed. |
+| `Channel` | [`InputChannelClass`](/docs/reference/types/general/input-channel) | yes | Channel whose accent color should be changed. |
 | `Color` | `int` | — | ID of the accent color palette » to use (not RGB24, see here » for more info); if not set, the default palette is used. |
 | `BackgroundEmojiID` | `int64` | — | Custom emoji ID used in the accent color pattern. |
 
 ## Returns
 
-`UpdatesClass`
+[`UpdatesClass`](/docs/reference/types/general/updates)
 
 ## Possible errors
 

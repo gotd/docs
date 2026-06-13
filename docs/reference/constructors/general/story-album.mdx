@@ -20,8 +20,13 @@ type tg.StoryAlbum struct { /* ... */ }
 | ---- | ---- | -------- | ----------- |
 | `AlbumID` | `int` | yes | ID of the album. |
 | `Title` | `string` | yes | Name of the album. |
-| `IconPhoto` | `PhotoClass` | — | Photo from the first story of the album, if it's a photo. |
-| `IconVideo` | `DocumentClass` | — | Video from the first story of the album, if it's a video. |
+| `IconPhoto` | [`PhotoClass`](/docs/reference/types/general/photo) | — | Photo from the first story of the album, if it's a photo. |
+| `IconVideo` | [`DocumentClass`](/docs/reference/types/general/document) | — | Video from the first story of the album, if it's a video. |
+
+## Returned by
+
+- [`stories.createAlbum`](/docs/reference/methods/stories/create-album)
+- [`stories.updateAlbum`](/docs/reference/methods/stories/update-album)
 
 ## References
 

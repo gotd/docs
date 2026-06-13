@@ -22,14 +22,14 @@ Implements [`help.PromoData`](/docs/reference/types/help/promo-data).
 | ---- | ---- | -------- | ----------- |
 | `Proxy` | `bool` | — | Set when connecting using an MTProxy that has configured an associated peer (that will be passed in peer, i.e. the channel that sponsored the MTProxy) that should be pinned on top of the chat list. |
 | `Expires` | `int` | yes | Unixtime when to re-invoke help.getPromoData. |
-| `Peer` | `PeerClass` | — | MTProxy/PSA peer |
+| `Peer` | [`PeerClass`](/docs/reference/types/general/peer) | — | MTProxy/PSA peer |
 | `PsaType` | `string` | — | For Public Service Announcement peers, indicates the type of the PSA. |
 | `PsaMessage` | `string` | — | For Public Service Announcement peers, contains the PSA itself. |
 | `PendingSuggestions` | `[]string` | yes | Contains a list of pending suggestions ». |
 | `DismissedSuggestions` | `[]string` | yes | Contains a list of inverted suggestions ». |
-| `CustomPendingSuggestion` | `PendingSuggestion` | — | Contains a list of custom pending suggestions ». |
-| `Chats` | `[]ChatClass` | yes | Chat info |
-| `Users` | `[]UserClass` | yes | User info |
+| `CustomPendingSuggestion` | [`PendingSuggestion`](/docs/reference/constructors/general/pending-suggestion) | — | Contains a list of custom pending suggestions ». |
+| `Chats` | [`[]ChatClass`](/docs/reference/types/general/chat) | yes | Chat info |
+| `Users` | [`[]UserClass`](/docs/reference/types/general/user) | yes | User info |
 
 ## References
 

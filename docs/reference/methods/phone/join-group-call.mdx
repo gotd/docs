@@ -37,16 +37,16 @@ client.Run(ctx, func(ctx context.Context) error {
 | ---- | ---- | -------- | ----------- |
 | `Muted` | `bool` | — | If set, the user will be muted by default upon joining. |
 | `VideoStopped` | `bool` | — | If set, the user's video will be disabled by default upon joining. |
-| `Call` | `InputGroupCallClass` | yes | The group call |
-| `JoinAs` | `InputPeerClass` | yes | Join the group call, presenting yourself as the specified user/channel |
+| `Call` | [`InputGroupCallClass`](/docs/reference/types/general/input-group-call) | yes | The group call |
+| `JoinAs` | [`InputPeerClass`](/docs/reference/types/general/input-peer) | yes | Join the group call, presenting yourself as the specified user/channel |
 | `InviteHash` | `string` | — | The invitation hash from the invite link », if provided allows speaking in a livestream or muted group chat. |
 | `PublicKey` | `bin.Int256` | — | For conference calls, your public key. |
 | `Block` | `[]byte` | — | The block containing an appropriate e2e.chain.changeSetGroupState event. |
-| `Params` | `DataJSON` | yes | WebRTC parameters |
+| `Params` | [`DataJSON`](/docs/reference/constructors/general/data-j-s-o-n) | yes | WebRTC parameters |
 
 ## Returns
 
-`UpdatesClass`
+[`UpdatesClass`](/docs/reference/types/general/updates)
 
 ## Possible errors
 

@@ -21,7 +21,7 @@ type tg.MessageReplies struct { /* ... */ }
 | `Comments` | `bool` | — | Whether this constructor contains information about the comment section of a channel post, or a simple message thread |
 | `Replies` | `int` | yes | Contains the total number of replies in this thread or comment section. |
 | `RepliesPts` | `int` | yes | PTS of the message that started this thread. |
-| `RecentRepliers` | `[]PeerClass` | — | For channel post comments, contains information about the last few comment posters for a specific thread, to show a small list of commenter profile pictures in client previews. |
+| `RecentRepliers` | [`[]PeerClass`](/docs/reference/types/general/peer) | — | For channel post comments, contains information about the last few comment posters for a specific thread, to show a small list of commenter profile pictures in client previews. |
 | `ChannelID` | `int64` | — | For channel post comments, contains the ID of the associated discussion supergroup |
 | `MaxID` | `int` | — | ID of the latest message in this thread or comment section. |
 | `ReadMaxID` | `int` | — | Contains the ID of the latest read message in this thread or comment section. |

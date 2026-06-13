@@ -42,18 +42,18 @@ client.Run(ctx, func(ctx context.Context) error {
 | `UpdateStickersetsOrder` | `bool` | — | Whether to move used stickersets to top, see here for more info on this flag » |
 | `InvertMedia` | `bool` | — | If set, any eventual webpage preview will be shown on top of the message instead of at the bottom. |
 | `AllowPaidFloodskip` | `bool` | — | Bots only: if set, allows sending up to 1000 messages per second, ignoring broadcasting limits for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance. |
-| `Peer` | `InputPeerClass` | yes | The destination chat |
-| `ReplyTo` | `InputReplyToClass` | — | If set, indicates that the message should be sent in reply to the specified message or story. |
-| `MultiMedia` | `[]InputSingleMedia` | yes | The medias to send: note that they must be separately uploaded using messages uploadMedia first, using raw inputMediaUploaded* constructors is not supported. |
+| `Peer` | [`InputPeerClass`](/docs/reference/types/general/input-peer) | yes | The destination chat |
+| `ReplyTo` | [`InputReplyToClass`](/docs/reference/types/general/input-reply-to) | — | If set, indicates that the message should be sent in reply to the specified message or story. |
+| `MultiMedia` | [`[]InputSingleMedia`](/docs/reference/constructors/general/input-single-media) | yes | The medias to send: note that they must be separately uploaded using messages uploadMedia first, using raw inputMediaUploaded* constructors is not supported. |
 | `ScheduleDate` | `int` | — | Scheduled message date for scheduled messages |
-| `SendAs` | `InputPeerClass` | — | Send this message as the specified peer |
-| `QuickReplyShortcut` | `InputQuickReplyShortcutClass` | — | Add the message to the specified quick reply shortcut », instead. |
+| `SendAs` | [`InputPeerClass`](/docs/reference/types/general/input-peer) | — | Send this message as the specified peer |
+| `QuickReplyShortcut` | [`InputQuickReplyShortcutClass`](/docs/reference/types/general/input-quick-reply-shortcut) | — | Add the message to the specified quick reply shortcut », instead. |
 | `Effect` | `int64` | — | Specifies a message effect » to use for the message. |
 | `AllowPaidStars` | `int64` | — | For paid messages », specifies the amount of Telegram Stars the user has agreed to pay in order to send the message. |
 
 ## Returns
 
-`UpdatesClass`
+[`UpdatesClass`](/docs/reference/types/general/updates)
 
 ## Possible errors
 

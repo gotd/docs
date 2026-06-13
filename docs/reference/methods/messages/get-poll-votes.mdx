@@ -35,7 +35,7 @@ client.Run(ctx, func(ctx context.Context) error {
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| `Peer` | `InputPeerClass` | yes | Chat where the poll was sent |
+| `Peer` | [`InputPeerClass`](/docs/reference/types/general/input-peer) | yes | Chat where the poll was sent |
 | `ID` | `int` | yes | Message ID |
 | `Option` | `[]byte` | — | Get only results for the specified poll option |
 | `Offset` | `string` | — | Offset for results, taken from the next_offset field of messages.votesList, initially an empty string. Note: if no more results are available, the method call will return an empty next_offset; thus, avoid providing the next_offset returned in messages.votesList if it is empty, to avoid an infinite loop. |
@@ -43,7 +43,7 @@ client.Run(ctx, func(ctx context.Context) error {
 
 ## Returns
 
-`*MessagesVotesList`
+[`*MessagesVotesList`](/docs/reference/constructors/messages/votes-list)
 
 ## Possible errors
 

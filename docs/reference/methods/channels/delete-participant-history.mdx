@@ -35,12 +35,12 @@ client.Run(ctx, func(ctx context.Context) error {
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| `Channel` | `InputChannelClass` | yes | Supergroup |
-| `Participant` | `InputPeerClass` | yes | The participant whose messages should be deleted |
+| `Channel` | [`InputChannelClass`](/docs/reference/types/general/input-channel) | yes | Supergroup |
+| `Participant` | [`InputPeerClass`](/docs/reference/types/general/input-peer) | yes | The participant whose messages should be deleted |
 
 ## Returns
 
-`*MessagesAffectedHistory`
+[`*MessagesAffectedHistory`](/docs/reference/constructors/messages/affected-history)
 
 ## Possible errors
 

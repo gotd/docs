@@ -18,11 +18,16 @@ type tg.MessagesPeerDialogs struct { /* ... */ }
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| `Dialogs` | `[]DialogClass` | yes | Dialog info |
-| `Messages` | `[]MessageClass` | yes | Messages mentioned in dialog info |
-| `Chats` | `[]ChatClass` | yes | Chats |
-| `Users` | `[]UserClass` | yes | Users |
-| `State` | `UpdatesState` | yes | Current update state of dialog |
+| `Dialogs` | [`[]DialogClass`](/docs/reference/types/general/dialog) | yes | Dialog info |
+| `Messages` | [`[]MessageClass`](/docs/reference/types/general/message) | yes | Messages mentioned in dialog info |
+| `Chats` | [`[]ChatClass`](/docs/reference/types/general/chat) | yes | Chats |
+| `Users` | [`[]UserClass`](/docs/reference/types/general/user) | yes | Users |
+| `State` | [`UpdatesState`](/docs/reference/constructors/updates/state) | yes | Current update state of dialog |
+
+## Returned by
+
+- [`messages.getPeerDialogs`](/docs/reference/methods/messages/get-peer-dialogs)
+- [`messages.getPinnedDialogs`](/docs/reference/methods/messages/get-pinned-dialogs)
 
 ## References
 

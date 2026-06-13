@@ -18,10 +18,14 @@ type tg.ContactsFound struct { /* ... */ }
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| `MyResults` | `[]PeerClass` | yes | Personalized results |
-| `Results` | `[]PeerClass` | yes | List of found user identifiers |
-| `Chats` | `[]ChatClass` | yes | Found chats |
-| `Users` | `[]UserClass` | yes | List of users |
+| `MyResults` | [`[]PeerClass`](/docs/reference/types/general/peer) | yes | Personalized results |
+| `Results` | [`[]PeerClass`](/docs/reference/types/general/peer) | yes | List of found user identifiers |
+| `Chats` | [`[]ChatClass`](/docs/reference/types/general/chat) | yes | Found chats |
+| `Users` | [`[]UserClass`](/docs/reference/types/general/user) | yes | List of users |
+
+## Returned by
+
+- [`contacts.search`](/docs/reference/methods/contacts/search)
 
 ## References
 
