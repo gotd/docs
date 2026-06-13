@@ -1,0 +1,8 @@
+{
+  "label": "Getting started",
+  "position": 2,
+  "link": {
+    "type": "generated-index",
+    "description": "Get your credentials, write your first client, and understand the small amount of boilerplate the examples rely on."
+  }
+}

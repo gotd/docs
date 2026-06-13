@@ -1,0 +1,8 @@
+{
+  "label": "Helpers",
+  "position": 5,
+  "link": {
+    "type": "generated-index",
+    "description": "The high-level packages built on top of the raw API: the message sender, text styling, uploads and downloads, pagination iterators, peer resolution, update recovery and middleware."
+  }
+}
