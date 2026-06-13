@@ -12,6 +12,10 @@ import (
 	"strings"
 )
 
+// refBase is the golds-generated reference for the tg package. Symbol
+// declarations are anchored as #name-<GoSymbol>.
+const refBase = "https://ref.gotd.dev/pkg/github.com/gotd/td/tg.html"
+
 // structInfo holds a parsed generated struct.
 type structInfo struct {
 	name     string
@@ -117,6 +121,7 @@ func Parse(dir string) (*Result, error) {
 			Hash:    d.hash,
 			Summary: d.summary,
 			DocURL:  d.url,
+			RefURL:  refBase + "#name-" + si.name,
 			Fields:  params(fset, si),
 		}
 		if c.DocURL == "" {
@@ -141,7 +146,7 @@ func Parse(dir string) (*Result, error) {
 		if d.tlName == "" {
 			continue
 		}
-		t := &Type{GoName: goName, TLName: d.tlName, Summary: d.summary, DocURL: d.url}
+		t := &Type{GoName: goName, TLName: d.tlName, Summary: d.summary, DocURL: d.url, RefURL: refBase + "#name-" + goName}
 		if t.DocURL == "" {
 			t.DocURL = "https://core.telegram.org/type/" + t.TLName
 		}
@@ -321,6 +326,9 @@ func parseMethod(fset *token.FileSet, fn *ast.FuncDecl, structs map[string]*stru
 		DocURL:    doc.url,
 		Errors:    doc.errors,
 		Signature: renderSignature(fset, fn),
+		// Methods have no own anchor (folded under Client); link the request
+		// struct, which carries the parameters and TL documentation.
+		RefURL: refBase + "#name-" + fn.Name.Name + "Request",
 	}
 	if m.DocURL == "" {
 		m.DocURL = "https://core.telegram.org/method/" + m.TLName

@@ -129,6 +129,14 @@ const config = {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
       },
+      // Algolia DocSearch. The apiKey is the public, search-only key — it is
+      // safe to commit. Values can be overridden via environment variables.
+      algolia: {
+        appId: process.env.ALGOLIA_APP_ID || 'X2N6LG2Z0C',
+        apiKey: process.env.ALGOLIA_API_KEY || '7211a1ddff7c214708ba57a83ddb74bd',
+        indexName: process.env.ALGOLIA_INDEX_NAME || 'gotd',
+        contextualSearch: true,
+      },
     }),
 };
 

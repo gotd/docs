@@ -11,6 +11,7 @@ type Method struct {
 	Summary    string  // one-paragraph description
 	DocURL     string  // https://core.telegram.org/method/<TLName>
 	Signature  string  // full Go signature as users call it
+	RefURL     string  // deep link to the symbol on ref.gotd.dev
 	Usage      string  // runnable "calling this method" snippet
 	Params       []Param // request parameters
 	ReturnType   string  // Go return type (excluding error), e.g. UpdatesClass
@@ -44,6 +45,7 @@ type Constructor struct {
 	Hash       string
 	Summary    string
 	DocURL     string // https://core.telegram.org/constructor/<TLName>
+	RefURL     string // deep link to the symbol on ref.gotd.dev
 	Fields     []Param
 	Implements *Ref   // the class it constructs, or nil for bare types
 	ReturnedBy []*Ref // methods that return this constructor
@@ -58,6 +60,7 @@ type Type struct {
 	Slug         string
 	Summary      string
 	DocURL       string // https://core.telegram.org/type/<TLName>
+	RefURL       string // deep link to the symbol on ref.gotd.dev
 	Constructors []*Ref
 	ReturnedBy   []*Ref // methods that return this type
 }
