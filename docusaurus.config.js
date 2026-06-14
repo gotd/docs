@@ -85,6 +85,11 @@ const config = {
           },
           // {to: '/blog', label: 'Blog', position: 'left'},
           {
+            to: '/docs/support',
+            label: 'Support',
+            position: 'right',
+          },
+          {
             href: 'https://github.com/gotd/td',
             label: 'GitHub',
             position: 'right',

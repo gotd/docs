@@ -62,7 +62,7 @@ func main() {
 
 :::warning[Read this first]
 Before using this library on a real account, read the
-[**How To Not Get Banned**](https://github.com/gotd/td/blob/main/.github/SUPPORT.md#how-to-not-get-banned)
+[**How To Not Get Banned**](./support.md#how-to-not-get-banned)
 guide. Telegram may limit or ban accounts that behave abusively.
 :::
 
