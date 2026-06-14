@@ -130,7 +130,9 @@ configures the bot. Only `AppID` and `AppHash` are required:
 | `DisableCommandRegistration` | Stop `Run` from publishing `OnCommand` handlers via `SetMyCommands`. |
 
 Leaving `Storage` nil keeps the session, peers and update state in memory:
-nothing survives a restart. That is fine for development; for production, give it
-a [`storage.BBoltStorage`](./persistence-and-pooling.md#persistence).
+nothing survives a restart. That is fine for development, but for production give
+it a [`storage.BBoltStorage`](./persistence-and-pooling.md#persistence) — without
+a persisted session every restart re-authorizes the bot, and Telegram answers
+repeated logins with a growing `FLOOD_WAIT` that can lock the bot out.
 
 Continue with [Sending messages](./sending-messages.md).

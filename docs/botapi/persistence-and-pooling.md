@@ -12,6 +12,15 @@ cache, and the update gap state. A single
 [`storage.BBoltStorage`](https://github.com/gotd/botapi/blob/main/storage)
 satisfies all of these at once, backed by one bbolt file:
 
+:::warning[Persist the session, or you will hit FLOOD_WAIT]
+Storage is optional in the API but **effectively mandatory** for any bot that
+restarts. Without a persisted session every `Run` starts a fresh session and
+**re-authorizes the bot**, and Telegram rate-limits repeated logins with
+`FLOOD_WAIT` — the wait grows with each retry and a crash/restart loop can lock
+the bot out for hours. With a persisted session the bot reuses its existing
+authorization instead of logging in again.
+:::
+
 ```go
 import (
 	"go.etcd.io/bbolt"
