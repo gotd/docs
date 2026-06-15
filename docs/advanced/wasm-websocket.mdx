@@ -1,0 +1,166 @@
+---
+sidebar_position: 6
+---
+
+import WasmDemo from '@site/src/components/WasmDemo';
+
+# Running in the browser (WASM)
+
+gotd compiles to WebAssembly and runs inside the browser. Browsers cannot open
+raw TCP sockets, so on the `js/wasm` platform gotd switches to the
+[**WebSocket transport**](./transports-and-proxy.md#websocket-transport)
+automatically: [`dcs.DefaultResolver`](https://ref.gotd.dev/pkg/github.com/gotd/td/telegram/dcs.html)
+returns `dcs.Websocket`, which connects to `wss://*.web.telegram.org/apiws`.
+
+The practical consequence is that **your client code does not change**. You
+build the same program with `GOOS=js GOARCH=wasm` and it talks to Telegram over
+WebSocket instead of TCP.
+
+```go
+// On js/wasm this client uses the WebSocket transport with no extra config.
+client := telegram.NewClient(appID, appHash, telegram.Options{})
+```
+
+## Try it
+
+This is the example below, compiled to WebAssembly and running on this page.
+Enter an App ID / App Hash from
+[my.telegram.org/apps](https://my.telegram.org/apps) and press **Run**: gotd
+connects to Telegram over WebSocket and calls `help.getNearestDC` — an
+unauthenticated connectivity check — streaming its logs here live.
+
+<WasmDemo />
+
+## The example
+
+The full source lives in
+[`examples/wasm-websocket`](https://github.com/gotd/docs/tree/main/examples/wasm-websocket).
+You can also build and serve it standalone with the Go toolchain alone:
+
+```sh
+cd examples/wasm-websocket
+make serve   # builds main.wasm + wasm_exec.js, serves on http://localhost:8080
+```
+
+### The Go side
+
+The program exports a single function to JavaScript. Because gotd performs
+blocking network I/O — which browsers forbid on the main thread — the work runs
+in a goroutine and the result is delivered through a `Promise`. A
+[`log.Logger`](https://ref.gotd.dev/pkg/github.com/gotd/log.html) that writes
+each record to a JS callback is what feeds the live log above.
+
+```go
+//go:build js && wasm
+
+package main
+
+import (
+	"context"
+	"strconv"
+	"strings"
+	"syscall/js"
+
+	"github.com/gotd/log"
+
+	"github.com/gotd/td/telegram"
+)
+
+func main() {
+	js.Global().Set("gotdConnect", js.FuncOf(connect))
+	select {} // keep the Go runtime alive so the export stays callable
+}
+
+// connect(appID, appHash, onLog) -> Promise<string>
+func connect(_ js.Value, args []js.Value) any {
+	appID, _ := strconv.Atoi(args[0].String())
+	appHash := args[1].String()
+	onLog := args[2] // a JS function: receives one log line at a time
+
+	handler := js.FuncOf(func(_ js.Value, promise []js.Value) any {
+		resolve, reject := promise[0], promise[1]
+		go func() {
+			report, err := run(appID, appHash, onLog)
+			if err != nil {
+				reject.Invoke(err.Error())
+				return
+			}
+			resolve.Invoke(report)
+		}()
+		return nil
+	})
+	return js.Global().Get("Promise").New(handler)
+}
+
+func run(appID int, appHash string, onLog js.Value) (string, error) {
+	logger := jsLogger{fn: onLog, min: log.LevelInfo}
+
+	// No Resolver set: js/wasm defaults to the WebSocket transport.
+	client := telegram.NewClient(appID, appHash, telegram.Options{Logger: logger})
+
+	var report string
+	err := client.Run(context.Background(), func(ctx context.Context) error {
+		dc, err := client.API().HelpGetNearestDC(ctx)
+		if err != nil {
+			return err
+		}
+		report = "nearest DC: " + strconv.Itoa(dc.NearestDC) + ", country: " + dc.Country
+		return nil
+	})
+	return report, err
+}
+
+// jsLogger renders each gotd log record to a line and hands it to JavaScript.
+type jsLogger struct {
+	fn  js.Value
+	min log.Level
+}
+
+func (l jsLogger) Enabled(_ context.Context, level log.Level) bool { return level >= l.min }
+
+func (l jsLogger) Log(_ context.Context, level log.Level, msg string, attrs ...log.Attr) {
+	var b strings.Builder
+	b.WriteString(level.String())
+	b.WriteByte('\t')
+	b.WriteString(msg)
+	for _, a := range attrs {
+		b.WriteByte(' ')
+		b.WriteString(a.Key + "=" + a.Value.String())
+	}
+	l.fn.Invoke(b.String())
+}
+```
+
+### The HTML side
+
+The host page loads Go's `wasm_exec.js` shim and the compiled `main.wasm`, then
+calls the exported function:
+
+```html
+<script src="wasm_exec.js"></script>
+<script>
+  const go = new Go();
+  WebAssembly.instantiateStreaming(fetch("main.wasm"), go.importObject)
+    .then((result) => go.run(result.instance)); // registers gotdConnect
+
+  async function connect(appID, appHash) {
+    document.getElementById("out").textContent =
+      await gotdConnect(appID, appHash, (line) => console.log(line));
+  }
+</script>
+```
+
+`wasm_exec.js` ships with the Go toolchain. On Go 1.24+ it lives at
+`$(go env GOROOT)/lib/wasm/wasm_exec.js`; older toolchains keep it under
+`misc/wasm/`. The example's `Makefile` copies it for you.
+
+## Notes
+
+* **Credentials stay in the browser.** The App ID / App Hash are used only to
+  build the client; nothing is sent anywhere except Telegram.
+* **CORS is handled by Telegram.** The `wss://*.web.telegram.org/apiws`
+  endpoints accept browser WebSocket connections, so no proxy is required for
+  the transport itself.
+* **Authentication** works the same as on native platforms, but storing a
+  session in the browser is up to you — `localStorage` via a custom
+  `session.Storage` is a common choice.

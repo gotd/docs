@@ -4,7 +4,10 @@
   "private": true,
   "scripts": {
     "docusaurus": "docusaurus",
+    "gen:wasm": "bash tools/build-wasm.sh",
+    "prestart": "bash tools/build-wasm.sh",
     "start": "NODE_OPTIONS=--no-experimental-webstorage docusaurus start",
+    "prebuild": "bash tools/build-wasm.sh",
     "build": "NODE_OPTIONS=--no-experimental-webstorage docusaurus build",
     "swizzle": "docusaurus swizzle",
     "deploy": "NODE_OPTIONS=--no-experimental-webstorage docusaurus deploy",

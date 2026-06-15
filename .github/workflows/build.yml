@@ -1,0 +1,32 @@
+name: build
+
+# Validates that the documentation site builds on pull requests, including the
+# embedded WASM demo (docs/advanced/wasm-websocket). The site build runs
+# `gen:wasm` via the `prebuild` npm hook, which compiles examples/wasm-websocket
+# with the Go toolchain — so this job needs both Go and Node.
+#
+# Pushes to main are built and deployed by static.yml, so this runs on PRs only.
+on:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+
+      # Required by the `gen:wasm` step (GOOS=js GOARCH=wasm go build).
+      - uses: actions/setup-go@v6
+        with:
+          go-version: 'stable'
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: yarn
+
+      - run: yarn install --frozen-lockfile
+
+      # Runs prebuild -> gen:wasm (Go) and then docusaurus build.
+      - name: Build site
+        run: yarn build

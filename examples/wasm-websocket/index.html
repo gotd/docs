@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>gotd · WASM WebSocket demo</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 40rem; margin: 3rem auto; padding: 0 1rem; }
+    label { display: block; margin: .75rem 0 .25rem; font-weight: 600; }
+    input { width: 100%; padding: .5rem; box-sizing: border-box; }
+    button { margin-top: 1rem; padding: .6rem 1.2rem; cursor: pointer; }
+    button:disabled { cursor: default; opacity: .6; }
+    pre { background: #f4f4f4; padding: 1rem; border-radius: .4rem; white-space: pre-wrap; word-break: break-word; }
+  </style>
+</head>
+<body>
+  <h1>gotd in the browser</h1>
+  <p>
+    Connects to Telegram over the WebSocket transport, compiled to WebAssembly.
+    Credentials come from <a href="https://my.telegram.org/apps">my.telegram.org/apps</a>
+    and are used only in your browser. The demo calls <code>help.getNearestDC</code>,
+    which needs no login.
+  </p>
+
+  <label for="appID">App ID</label>
+  <input id="appID" type="number" placeholder="123456"/>
+
+  <label for="appHash">App Hash</label>
+  <input id="appHash" type="text" placeholder="0123456789abcdef0123456789abcdef"/>
+
+  <button id="connect" disabled>Loading WASM…</button>
+  <pre id="out">Waiting.</pre>
+
+  <script src="wasm_exec.js"></script>
+  <script>
+    const out = document.getElementById("out");
+    const button = document.getElementById("connect");
+
+    const go = new Go();
+    WebAssembly.instantiateStreaming(fetch("main.wasm"), go.importObject)
+      .then((result) => {
+        go.run(result.instance); // registers gotdConnect on window
+        button.disabled = false;
+        button.textContent = "Connect";
+        out.textContent = "Ready.";
+      })
+      .catch((err) => { out.textContent = "Failed to load WASM: " + err; });
+
+    button.addEventListener("click", async () => {
+      const appID = document.getElementById("appID").value.trim();
+      const appHash = document.getElementById("appHash").value.trim();
+      if (!appID || !appHash) {
+        out.textContent = "Enter both App ID and App Hash.";
+        return;
+      }
+      button.disabled = true;
+      out.textContent = "";
+      const log = (line) => { out.textContent += line + "\n"; };
+      try {
+        // The third argument receives gotd's log records, one line at a time.
+        const report = await gotdConnect(appID, appHash, log);
+        log("✓ " + report);
+      } catch (err) {
+        log("✗ " + err);
+      } finally {
+        button.disabled = false;
+      }
+    });
+  </script>
+</body>
+</html>

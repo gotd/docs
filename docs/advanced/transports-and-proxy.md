@@ -56,9 +56,10 @@ For ordinary proxies, plug a custom dialer into a plain resolver via
 
 ## WebSocket transport
 
-gotd supports a WebSocket transport, which is what lets it run in **WASM** in the
-browser. The connectivity check pattern is the same — set the appropriate resolver and
-the rest of your code is unchanged.
+gotd supports a WebSocket transport (`dcs.Websocket`), which is what lets it run in
+**WASM** in the browser — browsers cannot open raw TCP sockets. On the `js/wasm`
+platform it is selected automatically, so the rest of your code is unchanged. See
+[Running in the browser (WASM)](./wasm-websocket.mdx) for a runnable example.
 
 ## Test servers
 
