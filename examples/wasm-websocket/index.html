@@ -22,11 +22,13 @@
     which needs no login.
   </p>
 
+  <!-- Defaults are the public Telegram Desktop credentials, so the demo runs out of the box. -->
   <label for="appID">App ID</label>
-  <input id="appID" type="number" placeholder="123456"/>
+  <input id="appID" type="number" placeholder="123456" value="17349"/>
 
   <label for="appHash">App Hash</label>
-  <input id="appHash" type="text" placeholder="0123456789abcdef0123456789abcdef"/>
+  <input id="appHash" type="text" placeholder="0123456789abcdef0123456789abcdef"
+         value="344583e45741c457fe1862106095a5eb"/>
 
   <button id="connect" disabled>Loading WASM…</button>
   <pre id="out">Waiting.</pre>

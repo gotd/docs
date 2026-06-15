@@ -24,10 +24,11 @@ client := telegram.NewClient(appID, appHash, telegram.Options{})
 ## Try it
 
 This is the example below, compiled to WebAssembly and running on this page.
-Enter an App ID / App Hash from
-[my.telegram.org/apps](https://my.telegram.org/apps) and press **Run**: gotd
-connects to Telegram over WebSocket and calls `help.getNearestDC` — an
-unauthenticated connectivity check — streaming its logs here live.
+Just press **Run**: gotd connects to Telegram over WebSocket and calls
+`help.getNearestDC` — an unauthenticated connectivity check — streaming its logs
+here live. The fields are prefilled with the public Telegram Desktop
+credentials; swap in your own from
+[my.telegram.org/apps](https://my.telegram.org/apps) if you like.
 
 <WasmDemo />
 

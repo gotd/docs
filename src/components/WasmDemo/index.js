@@ -34,8 +34,9 @@ function Demo() {
   // status: loading | ready | running | error
   const [status, setStatus] = useState('loading');
   const [error, setError] = useState('');
-  const [appID, setAppID] = useState('');
-  const [appHash, setAppHash] = useState('');
+  // Public Telegram Desktop credentials, so the demo runs out of the box.
+  const [appID, setAppID] = useState('17349');
+  const [appHash, setAppHash] = useState('344583e45741c457fe1862106095a5eb');
   const [logs, setLogs] = useState([]);
   const logRef = useRef(null);
 
