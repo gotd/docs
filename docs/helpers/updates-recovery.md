@@ -37,9 +37,34 @@ client, err := telegram.ClientFromEnvironment(telegram.Options{
 	UpdateHandler: gaps,
 	Middlewares: []telegram.Middleware{
 		updhook.UpdateHook(gaps.Handle),
+		// Keep local pts in sync after self-initiated reads/deletes.
+		updhook.AffectedHook(gaps),
 	},
 })
 ```
+
+## Self-initiated reads and deletes
+
+`UpdateHook` forwards `tg.UpdatesClass` results to the manager, but some methods
+return a different shape. `messages.readHistory`, `messages.deleteMessages`,
+`channels.deleteMessages`, `messages.readMentions` and `messages.deleteHistory`
+return `messages.affectedMessages` / `messages.affectedHistory` — results that
+carry a **pts increment the client must apply**, yet are not updates and so never
+reach the gap engine.
+
+If you skip them, the server's pts advances while your local pts stays behind, so
+the next genuine update looks like a gap and is buffered. A common symptom: you
+read or delete a message in a handler, and a later edit in the same chat is then
+postponed until some unrelated pts-changing update arrives
+([gotd/td#1382](https://github.com/gotd/td/issues/1382)).
+
+[`updhook.AffectedHook`](https://ref.gotd.dev/pkg/github.com/gotd/td/telegram/updates/hook.html)
+closes this gap. It inspects each RPC result, and when it sees an affected-pts
+result it calls `Manager.HandleAffected` to advance the local pts (releasing any
+updates postponed behind it), routing channel methods to the right channel
+sequence and everything else to the common one. It is opt-in, mirrors TDLib's
+behavior, and is a no-op before `gaps.Run` — so install it alongside `UpdateHook`
+as shown above. See [gotd/td#1782](https://github.com/gotd/td/pull/1782).
 
 ## Running the engine
 
