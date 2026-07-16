@@ -16,7 +16,7 @@ jobs:
       - uses: actions/checkout@v7
 
       # Required by the `gen:wasm` step (GOOS=js GOARCH=wasm go build).
-      - uses: actions/setup-go@v6
+      - uses: actions/setup-go@v7
         with:
           go-version: 'stable'
 
