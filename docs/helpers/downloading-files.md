@@ -149,13 +149,19 @@ _, err := d.Download(api, location).WithThreads(16).ToPath(ctx, path)
 snap := sched.Snapshot() // Window, InFlight, Waiting, Decreases
 ```
 
-To use one scheduler for every `client.Download*` call, set it on the client:
+To use schedulers for `client.Download` and `client.DownloadWeb`, set the options on the
+client. It creates one scheduler per DC on first use:
 
 ```go
 client := telegram.NewClient(appID, appHash, telegram.Options{
-	DownloadScheduler: sched,
+	DownloadScheduler: &downloader.SchedulerOptions{Start: 4, Max: 16},
 })
+
+snap := client.DownloadScheduler(dc).Snapshot()
 ```
+
+`DownloadVia` can't know the DC of its invoker, so it uses a scheduler only when you
+pass one with `WithScheduler`.
 
 ## Bulk downloads
 
