@@ -48,8 +48,8 @@ client := telegram.NewClient(appID, appHash, telegram.Options{
 	TracerProvider: tp,
 })
 
-// Downloads started with client.Download* use the client's providers. For your own
-// Downloader:
+// client.Downloader() and client.Download* use the client's MeterProvider and Logger.
+// The updates manager needs its own MeterProvider (above). For your own Downloader:
 d := downloader.NewDownloader().
 	WithMeterProvider(mp).
 	WithLogger(log.Named(lg, "downloader"))
@@ -70,11 +70,11 @@ content, so the number of series stays bounded. IDs only appear in logs.
 | `gotd.client.connection.state` | counter | `dc`, `state` (`connecting`, `ready`, `disconnected`) | Primary connection state changes. |
 | `gotd.client.connection.dead` | counter | `dc`, `kind` (`primary`, `data`, `cdn`) | Connections found dead (pings, read errors). |
 | `gotd.client.connection.reconnects` | counter | `dc` | Reconnects of the primary connection. |
-| `gotd.client.connection.restarts` | counter | `reason` (`timeout`, `migration`) | Restarts requested by the client itself. |
+| `gotd.client.connection.restarts` | counter | `reason` (`timeout`, `migration`) | Restarts requested by the client itself; each is also counted in `connection.reconnects`. |
 | `gotd.client.migrations` | counter | `dc` (target) | Home DC changes (`*_MIGRATE`). |
 | `gotd.client.auth.lost` | counter | `reason` | Authorized → lost transitions (see `OnAuthLost`). |
 | `gotd.client.request.timeouts` | counter | `result` (`resent`, `failed`), `method` | Requests that missed their `RequestTimeout` deadline. |
-| `gotd.client.pool.created` | counter | `dc`, `kind` (`file`, `migrate`), `result` | Connection pools created for other DCs. |
+| `gotd.client.pool.created` | counter | `dc`, `kind` (`file`, `migrate`), `result` (`ok`, `error`, `canceled`) | Connection pools created for other DCs. |
 | `gotd.client.pool.create.duration` | histogram, s | `kind`, `result` | Time to create a pool (connect and authorization transfer). |
 | `gotd.client.pool.evicted` | counter | `dc`, `kind`, `reason` | Cached pools dropped, e.g. after `AUTH_KEY_UNREGISTERED`. |
 | `gotd.client.file.migrations` | counter | `dc` (target), `source` | `FILE_MIGRATE` hops. |
@@ -113,11 +113,11 @@ For per-method metrics, add a [middleware](../helpers/middleware).
 | `gotd.downloader.resumes` | counter | | Downloads started with `WithOffset`. |
 | `gotd.downloader.cdn.redirects` | counter | | Files served from a CDN DC. |
 | `gotd.downloader.cdn.reuploads` | counter | | `upload.reuploadCdnFile` requests. |
-| `gotd.downloader.hash_mismatches` | counter | `kind` (`cdn`, `verify`) | Parts that failed hash verification. |
+| `gotd.downloader.hash.mismatches` | counter | `kind` (`cdn`, `verify`) | Parts that failed hash verification. |
 | `gotd.downloader.file_reference.refreshes` | counter | `result` (`ok`, `not_found`, `error`, `limit`) | `WithRefresh` attempts. |
 | `gotd.downloader.verify` | counter | `result` (`complete`, `partial`, `none`, `error`) | `Builder.Verify` results. |
 | `gotd.downloader.retries` | counter | `operation` | Retried part requests. |
-| `gotd.downloader.retries_exhausted` | counter | `operation` | Requests that ran out of retries. |
+| `gotd.downloader.retries.exhausted` | counter | `operation` | Requests that ran out of retries. |
 | `gotd.downloader.scheduler.backoffs` | counter | `reason` (`flood_wait`, `timeout`) | Backoffs reported to a `Scheduler`. |
 | `gotd.downloader.scheduler.window` | gauge | your attributes | Current window of a `Scheduler`. |
 | `gotd.downloader.scheduler.in_flight` | gauge | your attributes | Part requests in flight. |
@@ -126,7 +126,7 @@ For per-method metrics, add a [middleware](../helpers/middleware).
 
 Scheduler gauges are registered by `Scheduler.Instrument`, with your own attributes, for
 example the DC. Schedulers the client creates from `Options.DownloadScheduler` are
-registered with a `dc` attribute:
+registered with a `dc` attribute while `Run` runs. For your own schedulers:
 
 ```go
 reg, err := sched.Instrument(meter, attribute.Int("dc", 2))
@@ -145,7 +145,7 @@ defer reg.Unregister()
   - `before_run{action="dropped"}` is zero, unless you chose `BeforeRunDrop`.
 - **Authorization:** any increase of `auth.lost` needs attention.
 - **Downloads keep up:**
-  - `downloads{result="error"}`, `hash_mismatches` and `retries_exhausted` stay near zero;
+  - `downloads{result="error"}`, `hash.mismatches` and `retries.exhausted` stay near zero;
   - `scheduler.window` recovers after `scheduler.backoffs`.
 
 ## Logs
