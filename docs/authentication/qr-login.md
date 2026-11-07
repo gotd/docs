@@ -54,8 +54,19 @@ if _, err := client.QR().Auth(ctx, loggedIn, show); err != nil {
 
 ## Handling 2FA
 
-If the account has a 2FA password, `Auth` fails with `SESSION_PASSWORD_NEEDED`. Detect
-it and complete the sign-in with the password:
+If the account has a 2FA password, pass a password callback, and `Import`/`Auth` complete
+the sign-in with it:
+
+```go
+qr := qrlogin.NewQR(client.API(), appID, appHash, qrlogin.Options{
+	Password: func(ctx context.Context) (string, error) {
+		return promptPassword(ctx)
+	},
+})
+```
+
+Without the callback, `Auth` fails with `SESSION_PASSWORD_NEEDED`. Detect it and
+complete the sign-in with the password:
 
 ```go
 import "github.com/gotd/td/tgerr"

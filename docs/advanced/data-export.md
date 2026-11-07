@@ -60,8 +60,36 @@ make through it is wrapped in the takeout session.
 
 This is the [`takeout`](https://github.com/gotd/td/tree/main/examples/takeout) example.
 
-:::note
-Takeout sessions are subject to a server-imposed delay before they start
-(`TAKEOUT_INIT_DELAY`). The [floodwait middleware](../helpers/middleware.md) recognises
-this error and waits it out.
-:::
+## Long exports
+
+A takeout session lives until it is finished, so a long export can save its ID and
+resume it after a restart instead of starting a new session (which may require the
+user to confirm again):
+
+```go
+t, err := takeout.Init(ctx, client, cfg)
+if err != nil {
+	return err
+}
+saveTakeoutID(t.ID())
+
+// After restart:
+t = takeout.NewClient(loadTakeoutID(), client)
+// ... export ...
+return t.Finish(ctx, true)
+```
+
+New accounts must confirm the export on another device, or wait: init fails with
+`TAKEOUT_INIT_DELAY_X`. Set `OnInitDelay` to keep polling until the user confirms:
+
+```go
+cfg := takeout.Config{
+	Contacts: true,
+	OnInitDelay: func(ctx context.Context, d time.Duration) error {
+		fmt.Printf("Confirm the export in Telegram (or wait %s)\n", d)
+		return nil // keep polling every InitPollInterval (30s)
+	},
+}
+```
+
+`takeout.Run` finishes the session even if its context is canceled.

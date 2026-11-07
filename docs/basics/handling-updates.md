@@ -44,6 +44,32 @@ Common handlers:
 There are handlers for the full update set — see the
 [`tg` reference](https://ref.gotd.dev/pkg/github.com/gotd/td/tg.html).
 
+The dispatcher can be passed by value: copies share handlers, so you can register
+handlers (including `OnFallback`) after passing it to the client, even while updates
+are being handled.
+
+### One handler for all chats
+
+Private chats, basic groups and channels have separate update types. The `OnAny*`
+helpers register one handler for all of them:
+
+```go
+dispatcher.OnAnyNewMessage(func(ctx context.Context, e tg.Entities, msg tg.MessageClass) error {
+	return archive(msg)
+})
+dispatcher.OnAnyEditMessage(onEdit)
+dispatcher.OnAnyDeleteMessages(func(ctx context.Context, e tg.Entities, channelID int64, ids []int) error {
+	return nil // channelID is 0 for private chats and basic groups
+})
+dispatcher.OnAnyReadInbox(onRead)  // also OnAnyReadOutbox
+dispatcher.OnAnyTyping(onTyping)
+
+// Called for every dispatched update before its handler, e.g. for metrics.
+dispatcher.OnBefore(func(ctx context.Context, e tg.Entities, u tg.UpdateClass) {
+	updatesTotal.Inc()
+})
+```
+
 ## The `Entities` argument
 
 Updates reference users and chats by ID. The `tg.Entities` value passed to each handler
@@ -63,6 +89,10 @@ dispatcher.OnNewMessage(func(ctx context.Context, e tg.Entities, u *tg.UpdateNew
 	return nil
 })
 ```
+
+To call handlers yourself with results of other methods (e.g. replaying stored updates or
+a `getDifference` result), build the entities with
+`tg.EntitiesFrom(users, chats)` or `tg.EntitiesFromResult(result)`.
 
 ## Filtering your own messages
 

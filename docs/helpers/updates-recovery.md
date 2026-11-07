@@ -94,16 +94,55 @@ stream.
 ## Persisting state
 
 By default the engine keeps state in memory, so a restart re-syncs from scratch. For a
-long-running service, give it a `Storage` (and access-hash storage) so it resumes from
-where it left off. The
-[`gotd/contrib`](https://github.com/gotd/contrib) module provides bbolt-backed
-implementations:
+long-running service, give it a `Storage` and access-hash storage so it resumes from
+where it left off: without stored channel access hashes it can't fetch channel
+differences after a restart. The
+[`gotd/contrib`](https://github.com/gotd/contrib) module provides bbolt- and
+pebble-backed implementations:
 
 ```go
+import "github.com/gotd/contrib/pebble"
+
 gaps := updates.New(updates.Config{
-	Handler: d,
-	Storage: boltstor.NewStateStorage(boltdb),
+	Handler:          d,
+	Storage:          pebble.NewStateStorage(db),
+	AccessHasher:     pebble.NewAccessHasher(db),
+	UserAccessHasher: pebble.NewAccessHasher(db),
 })
+```
+
+The bbolt equivalents are `bbolt.NewStateStorage(db)` and `bbolt.NewAccessHasher(db)`.
+
+## Tracking channels
+
+The engine tracks channels with a stored state, and learns about other channels from
+their next update. To track channels joined while the client was offline (or reported
+via `OnLoadChannelStateFailed`), pass them with the pts of their dialog. Stored pts take
+precedence, so missed updates are fetched:
+
+```go
+gaps.Run(ctx, api, self.ID, updates.AuthOptions{
+	OnStart: func(ctx context.Context) {
+		for _, d := range dialogs { // e.g. from messages.getDialogs
+			_ = gaps.TrackChannel(ctx, d.ChannelID, d.AccessHash, d.Pts)
+		}
+	},
+})
+```
+
+## Channel gaps
+
+When a channel gap is too long to recover (`updates.channelDifferenceTooLong`), the
+engine delivers the latest messages returned by the server to your handler, moves to
+the new state and reports the gap, so you can backfill older messages with
+`messages.getHistory`:
+
+```go
+updates.Config{
+	OnChannelGap: func(gap updates.ChannelGap) {
+		// gap.ChannelID, gap.AccessHash, gap.LocalPts, gap.RemotePts, gap.TopMessage
+	},
+}
 ```
 
 The [`userbot`](https://github.com/gotd/td/tree/main/examples/userbot) example uses
@@ -111,7 +150,8 @@ persistent state; the [`updates`](https://github.com/gotd/td/tree/main/examples/
 example is a minimal in-memory version.
 
 :::note[Known limits]
-The engine relies on the server for `getDifference` correctness and cannot recover from
-`ChannelDifferenceTooLong` (it resyncs that channel instead). Stateless updates can't be
-ordered. These are inherent to the MTProto update model.
+The engine relies on the server for `getDifference` correctness, and messages older than
+the ones returned with `ChannelDifferenceTooLong` must be fetched by the application
+(see [Channel gaps](#channel-gaps)). Stateless updates can't be ordered. These are
+inherent to the MTProto update model.
 :::

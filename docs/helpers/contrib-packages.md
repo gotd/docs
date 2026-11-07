@@ -75,7 +75,11 @@ See [User authentication](../authentication/user.md).
 ## Storage — sessions, peers & state
 
 `storage` defines the common peer abstractions; the rest are backend
-implementations of the session, peer and update-state storage interfaces. See
+implementations of the session, peer and update-state storage interfaces. `bbolt` and
+`pebble` also provide persistent updates state and access hashers for the
+[updates engine](./updates-recovery.md#persisting-state). The pebble backends commit
+with `WithWriteOptions` (synced by default; `pebble.NoSync` for speed), and
+`storage.UpdateHook` writes all peers of an update in one batch. See
 [Sessions](../authentication/sessions.md) for how session storage fits into the
 client.
 
