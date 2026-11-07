@@ -51,6 +51,36 @@ return waiter.Run(ctx, func(ctx context.Context) error {
 For one-shot scripts, `floodwait.NewSimpleWaiter()` is a simpler timer-based variant
 that needs no `Run` wrapper. Both support `WithMaxRetries` and `WithMaxWait`.
 
+### Long-running programs
+
+The `Waiter` keys flood waits by the method, unwrapping `invokeWith*` (so a flood
+wait inside a [takeout session](../advanced/data-export.md) throttles only that
+method), and dispatches requests concurrently. Further options:
+
+```go
+waiter := floodwait.NewWaiter().
+	// Space out requests of a method after it hits FLOOD_WAIT: the interval
+	// doubles on each flood wait and decays on success.
+	WithAdaptivePacing(100*time.Millisecond, 10*time.Second).
+	// Requests with their own pacing bypass the waiter.
+	WithExempt(tg.UploadGetFileRequestTypeID).
+	// Retry transient 5xx errors with exponential backoff.
+	WithServerErrorRetries(3).
+	WithCallback(func(ctx context.Context, wait floodwait.FloodWait) {
+		log.Printf("%s: wait %s", wait.Name, wait.Duration)
+	})
+
+// Per-request policy: background jobs wait as long as it takes,
+// interactive ones fail fast.
+bg := floodwait.WithPolicy(ctx, floodwait.Policy{MaxWait: -1, MaxRetries: -1})
+ui := floodwait.WithPolicy(ctx, floodwait.Policy{NoRetry: true})
+
+// Pacing state for metrics.
+for _, s := range waiter.Snapshot() {
+	fmt.Println(s.Name, s.Wait, s.Interval)
+}
+```
+
 ## Rate limiting
 
 To stay *under* the limits in the first place, add the

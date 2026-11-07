@@ -35,6 +35,11 @@ err := query.GetDialogs(client.API()).ForEach(ctx,
 )
 ```
 
+`elem.Peer` is an input peer you can pass to other methods, or `InputPeerEmpty` if the
+peer is known only as a [min constructor](https://core.telegram.org/api/min). For such
+peers use `elem.Entities.ExtractPeerFromMessage`, and `dialogs.DialogKey.InputPeer()` to
+turn a stored key back into an input peer.
+
 ## Message history
 
 Walk a chat's history newest-first:
@@ -54,6 +59,35 @@ err := query.Messages(client.API()).
 
 `Elem` also has `elem.File()` to extract downloadable media — see
 [Downloading files](./downloading-files.md).
+
+Use `MinID`/`MaxID` to fetch only a range of messages, e.g. new messages since the last
+archived one:
+
+```go
+query.Messages(client.API()).GetHistory(peer).MinID(lastArchivedID).ForEach(ctx, cb)
+```
+
+To fetch messages by ID together with their users and chats, use
+`GetMessagesWithEntities(ctx, peer, ids...)`.
+
+### Resuming
+
+Iterators expose their position as a `Cursor`, which you can persist and use to continue
+after a restart from the element after the last one you processed:
+
+```go
+iter := query.Messages(api).GetHistory(peer).Iter()
+for iter.Next(ctx) {
+	process(iter.Value())
+	save(iter.Cursor())
+}
+
+// After restart.
+iter = query.Messages(api).GetHistory(peer).Iter().Resume(load())
+```
+
+Dialogs iterators have the same `Cursor`/`Resume`. To iterate the main list and the
+archive in one pass, use `query.NewQuery(api).Dialogs().ForEachFolder(ctx, 100, cb)`.
 
 ### Stopping early
 
@@ -102,6 +136,28 @@ err := q.ForEach(ctx, func(ctx context.Context, p participants.Elem) error {
 	fmt.Printf("%d %s %s\n", user.ID, user.FirstName, user.LastName)
 	return nil
 })
+```
+
+## Stories
+
+`query.NewQuery(api).Stories()` pages through stories:
+
+```go
+q := query.NewQuery(client.API()).Stories()
+
+// Active stories of all followed peers; pass the returned state next time to
+// fetch only changes.
+state, err := q.GetAllStories().ForEach(ctx, func(ctx context.Context, s tg.PeerStories, e peer.Entities) error {
+	return nil
+})
+
+// Pinned stories and the stories archive of a peer.
+err = q.GetPinnedStories(peer).ForEach(ctx, cb)
+err = q.GetStoriesArchive(&tg.InputPeerSelf{}).ForEach(ctx, cb)
+
+// Skipped stories by ID, and views of own story.
+stories, entities, err := q.GetStoriesByID(ctx, peer, ids...)
+err = q.GetStoryViewsList(&tg.InputPeerSelf{}, storyID).ForEach(ctx, onView)
 ```
 
 ## Other iterators
