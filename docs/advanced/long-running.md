@@ -30,9 +30,30 @@ if errors.As(err, &lost) {
 }
 ```
 
-Return `nil` to keep running, e.g. to sign in again in the same `Run`. A lost
-authorization found on connect is reported via `OnSelfError`. Use
-`telegram.IsAuthLost(err)` to check errors yourself.
+Return `nil` to keep running, e.g. to sign in again in the same `Run`. The callback runs
+on its own goroutine with `Run`'s context, so the failed request returns right away, and
+`Run` waits for it before returning. A client counts as authorized after any successful
+request that needs authorization, including one restored from session storage. When the
+connect-time `Self` call finds a lost authorization, `OnAuthLost` is called first, then
+`OnSelfError` if it returned `nil`. Use `telegram.IsAuthLost(err)` to check errors
+yourself.
+
+## Connection events
+
+`OnConnectionState` reports the primary connection state (connecting, ready,
+disconnected), and `OnDead` reports dead connections. To know which DC and which kind
+of connection an event is about, use the event variants:
+
+```go
+telegram.Options{
+	OnConnectionStateEvent: func(e telegram.ConnectionStateEvent) {
+		// e.DC, e.State
+	},
+	OnConnDead: func(e telegram.ConnDeadEvent) {
+		// e.DC, e.Kind (ConnKindPrimary, ConnKindData, ConnKindCDN), e.Err
+	},
+}
+```
 
 ## Stuck requests
 

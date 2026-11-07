@@ -61,14 +61,24 @@ dispatcher.OnAnyEditMessage(onEdit)
 dispatcher.OnAnyDeleteMessages(func(ctx context.Context, e tg.Entities, channelID int64, ids []int) error {
 	return nil // channelID is 0 for private chats and basic groups
 })
-dispatcher.OnAnyReadInbox(onRead)  // also OnAnyReadOutbox
-dispatcher.OnAnyTyping(onTyping)
+dispatcher.OnAnyReadInbox(func(ctx context.Context, e tg.Entities, r tg.AnyRead) error {
+	// r.Peer, r.MaxID; r.TopMsgID for forum topics and comment threads.
+	return nil
+}) // also OnAnyReadOutbox
+dispatcher.OnAnyTyping(func(ctx context.Context, e tg.Entities, t tg.AnyTyping) error {
+	// t.Peer, t.From, t.Action; t.TopMsgID for forum topics.
+	return nil
+})
 
-// Called for every dispatched update before its handler, e.g. for metrics.
-dispatcher.OnBefore(func(ctx context.Context, e tg.Entities, u tg.UpdateClass) {
+// Called for every dispatched update before its handler, e.g. for metrics or filtering.
+// A non-nil error skips the update's handler and is returned by Handle.
+dispatcher.OnBefore(func(ctx context.Context, e tg.Entities, u tg.UpdateClass) error {
 	updatesTotal.Inc()
+	return nil
 })
 ```
+
+Each event struct also keeps the source update in its `Update` field.
 
 ## The `Entities` argument
 

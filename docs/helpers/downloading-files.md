@@ -149,6 +149,14 @@ _, err := d.Download(api, location).WithThreads(16).ToPath(ctx, path)
 snap := sched.Snapshot() // Window, InFlight, Waiting, Decreases
 ```
 
+To use one scheduler for every `client.Download*` call, set it on the client:
+
+```go
+client := telegram.NewClient(appID, appHash, telegram.Options{
+	DownloadScheduler: sched,
+})
+```
+
 ## Bulk downloads
 
 To back up many files, combine the downloader with a
