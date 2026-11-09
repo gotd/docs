@@ -61,6 +61,39 @@ abnormal ones (see [Logs](#logs)). Raise the level when you need to see more.
 Metric attributes never contain user, chat or channel IDs, file locations or message
 content, so the number of series stays bounded. IDs only appear in logs.
 
+### Several clients in one process
+
+gotd doesn't label metrics by client. Two clients (e.g. two accounts) sharing one
+`MeterProvider` add up into the same counters, and their gauges such as
+`gotd.client.pools` overwrite each other. Give each client its own provider that adds an
+instrumentation-scope attribute to every meter gotd creates:
+
+```go
+import (
+	"go.opentelemetry.io/otel/attribute"
+	"go.opentelemetry.io/otel/metric"
+)
+
+// scoped adds attrs to the instrumentation scope of every meter.
+type scoped struct {
+	metric.MeterProvider
+	attrs []attribute.KeyValue
+}
+
+func (p scoped) Meter(name string, opts ...metric.MeterOption) metric.Meter {
+	return p.MeterProvider.Meter(name, append(opts, metric.WithInstrumentationAttributes(p.attrs...))...)
+}
+
+mp := scoped{MeterProvider: shared, attrs: []attribute.KeyValue{attribute.String("account", name)}}
+// Use mp in telegram.Options and updates.Config of that account.
+```
+
+`client.Downloader()` uses the client's provider, so its metrics are separated too. A
+`Downloader` you share between clients is not.
+
+With Prometheus' OTLP receiver, set `otlp.promote_scope_metadata: true` to turn the
+scope attribute into a label (`otel_scope_account` above).
+
 ## Metrics
 
 ### Client (`telegram.Options.MeterProvider`)
@@ -135,6 +168,11 @@ defer reg.Unregister()
 
 ### What to watch
 
+- **Counters versus state.** `connection.state` counts transitions. The first `ready`
+  after start is a counter's first value, which PromQL's `increase()` doesn't show, and
+  an idle client looks the same as a dead one. To show disconnects, chart increases of
+  `state="disconnected"` and `connection.dead`. "Connected now" can't be read from these
+  counters.
 - **The client is healthy:**
   - `connection.state{state="ready"}` grows only on reconnects;
   - `connection.dead` and `request.timeouts` stay near zero;

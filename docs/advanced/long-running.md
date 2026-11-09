@@ -38,6 +38,25 @@ connect-time `Self` call finds a lost authorization, `OnAuthLost` is called firs
 `OnSelfError` if it returned `nil`. Use `telegram.IsAuthLost(err)` to check errors
 yourself.
 
+### In practice
+
+- **What it looks like.** Terminating a session from the official app (Settings →
+  Devices) shows up as `AUTH_KEY_UNREGISTERED`, not `SESSION_REVOKED`. That is the
+  `reason` to expect on `gotd.client.auth.lost`.
+- **When it's noticed.** Detection rides on requests: the loss is found by the next
+  request that needs authorization. A client that is idle, or only receives updates,
+  notices it on its next call.
+- **Several accounts in one process.** "Stop one account, keep the others" holds only if
+  each `Run` is supervised on its own. If all accounts' `Run` calls share one `errgroup`,
+  the `*AuthLostError` of one cancels the group and stops every account. Either run each
+  account under its own supervisor, or return `nil` from `OnAuthLost` (log, count and
+  alert) and stop that account yourself.
+- **Testing it.** Use a spare account, never one in use: a terminated session can't be
+  restored, and whatever happens until a new login is lost. Give the test client a
+  distinctive `DeviceConfig.DeviceModel` so its session is easy to find in the app's
+  device list, then terminate it there while the client sends a request every few
+  seconds.
+
 ## Connection events
 
 `OnConnectionState` reports the primary connection state (connecting, ready,
