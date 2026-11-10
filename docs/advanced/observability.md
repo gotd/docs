@@ -105,7 +105,8 @@ scope attribute into a label (`otel_scope_account` above).
 | `gotd.client.connection.reconnects` | counter | `dc` | Reconnects of the primary connection. |
 | `gotd.client.connection.restarts` | counter | `reason` (`timeout`, `migration`) | Restarts requested by the client itself; each is also counted in `connection.reconnects`. |
 | `gotd.client.migrations` | counter | `dc` (target) | Home DC changes (`*_MIGRATE`). |
-| `gotd.client.auth.lost` | counter | `reason` | Authorized → lost transitions (see `OnAuthLost`). |
+| `gotd.client.auth.lost` | counter | `reason`, `kind` | Authorized → lost transitions (see `OnAuthLost`). `reason` is the error type, `kind` is `banned`, `deleted`, `revoked`, `unregistered`, `expired` or `key_invalid`. |
+| `gotd.client.account.restricted` | counter | `reason` | Errors telling that the account is restricted: `FROZEN_METHOD_INVALID`, `FROZEN_PARTICIPANT_MISSING`, `PHONE_NUMBER_BANNED`. |
 | `gotd.client.request.timeouts` | counter | `result` (`resent`, `failed`), `method` | Requests that missed their `RequestTimeout` deadline. |
 | `gotd.client.pool.created` | counter | `dc`, `kind` (`file`, `migrate`), `result` (`ok`, `error`, `canceled`) | Connection pools created for other DCs. |
 | `gotd.client.pool.create.duration` | histogram, s | `kind`, `result` | Time to create a pool (connect and authorization transfer). |
@@ -181,7 +182,9 @@ defer reg.Unregister()
   - `difference.requests{result="too_long"}` and `channel.too_long` are rare;
   - `gaps{action="detected"}` is followed by a resolution;
   - `before_run{action="dropped"}` is zero, unless you chose `BeforeRunDrop`.
-- **Authorization:** any increase of `auth.lost` needs attention.
+- **Authorization:** any increase of `auth.lost` needs attention; `kind="banned"` or
+  `"deleted"` means the account is gone. Any `account.restricted` means a frozen
+  account or a banned number.
 - **Downloads keep up:**
   - `downloads{result="error"}`, `hash.mismatches` and `retries.exhausted` stay near zero;
   - `scheduler.window` recovers after `scheduler.backoffs`.
@@ -194,8 +197,9 @@ IDs (channel, DC, pts) appear here, never in metrics.
 | Level | Component | Events |
 | --- | --- | --- |
 | Debug | client | Connection state, dead data and CDN connections, pool created, `FILE_MIGRATE` hop, restart requested |
-| Info | client | Home DC migration (from, to) |
-| Warn | client | Dead primary connection, pool creation failed, pool evicted after `AUTH_KEY_UNREGISTERED`, lost authorization, request timeout |
+| Info | client | Home DC migration (from, to), popup service notifications (type, text) |
+| Warn | client | Dead primary connection, pool creation failed, pool evicted after `AUTH_KEY_UNREGISTERED`, lost authorization, request timeout, `AUTH_KEY_DROP_*` notification, frozen account (since, until, appeal URL) |
+| Error | client | Lost authorization of a banned or deleted account, `PHONE_NUMBER_BANNED` |
 | Debug | updates | Each difference request with result and duration, channel tracked, update received before `Run` |
 | Info | updates | Channel gap (channel, local and remote pts, top message, number of messages), replay of updates buffered before `Run` |
 | Warn | updates | `updates.differenceTooLong`, channel pts that did not advance, failed `TrackChannel` |
@@ -213,6 +217,7 @@ Use hooks to act on events. Use metrics and logs to watch them.
 | `OnConnectionStateEvent func(ConnectionStateEvent)` | The primary connection state changes; `DC`, `State`. Prefer it to `OnConnectionState`. |
 | `OnConnDead func(ConnDeadEvent)` | Any connection is dead; `DC`, `Kind`, `Err`. Prefer it to `OnDead`. |
 | `OnAuthLost func(ctx, err) error` | An authorized session is lost. Runs on its own goroutine with `Run`'s context. Return an error to stop `Run` with `*AuthLostError`. See [Long-running clients](long-running). |
+| `OnFrozen func(ctx, FreezeState)` | A request failed because the account is frozen, and app config confirms it. Checked at most once an hour. See [Frozen accounts](long-running#frozen-accounts). |
 | `OnSelfError` / `OnSelfSuccess` | The `Self` call after connecting fails or succeeds. |
 | `OnTransfer` | Authorization is transferred to another DC. |
 | `RequestTimeout func(bin.Encoder) time.Duration` | Per-request response deadline; one resend after a reconnect. Return 0 for requests that must not be sent twice. |
