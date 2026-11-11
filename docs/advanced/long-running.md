@@ -78,6 +78,34 @@ telegram.Options{
 }
 ```
 
+Without `RequestTimeout`, a request is resent on the same connection while the server
+hasn't acknowledged it: every 5 seconds, up to 5 times (`RetryInterval`, `MaxRetries` in
+`telegram.Options`). After the last resend the client keeps waiting
+for the answer, bounded by the request's context: a slow server (answers after half a
+minute happen on a busy DC) costs latency, not a failed request. A dead connection is
+detected by pings and closed, and its pending requests fail.
+
+## Lost connection state
+
+The server can forget the state of a connection, for example after the account signed in
+on another device. Requests then fail with `CONNECTION_NOT_INITED` or
+`CONNECTION_LAYER_INVALID`. The client sends `initConnection` again with the failed
+request and keeps doing so until the server accepts one, as Telegram Desktop and TDLib
+do, so these errors don't reach your code and you don't need to restart.
+
+## Misconfiguration
+
+Errors of the connection setup that reconnecting can't fix — `API_ID_INVALID`,
+`API_ID_PUBLISHED_FLOOD`, `CONNECTION_API_ID_INVALID` — stop `Run` (or fail `Start`)
+with `*telegram.ConfigError` instead of reconnecting forever:
+
+```go
+var cfgErr *telegram.ConfigError
+if errors.As(err, &cfgErr) {
+	// Check APP_ID and APP_HASH; cfgErr.Err is the RPC error.
+}
+```
+
 ## Files on other datacenters
 
 Use `client.FileDC` for file requests to other datacenters: pools are cached, use your

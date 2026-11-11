@@ -58,6 +58,10 @@ If you authenticate inside the callback, the session lives only for that run unl
 persist it — see [Sessions and storage](../authentication/sessions.md). Without a stored
 session you must re-authenticate every time.
 
+If a callback doesn't fit your program, for example when a web server owns the process,
+use `client.Start` and `client.Close` instead — see
+[Running without `Run`](../advanced/without-run.md).
+
 ## What about long-running bots?
 
 A bot or userbot needs to stay connected and process updates indefinitely. For that you

@@ -8,6 +8,47 @@ Bots authenticate with a single token from
 [@BotFather](https://t.me/BotFather) — no phone, code, or password. You still need an
 `api_id` / `api_hash` to identify your application.
 
+## The `telegram/bot` package
+
+For a bot that runs as a service, the
+[`telegram/bot`](https://ref.gotd.dev/pkg/github.com/gotd/td/telegram/bot.html) package
+does the whole setup in one call and gets the parts that are easy to get wrong right:
+
+```go
+import "github.com/gotd/td/telegram/bot"
+
+d := tg.NewUpdateDispatcher()
+b, err := bot.Start(ctx, appID, appHash, os.Getenv("BOT_TOKEN"), bot.Options{
+	Dir:     "state/mybot", // session and update state
+	Handler: d,
+}, telegram.WithLifetime(ctx))
+if err != nil {
+	return err
+}
+defer func() { _ = b.Close() }()
+
+return b.Wait(context.Background())
+```
+
+* **Session in `Dir`.** The bot keeps its authorization across restarts
+  (`session.json`). The stored session is checked against the token: a session of
+  another account fails with `bot.ErrSessionMismatch` instead of running as it.
+* **Updates while stopped.** The [updates manager](../helpers/updates-recovery.md) keeps
+  its state in `Dir` (`updates.json`), so messages sent while the bot was down are
+  delivered after the restart, and gaps are recovered.
+* **Peers.** The peer manager is fed with the entities of every update, with its cache
+  on, so peers seen in updates resolve without requests.
+* **Flood waits on sign in** are waited out, up to `MaxLoginWait` (5 minutes by default).
+* **Token check.** A malformed token fails before connecting, with an error wrapping
+  `auth.ErrInvalidBotToken` that never contains the secret. `auth.ParseBotToken` does
+  the same check on its own.
+
+Register handlers on the dispatcher before `Start`; use `b.Sender()`, `b.API()`,
+`b.Peers()` and `b.Self()` from them. Use `bot.New` and `b.Start(ctx)` to set things up
+between creating and starting the bot. Like the client, a `Bot` has `Stop`, `Shutdown`,
+`Close`, `Done` and `Wait` — see [Running without `Run`](../advanced/without-run.md).
+Use one `Dir` per bot, and don't share it between running processes.
+
 ## Signing in with a token
 
 ```go
@@ -35,8 +76,9 @@ that the [stored session](./sessions.md) is reused.
 
 ## The `BotFromEnvironment` shortcut
 
-For a typical bot, gotd bundles the whole setup — build client, run it, authenticate
-with `BOT_TOKEN`, register handlers, and block — into one helper:
+`BotFromEnvironment` bundles a simpler setup — build client, run it, authenticate with
+`BOT_TOKEN`, register handlers, and block — into one helper. It doesn't run the updates
+manager, so updates sent while the bot was stopped can be missed:
 
 ```go
 dispatcher := tg.NewUpdateDispatcher()

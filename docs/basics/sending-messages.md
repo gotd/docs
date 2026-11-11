@@ -84,3 +84,43 @@ dispatcher.OnNewMessage(func(ctx context.Context, e tg.Entities, u *tg.UpdateNew
 	return err
 })
 ```
+
+## Widgets
+
+Bots can send HTML widgets (layer 233): interactive HTML rendered in the chat, which can
+send queries back to the bot. Validate the HTML, send it as media, and answer queries:
+
+```go
+import (
+	"github.com/gotd/td/telegram/message"
+	"github.com/gotd/td/telegram/message/styling"
+	"github.com/gotd/td/telegram/message/widget"
+)
+
+if err := widget.ValidateHTML(html); err != nil { // non-empty, ≤32768 bytes, UTF-8
+	return err
+}
+
+_, err := sender.Reply(e, u).Media(ctx,
+	message.Widget(html, styling.Plain("Counter")).
+		PublicData(`{"n":0}`). // also visible in forwards and copies
+		AllowQueries(true),    // let the widget query the bot
+)
+
+dispatcher.OnBotWidgetQuery(func(ctx context.Context, e tg.Entities, u *tg.UpdateBotWidgetQuery) error {
+	// u.Data is the query; update the widget and answer it.
+	if _, err := sender.Peer(e, u).Edit(u.MsgID).WidgetData(ctx,
+		message.WidgetPublicData(`{"n":1}`),
+	); err != nil {
+		return err
+	}
+	return sender.AnswerWidgetQuery(ctx, u.QueryID, `{"n":1}`)
+})
+```
+
+A widget sent with `.Shared(true)` can be sent again by its id with
+`message.SharedWidget(id)` and updated everywhere with `sender.EditSharedWidgetData`.
+In inline mode, use `inline.MessageWidget`. To read a received widget, pass
+`*tg.MessageMediaWidget` to `widget.HTML`. The
+[`bot-widget`](https://github.com/gotd/td/tree/main/examples/bot-widget) example is a
+complete counter widget.
