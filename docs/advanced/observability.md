@@ -61,6 +61,39 @@ abnormal ones (see [Logs](#logs)). Raise the level when you need to see more.
 Metric attributes never contain user, chat or channel IDs, file locations or message
 content, so the number of series stays bounded. IDs only appear in logs.
 
+### Several clients in one process
+
+gotd doesn't label metrics by client. Two clients (e.g. two accounts) sharing one
+`MeterProvider` add up into the same counters, and their gauges such as
+`gotd.client.pools` overwrite each other. Give each client its own provider that adds an
+instrumentation-scope attribute to every meter gotd creates:
+
+```go
+import (
+	"go.opentelemetry.io/otel/attribute"
+	"go.opentelemetry.io/otel/metric"
+)
+
+// scoped adds attrs to the instrumentation scope of every meter.
+type scoped struct {
+	metric.MeterProvider
+	attrs []attribute.KeyValue
+}
+
+func (p scoped) Meter(name string, opts ...metric.MeterOption) metric.Meter {
+	return p.MeterProvider.Meter(name, append(opts, metric.WithInstrumentationAttributes(p.attrs...))...)
+}
+
+mp := scoped{MeterProvider: shared, attrs: []attribute.KeyValue{attribute.String("account", name)}}
+// Use mp in telegram.Options and updates.Config of that account.
+```
+
+`client.Downloader()` uses the client's provider, so its metrics are separated too. A
+`Downloader` you share between clients is not.
+
+With Prometheus' OTLP receiver, set `otlp.promote_scope_metadata: true` to turn the
+scope attribute into a label (`otel_scope_account` above).
+
 ## Metrics
 
 ### Client (`telegram.Options.MeterProvider`)
@@ -72,7 +105,8 @@ content, so the number of series stays bounded. IDs only appear in logs.
 | `gotd.client.connection.reconnects` | counter | `dc` | Reconnects of the primary connection. |
 | `gotd.client.connection.restarts` | counter | `reason` (`timeout`, `migration`) | Restarts requested by the client itself; each is also counted in `connection.reconnects`. |
 | `gotd.client.migrations` | counter | `dc` (target) | Home DC changes (`*_MIGRATE`). |
-| `gotd.client.auth.lost` | counter | `reason` | Authorized → lost transitions (see `OnAuthLost`). |
+| `gotd.client.auth.lost` | counter | `reason`, `kind` | Authorized → lost transitions (see `OnAuthLost`). `reason` is the error type, `kind` is `banned`, `deleted`, `revoked`, `unregistered`, `expired` or `key_invalid`. |
+| `gotd.client.account.restricted` | counter | `reason` | Errors telling that the account is restricted: `FROZEN_METHOD_INVALID`, `FROZEN_PARTICIPANT_MISSING`, `PHONE_NUMBER_BANNED`. |
 | `gotd.client.request.timeouts` | counter | `result` (`resent`, `failed`), `method` | Requests that missed their `RequestTimeout` deadline. |
 | `gotd.client.pool.created` | counter | `dc`, `kind` (`file`, `migrate`), `result` (`ok`, `error`, `canceled`) | Connection pools created for other DCs. |
 | `gotd.client.pool.create.duration` | histogram, s | `kind`, `result` | Time to create a pool (connect and authorization transfer). |
@@ -135,6 +169,11 @@ defer reg.Unregister()
 
 ### What to watch
 
+- **Counters versus state.** `connection.state` counts transitions. The first `ready`
+  after start is a counter's first value, which PromQL's `increase()` doesn't show, and
+  an idle client looks the same as a dead one. To show disconnects, chart increases of
+  `state="disconnected"` and `connection.dead`. "Connected now" can't be read from these
+  counters.
 - **The client is healthy:**
   - `connection.state{state="ready"}` grows only on reconnects;
   - `connection.dead` and `request.timeouts` stay near zero;
@@ -143,7 +182,9 @@ defer reg.Unregister()
   - `difference.requests{result="too_long"}` and `channel.too_long` are rare;
   - `gaps{action="detected"}` is followed by a resolution;
   - `before_run{action="dropped"}` is zero, unless you chose `BeforeRunDrop`.
-- **Authorization:** any increase of `auth.lost` needs attention.
+- **Authorization:** any increase of `auth.lost` needs attention; `kind="banned"` or
+  `"deleted"` means the account is gone. Any `account.restricted` means a frozen
+  account or a banned number.
 - **Downloads keep up:**
   - `downloads{result="error"}`, `hash.mismatches` and `retries.exhausted` stay near zero;
   - `scheduler.window` recovers after `scheduler.backoffs`.
@@ -156,8 +197,9 @@ IDs (channel, DC, pts) appear here, never in metrics.
 | Level | Component | Events |
 | --- | --- | --- |
 | Debug | client | Connection state, dead data and CDN connections, pool created, `FILE_MIGRATE` hop, restart requested |
-| Info | client | Home DC migration (from, to) |
-| Warn | client | Dead primary connection, pool creation failed, pool evicted after `AUTH_KEY_UNREGISTERED`, lost authorization, request timeout |
+| Info | client | Home DC migration (from, to), popup service notifications (type, text) |
+| Warn | client | Dead primary connection, pool creation failed, pool evicted after `AUTH_KEY_UNREGISTERED`, lost authorization, request timeout, `AUTH_KEY_DROP_*` notification, frozen account (since, until, appeal URL) |
+| Error | client | Lost authorization of a banned or deleted account, `PHONE_NUMBER_BANNED` |
 | Debug | updates | Each difference request with result and duration, channel tracked, update received before `Run` |
 | Info | updates | Channel gap (channel, local and remote pts, top message, number of messages), replay of updates buffered before `Run` |
 | Warn | updates | `updates.differenceTooLong`, channel pts that did not advance, failed `TrackChannel` |
@@ -175,6 +217,7 @@ Use hooks to act on events. Use metrics and logs to watch them.
 | `OnConnectionStateEvent func(ConnectionStateEvent)` | The primary connection state changes; `DC`, `State`. Prefer it to `OnConnectionState`. |
 | `OnConnDead func(ConnDeadEvent)` | Any connection is dead; `DC`, `Kind`, `Err`. Prefer it to `OnDead`. |
 | `OnAuthLost func(ctx, err) error` | An authorized session is lost. Runs on its own goroutine with `Run`'s context. Return an error to stop `Run` with `*AuthLostError`. See [Long-running clients](long-running). |
+| `OnFrozen func(ctx, FreezeState)` | A request failed because the account is frozen, and app config confirms it. Checked at most once an hour. See [Frozen accounts](long-running#frozen-accounts). |
 | `OnSelfError` / `OnSelfSuccess` | The `Self` call after connecting fails or succeeds. |
 | `OnTransfer` | Authorization is transferred to another DC. |
 | `RequestTimeout func(bin.Encoder) time.Duration` | Per-request response deadline; one resend after a reconnect. Return 0 for requests that must not be sent twice. |

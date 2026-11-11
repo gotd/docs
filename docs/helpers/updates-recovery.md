@@ -66,6 +66,60 @@ sequence and everything else to the common one. It is opt-in, mirrors TDLib's
 behavior, and is a no-op before `gaps.Run` — so install it alongside `UpdateHook`
 as shown above. See [gotd/td#1782](https://github.com/gotd/td/pull/1782).
 
+## Your own sends
+
+Telegram pushes the result of `messages.sendMessage`, `messages.sendMedia`,
+`messages.editMessage` and similar calls to the account's **other** sessions, not to the
+one that made the call: the session only gets it as the call's result. Without
+`updhook.UpdateHook` (see [Wiring it up](#wiring-it-up)) your handler sees your own
+message only after a later update reveals the pts gap and `getDifference` fetches it,
+which can take minutes.
+
+With `UpdateHook` the pts stays in sync, but one result still loses data. A text sent
+with `messages.sendMessage` comes back as `updateShortSentMessage`, which has the new
+message ID, date and pts, but no text and no peer. The engine can't rebuild it, so the
+handler gets a `tg.MessageEmpty` with that ID. If you record your own messages, build the
+message from the request in a middleware that sees both, as Telegram Web A does for its
+local messages:
+
+```go
+func sentHook(gaps *updates.Manager, self int64) telegram.Middleware {
+	return telegram.MiddlewareFunc(func(next tg.Invoker) telegram.InvokeFunc {
+		return func(ctx context.Context, input bin.Encoder, output bin.Decoder) error {
+			if err := next.Invoke(ctx, input, output); err != nil {
+				return err
+			}
+			box, ok := output.(*tg.UpdatesBox)
+			if !ok {
+				return nil
+			}
+			u := box.Updates
+			if s, ok := u.(*tg.UpdateShortSentMessage); ok {
+				if req, ok := input.(*tg.MessagesSendMessageRequest); ok {
+					u = &tg.UpdateShort{Date: s.Date, Update: &tg.UpdateNewMessage{
+						Message: &tg.Message{
+							ID: s.ID, Date: s.Date, Out: true,
+							FromID:   &tg.PeerUser{UserID: self},
+							PeerID:   peerOf(req.Peer), // your InputPeer → Peer mapping
+							Message:  req.Message,
+							Entities: s.Entities, // the server's entities, e.g. links
+						},
+						Pts: s.Pts, PtsCount: s.PtsCount,
+					}}
+				}
+			}
+			// The call succeeded: don't fail it because handling did; recovery fills
+			// the gap later.
+			_ = gaps.Handle(ctx, u)
+			return nil
+		}
+	})
+}
+```
+
+Use it instead of `updhook.UpdateHook(gaps.Handle)`, not next to it, so results aren't
+handled twice. Media sends return full `updates`, so only plain text needs this.
+
 ## Running the engine
 
 After authenticating, start the engine with your user ID. It blocks, keeping the client
@@ -148,6 +202,20 @@ gaps.Run(ctx, api, self.ID, updates.AuthOptions{
 })
 ```
 
+### "Failed to load channel state"
+
+On start the engine loads each channel with a stored pts, and needs its access hash
+from `ChannelAccessHasher` to call `updates.getChannelDifference`. If the pts is stored
+but the hash isn't, it logs "Failed to load channel state, skipping channel" (or calls
+`OnLoadChannelStateFailed`) and skips the channel until its next update arrives, so
+updates missed while offline are not fetched.
+
+Usually the hash store is behind the state store: another database, a cache that was
+cleared, or a channel the account left or that was deleted. Fix it by giving the hasher
+the hash (any store you have works, e.g. your own archive of chats), or by calling
+`TrackChannel` with the dialog's pts and hash as above. The stored state of a channel
+that is gone stays, so the same warning repeats on every start.
+
 ## Updates before `Run`
 
 Updates can arrive before the manager's `Run` has loaded the state, e.g. while the
@@ -177,6 +245,24 @@ updates.Config{
 	},
 }
 ```
+
+## Channels that aren't pushed
+
+Telegram doesn't push updates of every channel to every session. For such channels the
+engine only learns of new posts from its idle `getChannelDifference`, which runs
+15 minutes after the channel's last update and then every 15 minutes while none arrive
+(difference trigger `channel-idle-timeout` in the [metrics](../advanced/observability)). Their messages therefore arrive 0–15
+minutes late, about 7 minutes on average.
+
+The official clients do the same for channels that aren't open, and poll often only the
+open ones, at the `timeout` returned by the last `channelDifference`
+(Telegram Desktop `Updates::addActiveChat`, TDLib `channel_get_difference_timeout_` for
+open chats). With gotd, poll a channel you need sooner yourself, e.g. with
+`messages.getHistory` from its last known message.
+
+To see whether you're affected, compare update lag per channel with
+`gotd.updates.difference.triggers{reason="channel-idle-timeout"}`: a median lag of
+several minutes for a few channels matches the idle poll.
 
 The [`userbot`](https://github.com/gotd/td/tree/main/examples/userbot) example uses
 persistent state; the [`updates`](https://github.com/gotd/td/tree/main/examples/updates)
