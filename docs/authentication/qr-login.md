@@ -16,7 +16,8 @@ moment the code is scanned. Because that update arrives asynchronously, QR login
 **requires an update dispatcher**.
 
 The `qrlogin.OnLoginToken` helper registers a handler on your dispatcher and returns a
-channel that fires on scan:
+channel that fires on scan. It's a latch: a scan reported while nothing waits on the
+channel, for example while your `show` callback runs, is kept until read:
 
 ```go
 import (
@@ -52,6 +53,25 @@ if _, err := client.QR().Auth(ctx, loggedIn, show); err != nil {
 `Token` also offers `token.Image(level)` to get an `image.Image` directly, and
 `token.Expires()` for the expiry time.
 
+Errors of the token refresh that can be retried (flood waits, server errors) are retried
+with backoff while the current code stays on screen; other errors end `Auth`.
+
+## Accounts on another datacenter
+
+When the account that scans the code lives on another DC, Telegram answers with
+`auth.loginTokenMigrateTo`, and the login has to be completed on that DC. `client.QR()`
+does this for you: it migrates the client and imports the token there, also when the
+acceptance is seen on a token refresh instead of the update. If you build the QR with
+`qrlogin.NewQR`, pass the client's migration function:
+
+```go
+qr := qrlogin.NewQR(client.API(), appID, appHash, qrlogin.Options{
+	Migrate: client.MigrateTo,
+})
+```
+
+Without `Migrate`, `Auth` returns `*qrlogin.MigrationNeededError`.
+
 ## Handling 2FA
 
 If the account has a 2FA password, pass a password callback, and `Import`/`Auth` complete
@@ -59,13 +79,15 @@ the sign-in with it:
 
 ```go
 qr := qrlogin.NewQR(client.API(), appID, appHash, qrlogin.Options{
+	Migrate: client.MigrateTo,
 	Password: func(ctx context.Context) (string, error) {
 		return promptPassword(ctx)
 	},
 })
 ```
 
-Without the callback, `Auth` fails with `SESSION_PASSWORD_NEEDED`. Detect it and
+The password is checked after the token is accepted, also on another DC. Without the
+callback, `Auth` fails with `SESSION_PASSWORD_NEEDED`. Detect it and
 complete the sign-in with the password:
 
 ```go
@@ -99,3 +121,9 @@ show := func(ctx context.Context, token qrlogin.Token) error {
 
 The reusable `examples.QRAuth` helper bundles the show callback, the `loggedIn` channel
 and the 2FA fallback together.
+
+## Accepting a code
+
+To approve a login from your own signed-in client, as Settings → Devices → Link Desktop
+Device does, parse the scanned `tg://login?token=...` URL with `qrlogin.ParseTokenURL`
+and pass the token to `qrlogin.AcceptQR(ctx, client.API(), token)`.
