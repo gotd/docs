@@ -42,12 +42,10 @@ const config = {
           // Please change this to your repo.
           editUrl: 'https://github.com/gotd/docs/edit/main/docs/',
         },
-        // blog: {
-        //   showReadingTime: true,
-        //   // Please change this to your repo.
-        //   editUrl:
-        //     'https://github.com/gotd/docs/edit/main/blog/',
-        // },
+        blog: {
+          showReadingTime: true,
+          editUrl: 'https://github.com/gotd/docs/edit/main/',
+        },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
@@ -83,7 +81,7 @@ const config = {
             position: 'left',
             label: 'API Reference',
           },
-          // {to: '/blog', label: 'Blog', position: 'left'},
+          {to: '/blog', label: 'Blog', position: 'left'},
           {
             to: '/docs/support',
             label: 'Support',
@@ -124,10 +122,10 @@ const config = {
           {
             title: 'More',
             items: [
-              // {
-              //   label: 'Blog',
-              //   to: '/blog',
-              // },
+              {
+                label: 'Blog',
+                to: '/blog',
+              },
               {
                 label: 'GitHub',
                 href: 'https://github.com/gotd/td',
