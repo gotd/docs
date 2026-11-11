@@ -113,6 +113,24 @@ gaps := updates.New(updates.Config{
 
 The bbolt equivalents are `bbolt.NewStateStorage(db)` and `bbolt.NewAccessHasher(db)`.
 
+For a bot or a small account, `updates.NewFileStorage(path)` keeps the state, the
+channels' pts and their access hashes in one JSON file, rewritten atomically on every
+change. Use it as both `Storage` and `AccessHasher`: a channel's state is restored only
+together with its access hash. It doesn't scale to accounts in many busy channels, and a
+file must not be shared between processes.
+
+```go
+fs := updates.NewFileStorage("state/updates.json")
+gaps := updates.New(updates.Config{
+	Handler:      d,
+	Storage:      fs,
+	AccessHasher: fs,
+})
+```
+
+The [`telegram/bot`](../authentication/bot.md#the-telegrambot-package) package sets this
+up for bots.
+
 ## Tracking channels
 
 The engine tracks channels with a stored state, and learns about other channels from
@@ -170,3 +188,28 @@ a `ChannelDifferenceTooLong` gap must be fetched by the application
 (see [Channel gaps](#channel-gaps)). Stateless updates can't be ordered. These are
 inherent to the MTProto update model.
 :::
+
+## Errors in handlers
+
+By default, an error returned by your handler, or by `Storage` while saving the state, is
+logged and the engine moves on: the update is not delivered again. To stop instead, set
+`StopOnApplyError`:
+
+```go
+updates.Config{
+	Handler:          d,
+	StopOnApplyError: true,
+}
+```
+
+`Run` then returns the error, and the state isn't advanced past the failed batch, so
+after a restart with the stored state (`Forget: false`) the updates are delivered again.
+It's an error policy, not a transaction: work done before the error isn't rolled back,
+so handlers must be idempotent.
+
+## Updates inside differences
+
+A difference returned by `getDifference` or `getChannelDifference` can carry, besides
+new messages, other updates (`other_updates`): edits, deletions, read marks and so on.
+They are applied in TDLib's order and passed to your handler like pushed updates. An
+`updatePtsChanged` among them makes the engine fetch the difference once more.
