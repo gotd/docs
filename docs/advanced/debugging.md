@@ -54,6 +54,42 @@ To see *every* update (not just the ones your dispatcher handles), set a custom
 `UpdateHandler` that logs the raw `tg.UpdatesClass` before delegating. The
 `pretty-print` example also demonstrates this.
 
+## Wire traces
+
+To see the MTProto messages themselves, after decryption — containers, acks, pings,
+salts, wrappers like `invokeWithLayer` — set `Options.WireTracer` to an implementation of
+[`mtproto.WireTracer`](https://ref.gotd.dev/pkg/github.com/gotd/td/mtproto.html#WireTracer):
+
+```go
+type tracer struct{}
+
+func (tracer) OnMessage(m mtproto.WireMessage, body []byte) {
+	// m.Conn.DC, m.Direction, m.MessageID, m.SeqNo; body is only valid during the call.
+}
+
+func (tracer) OnEvent(e mtproto.WireEvent) {
+	// e.Type: conn_start, conn_up, key_set, session_new, salt_change, request, ...
+}
+
+client := telegram.NewClient(appID, appHash, telegram.Options{WireTracer: tracer{}})
+```
+
+The tracer is called for every connection of the client (primary, other DCs, media and
+CDN), synchronously, so it must return quickly. It never gets key material, only auth
+key ids.
+
+The [`wiretrace`](https://ref.gotd.dev/pkg/github.com/gotd/td/wiretrace.html) package
+reads and writes wire traces in the format of the traced Telegram Desktop build, and the
+`cmd/wiretrace` tool analyzes them: `decode` (one JSON line per logical message),
+`timeline`, `stats` (per-method counts, latencies, errors, flood waits) and `diff`, which
+compares two runs, e.g. Telegram Desktop against a gotd client, phase by phase or step by
+step with `--align marker`. With UI events in a Telegram Desktop trace, `timeline --ui`
+shows which click or key press sent which requests.
+
+```bash
+go run github.com/gotd/td/cmd/wiretrace@latest stats RUN_DIR
+```
+
 ## Error details
 
 RPC errors are `*tgerr.Error` and carry the Telegram error code and message. Use
