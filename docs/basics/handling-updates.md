@@ -127,7 +127,13 @@ return client.Run(ctx, func(ctx context.Context) error {
 ```
 
 `BotFromEnvironment` accepts `RunUntilCanceled` as its lifecycle function so you don't
-write this by hand — see the [Echo bot tutorial](./echo-bot.md).
+write this by hand.
+
+Without a callback, start the client with `client.Start` and block in
+`client.Wait`, which returns when the client stops — see
+[Running without `Run`](../advanced/without-run.md). The
+[`telegram/bot`](../authentication/bot.md#the-telegrambot-package) package does this for
+bots, together with update recovery; the [Echo bot tutorial](./echo-bot.md) uses it.
 
 ## Don't miss updates
 

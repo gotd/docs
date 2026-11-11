@@ -19,63 +19,94 @@ package main
 
 import (
 	"context"
+	"os"
+	"os/signal"
+	"strconv"
 
+	"github.com/go-faster/errors"
 	"go.uber.org/zap"
 
 	"github.com/gotd/log/logzap"
 
 	"github.com/gotd/td/examples"
 	"github.com/gotd/td/telegram"
-	"github.com/gotd/td/telegram/message"
+	"github.com/gotd/td/telegram/bot"
 	"github.com/gotd/td/tg"
 )
 
 func main() {
 	// examples.Run sets up a logger and context; see Environment helpers.
 	examples.Run(func(ctx context.Context, log *zap.Logger) error {
-		// 1. The dispatcher routes incoming updates to handlers.
-		dispatcher := tg.NewUpdateDispatcher()
-		opts := telegram.Options{
-			Logger:        logzap.New(log),
-			UpdateHandler: dispatcher,
+		ctx, stop := signal.NotifyContext(ctx, os.Interrupt)
+		defer stop()
+
+		appID, err := strconv.Atoi(os.Getenv("APP_ID"))
+		if err != nil {
+			return errors.Wrap(err, "APP_ID")
+		}
+		dir := os.Getenv("STATE_DIR")
+		if dir == "" {
+			dir = "bot-echo"
 		}
 
-		// 2. BotFromEnvironment builds the client, runs it, and signs in
-		//    with BOT_TOKEN from the environment.
-		return telegram.BotFromEnvironment(ctx, opts, func(ctx context.Context, client *telegram.Client) error {
-			// 3. Raw API client and a message sender built on top of it.
-			api := tg.NewClient(client)
-			sender := message.NewSender(api)
+		// 1. The dispatcher routes incoming updates to handlers.
+		d := tg.NewUpdateDispatcher()
 
-			// 4. Reply to every incoming text message.
-			dispatcher.OnNewMessage(func(ctx context.Context, e tg.Entities, u *tg.UpdateNewMessage) error {
-				m, ok := u.Message.(*tg.Message)
-				if !ok || m.Out {
-					return nil // not a plain message, or our own — ignore
-				}
-				_, err := sender.Reply(e, u).Text(ctx, m.Message)
-				return err
-			})
-			return nil
-		}, telegram.RunUntilCanceled) // 5. Block until cancelled.
+		// 2. The bot: session and update state in dir.
+		b, err := bot.New(appID, os.Getenv("APP_HASH"), os.Getenv("BOT_TOKEN"), bot.Options{
+			Dir:     dir,
+			Handler: d,
+			Client:  telegram.Options{Logger: logzap.New(log)},
+		})
+		if err != nil {
+			return err
+		}
+
+		// 3. Reply to every incoming text message.
+		d.OnNewMessage(func(ctx context.Context, e tg.Entities, u *tg.UpdateNewMessage) error {
+			m, ok := u.Message.(*tg.Message)
+			if !ok || m.Out {
+				return nil // not a plain message, or our own — ignore
+			}
+			_, err := b.Sender().Reply(e, u).Text(ctx, m.Message)
+			return err
+		})
+
+		// 4. Connect, sign in (or check the stored session) and start updates.
+		if err := b.Start(ctx, telegram.WithLifetime(ctx)); err != nil {
+			return err
+		}
+		defer func() { _ = b.Close() }()
+		log.Info("Bot started", zap.String("username", b.Self().Username))
+
+		// 5. Run until Ctrl+C or a fatal error, e.g. a revoked token.
+		return b.Wait(context.Background())
 	})
 }
 ```
 
+The example also answers in supergroups with `OnNewChannelMessage`, the same way.
+
 ## Walking through it
 
-1. **Dispatcher** — `tg.NewUpdateDispatcher()` is both the thing you register handlers
-   on and the `UpdateHandler` the client delivers updates to.
-2. **`BotFromEnvironment`** — reads `APP_ID`, `APP_HASH`, `BOT_TOKEN` and the session
-   path, then handles connect + auth so the inner function starts already signed in.
-3. **Sender** — `message.NewSender` wraps the raw API with the
-   [message builder](./sending-messages.md).
-4. **Handler** — `OnNewMessage` fires for each message. We skip anything that isn't a
+1. **Dispatcher** — `tg.NewUpdateDispatcher()` is where you register handlers. The bot
+   passes it the updates.
+2. **`bot.New`** — checks the token and sets up the client, the
+   [updates manager](../helpers/updates-recovery.md) and the peer manager, without
+   connecting yet. The session and the update state go to `dir`, so the bot doesn't sign
+   in again on every start and gets the messages sent while it was stopped.
+3. **Handler** — `OnNewMessage` fires for each message. We skip anything that isn't a
    `*tg.Message` and skip our own outgoing messages (`m.Out`), then
-   `sender.Reply(e, u)` targets the originating chat and `.Text(ctx, m.Message)` echoes
-   the text back.
-5. **`RunUntilCanceled`** — keeps the client connected so updates keep flowing until you
-   stop the process.
+   `b.Sender().Reply(e, u)` targets the originating chat and `.Text(ctx, m.Message)`
+   echoes the text back.
+4. **`Start`** — connects, signs in with the token, or checks that the stored session is
+   this bot's, and starts the updates manager. `WithLifetime(ctx)` stops the bot when
+   `ctx` is cancelled.
+5. **`Wait`** — blocks until the bot stops, and returns why. `Close` releases everything.
+
+See [Bot authentication](../authentication/bot.md#the-telegrambot-package) for what the
+`bot` package does, and [Running without `Run`](../advanced/without-run.md) for
+`Start`, `Wait` and `Close`.
 
 ## Run it
 
@@ -83,12 +114,13 @@ func main() {
 export APP_ID=1234567
 export APP_HASH=abcdef0123456789abcdef0123456789
 export BOT_TOKEN=12345:your-bot-token
-export SESSION_FILE=~/session.echo.json
+export STATE_DIR=~/bot-echo
 
 go run .
 ```
 
-Message your bot and it replies with the same text.
+Message your bot and it replies with the same text. Stop it, send a few messages, start
+it again: it answers them too.
 
 ## Next steps
 
@@ -97,5 +129,5 @@ Message your bot and it replies with the same text.
 * **Save** media users send you → the
   [`save-media`](https://github.com/gotd/td/tree/main/examples/save-media) example and
   [Downloading files](../helpers/downloading-files.md)
-* Never miss a message after downtime →
+* How missed updates are recovered →
   [Update recovery](../helpers/updates-recovery.md)
