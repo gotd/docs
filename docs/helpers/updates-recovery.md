@@ -170,8 +170,9 @@ The bbolt equivalents are `bbolt.NewStateStorage(db)` and `bbolt.NewAccessHasher
 For a bot or a small account, `updates.NewFileStorage(path)` keeps the state, the
 channels' pts and their access hashes in one JSON file, rewritten atomically on every
 change. Use it as both `Storage` and `AccessHasher`: a channel's state is restored only
-together with its access hash. It doesn't scale to accounts in many busy channels, and a
-file must not be shared between processes.
+together with its access hash. It also keeps user access hashes, so it can serve as
+`UserAccessHasher` (it is used as one automatically, see below). It doesn't scale to
+accounts in many busy channels, and a file must not be shared between processes.
 
 ```go
 fs := updates.NewFileStorage("state/updates.json")
@@ -184,6 +185,46 @@ gaps := updates.New(updates.Config{
 
 The [`telegram/bot`](../authentication/bot.md#the-telegrambot-package) package sets this
 up for bots.
+
+## Access hashes
+
+To fetch a channel's difference the engine needs the channel's access hash. With the
+default in-memory hasher it only knows channels it has already seen in updates, so the
+first update from a channel known only from the dialog list costs an extra
+`updates.getDifference` and `getChannelDifference` to learn the hash.
+
+Pass a hasher that also knows the peers the rest of your app has seen:
+[`*peers.Manager`](./peers.md#caching-in-the-manager) implements both
+`ChannelAccessHasher` and `UserAccessHasher`, and so do `updates.FileStorage` and the
+contrib storages:
+
+```go
+manager := peers.Options{}.Build(client.API())
+gaps := updates.New(updates.Config{
+	Handler:      manager.UpdateHook(d),
+	AccessHasher: manager,
+})
+```
+
+If `UserAccessHasher` is not set, the engine uses `AccessHasher` for users too when it
+implements `UserAccessHasher`, so a persistent hasher keeps both across restarts. `Run`
+logs a warning when the state is persistent but the hashers are in memory.
+
+## Failed differences
+
+A failed `updates.getDifference` or `getChannelDifference` is retried with backoff:
+1 s, doubling up to 60 s, then every 60–80 s, like TDLib and Telegram Desktop.
+`FLOOD_WAIT` is waited out; a lost authorization stops the retries.
+
+- `PERSISTENT_TIMESTAMP_INVALID` / `PERSISTENT_TIMESTAMP_EMPTY` on the common sequence
+  reset the state from `updates.getState` (stored channels are kept) and call
+  `Config.OnTooLong`, since the updates in between are lost.
+- A channel's `PERSISTENT_TIMESTAMP_OUTDATED` is retried; `CHANNEL_INVALID` stops tracking
+  the channel, like `CHANNEL_PRIVATE`.
+
+`Config.Clock` drives the retries (handy with a fake clock in tests). The
+`gotd.updates.difference.triggers` metric counts them with the `retry` and
+`channel-retry` reasons.
 
 ## Tracking channels
 
