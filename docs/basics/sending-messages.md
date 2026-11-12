@@ -51,7 +51,9 @@ b.Poll(ctx, /* options */)
 ```
 
 For formatted text see [Styled text and HTML](../helpers/styling.md); for sending files
-see [Uploading files](../helpers/uploading-files.md).
+see [Uploading files](../helpers/uploading-files.md). Uploaded documents get a file name
+and a MIME type from the file's extension (`application/octet-stream` if unknown) unless
+you set them.
 
 ## Message options
 
