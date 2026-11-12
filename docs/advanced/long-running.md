@@ -161,9 +161,6 @@ telegram.Options{
 			return 30 * time.Second
 		}
 	},
-	// Liveness of connections.
-	PingInterval: 30 * time.Second,
-	PingTimeout:  10 * time.Second,
 }
 ```
 
@@ -173,6 +170,45 @@ hasn't acknowledged it: every 5 seconds, up to 5 times (`RetryInterval`, `MaxRet
 for the answer, bounded by the request's context: a slow server (answers after half a
 minute happen on a busy DC) costs latency, not a failed request. A dead connection is
 detected by pings and closed, and its pending requests fail.
+
+## Pings and salts
+
+By default every connection pings like Telegram Desktop: `ping_delay_disconnect` with a
+60-second disconnect delay, a random 30–45 seconds after the previous ping. Set
+`Options.PingInterval` for a fixed interval instead (the disconnect delay is then
+`PingInterval + PingTimeout`; `PingTimeout` defaults to 15 seconds).
+
+gotd doesn't request future salts: like Telegram Desktop it takes the server salt from
+`new_session_created` and `bad_server_salt`, re-sending a request whose salt expired.
+`mtproto.Options.SaltFetchInterval` turns periodic `get_future_salts` back on.
+
+## Clock skew
+
+Message IDs carry the time, and the server rejects messages whose time is too far from
+its own. gotd keeps the server time offset like TDLib: it is seeded from the key exchange,
+corrected from every message the server sends, and reset by `bad_msg_notification`
+(requests refused for their time are re-sent, at most three times). A local clock that is
+minutes off works.
+
+The offset is saved with the session and used from the first message of the next run.
+Read it with `client.ServerTimeOffset()`, or set the initial value with
+`Options.ServerTimeOffset` (it then takes precedence over the stored one).
+
+## Reconnects and server sessions
+
+A reconnect with the same key continues the same server session (`session_id`), as TDLib
+does, so the server keeps its state for the client and delivers what it queued. When the
+server starts a new session anyway, the client:
+
+- re-sends the requests the new session didn't see (those before its `first_msg_id`);
+- sends `updatesTooLong` to the update handler on the primary connection, so the
+  [updates manager](../helpers/updates-recovery.md) fetches what may have been lost.
+
+A write the server executed in the lost session may thus be sent again; make
+non-idempotent operations safe to repeat (e.g. a stable `random_id`) if that matters.
+
+Received messages are deduplicated like TDLib does, including messages inside
+containers: a duplicate is acknowledged again but not handled twice.
 
 ## Lost connection state
 

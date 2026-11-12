@@ -54,7 +54,11 @@ if _, err := sender.Resolve("@channel").Media(ctx, doc); err != nil {
 ```
 
 `UploadedDocument` takes optional caption styling options and exposes builder methods
-(`MIME`, `Filename`, `Audio`, `Video`, `Voice`, …) to describe the file. This is the
+(`MIME`, `Filename`, `Audio`, `Video`, `Voice`, …) to describe the file. Without them a
+document still gets a file name attribute from the uploaded file's name and a MIME type
+from its extension, or `application/octet-stream` for unknown extensions, as Telegram
+Desktop sends it (before v0.165.0 such documents went out without either and clients
+could show them as audio). This is the
 [`bot-upload`](https://github.com/gotd/td/tree/main/examples/bot-upload) example.
 
 ## Tuning
