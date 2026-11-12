@@ -72,6 +72,47 @@ func (s *memorySession) StoreSession(_ context.Context, data []byte) error {
 An in-memory store means re-authenticating on every restart — fine for tests or
 short-lived bots, not for production user clients.
 
+## What a session holds
+
+The stored data (`session.Data`, JSON with a format version) is more than the home DC key:
+
+- the auth key and salt of the home DC, and when the key was created;
+- the auth keys of other DCs the client already transferred the authorization to (`DCs`),
+  so after a restart file downloads and `*_MIGRATE` redirects reuse them instead of
+  running a new key exchange and `auth.exportAuthorization`/`importAuthorization`;
+- the server time offset the client observed (see
+  [Long-running clients](../advanced/long-running.md#clock-skew)), used from the first
+  message of the next run;
+- the ID of the signed-in user or bot, so `client.SelfID()` answers without a request.
+
+These fields are optional additions to format version 1: older gotd versions ignore
+them, and session files written by older versions load with them unset. A file written by
+a newer format version fails to load with `session.ErrVersionUnsupported` instead of
+looking like a missing session.
+
+## Logging out
+
+`client.LogOut(ctx)` ends the authorization the way Telegram Desktop and TDLib do:
+
+1. `auth.logOut` on the home DC (a 401 counts as success);
+2. `auth.logOut` on every other DC the authorization was transferred to, then those
+   connections are closed;
+3. the stored session is wiped, so the next start creates a new key and is unauthorized.
+
+```go
+res, err := client.LogOut(ctx)
+if err != nil {
+	// The local steps already ran: the session is wiped either way.
+	return err
+}
+// res.FutureAuthToken, if set, can be passed to a later sign-in
+// (auth.sendCode logout_tokens) to skip the code.
+```
+
+Logging out is irrevocable, and your own logout isn't reported to `OnAuthLost`. The
+client keeps running unauthorized on its current key until you sign in again or stop it;
+gotd doesn't send `destroy_auth_key` yet.
+
 ## From the environment
 
 `telegram.ClientFromEnvironment` and `BotFromEnvironment` derive a `FileStorage` from
