@@ -183,8 +183,9 @@ gaps := updates.New(updates.Config{
 })
 ```
 
-The [`telegram/bot`](../authentication/bot.md#the-telegrambot-package) package sets this
-up for bots.
+The [`telegram/bot`](../authentication/bot.md#the-telegrambot-package) and
+[`telegram/user`](../authentication/user.md#the-telegramuser-package) packages set this
+up for bots and user accounts.
 
 ## Access hashes
 

@@ -134,6 +134,8 @@ Without a callback, start the client with `client.Start` and block in
 [Running without `Run`](../advanced/without-run.md). The
 [`telegram/bot`](../authentication/bot.md#the-telegrambot-package) package does this for
 bots, together with update recovery; the [Echo bot tutorial](./echo-bot.md) uses it.
+[`telegram/user`](../authentication/user.md#the-telegramuser-package) does the same for
+user accounts.
 
 ## Don't miss updates
 
