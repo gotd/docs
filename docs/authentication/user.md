@@ -8,6 +8,61 @@ Signing in as a user means a phone number, a login code Telegram sends you, and 
 account has it enabled — a 2FA password. gotd wraps this multi-step dance in
 [`auth.Flow`](https://ref.gotd.dev/pkg/github.com/gotd/td/telegram/auth.html).
 
+## The `telegram/user` package
+
+For a user account that runs as a service (a userbot, an archiver), the
+[`telegram/user`](https://ref.gotd.dev/pkg/github.com/gotd/td/telegram/user.html) package
+connects, signs in only if needed, and starts the updates and peer managers in one call.
+It is the user counterpart of [`telegram/bot`](./bot.md#the-telegrambot-package):
+
+```go
+import "github.com/gotd/td/telegram/user"
+
+d := tg.NewUpdateDispatcher()
+u, err := user.Start(ctx, appID, appHash, user.Options{
+	Dir:     "state/me", // session, update state and access hashes
+	Handler: d,
+	// Used only if the stored session is not authorized.
+	Auth: user.Phone(authenticator, auth.SendCodeOptions{}),
+}, telegram.WithLifetime(ctx))
+if err != nil {
+	return err
+}
+defer func() { _ = u.Close() }()
+
+return u.Wait(context.Background())
+```
+
+* **Session in `Dir`.** An authorized session (`session.json`) is used as is and never
+  signed in again. A bot session, or another account than `Options.UserID`, fails with
+  `user.ErrSessionMismatch`.
+* **Signing in.** `Options.Auth` signs in an unauthorized session: `user.Phone` (code and
+  2FA password through [`auth.Flow`](#the-flow)), `user.QR` (a [login token](./qr-login.md)
+  shown with `QROptions.Show`, imported on another DC if needed) or `user.AuthFunc` for a
+  custom sign in. With `Auth` nil, `Start` returns `user.ErrNotAuthorized` without sending
+  anything, for services that must only run with an existing session.
+* **Flood waits** on sign in are waited out, up to `MaxLoginWait` (5 minutes by default),
+  but only where that can't send a new code: before the code was requested for
+  `user.Phone`, always for QR, never for `user.AuthFunc`. Otherwise the error is returned.
+* **Updates while stopped.** The [updates manager](../helpers/updates-recovery.md) keeps
+  its state and the access hashes of channels and users in `Dir` (`updates.json`), so
+  updates sent while the client was down are delivered after the restart, and known
+  channels need no extra `getDifference`. Updates received during sign in are buffered.
+* **Peers.** The peer manager is fed with the entities of every update, with its cache on.
+
+Register handlers on the dispatcher before `Start`; use `u.Sender()`, `u.API()`,
+`u.Peers()`, `u.Self()` and `u.ID()` from them. Use `user.New` and `u.Start(ctx)` to set
+things up between creating and starting. Like the client, a `User` has `Stop`,
+`Shutdown`, `Close`, `Done` and `Wait` — see [Running without `Run`](../advanced/without-run.md).
+Use one `Dir` per account, and don't share it between running processes.
+
+:::tip
+The runnable [`userbot-echo`](https://github.com/gotd/td/tree/main/examples/userbot-echo)
+example replies to private messages as a user account.
+:::
+
+The rest of this page shows the sign in on a plain `telegram.Client`.
+
 ## The flow
 
 You provide an [`auth.UserAuthenticator`](#the-userauthenticator-interface) — something
